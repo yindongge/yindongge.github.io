@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+	<div id="snake">
+		<div class="info">贪吃蛇</div>
+		<input type="button" id="start" value="开始游戏" />
+		<div id="map">
+		</div>
+		<div class="help">
+			<div class="left">
+				<div><span></span>食物</div>
+				<div><span></span>死亡</div>
+				<div><span></span>减速</div>
+				<div><span></span>加速</div>
+			</div>
+			<div class="right">
+				<span>战绩:<i id="score">0</i>分</span>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function(){
+			var colors = ['#81FF9C','#F72AB5','#EBFF1D','#20F5FB'];
+			var spans = document.querySelectorAll('.left span');
+			spans = [...spans];
+			spans.forEach((item,i)=>{
+				item.style.background = colors[i];
+			});
+		})()
+	</script>
+	<script src="js/snake.js"></script>
+</body>
+</html>
