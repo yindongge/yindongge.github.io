@@ -298,10 +298,10 @@ $("#person").hover(function(){
 		opacity:1
 	});
 	$(".tou").css({
-		background:"url(img/about/people1_1.png)"
+		background:"url(img/about/people1.png)"
 	});
 	$(".shen").css({
-		background:"url(img/about/people2_1.png)"
+		background:"url(img/about/people2.png)"
 	})
 },function(){
 	$("#person").css({
