@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script src="../js/common/add.js"></script>
+<script src="../js/common/layer/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>
+<div class="page-wrapper ">
+<div class="container-fluid">
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li class="active">专题页配置</li>
+			</ul>
+			<!-- 切换 -->
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="width:30%;">
+			   <a href="#" class="btn btn-info " role="button">基本信息</a>
+			   <a href="#" class="btn btn-info" role="button">自定义HTML</a>
+			   <a href="#" class="btn btn-primary" role="button">活动专题图</a>
+			   <a href="#" class="btn btn-info" role="button">分组商品</a>
+			   <a href="#" class="btn btn-info" role="button">锚点链接</a>
+		    </div>
+			<!-- 切换 -->
+			<div class="panel panel-info">
+				<div class="panle_img">
+					<img src="../img/01.jpg" alt="">
+					<span class="glyphicon glyphicon-remove-circle closeme"></span>
+					<a class="btn btn-success btn-click"><span class="glyphicon glyphicon-pencil"></span>编辑</a>
+				</div>
+				<div class="panle_img">
+					<img src="../img/01.jpg" alt="">
+					<span class="glyphicon glyphicon-remove-circle closeme"></span>
+					<a class="btn btn-success btn-click"><span class="glyphicon glyphicon-pencil"></span>编辑</a>
+				</div>
+				<div class="continute">
+					<button class="btn btn-info">继续添加</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+		$('.btn-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '专题图片',
+    shadeClose: true,
+    shade: 0.8,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: '专题配置活动专题弹出框.html' //iframe的url
+});
+		})
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgOrder" >
+    <id column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="serial_no" property="serialNo" jdbcType="BIGINT" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="accounts" property="accounts" jdbcType="DECIMAL" />
+    <result column="discount" property="discount" jdbcType="DECIMAL" />
+    <result column="balance" property="balance" jdbcType="DECIMAL" />
+    <result column="send_money" property="sendMoney" jdbcType="DECIMAL" />
+    <result column="order_money" property="orderMoney" jdbcType="DECIMAL" />
+    <result column="deposit_money" property="depositMoney" jdbcType="DECIMAL" />
+    <result column="deposit_refund" property="depositRefund" jdbcType="DECIMAL" />
+    <result column="pay_money" property="payMoney" jdbcType="DECIMAL" />
+    <result column="consignee" property="consignee" jdbcType="VARCHAR" />
+    <result column="consignee_address" property="consigneeAddress" jdbcType="VARCHAR" />
+    <result column="consignee_tel" property="consigneeTel" jdbcType="VARCHAR" />
+    <result column="consignee_mobile" property="consigneeMobile" jdbcType="VARCHAR" />
+    <result column="consignee_email" property="consigneeEmail" jdbcType="VARCHAR" />
+    <result column="invoice" property="invoice" jdbcType="VARCHAR" />
+    <result column="send_style" property="sendStyle" jdbcType="TINYINT" />
+    <result column="send_date" property="sendDate" jdbcType="DATE" />
+    <result column="send_time_start" property="sendTimeStart" jdbcType="TIME" />
+    <result column="send_time_end" property="sendTimeEnd" jdbcType="TIME" />
+    <result column="take_date" property="takeDate" jdbcType="DATE" />
+    <result column="take_code" property="takeCode" jdbcType="VARCHAR" />
+    <result column="pay_style" property="payStyle" jdbcType="TINYINT" />
+    <result column="local_pay_style" property="localPayStyle" jdbcType="TINYINT" />
+    <result column="online_pay_style" property="onlinePayStyle" jdbcType="TINYINT" />
+    <result column="source" property="source" jdbcType="TINYINT" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="pay_status" property="payStatus" jdbcType="TINYINT" />
+    <result column="comment_status" property="commentStatus" jdbcType="TINYINT" />
+    <result column="return_status" property="returnStatus" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
+    <result column="finish_time" property="finishTime" jdbcType="TIMESTAMP" />
+    <result column="limit_pay_time" property="limitPayTime" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    order_id, serial_no, shop_id, user_id, accounts, discount, balance, send_money, order_money, deposit_money, deposit_refund, pay_money,
+    consignee, consignee_address, consignee_tel, consignee_mobile, consignee_email, invoice, 
+    send_style, send_date, send_time_start, send_time_end, take_date, take_code, pay_style, 
+    local_pay_style, online_pay_style, source, remark, pay_status, comment_status, return_status, 
+    status, create_time, pay_time, finish_time, limit_pay_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_order
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_order
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgOrder" useGeneratedKeys="true" keyColumn="order_id" keyProperty="orderId" >
+    insert into org_order (serial_no, shop_id, user_id, 
+      accounts, discount, balance, 
+      send_money, order_money, deposit_money, deposit_refund, pay_money, consignee, 
+      consignee_address, consignee_tel, consignee_mobile, 
+      consignee_email, invoice, send_style, 
+      send_date, send_time_start, send_time_end, 
+      take_date, take_code, pay_style, 
+      local_pay_style, online_pay_style, source, 
+      remark, pay_status, comment_status, 
+      return_status, status, create_time, 
+      pay_time, finish_time, limit_pay_time)
+    values (#{serialNo,jdbcType=BIGINT}, #{shopId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{accounts,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, #{balance,jdbcType=DECIMAL}, 
+      #{sendMoney,jdbcType=DECIMAL}, #{orderMoney,jdbcType=DECIMAL}, #{depositMoney,jdbcType=DECIMAL}, #{depositRefund,jdbcType=DECIMAL}, #{payMoney,jdbcType=DECIMAL},#{consignee,jdbcType=VARCHAR}, 
+      #{consigneeAddress,jdbcType=VARCHAR}, #{consigneeTel,jdbcType=VARCHAR}, #{consigneeMobile,jdbcType=VARCHAR}, 
+      #{consigneeEmail,jdbcType=VARCHAR}, #{invoice,jdbcType=VARCHAR}, #{sendStyle,jdbcType=TINYINT}, 
+      #{sendDate,jdbcType=DATE}, #{sendTimeStart,jdbcType=TIME}, #{sendTimeEnd,jdbcType=TIME}, 
+      #{takeDate,jdbcType=DATE}, #{takeCode,jdbcType=VARCHAR}, #{payStyle,jdbcType=TINYINT}, 
+      #{localPayStyle,jdbcType=TINYINT}, #{onlinePayStyle,jdbcType=TINYINT}, #{source,jdbcType=TINYINT}, 
+      #{remark,jdbcType=VARCHAR}, #{payStatus,jdbcType=TINYINT}, #{commentStatus,jdbcType=TINYINT}, 
+      #{returnStatus,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{payTime,jdbcType=TIMESTAMP}, #{finishTime,jdbcType=TIMESTAMP}, #{limitPayTime,jdbcType=SMALLINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgOrder" >
+    update org_order
+    <set >
+      <if test="serialNo != null" >
+        serial_no = #{serialNo,jdbcType=BIGINT},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="accounts != null" >
+        accounts = #{accounts,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=DECIMAL},
+      </if>
+      <if test="sendMoney != null" >
+        send_money = #{sendMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="orderMoney != null" >
+        order_money = #{orderMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="depositMoney != null" >
+        deposit_money = #{depositMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="depositRefund != null" >
+        deposit_refund = #{depositRefund,jdbcType=DECIMAL},
+      </if>
+      <if test="payMoney != null" >
+        pay_money = #{payMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="consignee != null" >
+        consignee = #{consignee,jdbcType=VARCHAR},
+      </if>
+      <if test="consigneeAddress != null" >
+        consignee_address = #{consigneeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="consigneeTel != null" >
+        consignee_tel = #{consigneeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="consigneeMobile != null" >
+        consignee_mobile = #{consigneeMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="consigneeEmail != null" >
+        consignee_email = #{consigneeEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="invoice != null" >
+        invoice = #{invoice,jdbcType=VARCHAR},
+      </if>
+      <if test="sendStyle != null" >
+        send_style = #{sendStyle,jdbcType=TINYINT},
+      </if>
+      <if test="sendDate != null" >
+        send_date = #{sendDate,jdbcType=DATE},
+      </if>
+      <if test="sendTimeStart != null" >
+        send_time_start = #{sendTimeStart,jdbcType=TIME},
+      </if>
+      <if test="sendTimeEnd != null" >
+        send_time_end = #{sendTimeEnd,jdbcType=TIME},
+      </if>
+      <if test="takeDate != null" >
+        take_date = #{takeDate,jdbcType=DATE},
+      </if>
+      <if test="takeCode != null" >
+        take_code = #{takeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payStyle != null" >
+        pay_style = #{payStyle,jdbcType=TINYINT},
+      </if>
+      <if test="localPayStyle != null" >
+        local_pay_style = #{localPayStyle,jdbcType=TINYINT},
+      </if>
+      <if test="onlinePayStyle != null" >
+        online_pay_style = #{onlinePayStyle,jdbcType=TINYINT},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        pay_status = #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="commentStatus != null" >
+        comment_status = #{commentStatus,jdbcType=TINYINT},
+      </if>
+      <if test="returnStatus != null" >
+        return_status = #{returnStatus,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payTime != null" >
+        pay_time = #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishTime != null" >
+       	finish_time = #{finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="limitPayTime != null" >
+        limit_pay_time = #{limitPayTime,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgOrder" >
+    update org_order
+    set serial_no = #{serialNo,jdbcType=BIGINT},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      accounts = #{accounts,jdbcType=DECIMAL},
+      discount = #{discount,jdbcType=DECIMAL},
+      balance = #{balance,jdbcType=DECIMAL},
+      send_money = #{sendMoney,jdbcType=DECIMAL},
+      order_money = #{orderMoney,jdbcType=DECIMAL},
+      deposit_money = #{depositMoney,jdbcType=DECIMAL},
+      deposit_refund = #{depositRefund,jdbcType=DECIMAL},
+      pay_money = #{payMoney,jdbcType=DECIMAL},
+      consignee = #{consignee,jdbcType=VARCHAR},
+      consignee_address = #{consigneeAddress,jdbcType=VARCHAR},
+      consignee_tel = #{consigneeTel,jdbcType=VARCHAR},
+      consignee_mobile = #{consigneeMobile,jdbcType=VARCHAR},
+      consignee_email = #{consigneeEmail,jdbcType=VARCHAR},
+      invoice = #{invoice,jdbcType=VARCHAR},
+      send_style = #{sendStyle,jdbcType=TINYINT},
+      send_date = #{sendDate,jdbcType=DATE},
+      send_time_start = #{sendTimeStart,jdbcType=TIME},
+      send_time_end = #{sendTimeEnd,jdbcType=TIME},
+      take_date = #{takeDate,jdbcType=DATE},
+      take_code = #{takeCode,jdbcType=VARCHAR},
+      pay_style = #{payStyle,jdbcType=TINYINT},
+      local_pay_style = #{localPayStyle,jdbcType=TINYINT},
+      online_pay_style = #{onlinePayStyle,jdbcType=TINYINT},
+      source = #{source,jdbcType=TINYINT},
+      remark = #{remark,jdbcType=VARCHAR},
+      pay_status = #{payStatus,jdbcType=TINYINT},
+      comment_status = #{commentStatus,jdbcType=TINYINT},
+      return_status = #{returnStatus,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
+      finish_time = #{finishTime,jdbcType=TIMESTAMP},
+      limit_pay_time = #{limitPayTime,jdbcType=SMALLINT}
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgOrderVo" extends="BaseResultMap" >
+  	  <result column="user_name" property="userName" jdbcType="VARCHAR" />
+  	  <result column="wait_solve_count" property="waitSolveCount" jdbcType="INTEGER" />
+  	  <result column="finish_solve_count" property="finishSolveCount" jdbcType="INTEGER" />
+  	  <result column="show" property="show" jdbcType="VARCHAR"/>
+  	<association property="orgShop" javaType="com.kjj.commserver.entity.shop.OrgShop">
+  	  <result column="shop_code" property="shopCode" jdbcType="VARCHAR" />
+	  <result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+	  <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+	  <result column="address" property="address" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.order_id, 
+    t.serial_no, 
+    t.shop_id, 
+    t.user_id, 
+    t.accounts, 
+    t.discount, 
+    t.balance, 
+    t.send_money, 
+    t.order_money, 
+    t.deposit_money, 
+    t.deposit_refund, 
+    t.pay_money, 
+    t.consignee, 
+    t.consignee_address, 
+    t.consignee_tel, 
+    t.consignee_mobile, 
+    t.consignee_email, 
+    t.invoice, 
+    t.send_style, 
+    t.send_date, 
+    t.send_time_start, 
+    t.send_time_end, 
+    t.take_date, 
+    t.take_code, 
+    t.pay_style, 
+    t.local_pay_style, 
+    t.online_pay_style, 
+    t.source, 
+    t.remark, 
+    t.pay_status, 
+    t.comment_status, 
+    t.return_status, 
+    t.status, 
+    t.create_time, 
+    t.pay_time, 
+    t.finish_time, 
+    t.limit_pay_time,
+    os.shop_code, 
+    os.shop_name, 
+    os.area_code, 
+    os.address,
+    ou.user_name,
+    (select count(oso.id) from org_solve_order oso where oso.order_id = t.order_id and oso.status = 0) AS wait_solve_count,
+    (select count(oso.id) from org_solve_order oso where oso.order_id = t.order_id and oso.status = 1) AS finish_solve_count,
+    oa.show
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_order t
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_area oa on os.area_code = oa.code
+    where t.order_id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="orderId != null" >
+          and t.order_id = #{orderId,jdbcType=INTEGER}
+      </if>
+      <if test="serialNo != null" >
+          and t.serial_no = #{serialNo,jdbcType=BIGINT}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="accounts != null" >
+          and t.accounts = #{accounts,jdbcType=DECIMAL}
+      </if>
+      <if test="discount != null" >
+          and t.discount = #{discount,jdbcType=DECIMAL}
+      </if>
+      <if test="balance != null" >
+          and t.balance = #{balance,jdbcType=DECIMAL}
+      </if>
+      <if test="sendMoney != null" >
+          and t.send_money = #{sendMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="orderMoney != null" >
+          and t.order_money = #{orderMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="depositMoney != null" >
+          and t.deposit_money = #{depositMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="depositRefund != null" >
+          and t.deposit_refund = #{depositRefund,jdbcType=DECIMAL}
+      </if>
+      <if test="payMoney != null" >
+          and t.pay_money = #{payMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="consignee != null" >
+          and t.consignee = #{consignee,jdbcType=VARCHAR}
+      </if>
+      <if test="consigneeAddress != null" >
+          and t.consignee_address = #{consigneeAddress,jdbcType=VARCHAR}
+      </if>
+      <if test="consigneeTel != null" >
+          and t.consignee_tel = #{consigneeTel,jdbcType=VARCHAR}
+      </if>
+      <if test="consigneeMobile != null" >
+          and t.consignee_mobile = #{consigneeMobile,jdbcType=VARCHAR}
+      </if>
+      <if test="consigneeEmail != null" >
+          and t.consignee_email = #{consigneeEmail,jdbcType=VARCHAR}
+      </if>
+      <if test="invoice != null" >
+          and t.invoice = #{invoice,jdbcType=VARCHAR}
+      </if>
+      <if test="sendStyle != null" >
+          and t.send_style = #{sendStyle,jdbcType=TINYINT}
+      </if>
+      <if test="sendDate != null" >
+          and t.send_date = #{sendDate,jdbcType=DATE}
+      </if>
+      <if test="sendTimeStart != null" >
+          and t.send_time_start = #{sendTimeStart,jdbcType=TIME}
+      </if>
+      <if test="sendTimeEnd != null" >
+          and t.send_time_end = #{sendTimeEnd,jdbcType=TIME}
+      </if>
+      <if test="takeDate != null" >
+          and t.take_date = #{takeDate,jdbcType=DATE}
+      </if>
+      <if test="takeCode != null" >
+          and t.take_code = #{takeCode,jdbcType=VARCHAR}
+      </if>
+      <if test="payStyle != null" >
+          and t.pay_style = #{payStyle,jdbcType=TINYINT}
+      </if>
+      <if test="localPayStyle != null" >
+          and t.local_pay_style = #{localPayStyle,jdbcType=TINYINT}
+      </if>
+      <if test="onlinePayStyle != null" >
+          and t.online_pay_style = #{onlinePayStyle,jdbcType=TINYINT}
+      </if>
+      <if test="source != null" >
+          and t.source = #{source,jdbcType=TINYINT}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="payStatus != null" >
+          and t.pay_status = #{payStatus,jdbcType=TINYINT}
+      </if>
+      <if test="commentStatus != null" >
+          and t.comment_status = #{commentStatus,jdbcType=TINYINT}
+      </if>
+      <if test="returnStatus != null" >
+          and t.return_status = #{returnStatus,jdbcType=TINYINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="payTime != null" >
+          and t.pay_time = #{payTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="finishTime != null" >
+          and t.finish_time = #{finishTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="limitPayTime != null" >
+          and t.limit_pay_time = #{limitPayTime,jdbcType=SMALLINT}
+      </if>
+      <if test="shopIds != null" >
+          <if test="shopIds.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopIds" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+          </if>
+          <if test="shopIds.size() == 0" >
+          and 1 = 0
+      	  </if>
+      </if>
+      <if test="shopSelect != null and shopSelect.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopSelect" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+      </if>
+      <if test="queryStatus != null">
+	      <if test="queryStatus > -1 and 10 > queryStatus">
+			and t.status = #{queryStatus,jdbcType=TINYINT}
+		  </if>
+		  <if test="queryStatus == 12">
+			and t.status = 2 and t.send_style = 0
+		  </if>
+	      <if test="queryStatus == 22">
+			and t.status = 2 and t.send_style = 1
+	      </if>
+		  <if test="queryStatus == 13">
+			and t.status = 3 and t.send_style = 0
+		  </if>
+		  <if test="queryStatus == 23">
+			and t.status = 3 and t.send_style = 1
+		  </if>
+	  </if>
+	  <if test="goodsNameLike != null and goodsNameLike != ''" >
+          and exists (
+          	select 1 from org_order_goods oog
+          	left join org_product_item opi on oog.goods_id = opi.goods_id
+          	where t.order_id = oog.order_id
+          	and opi.goods_name like concat('%',#{goodsNameLike,jdbcType=VARCHAR},'%')
+          )
+      </if>
+      <if test="orderIdLike != null and orderIdLike != '' ">
+		and t.order_id like concat('%',#{orderIdLike,jdbcType=VARCHAR},'%')
+	  </if>
+	  <if test="consigneeLike != null and consigneeLike != '' ">
+		and t.consignee like concat('%',#{consigneeLike,jdbcType=VARCHAR},'%')
+	  </if>
+	  <if test="takeCodeLike != null and takeCodeLike != '' ">
+		and t.take_code like concat('%',#{takeCodeLike,jdbcType=VARCHAR},'%')
+	  </if>
+	  <if test="createTimeStart != null">
+		and t.create_time &gt;= #{createTimeStart,jdbcType=TIMESTAMP}
+	  </if>
+	  <if test="createTimeEnd != null">
+	    and t.create_time &lt;= #{createTimeEnd,jdbcType=TIMESTAMP}
+	  </if>
+	  <if test="waitPaid != null and waitPaid" >
+        and t.pay_status = 0 and t.status = 0
+      </if>
+	  <if test="waitSend != null and waitSend" >
+        and t.send_style = 0 and t.status = 3
+      </if>
+	  <if test="waitTake != null and waitTake" >
+        and t.send_style = 1 and t.status = 3
+      </if>
+	  <if test="waitComment != null and waitComment" >
+        and t.comment_status = 0 and t.status = 4
+      </if>
+	  <if test="timeOut != null and timeOut" >
+        and t.status = 0 and t.pay_style = 0 and t.pay_status = 0 
+		and (t.create_time &lt; date_sub(now(),interval 1 day)
+		  or (t.limit_pay_time is not null and t.create_time &lt; date_sub(now(),interval t.limit_pay_time day_minute))
+		)
+      </if>
+      <if test="userName != null " >
+        and ou.user_name like concat('%',#{userName,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="mobilePhone != null " >
+        and ou.mobile_phone like concat('%',#{mobilePhone,jdbcType=VARCHAR},'%')
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.order_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.order_id) from org_order t
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_area oa on os.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_order t
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_area oa on os.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_order where order_id in (
+    select t.order_id from (select * from org_order) t
+    left join org_shop os on t.shop_id = os.shop_id
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  
+  <resultMap id="CountResultMap" type="com.kjj.commserver.entity.order.aide.OrgOrderUserCount" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="wait_paid_count" property="waitPaidCount" jdbcType="INTEGER" />
+    <result column="wait_send_count" property="waitSendCount" jdbcType="INTEGER" />
+    <result column="wait_take_count" property="waitTakeCount" jdbcType="INTEGER" />
+    <result column="wait_comment_count" property="waitCommentCount" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="selectUserCount" parameterType="java.util.Map" resultMap="CountResultMap" >
+    select 
+    <!-- #{userId,jdbcType=INTEGER} AS user_id, -->
+   	(select count(order_id) from org_order where user_id = #{userId,jdbcType=INTEGER} and pay_status = 0 and status = 0) as wait_paid_count,
+   	(select count(order_id) from org_order where user_id = #{userId,jdbcType=INTEGER} and send_style = 0 and status = 3) as wait_send_count,
+   	(select count(order_id) from org_order where user_id = #{userId,jdbcType=INTEGER} and send_style = 1 and status = 3) as wait_take_count,
+   	(select count(order_id) from org_order where user_id = #{userId,jdbcType=INTEGER} and comment_status = 0 and status = 4) as wait_comment_count
+   	from dual
+  </select>
+  <select id="selectByPrimaryKey4Update" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_order
+    where order_id = #{orderId,jdbcType=INTEGER}
+    for update
+  </select>
+</mapper>

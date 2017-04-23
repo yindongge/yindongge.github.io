@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body >
+	<div class="box box-control">
+		<header class="header">
+			<div class="head-content">个人中心</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+		<div class="content">
+			<a class="floorfirst reverse-member" >
+				<div class="floor_h70">
+					<div class="floorname">
+						<div class="floorname-left">
+							<p href="#"><img src="images/p14.jpg" alt=""></p>
+						</div>
+						<div class="floorname-right">
+							<h4>好听的名字</h4>
+							<h5>普通会员</h5>
+						</div>
+					</div>
+					<div class="member-center-link">
+						账户管理>>
+					</div>
+				</div>
+			</a>
+			<div class="go-center">
+				<a href="#">点击登录</a>
+			</div>
+			<!--  -->
+			<div class="floordingdan">
+				<div class="floor">
+					<a href="#" class="go">我的订单<span class="rightspan1">查看全部订单</span></a>
+				</div>
+				<div class="floor_h60">
+					<div class="iconlist">
+						<a href="#">
+							<span class="iconcenter f-icon1"><i class="on">12</i></span>
+							<span>待付款</span>
+						</a>
+						<a href="#">
+							<span class="iconcenter f-icon2"><i>1</i></span>
+							<span>待收货</span>
+						</a>
+						<a href="#">
+							<span class="iconcenter f-icon3"><i class="on">2</i></span>
+							<span>待自提</span>
+						</a>
+						<a href="#">
+							<span class="iconcenter f-icon4"><i>3</i></span>
+							<span>待评价</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+			<div class="floorbox">
+				<div class="floor">
+					<a href="#" class="go">我的购物车</a>
+				</div>
+				<div class="floor">
+					<a href="#" class="go">我的优惠券</a>
+				</div>
+				<div class="floor">
+					<a href="#" class="go">我的评价</a>
+				</div>
+				<div class="floor">
+					<a href="#" class="go">我的地址</a>
+				</div>
+			</div>
+
+			<!--  -->
+		</div>
+		<!-- end center -->
+		<footer class="footer">
+			<img src="images/footer.png" alt="">
+		</footer>
+	</div>
+	<!-- end box -->
+	<div class="footerbar">
+		<a href="#" class="on">
+			<div class="iconfoot foot1 "></div>
+			<div class="iconfoottext">首页</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot2"></div>
+			<div class="iconfoottext">快捷购</div>
+		</a>
+		<a href="#"  >
+			<div class="iconfoot foot3"></div>
+			<div class="iconfoottext">购物车</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot4"></div>
+			<div class="iconfoottext">类目</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot5"></div>
+			<div class="iconfoottext">我的</div>
+		</a>
+	</div>
+	<!-- end fixedbar -->
+</body>
+</html>

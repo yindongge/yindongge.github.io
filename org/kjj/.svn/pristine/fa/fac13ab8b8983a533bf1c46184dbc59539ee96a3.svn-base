@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgMobilePageModuleMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgMobilePageModule" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="page_id" property="pageId" jdbcType="INTEGER" />
+    <result column="module_img" property="moduleImg" jdbcType="VARCHAR" />
+    <result column="module_order" property="moduleOrder" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, page_id, module_img, module_order
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_mobile_page_module
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_mobile_page_module
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageModule" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_mobile_page_module (page_id, module_img, module_order
+      )
+    values (#{pageId,jdbcType=INTEGER}, #{moduleImg,jdbcType=VARCHAR}, #{moduleOrder,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageModule" >
+    update org_mobile_page_module
+    <set >
+      <if test="pageId != null" >
+        page_id = #{pageId,jdbcType=INTEGER},
+      </if>
+      <if test="moduleImg != null" >
+        module_img = #{moduleImg,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleOrder != null" >
+        module_order = #{moduleOrder,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageModule" >
+    update org_mobile_page_module
+    set page_id = #{pageId,jdbcType=INTEGER},
+      module_img = #{moduleImg,jdbcType=VARCHAR},
+      module_order = #{moduleOrder,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgMobilePageModuleVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.page_id, 
+    t.module_img, 
+    t.module_order
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page_module t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="pageId != null" >
+          and t.page_id = #{pageId,jdbcType=INTEGER}
+      </if>
+      <if test="moduleImg != null" >
+          and t.module_img = #{moduleImg,jdbcType=VARCHAR}
+      </if>
+      <if test="moduleOrder != null" >
+          and t.module_order = #{moduleOrder,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_mobile_page_module t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page_module t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_mobile_page_module where id in (
+    select t.id from (select * from org_mobile_page_module) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  
+  <select id="selectMax" resultType="java.lang.Long">
+  	 select max(t.module_order) from org_mobile_page_module t
+  </select>
+</mapper>

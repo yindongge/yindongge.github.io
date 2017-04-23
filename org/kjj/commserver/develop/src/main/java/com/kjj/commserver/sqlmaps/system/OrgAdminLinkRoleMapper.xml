@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.system.OrgAdminLinkRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.system.OrgAdminLinkRole" >
+    <id column="userid" property="userid" jdbcType="INTEGER" />
+    <id column="roleid" property="roleid" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from org_admin_link_role
+    where userid = #{userid,jdbcType=INTEGER}
+      and roleid = #{roleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.system.OrgAdminLinkRole" useGeneratedKeys="true" keyColumn="userid" keyProperty="userid" >
+    insert into org_admin_link_role (userid,roleid)
+    values (#{userid,jdbcType=INTEGER},#{roleid,jdbcType=INTEGER})
+  </insert>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.system.aide.OrgAdminLinkRoleVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.userid, 
+    t.roleid
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_admin_link_role t
+    where t.userid = #{userid,jdbcType=INTEGER}
+      and t.roleid = #{roleid,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="userid != null" >
+          and t.userid = #{userid,jdbcType=INTEGER}
+      </if>
+      <if test="roleid != null" >
+          and t.roleid = #{roleid,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.userid desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.userid) from org_admin_link_role t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_admin_link_role t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_admin_link_role
+    <where >
+      <if test="userid != null" >
+          and userid = #{userid,jdbcType=INTEGER}
+      </if>
+      <if test="roleid != null" >
+          and roleid = #{roleid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </delete>
+</mapper>

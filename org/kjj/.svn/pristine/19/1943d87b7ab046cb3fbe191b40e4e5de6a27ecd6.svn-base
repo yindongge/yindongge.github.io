@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script src="../js/common/add.js"></script>
+<script src="../js/common/layer/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+<style type="text/css">
+	 @font-face { font-family:"Glyphicons Halflings";}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$('.btn-click7').click(function(e){
+			//iframe层
+			layer.open({
+			    type: 2,
+			    title: '推荐商品/专题',
+			    shadeClose: true,
+			    shade: 0.8,
+				maxmin: true, //开启最大化最小化按钮
+			    area: ['800px', '450px'],
+			    content: '焦点组图弹出框之推荐商品专题.html' //iframe的url
+			});
+			e.preventDefault();
+		});
+
+	});
+</script>
+</head>
+<body>
+<div class="page-wrapper ">
+<div class="container-fluid">
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li><a href="#">控制台</a></li>
+				<li class="active">焦点组图</li>
+			</ul>
+			<!-- 切换 -->
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+			   <a href="#" class="btn btn-info " role="button">基本信息</a>
+			   <a href="#" class="btn btn-info" role="button">头部设置</a>
+			   <a href="#" class="btn btn-info" role="button">轮播/公告</a>
+			   <a href="#" class="btn btn-primary" role="button">焦点组图</a>
+			   <a href="#" class="btn btn-info" role="button">促销板块</a>
+			   <a href="#" class="btn btn-info" role="button">楼层板块</a>
+			   <a href="#" class="btn btn-info" role="button">其他设置</a>
+
+		    </div>
+			<!-- 切换 -->
+			<div class="focus_group">
+				<div class="focus_floor1 jshover">
+					<img src="" alt="" />
+					<div class="edit-wrapper">
+						<a href="" class="btn-click">编辑</a>
+						<a href="">|</a>
+						<a href="">删除</a>
+					</div>
+				</div>
+				<div class="focus_floor2 ">
+					<div class="focus_floor_top">
+						<div class="blockspan2">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+						<div class="blockspan2">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+						<div class="blockspan2">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+							<a href="" class="pull-right poabsloute btn-click7">添加</a>
+					</div>
+					<div class="focus_floor_bottom">
+						<div class="blockspan3">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+						<div class="blockspan3">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+						<div class="blockspan3">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+						<div class="blockspan3">
+							<img src="../img/b3.jpg" alt="" />
+							<div class="edit-wrapper">
+								<a href="" class="btn-click">编辑</a>
+								<a href="">|</a>
+								<a href="">删除</a>
+							</div>
+						</div>
+						<a href="" class="pull-right poabsloute">添加</a>
+					</div>
+				</div>
+				<div class="focus_floor3">
+					<div class="blockspan4">
+						<img src="../img/b3.jpg" alt="" />
+						<div class="edit-wrapper">
+							<a href="" class="btn-click">编辑</a>
+							<a href="">|</a>
+							<a href="">删除</a>
+						</div>
+					</div>
+					<div class="blockspan4">
+						<img src="../img/b3.jpg" alt="" />
+						<div class="edit-wrapper">
+							<a href="" class="btn-click">编辑</a>
+							<a href="">|</a>
+							<a href="">删除</a>
+						</div>
+					</div>
+						<a href="" class="pull-right poabsloute">添加</a>
+				</div>
+			</div>
+		<!--  -->
+		<div class="text-center margin5">
+			<button type="button" class="btn btn-info">保存</button>
+		</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var eleedit=$('.edit-wrapper');
+		eleedit.hide();
+		$('.blockspan1, .blockspan2, .blockspan3 , .blockspan4').hover(function(){
+			$(this).find(eleedit).show();
+		},function(){
+			$(this).find(eleedit).delay("500").hide();
+		});
+		$('.jshover').hover(function(){
+			$(this).find(eleedit).show();
+		},function(){
+			$(this).find(eleedit).delay("500").hide();
+		});
+	});
+</script>
+</body>
+</html>

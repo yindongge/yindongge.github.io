@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="js/jquery.js"></script>
+<script src="js/me.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/slide-left.js"></script>
+<script src="js/base.js"></script>
+<script src="js/jquery.jqzoom.js"></script>
+<script src="js/Slide-pic.2.1.1.js"></script>
+<link href="css/modal.css" rel="stylesheet" type="text/css" />
+<link href="css/tab.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sevrice.css" rel="stylesheet" type="text/css" />
+
+<link href="css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+<div class="all">
+	<div class="top">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<ul class="nav navbar-nav fl">
+					<li class="showmenu">
+						<a href="#" class="yellow"><i class="glyphicon point"></i> 北京 </a>
+						<div class="hidemenu">
+							<p>请选择收货区域</p>
+							<p><a href="">北京</a><a href="">上海</a><a href="">天津</a><a href="">重庆</a></p>
+						</div>
+					</li>
+	            	<li><a href="#">您好，欢迎来到快捷健</a></li>
+	            	<li><a href="#">[登录]</a></li>
+	            	<li><a href="#">[免费成为会员]</a></li>
+				</ul>
+				<ul class="nav navbar-nav fr">
+					<li class="showmenu special2">
+						<a href="#" > 我的快捷健  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">我的订单</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><i class="glyphicon glyphicon-star point4"></i> 收藏夹</a></li>
+					<li><a href="#"><i class="glyphicon point2"></i> 消息</a></li>
+					<li><a href="#"><i class="glyphicon point3"></i> 手机快捷健</a></li>
+					<li class="showmenu special2">
+						<a href="#" > 客户服务  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">留言咨询</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- end top -->
+	<div class="header">
+		<div class="container">
+			<div class="logo fl">
+				<a href="index.html"><img src="img/logo.jpg"></a>
+				<div class="select-city">
+					<strong class="strong">光华路SOHO</strong>
+					<span class="small">切换 <i class="glyphicon glyphicon-chevron-down"></i>
+					</span>
+				</div>
+			</div>
+			<div class="search fl">
+					<div class="input-group">
+					      <input type="text" class="form-control" placeholder="Search for...">
+					      <i  class="icon1 glyphicon glyphicon-search"></i>
+					      <span class="input-group-btn">
+					        	<button class="btn btn-me" type="button">搜索</button>
+					      </span>
+				    </div>
+				    <div class="hotword">
+				    	<a href="">热门搜索:</a>
+				    	<a href="">咖啡</a>
+				    	<a href="">新疆</a>
+				    	<a href="">红酒</a>
+				    	<a href="">新疆红枣</a>
+				    	<a href="">黄飞鸿</a>
+				    	<a href="">叫一叫</a>
+				    </div>
+			</div>
+			<div class="shopcar fr">
+				<div class="shop">
+					<i  class="glyphicon icon2 icon"></i>
+					<i  class="glyphicon glyphicon-menu-down icon3 icon"></i>
+					<i  class="glyphicon icon4 icon">2</i>
+					<a href="#">去购物车结算</a>
+				</div>
+				<div class="space"></div>
+				<div class="sale">
+					<div class="nogoods">
+						<p class="spepcial3">购物车中还没有商品，赶紧选购吧</p>
+					</div>
+					<ul class="havegoods">
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+								<p>红牛多功能饮料来几箱比较好呢</p>
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-foot">
+								<p>共计<i class="blue">2</i>件商品共计￥<i class="blue">160.00元</i></p>
+								<p><button type="button" class="btn btn-warning pull-right">去购物车结算</button></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+	<!-- start foods -->
+	<div class="container">
+		<div class="take-out-wrapper">
+			<div class="take-out-shop">
+				<div class="take-out-shop-leftitem">
+					<img src="img/1.png" alt="" />
+					<h5>快捷健超市(永安里店)</h5>
+					<p>门店地址:东城区朝阳门北大街2号港澳中心瑞士酒店1栋1层    010-6553449</p>
+					<p>20元起送 5元配送费 由美团专送提供专业高品质送餐服务</p>
+				</div>
+				<div class="take-out-shop-rightitem">
+					<div class="div-block">
+						<span class="red">￥12</span>
+						<span class="gray">起送</span>
+					</div>
+					<div class="div-block">
+						<span class="red">￥12</span>
+						<span class="gray">起送</span>
+					</div>
+					<div class="div-block">
+						<span class="red">￥12</span>
+						<span class="gray">起送</span>
+					</div>
+				</div>
+			</div>
+			<div class="take-out-content">
+				<div class="take-out-firstitem">
+					<div class="t-o-title">
+						<a href="" class="active">菜品<span></span></a>
+						<a href="">评价<span></span></a>
+					</div>
+					<div class="t-o-list">
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+						<a href="">辣白菜猪肉双拼饭沙拉套</a>
+					</div>
+				</div>
+				<div class="take-out-lastitem">
+					<div class="t-o-left-wrapper">
+						<div class="t-o-left">
+							<h4>精选午餐</h4>
+							<div class="food-classfiy">
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian disabled"></span>
+											<span>12</span>
+											<span class="jia"></span>
+										</div>
+									</div>
+								</div>
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian disabled"></span>
+											<span>12</span>
+											<span class="jia"></span>
+										</div>
+									</div>
+								</div>
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian disabled"></span>
+											<span>12</span>
+											<span class="jia"></span>
+										</div>
+									</div>
+								</div>
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian "></span>
+											<span>12</span>
+											<span class="jia disabled"></span>
+										</div>
+									</div>
+								</div>
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian disabled"></span>
+											<span>12</span>
+											<span class="jia"></span>
+										</div>
+									</div>
+								</div>
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian disabled"></span>
+											<span>12</span>
+											<span class="jia"></span>
+										</div>
+									</div>
+								</div>
+								<div class="foods-item">
+									<img src="img/33.jpg	" alt=""  class="foodsimg" />
+									<h3>辣白菜猪肉双拼饭沙拉套	</h3>
+									<p>	鸡肉+猪肉+辣白菜+蔬菜（西兰花、胡萝卜</p>
+									<p>	月售1200份</p>
+									<div class="lastp">
+										<span class="red">￥45.00</span>
+										<div class="as">
+											<span class="jian disabled"></span>
+											<span>12</span>
+											<span class="jia"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="t-o-right">
+						<h4>订餐必读&门店公告</h4>
+						<ul>
+							<li>一、本公司食材全部由海底捞全程冷链供货，新鲜有品质；贴心又精致的包装，让生活更优雅。</li>
+							<li>二、所有未备注送达时间的订单，显示送餐时间是10：30之前的，都在10：30开始统一送餐；由于餐量集中，为保证您的正常用餐，需要订餐客户下楼自取。给您带来不便敬请谅解。</li>
+							<li>三、众包区域经理，查餐电话：18081040404、18176325888</li>
+							<li>四、加工部所有餐品统一标准出餐，不能单独放辣或不放辣，也不能增加或者减少食材。以减少出错，由此带来的不便敬请谅解。</li>
+							<li>本餐厅为 优粮 合作餐厅，服务提供方为 优粮 ，客户服务电话：01057131418/01057131412</li>
+							<li>本餐厅所列商家所有信息、服务均来自合作方，其信息的真实性、准确性、合法性和服务的质量由信息拥有者 优粮 负责。</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ <!-- end  foods -->
+
+
+<!-- footer -->
+<div class="well">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 ">
+					<div class="thumbnail">
+					      <img src="img/icon/icon11.png" alt="...">
+					      <div class="caption">
+					        <h5>会员服务</h5>
+					        <p><a href="">购物流程</a></p>
+					        <p><a href="">常见问题</a></p>
+					        <p><a href="">用户服务</a></p>
+					        <p><a href="">积分说明</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon12.png" alt="...">
+					      <div class="caption">
+					        <h5>支付问题</h5>
+					       	<p><a href="">在线支付</a></p>
+					        <p><a href="">礼品卡</a></p>
+					        <p><a href="">配送方式</a></p>
+					        <p><a href="">配送范围</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon13.png" alt="...">
+					      <div class="caption">
+					        <h5>售后服务</h5>
+					       <p><a href="">售后服务政策</a></p>
+					        <p><a href="">售后服务流程</a></p>
+					        <p><a href="">退款说明</a></p>
+					        <p><a href="">订单取消</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon14.png" alt="...">
+					      <div class="caption">
+					        <h5>关于我们</h5>
+					        <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon15.png" alt="...">
+					      <div class="caption">
+					        <h5>店面体验</h5>
+					       <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+			</div>
+
+	</div>
+</div>
+
+
+
+
+<div class="lunch-shopcar">
+	<div class="lunch-title">
+		<span class="yellow">购物车</span>
+		<a href=""><span class="lajiicon"></span>清空全部</a>
+	</div>
+	<div class="lunch-body">
+		<table class="table ">
+			<tbody>
+				<tr>
+					<td ><div class="l-name">冰咖啡</div></td>
+					<td ><div class="l-price">$45.00</div></td>
+					<td >
+						<div class="l-add">
+							<a>-</a>
+							<input type="text"  value="12" />
+							<a>+</a>
+						</div>
+					</td>
+				</tr>
+					<tr>
+					<td ><div class="l-name">冰咖啡</div></td>
+					<td ><div class="l-price">$45.00</div></td>
+					<td >
+						<div class="l-add">
+							<a>-</a>
+							<input type="text"  value="12" />
+							<a>+</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td ><div class="l-name">冰咖啡</div></td>
+					<td ><div class="l-price">$45.00</div></td>
+					<td >
+						<div class="l-add">
+							<a>-</a>
+							<input type="text"  value="12" />
+							<a>+</a>
+						</div>
+					</td>
+				</tr>
+					<tr>
+					<td ><div class="l-name">冰咖啡</div></td>
+					<td ><div class="l-price">$45.00</div></td>
+					<td >
+						<div class="l-add">
+							<a>-</a>
+							<input type="text"  value="12" />
+							<a>+</a>
+						</div>
+					</td>
+				</tr>
+					<tr>
+					<td ><div class="l-name">冰咖啡</div></td>
+					<td ><div class="l-price">$45.00</div></td>
+					<td >
+						<div class="l-add">
+							<a>-</a>
+							<input type="text"  value="12" />
+							<a>+</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="lunch-bottom">
+		<div class="l-car-left">
+			<span class="circle"><i>12</i></span>
+			<span class="last-span">还需付:￥23.00</span>
+		</div>
+		<div class="l-pay-right">
+			<a href="">去结算</a>
+		</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('.btn-2').click(function(){
+			$(this).addClass('upme');	;
+		})
+	})
+</script>
+</body>
+</html>

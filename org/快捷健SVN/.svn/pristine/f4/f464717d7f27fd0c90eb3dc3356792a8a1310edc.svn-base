@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+</head>
+<body >
+<div class="box">
+	<div class="net">
+		<p class="netimgp"><img src="images/xinhao.png" alt="">	</p>
+		<p>亲~ 网络不给力哦，	</p>
+		<p>	刷新试试吧</p>
+		<div class="neta-wrapper">
+				<div class="net-button"><a href="#" class="neta">重新加载</a></div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

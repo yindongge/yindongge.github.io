@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/load.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<title>车帮</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			  <li class="active">消息管理</li>
+			</ul>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="content">
+			<!-- 提示 -->
+			<div class="btn-group">
+					<button class="btn btn-danger">常规消息模板</button>
+					<button class="btn btn-info">营销消息</button>
+				</div>
+			<!-- 表单↑↑ -->
+			<div class="table-wrapper">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr class="info">
+							<th style="width:40%">模拟主题</th>
+							<th>站内信</th>
+							<th>短信</th>
+							<th>启用状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>注册成功模板</td>
+							<td>赵先生</td>
+							<td><span class="glyphicon glyphicon-ok"></span></td>
+							<td>是</td>
+							<td>
+								<button class="btn btn-success btn-xs">编辑</button>
+							</td>
+						</tr>
+						<tr>
+							<td>注册成功模板</td>
+							<td>赵先生</td>
+							<td><span class="glyphicon glyphicon-ok"></span></td>
+							<td>是</td>
+							<td>
+								<button class="btn btn-success btn-xs">编辑</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="pageselect">
+					<div class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="到第几页">
+						</div>
+						<button type="submit" class="btn btn-sm btn-info">确定</button>
+					</div>
+					<ul class="pagination pull-right pagination-sm">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						  </a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">.....</a></li>
+						<li><a href="#">15</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						  </a>
+						</li>
+					 </ul>
+				 	<span class=" pull-right">共有200条记录 每页50条</span>
+				</div>
+			</div>
+
+			<!-- 表单结束↑ -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

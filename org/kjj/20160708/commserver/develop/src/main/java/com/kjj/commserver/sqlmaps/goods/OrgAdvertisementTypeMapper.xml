@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgAdvertisementTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgAdvertisementType" >
+    <id column="advertisement_type_id" property="advertisementTypeId" jdbcType="INTEGER" />
+    <result column="advertisement_type_name" property="advertisementTypeName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    advertisement_type_id, advertisement_type_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_advertisement_type
+    where advertisement_type_id = #{advertisementTypeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_advertisement_type
+    where advertisement_type_id = #{advertisementTypeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgAdvertisementType" useGeneratedKeys="true" keyColumn="advertisement_type_id" keyProperty="advertisementTypeId" >
+    insert into org_advertisement_type (advertisement_type_name)
+    values (#{advertisementTypeName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgAdvertisementType" >
+    update org_advertisement_type
+    <set >
+      <if test="advertisementTypeName != null" >
+        advertisement_type_name = #{advertisementTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where advertisement_type_id = #{advertisementTypeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgAdvertisementType" >
+    update org_advertisement_type
+    set advertisement_type_name = #{advertisementTypeName,jdbcType=VARCHAR}
+    where advertisement_type_id = #{advertisementTypeId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgAdvertisementTypeVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.advertisement_type_id, 
+    t.advertisement_type_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_advertisement_type t
+    where t.advertisement_type_id = #{advertisementTypeId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="advertisementTypeId != null" >
+          and t.advertisement_type_id = #{advertisementTypeId,jdbcType=INTEGER}
+      </if>
+      <if test="advertisementTypeName != null" >
+          and t.advertisement_type_name = #{advertisementTypeName,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.advertisement_type_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.advertisement_type_id) from org_advertisement_type t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_advertisement_type t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_advertisement_type where advertisement_type_id in (
+    select t.advertisement_type_id from (select * from org_advertisement_type) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

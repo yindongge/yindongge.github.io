@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/load.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<title>车帮</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			  <li class="active">订单管理</li>
+			</ul>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="content">
+			<!-- 提示 -->
+			<form class="form-inline">
+				<div class="well form-well">
+						<div class="form-group">
+							<label>订单号：</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>承租人：</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>订单状态：</label>
+							<select name="" id="" class="form-control" style="width:120px;">
+								<option value="">请选择</option>
+								<option value="">租客下单</option>
+								<option value="">已取消</option>
+								<option value="">车主已确认</option>
+								<option value="">定金已交</option>
+								<option value="">车辆监控</option>
+								<option value="">租金已交</option>
+								<option value="">订单完成</option>
+								<option value="">车主拒接</option>
+							</select>
+						</div>
+						<br>
+						<div class="form-group">
+							<label>店铺：</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>车主：</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>下单时间：</label>
+							<input type="text" class="form-control">
+							<label>至</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn btn-danger">查询</button>
+						</div>
+					</div>
+			</form>
+			<!-- 表单↑↑ -->
+			<div class="table-wrapper">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr class="info">
+							<th>订单号</th>
+							<th>承租人</th>
+							<th>车主</th>
+							<th>车型</th>
+							<th>店铺</th>
+							<th>下单时间</th>
+							<th>订单状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>13862155555</td>
+							<td>赵先生</td>
+							<td>王晓而</td>
+							<td>大众POLO1.5T手动版</td>
+							<td>光华路点</td>
+							<td>15-05-12 08:42:341</td>
+							<td>租客下单</td>
+							<td>
+								<button class="btn btn-success btn-xs">查看</button>
+							</td>
+						</tr>
+						<tr>
+							<td>13862155555</td>
+							<td>赵先生</td>
+							<td>王晓而</td>
+							<td>大众POLO1.5T手动版</td>
+							<td>光华路点</td>
+							<td>15-05-12 08:42:341</td>
+							<td>租客下单</td>
+							<td>
+								<button class="btn btn-success btn-xs">查看</button>
+							</td>
+						</tr>
+						<tr>
+							<td>13862155555</td>
+							<td>赵先生</td>
+							<td>王晓而</td>
+							<td>大众POLO1.5T手动版</td>
+							<td>光华路点</td>
+							<td>15-05-12 08:42:341</td>
+							<td>租客下单</td>
+							<td>
+								<button class="btn btn-success btn-xs">查看</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="pageselect">
+					<div class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="到第几页">
+						</div>
+						<button type="submit" class="btn btn-sm btn-info">确定</button>
+					</div>
+					<ul class="pagination pull-right pagination-sm">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						  </a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">.....</a></li>
+						<li><a href="#">15</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						  </a>
+						</li>
+					 </ul>
+				 	<span class=" pull-right">共有200条记录 每页50条</span>
+				</div>
+			</div>
+
+			<!-- 表单结束↑ -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

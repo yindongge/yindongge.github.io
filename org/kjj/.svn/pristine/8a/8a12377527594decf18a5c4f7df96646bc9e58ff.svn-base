@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.special.OrgSpecialMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.special.OrgSpecial" >
+    <id column="special_id" property="specialId" jdbcType="INTEGER" />
+    <result column="special_name" property="specialName" jdbcType="VARCHAR" />
+    <result column="back_color" property="backColor" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_id" property="createId" jdbcType="INTEGER" />
+    <result column="create_name" property="createName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="scope" property="scope" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    special_id, special_name, back_color, start_time, end_time, status, create_id, create_name, 
+    create_time, scope
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_special
+    where special_id = #{specialId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_special
+    where special_id = #{specialId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.special.OrgSpecial" useGeneratedKeys="true" keyColumn="special_id" keyProperty="specialId" >
+    insert into org_special (special_name, back_color, start_time, 
+      end_time, status, create_id, 
+      create_name, create_time, scope
+      )
+    values (#{specialName,jdbcType=VARCHAR}, #{backColor,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, #{createId,jdbcType=INTEGER}, 
+      #{createName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{scope,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.special.OrgSpecial" >
+    update org_special
+    <set >
+      <if test="specialName != null" >
+        special_name = #{specialName,jdbcType=VARCHAR},
+      </if>
+      <if test="backColor != null" >
+        back_color = #{backColor,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null" >
+        create_id = #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="createName != null" >
+        create_name = #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scope != null" >
+        scope = #{scope,jdbcType=TINYINT},
+      </if>
+    </set>
+    where special_id = #{specialId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.special.OrgSpecial" >
+    update org_special
+    set special_name = #{specialName,jdbcType=VARCHAR},
+      back_color = #{backColor,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=TINYINT},
+      create_id = #{createId,jdbcType=INTEGER},
+      create_name = #{createName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      scope = #{scope,jdbcType=TINYINT}
+    where special_id = #{specialId,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special t
+    <include refid="Table_Join_Clause" />
+    where t.special_id = #{specialId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="specialId != null" >
+          and t.special_id = #{specialId,jdbcType=INTEGER}
+      </if>
+      <if test="specialName != null" >
+          and t.special_name = #{specialName,jdbcType=VARCHAR}
+      </if>
+      <if test="backColor != null" >
+          and t.back_color = #{backColor,jdbcType=VARCHAR}
+      </if>
+      <if test="startTime != null" >
+          and t.start_time = #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+          and t.end_time = #{endTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createId != null" >
+          and t.create_id = #{createId,jdbcType=INTEGER}
+      </if>
+      <if test="createName != null" >
+          and t.create_name = #{createName,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="scope != null" >
+          and t.scope = #{scope,jdbcType=TINYINT}
+      </if>
+       <include refid="Vo_Where_Clause" />
+    </where>
+     <if test="sorting != null" >
+      order by ${sorting},t.special_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.special_id) from org_special t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_special where special_id in (
+    select t.special_id from (select * from org_special) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.special.aide.OrgSpecialVo" extends="BaseResultMap" >
+     <result column="weeks" property="weeks" jdbcType="VARCHAR" />
+     <association property="orgSpecialTime" javaType="com.kjj.commserver.entity.special.aide.OrgSpecialTimeVo"> 
+	    <result column="time_start" property="timeStart" jdbcType="TIMESTAMP" />
+	    <result column="time_end" property="timeEnd" jdbcType="TIMESTAMP" />
+     </association>
+     <association property="orgSpecialRule" javaType="com.kjj.commserver.entity.special.aide.OrgSpecialRuleVo"> 
+	    <result column="rule_content" property="ruleContent" jdbcType="LONGVARCHAR" />
+	    <result column="rule_html" property="ruleHtml" jdbcType="LONGVARCHAR" />
+     </association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.special_id, 
+    t.special_name, 
+    t.back_color, 
+    t.start_time, 
+    t.end_time, 
+    t.status, 
+    t.create_id, 
+    t.create_name, 
+    t.create_time,
+    t.scope,
+    ost.time_start,
+    ost.time_end,
+    osw.weeks,
+    osr.rule_content,
+    osr.rule_html
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    	<if test="specialNameLike != null" >
+          and t.special_name like concat('%', #{specialNameLike,jdbcType=TIMESTAMP},'%')
+       </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+    left join org_special_time ost on t.special_id=ost.special_id 
+    left join (SELECT special_id,GROUP_CONCAT(week_code) weeks FROM org_special_week group by special_id) osw on t.special_id=osw.special_id 
+    left join org_special_rule osr on t.special_id=osr.special_id 
+  </sql>
+</mapper>

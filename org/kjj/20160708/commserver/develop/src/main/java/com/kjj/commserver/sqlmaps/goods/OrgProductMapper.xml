@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProduct" >
+    <id column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="cat_str" property="catStr" jdbcType="VARCHAR" />
+    <result column="cat_id" property="catId" jdbcType="SMALLINT" />
+    <result column="goods_sn_total" property="goodsSnTotal" jdbcType="VARCHAR" />
+    <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="goods_name_style" property="goodsNameStyle" jdbcType="VARCHAR" />
+    <result column="click_count" property="clickCount" jdbcType="INTEGER" />
+    <result column="brand_id" property="brandId" jdbcType="SMALLINT" />
+    <result column="provider_name" property="providerName" jdbcType="VARCHAR" />
+    <result column="goods_number" property="goodsNumber" jdbcType="SMALLINT" />
+    <result column="goods_weight" property="goodsWeight" jdbcType="DECIMAL" />
+    <result column="market_price" property="marketPrice" jdbcType="DECIMAL" />
+    <result column="shop_price" property="shopPrice" jdbcType="DECIMAL" />
+    <result column="promote_price" property="promotePrice" jdbcType="DECIMAL" />
+    <result column="promote_start_date" property="promoteStartDate" jdbcType="INTEGER" />
+    <result column="promote_end_date" property="promoteEndDate" jdbcType="INTEGER" />
+    <result column="warn_number" property="warnNumber" jdbcType="TINYINT" />
+    <result column="keywords" property="keywords" jdbcType="VARCHAR" />
+    <result column="goods_brief" property="goodsBrief" jdbcType="VARCHAR" />
+    <result column="goods_thumb" property="goodsThumb" jdbcType="VARCHAR" />
+    <result column="goods_img" property="goodsImg" jdbcType="VARCHAR" />
+    <result column="original_img" property="originalImg" jdbcType="VARCHAR" />
+    <result column="is_real" property="isReal" jdbcType="TINYINT" />
+    <result column="extension_code" property="extensionCode" jdbcType="VARCHAR" />
+    <result column="is_on_sale" property="isOnSale" jdbcType="TINYINT" />
+    <result column="is_alone_sale" property="isAloneSale" jdbcType="TINYINT" />
+    <result column="is_shipping" property="isShipping" jdbcType="TINYINT" />
+    <result column="integral" property="integral" jdbcType="INTEGER" />
+    <result column="add_time" property="addTime" jdbcType="INTEGER" />
+    <result column="sort_order" property="sortOrder" jdbcType="SMALLINT" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="is_best" property="isBest" jdbcType="TINYINT" />
+    <result column="is_new" property="isNew" jdbcType="TINYINT" />
+    <result column="is_hot" property="isHot" jdbcType="TINYINT" />
+    <result column="is_promote" property="isPromote" jdbcType="TINYINT" />
+    <result column="bonus_type_id" property="bonusTypeId" jdbcType="TINYINT" />
+    <result column="last_update" property="lastUpdate" jdbcType="INTEGER" />
+    <result column="goods_type" property="goodsType" jdbcType="SMALLINT" />
+    <result column="seller_note" property="sellerNote" jdbcType="VARCHAR" />
+    <result column="give_integral" property="giveIntegral" jdbcType="INTEGER" />
+    <result column="rank_integral" property="rankIntegral" jdbcType="INTEGER" />
+    <result column="suppliers_id" property="suppliersId" jdbcType="SMALLINT" />
+    <result column="is_check" property="isCheck" jdbcType="TINYINT" />
+    <result column="isimport" property="isimport" jdbcType="INTEGER" />
+    <result column="place" property="place" jdbcType="VARCHAR" />
+    <result column="expiration" property="expiration" jdbcType="VARCHAR" />
+    <result column="spec" property="spec" jdbcType="VARCHAR" />
+    <result column="specid" property="specid" jdbcType="INTEGER" />
+    <result column="onsaletime" property="onsaletime" jdbcType="TIMESTAMP" />
+    <result column="sale_num" property="saleNum" jdbcType="INTEGER" />
+    <result column="comment_num" property="commentNum" jdbcType="INTEGER" />
+    <result column="consult_num" property="consultNum" jdbcType="INTEGER" />
+    <result column="offsaletime" property="offsaletime" jdbcType="TIMESTAMP" />
+    <result column="historytime" property="historytime" jdbcType="TIMESTAMP" />
+    <result column="off_sale_type" property="offSaleType" jdbcType="TINYINT" />
+    <result column="show_type" property="showType" jdbcType="TINYINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.kjj.commserver.entity.goods.OrgProduct" extends="BaseResultMap" >
+    <result column="goods_desc" property="goodsDesc" jdbcType="LONGVARCHAR" />
+    <result column="mobile_goods_desc" property="mobileGoodsDesc" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    goods_id, cat_str, cat_id, goods_sn_total, goods_sn, goods_name, goods_name_style, 
+    click_count, brand_id, provider_name, goods_number, goods_weight, market_price, shop_price, 
+    promote_price, promote_start_date, promote_end_date, warn_number, keywords, goods_brief, 
+    goods_thumb, goods_img, original_img, is_real, extension_code, is_on_sale, is_alone_sale, 
+    is_shipping, integral, add_time, sort_order, is_delete, is_best, is_new, is_hot, 
+    is_promote, bonus_type_id, last_update, goods_type, seller_note, give_integral, rank_integral, 
+    suppliers_id, is_check, isimport, place, expiration, spec, specid, onsaletime, sale_num, 
+    comment_num, consult_num, offsaletime, historytime, off_sale_type, show_type
+  </sql>
+  <sql id="Blob_Column_List" >
+    goods_desc, mobile_goods_desc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from org_product
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProduct" useGeneratedKeys="true" keyColumn="goods_id" keyProperty="goodsId" >
+    insert into org_product (cat_str, cat_id, goods_sn_total, 
+      goods_sn, goods_name, goods_name_style, 
+      click_count, brand_id, provider_name, 
+      goods_number, goods_weight, market_price, 
+      shop_price, promote_price, promote_start_date, 
+      promote_end_date, warn_number, keywords, 
+      goods_brief, goods_thumb, goods_img, 
+      original_img, is_real, extension_code, 
+      is_on_sale, is_alone_sale, is_shipping, 
+      integral, add_time, sort_order, 
+      is_delete, is_best, is_new, 
+      is_hot, is_promote, bonus_type_id, 
+      last_update, goods_type, seller_note, 
+      give_integral, rank_integral, suppliers_id, 
+      is_check, isimport, place, 
+      expiration, spec, specid, 
+      onsaletime, sale_num, comment_num, 
+      consult_num, offsaletime, historytime, 
+      off_sale_type, show_type, goods_desc, 
+      mobile_goods_desc)
+    values (#{catStr,jdbcType=VARCHAR}, #{catId,jdbcType=SMALLINT}, #{goodsSnTotal,jdbcType=VARCHAR}, 
+      #{goodsSn,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, #{goodsNameStyle,jdbcType=VARCHAR}, 
+      #{clickCount,jdbcType=INTEGER}, #{brandId,jdbcType=SMALLINT}, #{providerName,jdbcType=VARCHAR}, 
+      #{goodsNumber,jdbcType=SMALLINT}, #{goodsWeight,jdbcType=DECIMAL}, #{marketPrice,jdbcType=DECIMAL}, 
+      #{shopPrice,jdbcType=DECIMAL}, #{promotePrice,jdbcType=DECIMAL}, #{promoteStartDate,jdbcType=INTEGER}, 
+      #{promoteEndDate,jdbcType=INTEGER}, #{warnNumber,jdbcType=TINYINT}, #{keywords,jdbcType=VARCHAR}, 
+      #{goodsBrief,jdbcType=VARCHAR}, #{goodsThumb,jdbcType=VARCHAR}, #{goodsImg,jdbcType=VARCHAR}, 
+      #{originalImg,jdbcType=VARCHAR}, #{isReal,jdbcType=TINYINT}, #{extensionCode,jdbcType=VARCHAR}, 
+      #{isOnSale,jdbcType=TINYINT}, #{isAloneSale,jdbcType=TINYINT}, #{isShipping,jdbcType=TINYINT}, 
+      #{integral,jdbcType=INTEGER}, #{addTime,jdbcType=INTEGER}, #{sortOrder,jdbcType=SMALLINT}, 
+      #{isDelete,jdbcType=TINYINT}, #{isBest,jdbcType=TINYINT}, #{isNew,jdbcType=TINYINT}, 
+      #{isHot,jdbcType=TINYINT}, #{isPromote,jdbcType=TINYINT}, #{bonusTypeId,jdbcType=TINYINT}, 
+      #{lastUpdate,jdbcType=INTEGER}, #{goodsType,jdbcType=SMALLINT}, #{sellerNote,jdbcType=VARCHAR}, 
+      #{giveIntegral,jdbcType=INTEGER}, #{rankIntegral,jdbcType=INTEGER}, #{suppliersId,jdbcType=SMALLINT}, 
+      #{isCheck,jdbcType=TINYINT}, #{isimport,jdbcType=INTEGER}, #{place,jdbcType=VARCHAR}, 
+      #{expiration,jdbcType=VARCHAR}, #{spec,jdbcType=VARCHAR}, #{specid,jdbcType=INTEGER}, 
+      #{onsaletime,jdbcType=TIMESTAMP}, #{saleNum,jdbcType=INTEGER}, #{commentNum,jdbcType=INTEGER}, 
+      #{consultNum,jdbcType=INTEGER}, #{offsaletime,jdbcType=TIMESTAMP}, #{historytime,jdbcType=TIMESTAMP}, 
+      #{offSaleType,jdbcType=TINYINT}, #{showType,jdbcType=TINYINT}, #{goodsDesc,jdbcType=LONGVARCHAR}, 
+      #{mobileGoodsDesc,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProduct" >
+    update org_product
+    <set >
+      <if test="catStr != null" >
+        cat_str = #{catStr,jdbcType=VARCHAR},
+      </if>
+      <if test="catId != null" >
+        cat_id = #{catId,jdbcType=SMALLINT},
+      </if>
+      <if test="goodsSnTotal != null" >
+        goods_sn_total = #{goodsSnTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSn != null" >
+        goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null" >
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsNameStyle != null" >
+        goods_name_style = #{goodsNameStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="clickCount != null" >
+        click_count = #{clickCount,jdbcType=INTEGER},
+      </if>
+      <if test="brandId != null" >
+        brand_id = #{brandId,jdbcType=SMALLINT},
+      </if>
+      <if test="providerName != null" >
+        provider_name = #{providerName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsNumber != null" >
+        goods_number = #{goodsNumber,jdbcType=SMALLINT},
+      </if>
+      <if test="goodsWeight != null" >
+        goods_weight = #{goodsWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="marketPrice != null" >
+        market_price = #{marketPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="shopPrice != null" >
+        shop_price = #{shopPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="promotePrice != null" >
+        promote_price = #{promotePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="promoteStartDate != null" >
+        promote_start_date = #{promoteStartDate,jdbcType=INTEGER},
+      </if>
+      <if test="promoteEndDate != null" >
+        promote_end_date = #{promoteEndDate,jdbcType=INTEGER},
+      </if>
+      <if test="warnNumber != null" >
+        warn_number = #{warnNumber,jdbcType=TINYINT},
+      </if>
+      <if test="keywords != null" >
+        keywords = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBrief != null" >
+        goods_brief = #{goodsBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsThumb != null" >
+        goods_thumb = #{goodsThumb,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsImg != null" >
+        goods_img = #{goodsImg,jdbcType=VARCHAR},
+      </if>
+      <if test="originalImg != null" >
+        original_img = #{originalImg,jdbcType=VARCHAR},
+      </if>
+      <if test="isReal != null" >
+        is_real = #{isReal,jdbcType=TINYINT},
+      </if>
+      <if test="extensionCode != null" >
+        extension_code = #{extensionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isOnSale != null" >
+        is_on_sale = #{isOnSale,jdbcType=TINYINT},
+      </if>
+      <if test="isAloneSale != null" >
+        is_alone_sale = #{isAloneSale,jdbcType=TINYINT},
+      </if>
+      <if test="isShipping != null" >
+        is_shipping = #{isShipping,jdbcType=TINYINT},
+      </if>
+      <if test="integral != null" >
+        integral = #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null" >
+        add_time = #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="sortOrder != null" >
+        sort_order = #{sortOrder,jdbcType=SMALLINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="isBest != null" >
+        is_best = #{isBest,jdbcType=TINYINT},
+      </if>
+      <if test="isNew != null" >
+        is_new = #{isNew,jdbcType=TINYINT},
+      </if>
+      <if test="isHot != null" >
+        is_hot = #{isHot,jdbcType=TINYINT},
+      </if>
+      <if test="isPromote != null" >
+        is_promote = #{isPromote,jdbcType=TINYINT},
+      </if>
+      <if test="bonusTypeId != null" >
+        bonus_type_id = #{bonusTypeId,jdbcType=TINYINT},
+      </if>
+      <if test="lastUpdate != null" >
+        last_update = #{lastUpdate,jdbcType=INTEGER},
+      </if>
+      <if test="goodsType != null" >
+        goods_type = #{goodsType,jdbcType=SMALLINT},
+      </if>
+      <if test="sellerNote != null" >
+        seller_note = #{sellerNote,jdbcType=VARCHAR},
+      </if>
+      <if test="giveIntegral != null" >
+        give_integral = #{giveIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="rankIntegral != null" >
+        rank_integral = #{rankIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="suppliersId != null" >
+        suppliers_id = #{suppliersId,jdbcType=SMALLINT},
+      </if>
+      <if test="isCheck != null" >
+        is_check = #{isCheck,jdbcType=TINYINT},
+      </if>
+      <if test="isimport != null" >
+        isimport = #{isimport,jdbcType=INTEGER},
+      </if>
+      <if test="place != null" >
+        place = #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="expiration != null" >
+        expiration = #{expiration,jdbcType=VARCHAR},
+      </if>
+      <if test="spec != null" >
+        spec = #{spec,jdbcType=VARCHAR},
+      </if>
+      <if test="specid != null" >
+        specid = #{specid,jdbcType=INTEGER},
+      </if>
+      <if test="onsaletime != null" >
+        onsaletime = #{onsaletime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="saleNum != null" >
+        sale_num = #{saleNum,jdbcType=INTEGER},
+      </if>
+      <if test="commentNum != null" >
+        comment_num = #{commentNum,jdbcType=INTEGER},
+      </if>
+      <if test="consultNum != null" >
+        consult_num = #{consultNum,jdbcType=INTEGER},
+      </if>
+      <if test="offsaletime != null" >
+        offsaletime = #{offsaletime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="historytime != null" >
+        historytime = #{historytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="offSaleType != null" >
+        off_sale_type = #{offSaleType,jdbcType=TINYINT},
+      </if>
+      <if test="showType != null" >
+        show_type = #{showType,jdbcType=TINYINT},
+      </if>
+      <if test="goodsDesc != null" >
+        goods_desc = #{goodsDesc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="mobileGoodsDesc != null" >
+        mobile_goods_desc = #{mobileGoodsDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.kjj.commserver.entity.goods.OrgProduct" >
+    update org_product
+    set cat_str = #{catStr,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=SMALLINT},
+      goods_sn_total = #{goodsSnTotal,jdbcType=VARCHAR},
+      goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_name_style = #{goodsNameStyle,jdbcType=VARCHAR},
+      click_count = #{clickCount,jdbcType=INTEGER},
+      brand_id = #{brandId,jdbcType=SMALLINT},
+      provider_name = #{providerName,jdbcType=VARCHAR},
+      goods_number = #{goodsNumber,jdbcType=SMALLINT},
+      goods_weight = #{goodsWeight,jdbcType=DECIMAL},
+      market_price = #{marketPrice,jdbcType=DECIMAL},
+      shop_price = #{shopPrice,jdbcType=DECIMAL},
+      promote_price = #{promotePrice,jdbcType=DECIMAL},
+      promote_start_date = #{promoteStartDate,jdbcType=INTEGER},
+      promote_end_date = #{promoteEndDate,jdbcType=INTEGER},
+      warn_number = #{warnNumber,jdbcType=TINYINT},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      goods_brief = #{goodsBrief,jdbcType=VARCHAR},
+      goods_thumb = #{goodsThumb,jdbcType=VARCHAR},
+      goods_img = #{goodsImg,jdbcType=VARCHAR},
+      original_img = #{originalImg,jdbcType=VARCHAR},
+      is_real = #{isReal,jdbcType=TINYINT},
+      extension_code = #{extensionCode,jdbcType=VARCHAR},
+      is_on_sale = #{isOnSale,jdbcType=TINYINT},
+      is_alone_sale = #{isAloneSale,jdbcType=TINYINT},
+      is_shipping = #{isShipping,jdbcType=TINYINT},
+      integral = #{integral,jdbcType=INTEGER},
+      add_time = #{addTime,jdbcType=INTEGER},
+      sort_order = #{sortOrder,jdbcType=SMALLINT},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      is_best = #{isBest,jdbcType=TINYINT},
+      is_new = #{isNew,jdbcType=TINYINT},
+      is_hot = #{isHot,jdbcType=TINYINT},
+      is_promote = #{isPromote,jdbcType=TINYINT},
+      bonus_type_id = #{bonusTypeId,jdbcType=TINYINT},
+      last_update = #{lastUpdate,jdbcType=INTEGER},
+      goods_type = #{goodsType,jdbcType=SMALLINT},
+      seller_note = #{sellerNote,jdbcType=VARCHAR},
+      give_integral = #{giveIntegral,jdbcType=INTEGER},
+      rank_integral = #{rankIntegral,jdbcType=INTEGER},
+      suppliers_id = #{suppliersId,jdbcType=SMALLINT},
+      is_check = #{isCheck,jdbcType=TINYINT},
+      isimport = #{isimport,jdbcType=INTEGER},
+      place = #{place,jdbcType=VARCHAR},
+      expiration = #{expiration,jdbcType=VARCHAR},
+      spec = #{spec,jdbcType=VARCHAR},
+      specid = #{specid,jdbcType=INTEGER},
+      onsaletime = #{onsaletime,jdbcType=TIMESTAMP},
+      sale_num = #{saleNum,jdbcType=INTEGER},
+      comment_num = #{commentNum,jdbcType=INTEGER},
+      consult_num = #{consultNum,jdbcType=INTEGER},
+      offsaletime = #{offsaletime,jdbcType=TIMESTAMP},
+      historytime = #{historytime,jdbcType=TIMESTAMP},
+      off_sale_type = #{offSaleType,jdbcType=TINYINT},
+      show_type = #{showType,jdbcType=TINYINT},
+      goods_desc = #{goodsDesc,jdbcType=LONGVARCHAR},
+      mobile_goods_desc = #{mobileGoodsDesc,jdbcType=LONGVARCHAR}
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProduct" >
+    update org_product
+    set cat_str = #{catStr,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=SMALLINT},
+      goods_sn_total = #{goodsSnTotal,jdbcType=VARCHAR},
+      goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_name_style = #{goodsNameStyle,jdbcType=VARCHAR},
+      click_count = #{clickCount,jdbcType=INTEGER},
+      brand_id = #{brandId,jdbcType=SMALLINT},
+      provider_name = #{providerName,jdbcType=VARCHAR},
+      goods_number = #{goodsNumber,jdbcType=SMALLINT},
+      goods_weight = #{goodsWeight,jdbcType=DECIMAL},
+      market_price = #{marketPrice,jdbcType=DECIMAL},
+      shop_price = #{shopPrice,jdbcType=DECIMAL},
+      promote_price = #{promotePrice,jdbcType=DECIMAL},
+      promote_start_date = #{promoteStartDate,jdbcType=INTEGER},
+      promote_end_date = #{promoteEndDate,jdbcType=INTEGER},
+      warn_number = #{warnNumber,jdbcType=TINYINT},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      goods_brief = #{goodsBrief,jdbcType=VARCHAR},
+      goods_thumb = #{goodsThumb,jdbcType=VARCHAR},
+      goods_img = #{goodsImg,jdbcType=VARCHAR},
+      original_img = #{originalImg,jdbcType=VARCHAR},
+      is_real = #{isReal,jdbcType=TINYINT},
+      extension_code = #{extensionCode,jdbcType=VARCHAR},
+      is_on_sale = #{isOnSale,jdbcType=TINYINT},
+      is_alone_sale = #{isAloneSale,jdbcType=TINYINT},
+      is_shipping = #{isShipping,jdbcType=TINYINT},
+      integral = #{integral,jdbcType=INTEGER},
+      add_time = #{addTime,jdbcType=INTEGER},
+      sort_order = #{sortOrder,jdbcType=SMALLINT},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      is_best = #{isBest,jdbcType=TINYINT},
+      is_new = #{isNew,jdbcType=TINYINT},
+      is_hot = #{isHot,jdbcType=TINYINT},
+      is_promote = #{isPromote,jdbcType=TINYINT},
+      bonus_type_id = #{bonusTypeId,jdbcType=TINYINT},
+      last_update = #{lastUpdate,jdbcType=INTEGER},
+      goods_type = #{goodsType,jdbcType=SMALLINT},
+      seller_note = #{sellerNote,jdbcType=VARCHAR},
+      give_integral = #{giveIntegral,jdbcType=INTEGER},
+      rank_integral = #{rankIntegral,jdbcType=INTEGER},
+      suppliers_id = #{suppliersId,jdbcType=SMALLINT},
+      is_check = #{isCheck,jdbcType=TINYINT},
+      isimport = #{isimport,jdbcType=INTEGER},
+      place = #{place,jdbcType=VARCHAR},
+      expiration = #{expiration,jdbcType=VARCHAR},
+      spec = #{spec,jdbcType=VARCHAR},
+      specid = #{specid,jdbcType=INTEGER},
+      onsaletime = #{onsaletime,jdbcType=TIMESTAMP},
+      sale_num = #{saleNum,jdbcType=INTEGER},
+      comment_num = #{commentNum,jdbcType=INTEGER},
+      consult_num = #{consultNum,jdbcType=INTEGER},
+      offsaletime = #{offsaletime,jdbcType=TIMESTAMP},
+      historytime = #{historytime,jdbcType=TIMESTAMP},
+      off_sale_type = #{offSaleType,jdbcType=TINYINT},
+      show_type = #{showType,jdbcType=TINYINT}
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductVo" extends="BaseResultMap" >
+  	<result column="product_brand_name" property="productBrandName" jdbcType="VARCHAR" />
+  	<result column="inventory" property="inventory" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.goods_id, 
+    t.cat_str, 
+    t.cat_id, 
+    t.goods_sn_total, 
+    t.goods_sn, 
+    t.goods_name, 
+    t.goods_name_style, 
+    t.click_count, 
+    t.brand_id, 
+    t.provider_name, 
+    t.goods_number, 
+    t.goods_weight, 
+    t.market_price, 
+    t.shop_price, 
+    t.promote_price, 
+    t.promote_start_date, 
+    t.promote_end_date, 
+    t.warn_number, 
+    t.keywords, 
+    t.goods_brief, 
+    t.goods_thumb, 
+    t.goods_img, 
+    t.original_img, 
+    t.is_real, 
+    t.extension_code, 
+    t.is_on_sale, 
+    t.is_alone_sale, 
+    t.is_shipping, 
+    t.integral, 
+    t.add_time, 
+    t.sort_order, 
+    t.is_delete, 
+    t.is_best, 
+    t.is_new, 
+    t.is_hot, 
+    t.is_promote, 
+    t.bonus_type_id, 
+    t.last_update, 
+    t.goods_type, 
+    t.seller_note, 
+    t.give_integral, 
+    t.rank_integral, 
+    t.suppliers_id, 
+    t.is_check, 
+    t.isimport, 
+    t.place, 
+    t.expiration, 
+    t.spec, 
+    t.specid, 
+    t.onsaletime, 
+    t.sale_num, 
+    t.comment_num, 
+    t.consult_num, 
+    t.offsaletime, 
+    t.historytime, 
+    t.off_sale_type, 
+    t.show_type,
+    ob.product_brand_name,
+    ifnull(t2.inventory, 0) inventory
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product t
+    left join org_brand ob on t.brand_id = ob.product_brand_id
+    left join (select op.goods_id,SUM(opin.num) inventory from org_product_item opi
+	LEFT JOIN (SELECT goods_sn goods_sn,SUM(shop_amount)+warehouse_amount num FROM org_product_inventory
+	GROUP BY goods_sn) opin ON opi.goods_sn = opin.goods_sn
+	INNER JOIN org_product op on opi.parent_goods_id = op.goods_id
+	WHERE opi.is_delete != 1
+	AND op.is_delete !=1
+	GROUP BY op.goods_id) t2 on t.goods_id = t2.goods_id
+    where t.goods_id = #{goodsId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="catStr != null" >
+          and t.cat_str = #{catStr,jdbcType=VARCHAR}
+      </if>
+      <if test="catId != null" >
+          and t.cat_id = #{catId,jdbcType=SMALLINT}
+      </if>
+      <if test="goodsSnTotal != null" >
+          and t.goods_sn_total = #{goodsSnTotal,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsSn != null" >
+          and t.goods_sn = #{goodsSn,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsName != null" >
+          and t.goods_name = #{goodsName,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsNameStyle != null" >
+          and t.goods_name_style = #{goodsNameStyle,jdbcType=VARCHAR}
+      </if>
+      <if test="clickCount != null" >
+          and t.click_count = #{clickCount,jdbcType=INTEGER}
+      </if>
+      <if test="brandId != null and brandId > 0" >
+          and t.brand_id = #{brandId,jdbcType=SMALLINT}
+      </if>
+      <if test="providerName != null" >
+          and t.provider_name = #{providerName,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsNumber != null" >
+          and t.goods_number = #{goodsNumber,jdbcType=SMALLINT}
+      </if>
+      <if test="goodsWeight != null" >
+          and t.goods_weight = #{goodsWeight,jdbcType=DECIMAL}
+      </if>
+      <if test="marketPrice != null" >
+          and t.market_price = #{marketPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="shopPrice != null" >
+          and t.shop_price = #{shopPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="promotePrice != null" >
+          and t.promote_price = #{promotePrice,jdbcType=DECIMAL}
+      </if>
+      <if test="promoteStartDate != null" >
+          and t.promote_start_date = #{promoteStartDate,jdbcType=INTEGER}
+      </if>
+      <if test="promoteEndDate != null" >
+          and t.promote_end_date = #{promoteEndDate,jdbcType=INTEGER}
+      </if>
+      <if test="warnNumber != null" >
+          and t.warn_number = #{warnNumber,jdbcType=TINYINT}
+      </if>
+      <if test="keywords != null" >
+          and t.keywords = #{keywords,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsBrief != null" >
+          and t.goods_brief = #{goodsBrief,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsThumb != null" >
+          and t.goods_thumb = #{goodsThumb,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsImg != null" >
+          and t.goods_img = #{goodsImg,jdbcType=VARCHAR}
+      </if>
+      <if test="originalImg != null" >
+          and t.original_img = #{originalImg,jdbcType=VARCHAR}
+      </if>
+      <if test="isReal != null" >
+          and t.is_real = #{isReal,jdbcType=TINYINT}
+      </if>
+      <if test="extensionCode != null" >
+          and t.extension_code = #{extensionCode,jdbcType=VARCHAR}
+      </if>
+      <if test="isOnSale != null" >
+          and t.is_on_sale = #{isOnSale,jdbcType=TINYINT}
+      </if>
+      <if test="isAloneSale != null" >
+          and t.is_alone_sale = #{isAloneSale,jdbcType=TINYINT}
+      </if>
+      <if test="isShipping != null and isShipping >= 0" >
+          and t.is_shipping = #{isShipping,jdbcType=TINYINT}
+      </if>
+      <if test="integral != null" >
+          and t.integral = #{integral,jdbcType=INTEGER}
+      </if>
+      <if test="addTime != null" >
+          and t.add_time = #{addTime,jdbcType=INTEGER}
+      </if>
+      <if test="sortOrder != null" >
+          and t.sort_order = #{sortOrder,jdbcType=SMALLINT}
+      </if>
+      <if test="isDelete != null" >
+          and t.is_delete = #{isDelete,jdbcType=TINYINT}
+      </if>
+      <if test="isBest != null" >
+          and t.is_best = #{isBest,jdbcType=TINYINT}
+      </if>
+      <if test="isNew != null" >
+          and t.is_new = #{isNew,jdbcType=TINYINT}
+      </if>
+      <if test="isHot != null" >
+          and t.is_hot = #{isHot,jdbcType=TINYINT}
+      </if>
+      <if test="isPromote != null" >
+          and t.is_promote = #{isPromote,jdbcType=TINYINT}
+      </if>
+      <if test="bonusTypeId != null" >
+          and t.bonus_type_id = #{bonusTypeId,jdbcType=TINYINT}
+      </if>
+      <if test="lastUpdate != null" >
+          and t.last_update = #{lastUpdate,jdbcType=INTEGER}
+      </if>
+      <if test="goodsType != null" >
+          and t.goods_type = #{goodsType,jdbcType=SMALLINT}
+      </if>
+      <if test="sellerNote != null" >
+          and t.seller_note = #{sellerNote,jdbcType=VARCHAR}
+      </if>
+      <if test="giveIntegral != null" >
+          and t.give_integral = #{giveIntegral,jdbcType=INTEGER}
+      </if>
+      <if test="rankIntegral != null" >
+          and t.rank_integral = #{rankIntegral,jdbcType=INTEGER}
+      </if>
+      <if test="suppliersId != null" >
+          and t.suppliers_id = #{suppliersId,jdbcType=SMALLINT}
+      </if>
+      <if test="isCheck != null" >
+          and t.is_check = #{isCheck,jdbcType=TINYINT}
+      </if>
+      <if test="isimport != null" >
+          and t.isimport = #{isimport,jdbcType=INTEGER}
+      </if>
+      <if test="place != null" >
+          and t.place = #{place,jdbcType=VARCHAR}
+      </if>
+      <if test="expiration != null" >
+          and t.expiration = #{expiration,jdbcType=VARCHAR}
+      </if>
+      <if test="spec != null" >
+          and t.spec = #{spec,jdbcType=VARCHAR}
+      </if>
+      <if test="specid != null" >
+          and t.specid = #{specid,jdbcType=INTEGER}
+      </if>
+      <if test="onsaletime != null" >
+          and t.onsaletime = #{onsaletime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="saleNum != null" >
+          and t.sale_num = #{saleNum,jdbcType=INTEGER}
+      </if>
+      <if test="commentNum != null" >
+          and t.comment_num = #{commentNum,jdbcType=INTEGER}
+      </if>
+      <if test="consultNum != null" >
+          and t.consult_num = #{consultNum,jdbcType=INTEGER}
+      </if>
+      <if test="offsaletime != null" >
+          and t.offsaletime = #{offsaletime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="historytime != null" >
+          and t.historytime = #{historytime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="offSaleType != null and offSaleType > 0 " >
+          and t.off_sale_type = #{offSaleType,jdbcType=TINYINT}
+      </if>
+      <if test="showType != null" >
+          and t.show_type = #{showType,jdbcType=TINYINT}
+      </if>
+      <if test="goodsDesc != null" >
+          and t.goods_desc = #{goodsDesc,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="mobileGoodsDesc != null" >
+          and t.mobile_goods_desc = #{mobileGoodsDesc,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="goodsNameLike != null and goodsNameLike != ''" >
+          and t.goods_name like concat('%',#{goodsNameLike,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="classLevel2 == -1 and classLevel1 != null and classLevel1 > 0">
+      	  and t.cat_id in (select class_id from org_class where class_parent = #{classLevel1,jdbcType=SMALLINT})
+      </if>
+      <if test="classLevel2 != null and classLevel2 >0">
+      	  and t.cat_id = #{classLevel2,jdbcType=SMALLINT}
+      </if>
+      <if test="goodsIdForGoodsSnValidate != null">
+      	  and t.goods_id != #{goodsIdForGoodsSnValidate,jdbcType=INTEGER}
+      </if>
+      <if test="saleNumStart != null">
+     	 and t.sale_num &gt;= #{saleNumStart,jdbcType=INTEGER}
+      </if>
+      <if test="saleNumEnd != null">
+     	 and t.sale_num &lt;= #{saleNumEnd,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.goods_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.goods_id) from org_product t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product t
+    left join org_brand ob on t.brand_id = ob.product_brand_id
+    left join (select op.goods_id,SUM(opin.num) inventory from org_product_item opi
+	LEFT JOIN (SELECT goods_sn goods_sn,SUM(shop_amount)+warehouse_amount num FROM org_product_inventory
+	GROUP BY goods_sn) opin ON opi.goods_sn = opin.goods_sn
+	INNER JOIN org_product op on opi.parent_goods_id = op.goods_id
+	WHERE opi.is_delete != 1
+	AND op.is_delete !=1
+	GROUP BY op.goods_id) t2 on t.goods_id = t2.goods_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product where goods_id in (
+    select t.goods_id from (select * from org_product) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

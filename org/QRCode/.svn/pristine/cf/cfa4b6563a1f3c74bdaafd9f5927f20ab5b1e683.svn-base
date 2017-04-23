@@ -1,0 +1,126 @@
+
+.all{
+	width: 100%;
+	font-family: "microsoft yahei";
+}
+.mui-bar-nav{
+	background: #952339;
+}
+.mui-title{
+	color: #fff;
+}
+.header-control .mui-icon{
+	color: #fff;
+}
+.mui-card-control .mui-card{
+	margin: 10px 0px;
+}
+.mui-card-control h4{
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.mui-card-control .mui-card-content{
+	padding: 10px 15px;
+}
+.mui-card-control p{
+	margin-bottom: 0px;
+	width: 100%;
+}
+.mui-text-center.color{
+	color: #ff004e;
+	font-size: 18px;
+}
+.mui-card-content-inner{
+	padding: 15px;
+}
+.mui-card-control h5{
+	font-size: 15px;
+	color: #333;
+	line-height: 20px;
+}
+.mui-card-control .bgspecial h5{
+	color: #fff;
+	f55454
+}
+.mui-card-control .bgspecial p{
+	color: #f55454;
+	font-size: 12px;
+}
+.mui-table td{
+	padding: 8px;
+	font-size: 14px;
+	color: #333333;
+	border: 1px solid #ccc;
+}
+.bgspecial2 .mui-table td{
+	border: 1px solid #fff;
+	color: #fff;
+	font-size: 12px;
+}
+.mui-card.radius .mui-card-header{
+	background: #ff8686;
+	color: #fff;
+	
+}
+.mui-card.radius{
+	border-radius: 30px;
+	box-shadow: none;
+}
+.radius .mui-text-center.color{
+	color: #fff;
+}
+.nomargin.mui-card-control .mui-card{
+	margin: 0px;
+}
+.mui-card.havebg1{
+	background: url(../img/f1.png) no-repeat center;
+    background-size: 100% 100%;
+    color: #333;
+    min-height: 100px;
+}
+.mui-card.havebg2{
+	background: url(../img/f2.png) no-repeat center;
+	background-size: 100% 100%;
+	min-height: 330px;
+}
+.mui-card-content.bgspecial{
+	background: #333;
+	width: 76%;
+	background: url(../img/f3.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.mui-card-content.bgspecial2{
+	background: #333;
+	width: 79%;
+	background: url(../img/f5.png) no-repeat center;
+	background-size: 100% 100%;
+}
+ .mui-card.havebg2 .mui-card-header:after,
+ .mui-card.havebg3 .mui-card-header:after
+ {
+ 	height: 0px;
+ }
+.mui-card.havebg3{
+	background: #7ac8f4;
+}
+.fixed_mui_icon{
+	position: absolute;
+    top: 64px;
+    right: 20px;
+}
+.fixed_mui_icon img{
+	width: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

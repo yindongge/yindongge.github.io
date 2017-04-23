@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">   
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="jquery-1.11.2.min.js"></script> 
+<meta content="telephone=no" name="format-detection">
+<link href="weixin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+
+<body>
+	<div class="all-weixin">
+		<header class="header-weixin">
+			<img src="m1.png">
+		</header>
+		<div class="w1">
+			<a href="#link1" target="_parent"><span></span></a>
+		</div>
+		<div class="w2">
+			<a href="#"><img src="m3.png"></a>
+		</div>
+		<h5 class="h5">促销活动  I  每款商品每位用户仅限购买十件 </h5>
+		<div class="w4">
+			<a href="#"><img src="1.png"></a>
+			<a href="#"><img src="2.png"></a>
+			<a href="#"><img src="3.png"></a>
+			<a href="#"><img src="4.png"></a>
+			<div class="line3"></div>
+			<a href="#"><img src="5.png"></a>
+			<a href="#"><img src="6.png"></a>
+			<a href="#"><img src="7.png"></a>
+			<a href="#"><img src="8.png"></a>
+			<a href="#"><img src="9.png"></a>
+			<a href="#"><img src="10.png"></a>
+			<a href="#" class="a50"><img src="11.png"></a>
+			<a href="#" class="a50"><img src="12.png"></a>
+			<a href="#" class="a50"><img src="13.png"></a>
+			<a href="#" class="a50"><img src="14.png"></a>
+			<a href="#"><img src="15.png"></a>
+			<a href="#"><img src="16.png"></a>
+			<a href="#"><img src="17.png"></a>
+			<a href="#"><img src="18.png"></a>
+			<a href="#"><img src="19.png"></a>
+			<a href="#"><img src="20.png"></a>
+		</div>
+		<div class="zhuantisame-text" id="link1" >
+		<h2>活动规则</h2>
+		<h4>请参与者在参加活动前，仔细阅读本活动规则，用户参加活动即代表同意并遵守本次活动规则。</h4>
+		<p>一分钱限量抢活动规则：</p>
+		<p>1、活动时间：2015年10月20日2015年11月20日。</p>
+		<p>2、逢周一、三、五，每天11点开始，数量有限，抢完为止。</p>
+		<p>3、参与条件：每个快捷健注册用户均可参与。</p>
+		<P>4、参与方式：用户注册登陆后，进入活动页面，点击商品，加入购物车结算即可。</P>
+		<p>5、本次活动仅限线上支付，不支持货到付款支付。</p>
+		<P>6、线上支付请在30分钟内完成支付，超时订单将自动关闭。</P>
+		<p>7、快捷健提供送货上门和到店自提两种配送方式，送货上门需您的收货地址在配送范围内，点击查看配送范围</p>
+		<P>8、自提订单，请在提交订单后在约定的时间内到店自提，过时订单将自动关闭</P>
+		<p>本活动最终解释权归快捷健商城所有。</p>
+		<P></P>
+	</div>
+	</div>
+</body>
+</html>

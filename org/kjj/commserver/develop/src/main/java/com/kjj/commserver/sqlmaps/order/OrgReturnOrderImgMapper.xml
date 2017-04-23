@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgReturnOrderImgMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgReturnOrderImg" >
+    <id column="img_id" property="imgId" jdbcType="INTEGER" />
+    <result column="return_order_id" property="returnOrderId" jdbcType="INTEGER" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    img_id, return_order_id, img_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_return_order_img
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_return_order_img
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgReturnOrderImg" useGeneratedKeys="true" keyColumn="img_id" keyProperty="imgId" >
+    insert into org_return_order_img (return_order_id, img_url)
+    values (#{returnOrderId,jdbcType=INTEGER}, #{imgUrl,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgReturnOrderImg" >
+    update org_return_order_img
+    <set >
+      <if test="returnOrderId != null" >
+        return_order_id = #{returnOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="imgUrl != null" >
+        img_url = #{imgUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgReturnOrderImg" >
+    update org_return_order_img
+    set return_order_id = #{returnOrderId,jdbcType=INTEGER},
+      img_url = #{imgUrl,jdbcType=VARCHAR}
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgReturnOrderImgVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.img_id, 
+    t.return_order_id, 
+    t.img_url
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_return_order_img t
+    where t.img_id = #{imgId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="imgId != null" >
+          and t.img_id = #{imgId,jdbcType=INTEGER}
+      </if>
+      <if test="returnOrderId != null" >
+          and t.return_order_id = #{returnOrderId,jdbcType=INTEGER}
+      </if>
+      <if test="imgUrl != null" >
+          and t.img_url = #{imgUrl,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.img_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.img_id) from org_return_order_img t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_return_order_img t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_return_order_img where img_id in (
+    select t.img_id from (select * from org_return_order_img) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

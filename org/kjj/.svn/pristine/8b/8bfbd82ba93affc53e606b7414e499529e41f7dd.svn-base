@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!-- 设置tomcat允许访问linux软链接文件夹  -->
+<Context  allowLinking="true">    
+</Context>  

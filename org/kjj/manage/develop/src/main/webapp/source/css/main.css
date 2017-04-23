@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* CSS Document */
+select option{
+
+}
+select.form-control span{
+
+}
+.pagination>li{
+	float: left;
+}
+.wrapper{
+		 background:#fff;
+		 ppadding-top:80px;
+
+}
+.wrapper .glyphicon{ padding-right:7px;}
+.wrapper .navbar-control{ padding-left:31px; height: 50px; float: left;}
+.wrapper .navbar-inverse{ box-shadow:0px 3px 7px #486E81; border:0px;}
+.header-control li:first-child{
+	width: 100px;
+	overflow: hidden;
+	text-align: right;
+}
+.wrapper .navbar-control li a{ padding:15px 15px;}
+.wrapper  .header-control{min-height:30px; padding-right:50px; float: right;margin-top: 18px;}
+.header-control li a{ padding:10px 35px;}
+.header-control li a {
+    height: 16px;
+    line-height: 16px;
+    padding: 0px 5px;
+    font-size: 12px;
+    border-right: 1px solid #fff;
+    margin-right: 3px;
+}
+.header-control li:last-child a{
+	border-right: 0px;
+}
+.wrapper .side-nav{position:fixed; left:0px;
+ background:#eee;width:225px;padding-left:0px;text-align:center; height:100%;}
+.wrapper .side-nav li{}
+.wrapper .side-nav li a{color:#666; border-radius:0px;}
+.wrapper .navbar-brand{ width:225px; padding: 0px; text-align:center; background:#5C3C1C;}
+.wrapper .side-nav>li.active>a, .wrapper .side-nav>li.active>a:focus, .wrapper .side-nav>li.active>a:hover{ background:#fff; color:#666}
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{ background-color:#6FB2D3;}
+.nav>li>a:focus, .nav>li>a:hover{ background:#fff}
+.page-wrapper {
+
+
+}
+.page-wrapper .breadcrumb{ margin-bottom:10px;}
+.page-wrapper .icon1{ margin-bottom:10px}
+.form-horizontal .control-label {
+	color: #333;
+	font-size: 12px
+}
+.modal-footer {
+	text-align: center
+}
+.modal-button {
+	padding: 5px 50px;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+	text-align: center;
+	font-size:12px;
+	position: relative;
+}
+.table-control .tdfirst {
+	text-align: left;
+	width:400px;
+}
+
+.table-control .tdlast {
+
+	width:150px;
+}
+.table-control .tdcontrol1 {
+	padding-left: 50px;
+}
+.table-control .tdcontrol2 {
+	padding-left: 100px;
+}
+/*.tab1, .tab2{ display:none;}*/
+.table-control .vv{ display:none;}
+.table-control .bb{}
+.table-control .btn-go{ padding:0px 10px; margin-right:15px; font-size:12px;}
+.table-control{ margin-bottom:0px;}
+.wrapper .navbar-control .active a{
+	background:#6FB2D3;
+}
+.wrapper .navbar-control li{
+	float: left;
+}
+.wrapper .navbar-header{
+	width: 225px;
+	height: 50px;
+	float: left;
+}
+.header-control li{
+	float: left;
+}
+.form-control{
+	height: 30px;
+	position: relative;
+}
+.form-group{
+	position: relative;
+}
+.btn{
+	padding: 3px 12px;
+}
+.pagination>li>a.current{background:#00A8FF;}
+.gray_bg_block{
+	width: 100%;
+    border: 1px solid #ccc;
+    min-height: 30px;
+    padding: 5px;
+}
+.gray_bg_block a{
+	width: 80px;
+	height: 30px;
+	display: inline-block;
+	margin-right: 5px;
+	text-align: center;
+	line-height: 30px;
+	color: #333;
+	position: relative;
+}
+.gray_bg_block .glyphicon{
+	right: 0px;
+    font-style: normal;
+    color: #ff8a00;
+    position: absolute;
+    font-weight: 400;
+    font-size: 12px;
+    display: none;
+}
+.gray_bg_block .on  .glyphicon{
+	display: block;
+}
+.gray_bg_block a.on{
+	border: 1px solid #ff8a00;
+}
+.goods_list_wrapper{
+	width: 100%;
+}
+.goods_list_wrapper a{
+	display: block;
+	float: left;
+	border: 1px dashed #ccc;
+	padding: 10px;
+	width: 100px;
+	height: 120px;
+	margin-right: 15px;
+	position: relative;
+}
+.goods_list_wrapper a  .glyphicon{
+	    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+.goods_list_wrapper a img{
+	width: 80px;
+	height: 80px;
+}
+.goods_list_wrapper a p{
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #333;
+}
+.blue_bg-border.other select.form-control{
+
+}

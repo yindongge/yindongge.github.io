@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjj.ruixing.sqlmaps.goods.BasplustockMapper">
+  <resultMap id="BaseResultMap" type="com.kjj.ruixing.entity.goods.Basplustock">
+    <id column="PLUID" jdbcType="DECIMAL" property="pluid" />
+    <id column="SHPID" jdbcType="DECIMAL" property="shpid" />
+    <result column="SHPNO" jdbcType="VARCHAR" property="shpno" />
+    <result column="SHPNAME" jdbcType="VARCHAR" property="shpname" />
+    <result column="PLUNO" jdbcType="VARCHAR" property="pluno" />
+    <result column="PLUNAME" jdbcType="VARCHAR" property="pluname" />
+    <result column="SLPRC" jdbcType="DECIMAL" property="slprc" />
+    <result column="BCD" jdbcType="VARCHAR" property="bcd" />
+    <result column="FQTY" jdbcType="DECIMAL" property="fqty" />
+    <result column="SYNCDATE" jdbcType="TIMESTAMP" property="syncdate" />
+    <result column="PSQTY" jdbcType="DECIMAL" property="psqty" />
+    <result column="ASLPRC" jdbcType="DECIMAL" property="aslprc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PLUID, SHPID, SHPNO, SHPNAME, PLUNO, PLUNAME, SLPRC, BCD, FQTY, SYNCDATE, PSQTY, 
+    ASLPRC
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BASPLUSTOCK
+    where PLUID = #{pluid,jdbcType=DECIMAL}
+      and SHPID = #{shpid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from BASPLUSTOCK
+    where PLUID = #{pluid,jdbcType=DECIMAL}
+      and SHPID = #{shpid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.ruixing.entity.goods.Basplustock">
+    insert into BASPLUSTOCK (PLUID, SHPID, SHPNO, SHPNAME, PLUNO, 
+      PLUNAME, SLPRC, BCD, 
+      FQTY, SYNCDATE, PSQTY, 
+      ASLPRC)
+    values (#{pluid,jdbcType=DECIMAL}, #{shpid,jdbcType=DECIMAL}, #{shpno,jdbcType=VARCHAR}, #{shpname,jdbcType=VARCHAR}, #{pluno,jdbcType=VARCHAR}, 
+      #{pluname,jdbcType=VARCHAR}, #{slprc,jdbcType=DECIMAL}, #{bcd,jdbcType=VARCHAR}, 
+      #{fqty,jdbcType=DECIMAL}, #{syncdate,jdbcType=TIMESTAMP}, #{psqty,jdbcType=DECIMAL}, 
+      #{aslprc,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.ruixing.entity.goods.Basplustock">
+    update BASPLUSTOCK
+    <set>
+      <if test="shpno != null">
+        SHPNO = #{shpno,jdbcType=VARCHAR},
+      </if>
+      <if test="shpname != null">
+        SHPNAME = #{shpname,jdbcType=VARCHAR},
+      </if>
+      <if test="pluno != null">
+        PLUNO = #{pluno,jdbcType=VARCHAR},
+      </if>
+      <if test="pluname != null">
+        PLUNAME = #{pluname,jdbcType=VARCHAR},
+      </if>
+      <if test="slprc != null">
+        SLPRC = #{slprc,jdbcType=DECIMAL},
+      </if>
+      <if test="bcd != null">
+        BCD = #{bcd,jdbcType=VARCHAR},
+      </if>
+      <if test="fqty != null">
+        FQTY = #{fqty,jdbcType=DECIMAL},
+      </if>
+      <if test="syncdate != null">
+        SYNCDATE = #{syncdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="psqty != null">
+        PSQTY = #{psqty,jdbcType=DECIMAL},
+      </if>
+      <if test="aslprc != null">
+        ASLPRC = #{aslprc,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where PLUID = #{pluid,jdbcType=DECIMAL}
+      and SHPID = #{shpid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.ruixing.entity.goods.Basplustock">
+    update BASPLUSTOCK
+    set SHPNO = #{shpno,jdbcType=VARCHAR},
+      SHPNAME = #{shpname,jdbcType=VARCHAR},
+      PLUNO = #{pluno,jdbcType=VARCHAR},
+      PLUNAME = #{pluname,jdbcType=VARCHAR},
+      SLPRC = #{slprc,jdbcType=DECIMAL},
+      BCD = #{bcd,jdbcType=VARCHAR},
+      FQTY = #{fqty,jdbcType=DECIMAL},
+      SYNCDATE = #{syncdate,jdbcType=TIMESTAMP},
+      PSQTY = #{psqty,jdbcType=DECIMAL},
+      ASLPRC = #{aslprc,jdbcType=DECIMAL}
+    where PLUID = #{pluid,jdbcType=DECIMAL}
+      and SHPID = #{shpid,jdbcType=DECIMAL}
+  </update>
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.kjj.ruixing.entity.goods.aide.BasplustockVo" >
+    <result column="DB_TIME" jdbcType="TIMESTAMP" property="dbTime" />
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.PLUID, 
+    t.SHPID, 
+    t.SHPNO, 
+    t.SHPNAME, 
+    t.PLUNO, 
+    t.PLUNAME, 
+    t.SLPRC, 
+    t.BCD, 
+    t.FQTY, 
+    t.SYNCDATE, 
+    t.PSQTY, 
+    t.ASLPRC,
+    SYSDATE as DB_TIME
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from BASPLUSTOCK t
+    where t.PLUID = #{pluid,jdbcType=DECIMAL}
+      and t.SHPID = #{shpid,jdbcType=DECIMAL}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="pluid != null">
+          and t.PLUID = #{pluid,jdbcType=DECIMAL}
+      </if>
+      <if test="shpid != null">
+          and t.SHPID = #{shpid,jdbcType=DECIMAL}
+      </if>
+      <if test="shpno != null">
+          and t.SHPNO = #{shpno,jdbcType=VARCHAR}
+      </if>
+      <if test="shpname != null">
+          and t.SHPNAME = #{shpname,jdbcType=VARCHAR}
+      </if>
+      <if test="pluno != null">
+          and t.PLUNO = #{pluno,jdbcType=VARCHAR}
+      </if>
+      <if test="pluname != null">
+          and t.PLUNAME = #{pluname,jdbcType=VARCHAR}
+      </if>
+      <if test="slprc != null">
+          and t.SLPRC = #{slprc,jdbcType=DECIMAL}
+      </if>
+      <if test="bcd != null">
+          and t.BCD = #{bcd,jdbcType=VARCHAR}
+      </if>
+      <if test="fqty != null">
+          and t.FQTY = #{fqty,jdbcType=DECIMAL}
+      </if>
+      <if test="syncdate != null">
+          and t.SYNCDATE = #{syncdate,jdbcType=TIMESTAMP}
+      </if>
+      <if test="psqty != null">
+          and t.PSQTY = #{psqty,jdbcType=DECIMAL}
+      </if>
+      <if test="aslprc != null">
+          and t.ASLPRC = #{aslprc,jdbcType=DECIMAL}
+      </if>
+      <if test="lastUpdateTime != null">
+          and t.SYNCDATE > #{lastUpdateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.PLUID desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.PLUID) from BASPLUSTOCK t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from BASPLUSTOCK t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from BASPLUSTOCK where PLUID in (
+    select t.PLUID from (select * from BASPLUSTOCK) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <parameterMap type="java.util.HashMap" id="syncStockParam">     
+		<parameter property="state" jdbcType="INTEGER" mode="OUT"/>
+	    <parameter property="reason" jdbcType="VARCHAR" mode="OUT"/>
+  </parameterMap>
+	  
+  <select id="selectSyncStock" statementType="CALLABLE" parameterMap="syncStockParam">
+	{call Sync_Stock(?,?)}
+  </select>
+</mapper>

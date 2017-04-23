@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgAdvertisementMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgAdvertisement" >
+    <id column="advertisement_id" property="advertisementId" jdbcType="INTEGER" />
+    <result column="product_class_id" property="productClassId" jdbcType="INTEGER" />
+    <result column="product_class_level" property="productClassLevel" jdbcType="INTEGER" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+    <result column="timestamp" property="timestamp" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    advertisement_id, product_class_id, product_class_level, type_id, is_delete, is_active, 
+    timestamp
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_advertisement
+    where advertisement_id = #{advertisementId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_advertisement
+    where advertisement_id = #{advertisementId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgAdvertisement" useGeneratedKeys="true" keyColumn="advertisement_id" keyProperty="advertisementId" >
+    insert into org_advertisement (product_class_id, product_class_level, 
+      type_id, is_delete, is_active, 
+      timestamp)
+    values (#{productClassId,jdbcType=INTEGER}, #{productClassLevel,jdbcType=INTEGER}, 
+      #{typeId,jdbcType=INTEGER}, #{isDelete,jdbcType=TINYINT}, #{isActive,jdbcType=TINYINT}, 
+      #{timestamp,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgAdvertisement" >
+    update org_advertisement
+    <set >
+      <if test="productClassId != null" >
+        product_class_id = #{productClassId,jdbcType=INTEGER},
+      </if>
+      <if test="productClassLevel != null" >
+        product_class_level = #{productClassLevel,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="timestamp != null" >
+        timestamp = #{timestamp,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where advertisement_id = #{advertisementId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgAdvertisement" >
+    update org_advertisement
+    set product_class_id = #{productClassId,jdbcType=INTEGER},
+      product_class_level = #{productClassLevel,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      timestamp = #{timestamp,jdbcType=TIMESTAMP}
+    where advertisement_id = #{advertisementId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgAdvertisementVo" extends="BaseResultMap" >
+  	<result column="advertisement_type_name" property="advertisementTypeName" jdbcType="VARCHAR" />
+  	<result column="class_name" property="productClassName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.advertisement_id, 
+    t.product_class_id, 
+    t.product_class_level, 
+    t.type_id, 
+    t.is_delete, 
+    t.is_active, 
+    t.timestamp,
+    oat.advertisement_type_name,
+    oc.class_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_advertisement t
+    where t.advertisement_id = #{advertisementId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="advertisementId != null" >
+          and t.advertisement_id = #{advertisementId,jdbcType=INTEGER}
+      </if>
+      <if test="productClassId != null" >
+          and t.product_class_id = #{productClassId,jdbcType=INTEGER}
+      </if>
+      <if test="productClassLevel != null" >
+          and t.product_class_level = #{productClassLevel,jdbcType=INTEGER}
+      </if>
+      <if test="typeId != null" >
+          and t.type_id = #{typeId,jdbcType=INTEGER}
+      </if>
+      <if test="isDelete != null" >
+          and t.is_delete = #{isDelete,jdbcType=TINYINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="timestamp != null" >
+          and t.timestamp = #{timestamp,jdbcType=TIMESTAMP}
+      </if>
+      <if test="classLevel2 > 0">
+      	  and t.product_class_id = #{classLevel2,jdbcType=INTEGER}
+      </if>
+      <if test="classLevel1 > 0 and classLevel2 &lt; 0">
+      	  and t.product_class_id = #{classLevel1,jdbcType=INTEGER}
+      </if>
+      and (exists (select 1 from org_class oc where t.product_class_id = oc.class_id and oc.class_active = 1)
+      <if test="classLevel1 &lt; 0">
+       or exists (select 1 from org_advertisement oa where t.advertisement_id = oa.advertisement_id and oa.product_class_id = -1)
+      </if>)
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.advertisement_id desc 
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.advertisement_id) from org_advertisement t
+    left join org_class oc on t.product_class_id = oc.class_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_advertisement t
+    left join org_advertisement_type oat on t.type_id = oat.advertisement_type_id
+    left join org_class oc on t.product_class_id = oc.class_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_advertisement where advertisement_id in (
+    select t.advertisement_id from (select * from org_advertisement) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

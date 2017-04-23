@@ -1,0 +1,41 @@
+############################## test start ##############################
+jdbc.driverClass=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://127.0.0.1:3306/orgstorecms_test?characterEncoding=utf8&useUnicode=true&zeroDateTimeBehavior=convertToNull
+jdbc.user=root
+jdbc.password=Kjj!@#$1234
+
+jdbcRuiXing.driverClass=oracle.jdbc.driver.OracleDriver
+jdbcRuiXing.jdbcUrl=jdbc:oracle:thin:@192.168.2.100:1521:orcl
+jdbcRuiXing.user=v9oto
+jdbcRuiXing.password=v9oto
+############################## test end ##############################
+
+############################## product start ##############################
+#jdbc.driverClass=com.mysql.jdbc.Driver
+#jdbc.jdbcUrl=jdbc:mysql://114.113.234.176:3306/orgstorecms_online?characterEncoding=UTF-8&useUnicode=true&zeroDateTimeBehavior=convertToNull
+#jdbc.user=root
+#jdbc.password=8TUG3eoh
+#
+#jdbcRuiXing.driverClass=oracle.jdbc.driver.OracleDriver
+#jdbcRuiXing.jdbcUrl=jdbc:oracle:thin:@114.113.234.103:1521:orcl
+#jdbcRuiXing.user=v9oto
+#jdbcRuiXing.password=2015
+############################## product end ##############################
+
+############################## common start ##############################
+jdbc.initialPoolSize=30
+jdbc.minPoolSize=10
+jdbc.maxPoolSize=100
+jdbc.acquireIncrement=5
+jdbc.maxIdleTime=600
+jdbc.idleConnectionTestPeriod=60
+jdbc.maxStatementsPerConnection=100
+
+jdbcRuiXing.initialPoolSize=2
+jdbcRuiXing.minPoolSize=1
+jdbcRuiXing.maxPoolSize=10
+jdbcRuiXing.acquireIncrement=1
+jdbcRuiXing.maxIdleTime=600
+jdbcRuiXing.idleConnectionTestPeriod=60
+jdbcRuiXing.maxStatementsPerConnection=100
+############################## common end ##############################

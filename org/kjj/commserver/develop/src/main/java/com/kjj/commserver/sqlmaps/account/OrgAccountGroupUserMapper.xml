@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.account.OrgAccountGroupUserMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.account.OrgAccountGroupUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="group_id" property="groupId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, group_id, user_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_account_group_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_account_group_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.account.OrgAccountGroupUser" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_account_group_user (group_id, user_id)
+    values (#{groupId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.account.OrgAccountGroupUser" >
+    update org_account_group_user
+    <set >
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.account.OrgAccountGroupUser" >
+    update org_account_group_user
+    set group_id = #{groupId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.account.aide.OrgAccountGroupUserVo" extends="BaseResultMap" >
+  	<result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="level_type" jdbcType="TINYINT" property="levelType" />
+    <result column="reg_time" jdbcType="TIMESTAMP" property="regTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.group_id, 
+    t.user_id,
+    ou.user_name,
+    ou.mobile_phone,
+    ou.email,
+    ou.level_type,
+    ou.status,
+    ou.reg_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_account_group_user t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="groupId != null" >
+          and t.group_id = #{groupId,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="userName != null">
+          and ou.user_name like concat('%',#{userName},'%')
+      </if>
+      <if test="mobilePhone != null">
+          and ou.mobile_phone = #{mobilePhone,jdbcType=VARCHAR}
+      </if>
+      <if test="userIds != null " >
+	      <if test="userIds.size() > 0">
+	          and t.user_id in 
+	          <foreach collection="userIds" index="index" item="item" open="(" separator="," close=")">
+	          	#{item,jdbcType=INTEGER}
+	          </foreach>
+	      </if>
+	      <if test="userIds.size() == 0">
+	          and 1=0
+	      </if>
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_account_group_user t join org_users ou on t.user_id = ou.user_id 
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_account_group_user t join org_users ou on t.user_id = ou.user_id 
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_account_group_user where id in (
+    select t.id from (select * from org_account_group_user) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

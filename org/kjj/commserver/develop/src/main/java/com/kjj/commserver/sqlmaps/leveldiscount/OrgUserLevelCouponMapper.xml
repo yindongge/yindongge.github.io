@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjj.commserver.sqlmaps.leveldiscount.OrgUserLevelCouponMapper">
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCoupon">
+    <id column="level_coupon_id" jdbcType="INTEGER" property="levelCouponId" />
+    <result column="shop_type" jdbcType="TINYINT" property="shopType" />
+    <result column="product_type" jdbcType="TINYINT" property="productType" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="create_admin_id" jdbcType="SMALLINT" property="createAdminId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="class_id" jdbcType="INTEGER" property="classId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="city_shop_id" jdbcType="VARCHAR" property="cityShopId" />
+    <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    level_coupon_id, shop_type, product_type, status, create_admin_id, create_time, class_id, 
+    goods_id, class_name, goods_name, city_shop_id, city_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_user_level_coupon
+    where level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from org_user_level_coupon
+    where level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="level_coupon_id" keyProperty="levelCouponId" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCoupon" useGeneratedKeys="true">
+    insert into org_user_level_coupon (shop_type, product_type, status, 
+      create_admin_id, create_time, class_id, 
+      goods_id, class_name, goods_name, 
+      city_shop_id,city_code)
+    values (#{shopType,jdbcType=TINYINT}, #{productType,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
+      #{createAdminId,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP}, #{classId,jdbcType=INTEGER}, 
+      #{goodsId,jdbcType=INTEGER}, #{className,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{cityShopId,jdbcType=VARCHAR},#{cityCode,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCoupon">
+    update org_user_level_coupon
+    <set>
+      <if test="shopType != null">
+        shop_type = #{shopType,jdbcType=TINYINT},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createAdminId != null">
+        create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="classId != null">
+        class_id = #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="className != null">
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityShopId != null">
+        city_shop_id = #{cityShopId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCoupon">
+    update org_user_level_coupon
+    set shop_type = #{shopType,jdbcType=TINYINT},
+      product_type = #{productType,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      class_id = #{classId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      class_name = #{className,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      city_shop_id = #{cityShopId,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR}
+    where level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </update>
+  <update id="updateCouponStatus" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCoupon">
+    update org_user_level_coupon
+    set status = #{status,jdbcType=TINYINT} 
+    where level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </update>
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.kjj.commserver.entity.leveldiscount.aide.OrgUserLevelCouponVo" >
+  	<result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="goods_thumb" property="goodsThumb" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.level_coupon_id, 
+    t.shop_type, 
+    t.product_type, 
+    t.status, 
+    t.create_admin_id, 
+    t.create_time, 
+    t.class_id, 
+    t.goods_id, 
+    t.class_name, 
+    t.goods_name, 
+    t.city_shop_id,
+    t.city_code
+  </sql>
+  <sql id="Page_Column_List">
+    t.level_coupon_id, 
+    t.shop_type, 
+    t.product_type, 
+    t.status, 
+    t.create_admin_id, 
+    t.create_time, 
+    t.class_id, 
+    t.goods_id, 
+    t.class_name, 
+    t.goods_name, 
+    t.city_shop_id,
+    t.city_code
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level_coupon t
+    where t.level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="levelCouponId != null">
+          and t.level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+      </if>
+      <if test="shopType != null">
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="productType != null">
+          and t.product_type = #{productType,jdbcType=TINYINT}
+      </if>
+      <if test="status != null">
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null">
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTime != null">
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="classId != null">
+          and t.class_id = #{classId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null">
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="className != null">
+          and t.class_name = #{className,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsName != null">
+          and t.goods_name = #{goodsName,jdbcType=VARCHAR}
+      </if>
+      <if test="cityShopId != null">
+          and t.city_shop_id = #{cityShopId,jdbcType=VARCHAR}
+      </if>
+      <if test="cityShopIds != null">
+          and t.city_shop_id like concat('%',#{cityShopIds},'%')
+      </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.level_coupon_id desc
+    </if>
+  </sql>
+  <sql id="Page_Where_Clause">
+    <where>
+      <if test="levelCouponId != null">
+          and t.level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+      </if>
+      <if test="shopType != null">
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="productType != null">
+          and t.product_type = #{productType,jdbcType=TINYINT}
+      </if>
+      <if test="status != null">
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null">
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTimeStart != null and createTimeStart != ''">
+		  and t.create_time &gt;= #{createTimeStart}
+	  </if>
+	  <if test="createTimeEnd != null and createTimeEnd != ''">
+	      and t.create_time &lt;= #{createTimeEnd}
+	  </if>
+      <if test="classId != null">
+          and t.class_id = #{classId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null">
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="className != null">
+          and t.class_name = #{className,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsSn != null and goodsSn != '' ">
+		  and opi.goods_sn like concat('%',#{goodsSn},'%')
+	  </if>
+      <if test="goodsName != null and goodsName != '' ">
+		  and opi.goods_name like concat('%',#{goodsName},'%')
+	  </if>
+	  <if test="cityCode != null">
+          and t.city_code = #{cityCode,jdbcType=VARCHAR}
+      </if>
+      <if test="cityShopId != null">
+          and t.city_shop_id like concat('%',#{cityShopId},'%')
+      </if>
+      <if test="isDelete != null" >
+          and (opi.is_delete = '0' or t.goods_id is null)
+      </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.level_coupon_id desc
+    </if>
+  </sql>
+  <sql id="CalList_Where_Clause">
+    <where>
+      <if test="levelCouponId != null">
+          and t.level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+      </if>
+      <if test="shopType != null">
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="productType != null">
+          and t.product_type = #{productType,jdbcType=TINYINT}
+      </if>
+      <if test="status != null">
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null">
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="classId != null">
+          and t.class_id = #{classId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null">
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="className != null">
+          and t.class_name = #{className,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsName != null and goodsName != '' ">
+		  and opi.goods_name like concat('%',#{goodsName},'%')
+	  </if>
+	  <if test="cityCode != null">
+          and t.city_code = #{cityCode,jdbcType=VARCHAR}
+      </if>
+      <if test="cityShopId != null">
+          and t.city_shop_id like concat('%',#{cityShopId},'%')
+      </if>
+    </where>
+    order by city_shop_id desc,city_code desc,goods_id desc,class_id desc 
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.level_coupon_id) from org_user_level_coupon t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level_coupon t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectLevelCoupon" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select opi.goods_name,opi.goods_sn,opi.goods_thumb,t.* from org_user_level_coupon t left join org_product_item opi on t.goods_id = opi.goods_id  
+    <include refid="Page_Where_Clause" />
+  </select>
+  <select id="selectLevelCouponCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(1) from org_user_level_coupon t left join org_product_item opi on t.goods_id = opi.goods_id
+    <include refid="Page_Where_Clause" />
+  </select>
+  <select id="selectCalList" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level_coupon t
+    <include refid="CalList_Where_Clause" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map">
+    delete from org_user_level_coupon where level_coupon_id in (
+    select t.level_coupon_id from (select * from org_user_level_coupon) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

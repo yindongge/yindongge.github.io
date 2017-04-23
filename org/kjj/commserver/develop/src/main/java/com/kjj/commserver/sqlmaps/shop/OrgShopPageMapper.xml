@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopPageMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopPage" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="shop_search" property="shopSearch" jdbcType="VARCHAR" />
+    <result column="isactive" property="isactive" jdbcType="INTEGER" />
+    <result column="shopname" property="shopname" jdbcType="VARCHAR" />
+    <result column="isdelete" property="isdelete" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, shop_id, shop_search, isactive, shopname, isdelete, type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_page
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_page
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopPage" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_shop_page (shop_id, shop_search, isactive, 
+      shopname, isdelete, type
+      )
+    values (#{shopId,jdbcType=INTEGER}, #{shopSearch,jdbcType=VARCHAR}, #{isactive,jdbcType=INTEGER}, 
+      #{shopname,jdbcType=VARCHAR}, #{isdelete,jdbcType=INTEGER}, #{type,jdbcType=SMALLINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopPage" >
+    update org_shop_page
+    <set >
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="shopSearch != null" >
+        shop_search = #{shopSearch,jdbcType=VARCHAR},
+      </if>
+      <if test="isactive != null" >
+        isactive = #{isactive,jdbcType=INTEGER},
+      </if>
+      <if test="shopname != null" >
+        shopname = #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        isdelete = #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopPage" >
+    update org_shop_page
+    set shop_id = #{shopId,jdbcType=INTEGER},
+      shop_search = #{shopSearch,jdbcType=VARCHAR},
+      isactive = #{isactive,jdbcType=INTEGER},
+      shopname = #{shopname,jdbcType=VARCHAR},
+      isdelete = #{isdelete,jdbcType=INTEGER},
+      type = #{type,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopPageVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.shop_id, 
+    t.shop_search, 
+    t.isactive, 
+    t.shopname, 
+    t.isdelete, 
+    t.type
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="shopSearch != null" >
+          and t.shop_search = #{shopSearch,jdbcType=VARCHAR}
+      </if>
+      <if test="isactive != null" >
+          and t.isactive = #{isactive,jdbcType=INTEGER}
+      </if>
+      <if test="isdelete != null" >
+          and t.isdelete = #{isdelete,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+          and t.type = #{type,jdbcType=SMALLINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <sql id="QueryPage_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and osp.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and osp.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="shopSearch != null" >
+          and osp.shop_search = #{shopSearch,jdbcType=VARCHAR}
+      </if>
+      <if test="isactive != null" >
+          and osp.isactive = #{isactive,jdbcType=INTEGER}
+      </if>
+      <if test="isdelete != null" >
+          and osp.isdelete = #{isdelete,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+          and osp.type = #{type,jdbcType=SMALLINT}
+      </if>
+      <if test="shopNameLike != null and shopNameLike == '全部店铺'" >
+          and osp.shop_id = '-1'
+      </if>
+      <if test="shopNameLike != null and shopNameLike!= '全部店铺'" >
+          and (os.shop_name like concat('%',#{shopNameLike},'%') or oa.show like concat('%',#{shopNameLike},'%'))
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_shop_page t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page t 
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectPageList" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select osp.id, osp.shop_id,osp.shop_search,osp.isactive,concat(ifnull(os.shop_name,''),ifnull(oa.show,'')) as shopname
+    from org_shop_page osp left join org_shop os on osp.shop_id=os.shop_id left join org_area oa on osp.shop_id=oa.code
+    <include refid="QueryPage_Where_Clause" />
+  </select>
+  <select id="selectPageListCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(1) from org_shop_page osp left join org_shop os on osp.shop_id=os.shop_id left join org_area oa on osp.shop_id=oa.code
+    <include refid="QueryPage_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_page where id in (
+    select t.id from (select * from org_shop_page) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

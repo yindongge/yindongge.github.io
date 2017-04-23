@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.activity.OrgActivityMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.activity.OrgActivity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="type_id" property="typeId" jdbcType="TINYINT" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="award_timeout" property="awardTimeout" jdbcType="BIGINT" />
+    <result column="tip_win" property="tipWin" jdbcType="VARCHAR" />
+    <result column="tip_lose" property="tipLose" jdbcType="VARCHAR" />
+    <result column="limit_money" property="limitMoney" jdbcType="DECIMAL" />
+    <result column="limit_repeat" property="limitRepeat" jdbcType="TINYINT" />
+    <result column="limit_count" property="limitCount" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, type_id, start_time, end_time, award_timeout, tip_win, tip_lose, limit_money, 
+    limit_repeat, limit_count, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_activity
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_activity
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.activity.OrgActivity" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_activity (title, type_id, start_time, 
+      end_time, award_timeout, tip_win, 
+      tip_lose, limit_money, limit_repeat, 
+      limit_count, status)
+    values (#{title,jdbcType=VARCHAR}, #{typeId,jdbcType=TINYINT}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{awardTimeout,jdbcType=BIGINT}, #{tipWin,jdbcType=VARCHAR}, 
+      #{tipLose,jdbcType=VARCHAR}, #{limitMoney,jdbcType=DECIMAL}, #{limitRepeat,jdbcType=TINYINT}, 
+      #{limitCount,jdbcType=TINYINT}, #{status,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.activity.OrgActivity" >
+    update org_activity
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=TINYINT},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="awardTimeout != null" >
+        award_timeout = #{awardTimeout,jdbcType=BIGINT},
+      </if>
+      <if test="tipWin != null" >
+        tip_win = #{tipWin,jdbcType=VARCHAR},
+      </if>
+      <if test="tipLose != null" >
+        tip_lose = #{tipLose,jdbcType=VARCHAR},
+      </if>
+      <if test="limitMoney != null" >
+        limit_money = #{limitMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="limitRepeat != null" >
+        limit_repeat = #{limitRepeat,jdbcType=TINYINT},
+      </if>
+      <if test="limitCount != null" >
+        limit_count = #{limitCount,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.activity.OrgActivity" >
+    update org_activity
+    set title = #{title,jdbcType=VARCHAR},
+      type_id = #{typeId,jdbcType=TINYINT},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      award_timeout = #{awardTimeout,jdbcType=BIGINT},
+      tip_win = #{tipWin,jdbcType=VARCHAR},
+      tip_lose = #{tipLose,jdbcType=VARCHAR},
+      limit_money = #{limitMoney,jdbcType=DECIMAL},
+      limit_repeat = #{limitRepeat,jdbcType=TINYINT},
+      limit_count = #{limitCount,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_activity t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="title != null" >
+          and t.title = #{title,jdbcType=VARCHAR}
+      </if>
+      <if test="typeId != null" >
+          and t.type_id = #{typeId,jdbcType=TINYINT}
+      </if>
+      <if test="startTime != null" >
+          and t.start_time = #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+          and t.end_time = #{endTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="awardTimeout != null" >
+          and t.award_timeout = #{awardTimeout,jdbcType=BIGINT}
+      </if>
+      <if test="tipWin != null" >
+          and t.tip_win = #{tipWin,jdbcType=VARCHAR}
+      </if>
+      <if test="tipLose != null" >
+          and t.tip_lose = #{tipLose,jdbcType=VARCHAR}
+      </if>
+      <if test="limitMoney != null" >
+          and t.limit_money = #{limitMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="limitRepeat != null" >
+          and t.limit_repeat = #{limitRepeat,jdbcType=TINYINT}
+      </if>
+      <if test="limitCount != null" >
+          and t.limit_count = #{limitCount,jdbcType=TINYINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_activity t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_activity t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_activity where id in (
+    select t.id from (select * from org_activity) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.activity.aide.OrgActivityVo" extends="BaseResultMap" >
+     <association property="orgActivityDetail" javaType="com.kjj.commserver.entity.activity.aide.OrgActivityDetailVo" >
+         <id column="oad_id" property="id" jdbcType="INTEGER" />
+   		 <result column="activity_id" property="activityId" jdbcType="INTEGER" />
+   		 <result column="activity_detail" property="activityDetail" jdbcType="VARCHAR" />
+     </association>  
+     <collection property="dialitemList" resultMap="dialitemMap" />   
+  </resultMap>
+  <resultMap id="dialitemMap" type="com.kjj.commserver.entity.activity.aide.OrgActivityDialitemVo" >
+    <id column="oadi_id" property="id" jdbcType="INTEGER" />
+    <result column="activity_id" property="activityId" jdbcType="INTEGER" />
+    <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+    <result column="item_type" property="itemType" jdbcType="TINYINT" />
+    <result column="item_prize_id" property="itemPrizeId" jdbcType="INTEGER" />
+    <result column="item_prize_name" property="itemPrizeName" jdbcType="VARCHAR" />
+    <result column="thumb" property="thumb" jdbcType="VARCHAR" />
+    <result column="item_num" property="itemNum" jdbcType="SMALLINT" />
+    <result column="remain_num" property="remainNum" jdbcType="SMALLINT" />
+    <result column="lock_num" property="lockNum" jdbcType="SMALLINT" />
+    <result column="item_order" property="itemOrder" jdbcType="SMALLINT" />
+    <result column="item_rate" property="itemRate" jdbcType="BIGINT" />
+    <result column="oadi_status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.title, 
+    t.type_id, 
+    t.start_time, 
+    t.end_time, 
+    t.award_timeout, 
+    t.tip_win, 
+    t.tip_lose, 
+    t.limit_money, 
+    t.limit_repeat, 
+    t.limit_count, 
+    t.status,
+    oad.id oad_id,
+    oad.activity_id,
+    oad.activity_detail,
+    oadi.id oadi_id, 
+    oadi.activity_id, 
+    oadi.item_name, 
+    oadi.item_type, 
+    oadi.item_prize_id, 
+    oadi.item_prize_name, 
+    oadi.thumb, 
+    oadi.item_num, 
+    oadi.remain_num, 
+    oadi.lock_num,
+    oadi.item_order, 
+    oadi.item_rate, 
+    oadi.status oadi_status
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+ 	 left join org_activity_detail oad on t.id=oad.activity_id
+ 	 left join org_activity_dialitem oadi on t.id=oadi.activity_id and oadi.status=1
+  </sql>
+</mapper>

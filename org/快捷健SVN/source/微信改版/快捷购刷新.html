@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script src="js/swiper3.1.0.min.js"></script>
+<script src="js/me.js"></script>
+<script src="js/iscroll.js"></script>
+<style type="text/css">
+
+#pullDown, #pullUp {
+	background:#fff;
+	height:40px;
+	line-height:40px;
+	padding:5px 10px;
+	border-bottom:1px solid #ccc;
+	font-weight:bold;
+	font-size:14px;
+	color:#888;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:40px; height:40px;
+	background:url(pull-icon@2x.png) 0 0 no-repeat;
+	-webkit-background-size:40px 80px; background-size:40px 80px;
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:250ms;
+}
+#pullDown .pullDownIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+	background-position:0 100%;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+
+</style>
+<script type="text/javascript">
+
+var myScroll,
+	pullDownEl, pullDownOffset,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+
+function pullUpAction () {
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		//el = document.getElementById('thelist');
+		 el=$('.buyalllist');
+		for (i=0; i<3; i++) {
+			li = document.createElement(".buylist");
+
+			li.innerText = 'Generated row ' + (++generatedCount);
+			el.appendChild(li, el.childNodes[0]);
+
+		}
+
+		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+}
+
+function loaded() {
+	pullDownEl = document.getElementById('pullDown');
+	pullDownOffset = pullDownEl.offsetHeight;
+	pullUpEl = document.getElementById('pullUp');
+	pullUpOffset = pullUpEl.offsetHeight;
+
+	myScroll = new iScroll('wrapper', {
+		useTransition: true,
+		topOffset: pullDownOffset,
+		onScrollMove: function () {
+			if (this.y > 5 && !pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'flip';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				this.minScrollY = -pullDownOffset;
+			} else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		// onScrollEnd: function () {
+		// 	if (pullDownEl.className.match('flip')) {
+		// 		pullDownEl.className = 'loading';
+		// 		pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';
+		// 		// pullDownAction();	// Execute custom function (ajax call?)
+		// 	} else if (pullUpEl.className.match('flip')) {
+		// 		pullUpEl.className = 'loading';
+		// 		pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+		// 		pullUpAction();	// Execute custom function (ajax call?)
+		// 	}
+		// }
+	});
+}
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+</script>
+
+</head>
+<body >
+	<div class="box padding-top  box-height-fixed box-gray">
+
+	<div class="fastbuy">
+
+		<div id="pullDown">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+		</div>
+	<div id="wrapper">
+		<div class="buy_right">
+			<div class="buyalllist">
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span class="jiaobiao1"></span>
+						<span class="jiaobiao2"></span>
+						<!-- 上边的两个角标  -->
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠3元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity" style="width:27px;">
+							<span class="plus"></span>
+
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠0元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity">
+							<span class="plus"></span>
+							<span class="num">1</span>
+							<span class="reduce"></span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+					<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+					<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+
+				<!--  -->
+			</div>
+		</div>
+			<div id="pullUp">
+			<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...111</span>
+		</div>
+	</div>
+	<!-- wrapper -->
+	</div>
+	</div>
+	<!-- end box -->
+
+
+
+<script type="text/javascript">
+$(function(){
+	$('.window').scroll(function(){
+		alert('dasd')
+	})
+})
+
+</script>
+</body>
+</html>

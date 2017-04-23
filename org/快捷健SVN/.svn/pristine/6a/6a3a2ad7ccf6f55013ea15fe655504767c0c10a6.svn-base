@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">        
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/TouchSlide.1.1.js"></script> 
+<script src="js/me.js"></script> 
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+<body>
+<div class="all " >
+	<div class="header">
+		<h2>选择店铺<a href="javascript:;"><span class="glyphicon glyphicon-menu-left"></span></a></h2>
+	</div>
+	<div class="select">
+		<ul class="list text-center">
+			<li>选择省份</li>
+			<li>选择城市</li>
+			<li>选择区县</li>
+			<li>选择店铺</li>
+		</ul>
+	</div>
+	
+</div>
+	<div class="selcet-city">
+	<div class="fixed-city">
+		<ul class="list ">
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>456</li>
+			<li>789</li>
+			<li>10</li>
+			<li>1000</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>河北省平泉县</li>
+			<li>456</li>
+			<li>789</li>
+			<li>10</li>
+			<li>1000</li>
+		</ul>
+	</div>
+	</div>
+	<div class="slide-mask"></div>
+	<script type="text/javascript">
+	$('.select .list li').click(function(){
+		$('.fixed-city').addClass('moved');
+		$('.slide-mask').show();
+	})
+	$('.slide-mask').click(function(){
+		$('.fixed-city').removeClass('moved');
+		$('.slide-mask').hide();
+	})
+	 </script>
+</body>
+</html>

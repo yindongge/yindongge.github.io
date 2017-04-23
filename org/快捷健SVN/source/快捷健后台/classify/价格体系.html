@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+
+</head>
+<body>
+
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">商品</a></li>
+		<li ><a href="#">添加商品</a></li>
+		<li class="active">价格体系</li>
+	</ul>
+	<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+	   <a href="添加商品.html" class="btn btn-info " role="button">基本信息</a>
+	   <a href="详情描述.html" class="btn btn-info" role="button">SKU信息</a>
+	   <a href="详情描述.html" class="btn btn-primary" role="button">价格体系</a>
+	   <a href="相关商品.html" class="btn btn-info" role="button">相关商品</a>
+	   <a href="其他信息.html" class="btn btn-info" role="button">其他信息</a>
+    </div>
+	<hr/>
+	<div class="row">
+			<div class="col-sm-7">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						会员折扣
+					</div>
+					<div class="panel-body">
+						<table class="table table-hover table-bordered table-striped table-control ">
+							<thead class="text-center">
+								<tr>
+									<th>会员类型</th>
+									<th>会员价格（元）</th>
+									<th>折扣</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>普通会员</td>
+									<td><input type="text" ></input></td>
+									<td><input type="text" ></input></td>
+								</tr>
+									<tr>
+									<td>铜牌会员</td>
+									<td><input type="text" ></input></td>
+									<td><input type="text" ></input></td>
+								</tr>
+									<tr>
+									<td>银牌会员</td>
+									<td><input type="text" ></input></td>
+									<td><input type="text" ></input></td>
+								</tr>
+									<tr>
+									<td>金牌会员</td>
+									<td><input type="text" ></input></td>
+									<td><input type="text" ></input></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						商品积分
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-3"><p  class='text-right'  style="margin-top:5px;">消费积分:</p></div>
+							<div class="col-sm-7">
+								<input type="text" class="form-control"、>
+							</div>
+						</div>
+					<div class="panel-footer"><p><i class="glyphicon glyphicon-pushpin"></i>  留空为按积分规则累计，添加后则按实际积分计算。</p></div>
+
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-7">
+			<table class="table table-bordered table-hover input-control">
+				<thead>
+					<tr>
+						<th>颜色</th>
+						<th>尺寸</th>
+						<th>商品货号</th>
+						<th>市场价</th>
+						<th>预售价</th>
+						<th>预售数量</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>蓝色</td>
+						<td>15.22</td>
+						<td>1234561220</td>
+						<td>121212</td>
+						<td><input type="text" class="form-control input-control2" /></td>
+						<td><input type="text" class="form-control input-control2" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</br>
+		<div class="text-center">
+			<button type="button" class="btn btn-primary " >保存</button>
+		</div>
+</div>
+</div>
+</body>
+</html>

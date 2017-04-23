@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.operation.OrgItemRecommendMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.operation.OrgItemRecommend" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="shop_type" property="shopType" jdbcType="TINYINT" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="recommend_type" property="recommendType" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, shop_type, city_code, shop_id, goods_id, recommend_type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_item_recommend
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_item_recommend
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.operation.OrgItemRecommend" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_item_recommend (shop_type, city_code, shop_id, 
+      goods_id, recommend_type)
+    values (#{shopType,jdbcType=TINYINT}, #{cityCode,jdbcType=VARCHAR}, #{shopId,jdbcType=INTEGER}, 
+      #{goodsId,jdbcType=INTEGER}, #{recommendType,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.operation.OrgItemRecommend" >
+    update org_item_recommend
+    <set >
+      <if test="shopType != null" >
+        shop_type = #{shopType,jdbcType=TINYINT},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="recommendType != null" >
+        recommend_type = #{recommendType,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.operation.OrgItemRecommend" >
+    update org_item_recommend
+    set shop_type = #{shopType,jdbcType=TINYINT},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      recommend_type = #{recommendType,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.operation.aide.OrgItemRecommendVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.shop_type, 
+    t.city_code, 
+    t.shop_id, 
+    t.goods_id, 
+    t.recommend_type
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_item_recommend t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopType != null" >
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="cityCode != null" >
+          and t.city_code = #{cityCode,jdbcType=VARCHAR}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="recommendType != null" >
+          and t.recommend_type = #{recommendType,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_item_recommend t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_item_recommend t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_item_recommend where id in (
+    select t.id from (select * from org_item_recommend) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

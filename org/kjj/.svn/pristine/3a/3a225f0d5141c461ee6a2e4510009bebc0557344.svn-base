@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductShopSaleMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductShopSale" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="inventory_id" property="inventoryId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, inventory_id, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_shop_sale
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_shop_sale
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductShopSale" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_product_shop_sale (inventory_id, status)
+    values (#{inventoryId,jdbcType=INTEGER}, #{status,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductShopSale" >
+    update org_product_shop_sale
+    <set >
+      <if test="inventoryId != null" >
+        inventory_id = #{inventoryId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductShopSale" >
+    update org_product_shop_sale
+    set inventory_id = #{inventoryId,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_shop_sale t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="inventoryId != null" >
+          and t.inventory_id = #{inventoryId,jdbcType=INTEGER}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_product_shop_sale t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_shop_sale t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_shop_sale where id in (
+    select t.id from (select * from org_product_shop_sale) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductShopSaleVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.inventory_id, 
+    t.status
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

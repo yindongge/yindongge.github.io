@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.account.OrgAccountDepositRecordsMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.account.OrgAccountDepositRecords" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="fund_amount" property="fundAmount" jdbcType="DECIMAL" />
+    <result column="allowance_amount" property="allowanceAmount" jdbcType="DECIMAL" />
+    <result column="frozen_amount" property="frozenAmount" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="origin" property="origin" jdbcType="TINYINT" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="trader_id" property="traderId" jdbcType="INTEGER" />
+    <result column="service_code" property="serviceCode" jdbcType="VARCHAR" />
+    <result column="quit_code" property="quitCode" jdbcType="VARCHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="reason" property="reason" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, fund_amount, allowance_amount, frozen_amount, create_time, origin, type, 
+    trader_id, service_code, quit_code, comment
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_account_deposit_records
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_account_deposit_records
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.account.OrgAccountDepositRecords" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_account_deposit_records (user_id, fund_amount, allowance_amount, 
+      frozen_amount, create_time, origin, 
+      type, trader_id, service_code, quit_code, 
+      comment,reason)
+    values (#{userId,jdbcType=INTEGER}, #{fundAmount,jdbcType=DECIMAL}, #{allowanceAmount,jdbcType=DECIMAL}, 
+      #{frozenAmount,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, #{origin,jdbcType=TINYINT}, 
+      #{type,jdbcType=TINYINT}, #{traderId,jdbcType=INTEGER}, #{serviceCode,jdbcType=VARCHAR}, 
+      #{quitCode,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR},#{reason,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.account.OrgAccountDepositRecords" >
+    update org_account_deposit_records
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="fundAmount != null" >
+        fund_amount = #{fundAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="allowanceAmount != null" >
+        allowance_amount = #{allowanceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="frozenAmount != null" >
+        frozen_amount = #{frozenAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="origin != null" >
+        origin = #{origin,jdbcType=TINYINT},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="traderId != null" >
+        trader_id = #{traderId,jdbcType=INTEGER},
+      </if>
+      <if test="serviceCode != null" >
+        service_code = #{serviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="quitCode != null" >
+        quit_code = #{quitCode,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null" >
+        reason = #{reason,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.account.OrgAccountDepositRecords" >
+    update org_account_deposit_records
+    set user_id = #{userId,jdbcType=INTEGER},
+      fund_amount = #{fundAmount,jdbcType=DECIMAL},
+      allowance_amount = #{allowanceAmount,jdbcType=DECIMAL},
+      frozen_amount = #{frozenAmount,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      origin = #{origin,jdbcType=TINYINT},
+      type = #{type,jdbcType=TINYINT},
+      trader_id = #{traderId,jdbcType=INTEGER},
+      service_code = #{serviceCode,jdbcType=VARCHAR},
+      quit_code = #{quitCode,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      reason = #{reason,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.account.aide.OrgAccountDepositRecordsVo" extends="BaseResultMap" >
+  	<result column="user_name" property="userName" jdbcType="VARCHAR" />
+  	<result column="trader_name" property="traderName" jdbcType="VARCHAR" />
+  	<result column="mobile_phone" property="mobilePhone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.user_id, 
+    t.fund_amount, 
+    t.allowance_amount, 
+    t.frozen_amount, 
+    t.create_time, 
+    t.origin, 
+    t.type,
+    t.trader_id, 
+    t.service_code, 
+    t.quit_code, 
+    t.comment,
+    t.reason
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_account_deposit_records t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="fundAmount != null" >
+          and t.fund_amount = #{fundAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="allowanceAmount != null" >
+          and t.allowance_amount = #{allowanceAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="frozenAmount != null" >
+          and t.frozen_amount = #{frozenAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="origin != null" >
+          and t.origin = #{origin,jdbcType=TINYINT}
+      </if>
+      <if test="type != null" >
+          and t.type = #{type,jdbcType=TINYINT}
+      </if>
+      <if test="traderId != null" >
+          and t.trader_id = #{traderId,jdbcType=INTEGER}
+      </if>
+      <if test="serviceCode != null" >
+          and t.service_code = #{serviceCode,jdbcType=VARCHAR}
+      </if>
+      <if test="quitCode != null" >
+          and t.quit_code = #{quitCode,jdbcType=VARCHAR}
+      </if>
+      <if test="comment != null" >
+          and t.comment = #{comment,jdbcType=VARCHAR}
+      </if>
+      <if test="reason != null" >
+          and t.reason = #{reason,jdbcType=TINYINT}
+      </if>
+      <if test="createTimeStart != null and createTimeStart != ''" >
+          and t.create_time &gt;= str_to_date(#{createTimeStart},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="createTimeEnd != null and createTimeEnd != ''" >
+          and t.create_time &lt;= str_to_date(#{createTimeEnd},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="userName != null">
+          and ou.user_name like concat('%',#{userName},'%')
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_account_deposit_records t left join org_users ou on t.user_id = ou.user_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Select_Column_List" />
+    from org_account_deposit_records t left join org_users ou on t.user_id = ou.user_id left join org_users ous on t.trader_id = ous.user_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_account_deposit_records where id in (
+    select t.id from (select * from org_account_deposit_records) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectOweOfAllowance" parameterType="java.util.Map" resultType="java.lang.Long" >
+    SELECT IFNULL(SUM(allowance_amount),0) FROM org_account_deposit_records WHERE (TYPE = '7' OR TYPE = '8') AND user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <sql id="Vo_Select_Column_List" >
+    t.id, 
+    t.user_id, 
+    t.fund_amount, 
+    t.allowance_amount, 
+    t.frozen_amount, 
+    t.create_time, 
+    t.origin, 
+    t.type, 
+    t.trader_id,
+    t.service_code, 
+    t.quit_code, 
+    t.comment,
+    t.reason,
+    ou.user_name,
+    ous.user_name trader_name,
+    ous.mobile_phone
+  </sql>
+</mapper>

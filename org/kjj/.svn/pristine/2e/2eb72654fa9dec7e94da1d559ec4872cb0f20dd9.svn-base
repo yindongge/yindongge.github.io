@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgUsersMapper">
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgUsers">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="question" jdbcType="VARCHAR" property="question" />
+    <result column="answer" jdbcType="VARCHAR" property="answer" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="user_money" jdbcType="DECIMAL" property="userMoney" />
+    <result column="frozen_money" jdbcType="DECIMAL" property="frozenMoney" />
+    <result column="pay_points" jdbcType="INTEGER" property="payPoints" />
+    <result column="rank_points" jdbcType="INTEGER" property="rankPoints" />
+    <result column="address_id" jdbcType="INTEGER" property="addressId" />
+    <result column="reg_time" jdbcType="TIMESTAMP" property="regTime" />
+    <result column="last_login" jdbcType="TIMESTAMP" property="lastLogin" />
+    <result column="last_time" jdbcType="TIMESTAMP" property="lastTime" />
+    <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="visit_count" jdbcType="SMALLINT" property="visitCount" />
+    <result column="user_rank" jdbcType="TINYINT" property="userRank" />
+    <result column="is_special" jdbcType="TINYINT" property="isSpecial" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="flag" jdbcType="TINYINT" property="flag" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+    <result column="msn" jdbcType="VARCHAR" property="msn" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="office_phone" jdbcType="VARCHAR" property="officePhone" />
+    <result column="home_phone" jdbcType="VARCHAR" property="homePhone" />
+    <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="is_validated" jdbcType="TINYINT" property="isValidated" />
+    <result column="credit_line" jdbcType="DECIMAL" property="creditLine" />
+    <result column="own_id" jdbcType="INTEGER" property="ownId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="channel_id" jdbcType="TINYINT" property="channelId" />
+    <result column="service_id" jdbcType="SMALLINT" property="serviceId" />
+    <result column="image_url" jdbcType="VARCHAR" property="imageUrl" />
+    <result column="country" jdbcType="SMALLINT" property="country" />
+    <result column="serialnumber" jdbcType="VARCHAR" property="serialnumber" />
+    <result column="addresshome" jdbcType="VARCHAR" property="addresshome" />
+    <result column="addressnow" jdbcType="VARCHAR" property="addressnow" />
+    <result column="realname" jdbcType="VARCHAR" property="realname" />
+    <result column="addressDesc" jdbcType="VARCHAR" property="addressdesc" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="hobbies" jdbcType="VARCHAR" property="hobbies" />
+    <result column="last_send_style" jdbcType="TINYINT" property="lastSendStyle" />
+    <result column="level_type" jdbcType="TINYINT" property="levelType" />
+    <result column="level_id" jdbcType="VARCHAR" property="levelId" />
+    <result column="total" jdbcType="DECIMAL" property="total" />
+    <result column="user_code" jdbcType="VARCHAR" property="userCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, email, user_name, password, question, answer, sex, birthday, user_money, 
+    frozen_money, pay_points, rank_points, address_id, reg_time, last_login, last_time, 
+    last_ip, visit_count, user_rank, is_special, salt, parent_id, flag, alias, msn, qq, 
+    office_phone, home_phone, mobile_phone, is_validated, credit_line, own_id, open_id, 
+    channel_id, service_id, image_url, country, serialnumber, addresshome, addressnow, 
+    realname, addressDesc, status, hobbies, last_send_style, level_type, level_id, user_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_users
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from org_users
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.kjj.commserver.entity.user.OrgUsers" useGeneratedKeys="true">
+    insert into org_users (email, user_name, password, 
+      question, answer, sex, 
+      birthday, user_money, frozen_money, 
+      pay_points, rank_points, address_id, 
+      reg_time, last_login, last_time, 
+      last_ip, visit_count, user_rank, 
+      is_special, salt, parent_id, 
+      flag, alias, msn, qq, 
+      office_phone, home_phone, mobile_phone, 
+      is_validated, credit_line, own_id, 
+      open_id, channel_id, service_id, 
+      image_url, country, serialnumber, 
+      addresshome, addressnow, realname, 
+      addressDesc, status, hobbies, 
+      last_send_style,level_type,level_id, user_code)
+    values (#{email,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{question,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, 
+      #{birthday,jdbcType=VARCHAR}, #{userMoney,jdbcType=DECIMAL}, #{frozenMoney,jdbcType=DECIMAL}, 
+      #{payPoints,jdbcType=INTEGER}, #{rankPoints,jdbcType=INTEGER}, #{addressId,jdbcType=INTEGER}, 
+      #{regTime,jdbcType=TIMESTAMP}, #{lastLogin,jdbcType=TIMESTAMP}, #{lastTime,jdbcType=TIMESTAMP}, 
+      #{lastIp,jdbcType=VARCHAR}, #{visitCount,jdbcType=SMALLINT}, #{userRank,jdbcType=TINYINT}, 
+      #{isSpecial,jdbcType=TINYINT}, #{salt,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, 
+      #{flag,jdbcType=TINYINT}, #{alias,jdbcType=VARCHAR}, #{msn,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{officePhone,jdbcType=VARCHAR}, #{homePhone,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
+      #{isValidated,jdbcType=TINYINT}, #{creditLine,jdbcType=DECIMAL}, #{ownId,jdbcType=INTEGER}, 
+      #{openId,jdbcType=VARCHAR}, #{channelId,jdbcType=TINYINT}, #{serviceId,jdbcType=SMALLINT}, 
+      #{imageUrl,jdbcType=VARCHAR}, #{country,jdbcType=SMALLINT}, #{serialnumber,jdbcType=VARCHAR}, 
+      #{addresshome,jdbcType=VARCHAR}, #{addressnow,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{addressdesc,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{hobbies,jdbcType=VARCHAR}, 
+      #{lastSendStyle,jdbcType=TINYINT},#{levelType,jdbcType=TINYINT},#{levelId,jdbcType=VARCHAR},
+      #{userCode,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgUsers">
+    update org_users
+    <set>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="question != null">
+        question = #{question,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        answer = #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="userMoney != null">
+        user_money = #{userMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="frozenMoney != null">
+        frozen_money = #{frozenMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="payPoints != null">
+        pay_points = #{payPoints,jdbcType=INTEGER},
+      </if>
+      <if test="rankPoints != null">
+        rank_points = #{rankPoints,jdbcType=INTEGER},
+      </if>
+      <if test="addressId != null">
+        address_id = #{addressId,jdbcType=INTEGER},
+      </if>
+      <if test="regTime != null">
+        reg_time = #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLogin != null">
+        last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastTime != null">
+        last_time = #{lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastIp != null">
+        last_ip = #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="visitCount != null">
+        visit_count = #{visitCount,jdbcType=SMALLINT},
+      </if>
+      <if test="userRank != null">
+        user_rank = #{userRank,jdbcType=TINYINT},
+      </if>
+      <if test="isSpecial != null">
+        is_special = #{isSpecial,jdbcType=TINYINT},
+      </if>
+      <if test="salt != null">
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=TINYINT},
+      </if>
+      <if test="alias != null">
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="msn != null">
+        msn = #{msn,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="officePhone != null">
+        office_phone = #{officePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="homePhone != null">
+        home_phone = #{homePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="isValidated != null">
+        is_validated = #{isValidated,jdbcType=TINYINT},
+      </if>
+      <if test="creditLine != null">
+        credit_line = #{creditLine,jdbcType=DECIMAL},
+      </if>
+      <if test="ownId != null">
+        own_id = #{ownId,jdbcType=INTEGER},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="channelId != null">
+        channel_id = #{channelId,jdbcType=TINYINT},
+      </if>
+      <if test="serviceId != null">
+        service_id = #{serviceId,jdbcType=SMALLINT},
+      </if>
+      <if test="imageUrl != null">
+        image_url = #{imageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        country = #{country,jdbcType=SMALLINT},
+      </if>
+      <if test="serialnumber != null">
+        serialnumber = #{serialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="addresshome != null">
+        addresshome = #{addresshome,jdbcType=VARCHAR},
+      </if>
+      <if test="addressnow != null">
+        addressnow = #{addressnow,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="addressdesc != null">
+        addressDesc = #{addressdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="hobbies != null">
+        hobbies = #{hobbies,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSendStyle != null">
+        last_send_style = #{lastSendStyle,jdbcType=TINYINT},
+      </if>
+      <if test="levelType != null">
+        level_type = #{levelType,jdbcType=TINYINT},
+      </if>
+      <if test="levelId != null">
+        level_id = #{levelId,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null">
+        user_code = #{userCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgUsers">
+    update org_users
+    set email = #{email,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      question = #{question,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      user_money = #{userMoney,jdbcType=DECIMAL},
+      frozen_money = #{frozenMoney,jdbcType=DECIMAL},
+      pay_points = #{payPoints,jdbcType=INTEGER},
+      rank_points = #{rankPoints,jdbcType=INTEGER},
+      address_id = #{addressId,jdbcType=INTEGER},
+      reg_time = #{regTime,jdbcType=TIMESTAMP},
+      last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      last_time = #{lastTime,jdbcType=TIMESTAMP},
+      last_ip = #{lastIp,jdbcType=VARCHAR},
+      visit_count = #{visitCount,jdbcType=SMALLINT},
+      user_rank = #{userRank,jdbcType=TINYINT},
+      is_special = #{isSpecial,jdbcType=TINYINT},
+      salt = #{salt,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=TINYINT},
+      alias = #{alias,jdbcType=VARCHAR},
+      msn = #{msn,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      office_phone = #{officePhone,jdbcType=VARCHAR},
+      home_phone = #{homePhone,jdbcType=VARCHAR},
+      mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      is_validated = #{isValidated,jdbcType=TINYINT},
+      credit_line = #{creditLine,jdbcType=DECIMAL},
+      own_id = #{ownId,jdbcType=INTEGER},
+      open_id = #{openId,jdbcType=VARCHAR},
+      channel_id = #{channelId,jdbcType=TINYINT},
+      service_id = #{serviceId,jdbcType=SMALLINT},
+      image_url = #{imageUrl,jdbcType=VARCHAR},
+      country = #{country,jdbcType=SMALLINT},
+      serialnumber = #{serialnumber,jdbcType=VARCHAR},
+      addresshome = #{addresshome,jdbcType=VARCHAR},
+      addressnow = #{addressnow,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      addressDesc = #{addressdesc,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      hobbies = #{hobbies,jdbcType=VARCHAR},
+      last_send_style = #{lastSendStyle,jdbcType=TINYINT},
+      level_type = #{levelType,jdbcType=TINYINT},
+      level_id = #{levelId,jdbcType=VARCHAR},
+      user_code = #{userCode,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgUsersVo"> 
+	<result column="level_name" property="levelName" jdbcType="VARCHAR" />
+	<result column="discount" property="discount" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.user_id, 
+    t.email, 
+    t.user_name, 
+    t.password, 
+    t.question, 
+    t.answer, 
+    t.sex, 
+    t.birthday, 
+    t.user_money, 
+    t.frozen_money, 
+    t.pay_points, 
+    t.rank_points, 
+    t.address_id, 
+    t.reg_time, 
+    t.last_login, 
+    t.last_time, 
+    t.last_ip, 
+    t.visit_count, 
+    t.user_rank, 
+    t.is_special, 
+    t.salt, 
+    t.parent_id, 
+    t.flag, 
+    t.alias, 
+    t.msn, 
+    t.qq, 
+    t.office_phone, 
+    t.home_phone, 
+    t.mobile_phone, 
+    t.is_validated, 
+    t.credit_line, 
+    t.own_id, 
+    t.open_id, 
+    t.channel_id, 
+    t.service_id, 
+    t.image_url, 
+    t.country, 
+    t.serialnumber, 
+    t.addresshome, 
+    t.addressnow, 
+    t.realname, 
+    t.addressDesc, 
+    t.status, 
+    t.hobbies, 
+    t.last_send_style,
+    t.level_type,
+    t.level_id,
+    t.user_code,
+    oul.level_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_users t
+    left join org_user_level oul on t.level_id=oul.level_id
+    where t.user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="userId != null">
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="email != null">
+          and t.email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="userName != null">
+          and t.user_name = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="password != null">
+          and t.password = #{password,jdbcType=VARCHAR}
+      </if>
+      <if test="question != null">
+          and t.question = #{question,jdbcType=VARCHAR}
+      </if>
+      <if test="answer != null">
+          and t.answer = #{answer,jdbcType=VARCHAR}
+      </if>
+      <if test="sex != null">
+          and t.sex = #{sex,jdbcType=TINYINT}
+      </if>
+      <if test="birthday != null">
+          and t.birthday = #{birthday,jdbcType=VARCHAR}
+      </if>
+      <if test="userMoney != null">
+          and t.user_money = #{userMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="frozenMoney != null">
+          and t.frozen_money = #{frozenMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="payPoints != null">
+          and t.pay_points = #{payPoints,jdbcType=INTEGER}
+      </if>
+      <if test="rankPoints != null">
+          and t.rank_points = #{rankPoints,jdbcType=INTEGER}
+      </if>
+      <if test="addressId != null">
+          and t.address_id = #{addressId,jdbcType=INTEGER}
+      </if>
+      <if test="regTime != null">
+          and t.reg_time = #{regTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="lastLogin != null">
+          and t.last_login = #{lastLogin,jdbcType=TIMESTAMP}
+      </if>
+      <if test="lastTime != null">
+          and t.last_time = #{lastTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="lastIp != null">
+          and t.last_ip = #{lastIp,jdbcType=VARCHAR}
+      </if>
+      <if test="visitCount != null">
+          and t.visit_count = #{visitCount,jdbcType=SMALLINT}
+      </if>
+      <if test="userRank != null">
+          and t.user_rank = #{userRank,jdbcType=TINYINT}
+      </if>
+      <if test="isSpecial != null">
+          and t.is_special = #{isSpecial,jdbcType=TINYINT}
+      </if>
+      <if test="salt != null">
+          and t.salt = #{salt,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+          and t.parent_id = #{parentId,jdbcType=INTEGER}
+      </if>
+      <if test="flag != null">
+          and t.flag = #{flag,jdbcType=TINYINT}
+      </if>
+      <if test="alias != null">
+          and t.alias = #{alias,jdbcType=VARCHAR}
+      </if>
+      <if test="msn != null">
+          and t.msn = #{msn,jdbcType=VARCHAR}
+      </if>
+      <if test="qq != null">
+          and t.qq = #{qq,jdbcType=VARCHAR}
+      </if>
+      <if test="officePhone != null">
+          and t.office_phone = #{officePhone,jdbcType=VARCHAR}
+      </if>
+      <if test="homePhone != null">
+          and t.home_phone = #{homePhone,jdbcType=VARCHAR}
+      </if>
+      <if test="mobilePhone != null">
+          and t.mobile_phone = #{mobilePhone,jdbcType=VARCHAR}
+      </if>
+      <if test="isValidated != null">
+          and t.is_validated = #{isValidated,jdbcType=TINYINT}
+      </if>
+      <if test="creditLine != null">
+          and t.credit_line = #{creditLine,jdbcType=DECIMAL}
+      </if>
+      <if test="ownId != null">
+          and t.own_id = #{ownId,jdbcType=INTEGER}
+      </if>
+      <if test="openId != null">
+          and t.open_id = #{openId,jdbcType=VARCHAR}
+      </if>
+      <if test="channelId != null">
+          and t.channel_id = #{channelId,jdbcType=TINYINT}
+      </if>
+      <if test="serviceId != null">
+          and t.service_id = #{serviceId,jdbcType=SMALLINT}
+      </if>
+      <if test="imageUrl != null">
+          and t.image_url = #{imageUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="country != null">
+          and t.country = #{country,jdbcType=SMALLINT}
+      </if>
+      <if test="serialnumber != null">
+          and t.serialnumber = #{serialnumber,jdbcType=VARCHAR}
+      </if>
+      <if test="addresshome != null">
+          and t.addresshome = #{addresshome,jdbcType=VARCHAR}
+      </if>
+      <if test="addressnow != null">
+          and t.addressnow = #{addressnow,jdbcType=VARCHAR}
+      </if>
+      <if test="realname != null">
+          and t.realname = #{realname,jdbcType=VARCHAR}
+      </if>
+      <if test="addressdesc != null">
+          and t.addressDesc = #{addressdesc,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null and status > 0 ">
+          and t.status = #{status,jdbcType=INTEGER}
+      </if>
+      <if test="hobbies != null">
+          and t.hobbies = #{hobbies,jdbcType=VARCHAR}
+      </if>
+      <if test="lastSendStyle != null">
+          and t.last_send_style = #{lastSendStyle,jdbcType=TINYINT}
+      </if>
+      <if test="levelType != null">
+          and t.level_type = #{levelType,jdbcType=TINYINT}
+      </if>
+      <if test="levelId != null">
+          and t.level_id = #{levelId,jdbcType=VARCHAR}
+      </if>
+      <if test="loginName != null">
+          and (t.email = #{loginName,jdbcType=VARCHAR} or t.mobile_phone = #{loginName,jdbcType=VARCHAR} or t.user_name = #{loginName,jdbcType=VARCHAR})
+      </if>
+      <if test="listUserQuery != null">
+		   <if test="listUserQuery.size() > 0">
+		    and (
+	    	t.user_name IN
+	    	<foreach collection="listUserQuery" index="index" item="item" open="(" separator="," close=")">
+	           	#{item}
+	          </foreach>
+	    	or t.user_id IN
+	    	<foreach collection="listUserQuery" index="index" item="item" open="(" separator="," close=")">
+	           	#{item}
+	           </foreach> 
+	    	or t.mobile_phone IN
+	    	<foreach collection="listUserQuery" index="index" item="item" open="(" separator="," close=")">
+	           	#{item}
+	          	</foreach>
+		   )
+	 	   </if>
+	 	   <if test="listUserQuery.size() == 0">
+	 	   and 1 = 0
+	 	   </if>
+	 </if>
+	 <if test="userNameLike != null and userNameLike != '' ">
+		  and t.user_name like concat('%',#{userNameLike,jdbcType=VARCHAR},'%')
+	 </if>
+	 <if test="emailLike != null and emailLike != '' ">
+		  and t.email like concat('%',#{emailLike,jdbcType=VARCHAR},'%')
+	 </if>
+	 <if test="mobileLike != null and mobileLike != '' ">
+		  and t.mobile_phone like concat('%',#{mobileLike,jdbcType=VARCHAR},'%')
+	 </if>
+	 <if test="regTimeStart != null and regTimeStart != ''">
+		  and t.reg_time &gt;= #{regTimeStart,jdbcType=TIMESTAMP}
+	 </if>
+	 <if test="regTimeEnd != null and regTimeEnd != ''">
+	      and t.reg_time &lt;= #{regTimeEnd,jdbcType=TIMESTAMP}
+	 </if>
+	 <if test="noEnterprise != null and noEnterprise != ''">
+	      and t.level_type != '2'
+	 </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.user_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.user_id) from org_users t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_users t
+    left join org_user_level oul on t.level_id=oul.level_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from org_users where user_id in (
+    select t.user_id from (select * from org_users) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectEnterpriseUser" parameterType="java.util.Map" resultMap="VoResultMap">
+    select t.*,ifnull(t0.total,0.0) total from org_users t left join org_user_consume t0 on t.user_id = t0.user_id 
+    left join org_user_level oul on t.level_id=oul.level_id
+    where t.user_id in (select t1.user_id from org_enterprise_user t1 where t1.enterprise_id =  #{enterpriseId,jdbcType=INTEGER})
+  </select>
+  <select id="selectDiscountAndPoint" parameterType="java.util.Map" resultMap="VoResultMap">
+    select ifnull(t.pay_points,0) pay_points,ifnull(oul.discount,100.00) discount from org_users t left join org_user_level oul on t.level_id = oul.level_id 
+    where t.user_id = #{userId,jdbcType=INTEGER}
+  </select>
+</mapper>

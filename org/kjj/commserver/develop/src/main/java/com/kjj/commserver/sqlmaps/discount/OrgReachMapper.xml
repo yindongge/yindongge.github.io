@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.discount.OrgReachMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.discount.OrgReach" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="reach_style" property="reachStyle" jdbcType="TINYINT" />
+    <result column="shop_type" property="shopType" jdbcType="TINYINT" />
+    <result column="product_type" property="productType" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_admin_id" property="createAdminId" jdbcType="SMALLINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, label, title, start_time, end_time, reach_style, shop_type, product_type, 
+    status, create_admin_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_reach
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_reach
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.discount.OrgReach" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_reach (name, label, title, 
+      start_time, end_time, reach_style, 
+      shop_type, product_type, status, 
+      create_admin_id, create_time)
+    values (#{name,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{reachStyle,jdbcType=TINYINT}, 
+      #{shopType,jdbcType=TINYINT}, #{productType,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
+      #{createAdminId,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.discount.OrgReach" >
+    update org_reach
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reachStyle != null" >
+        reach_style = #{reachStyle,jdbcType=TINYINT},
+      </if>
+      <if test="shopType != null" >
+        shop_type = #{shopType,jdbcType=TINYINT},
+      </if>
+      <if test="productType != null" >
+        product_type = #{productType,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createAdminId != null" >
+        create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.discount.OrgReach" >
+    update org_reach
+    set name = #{name,jdbcType=VARCHAR},
+      label = #{label,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      reach_style = #{reachStyle,jdbcType=TINYINT},
+      shop_type = #{shopType,jdbcType=TINYINT},
+      product_type = #{productType,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_reach t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="label != null" >
+          and t.label = #{label,jdbcType=VARCHAR}
+      </if>
+      <if test="title != null" >
+          and t.title = #{title,jdbcType=VARCHAR}
+      </if>
+      <if test="startTime != null" >
+          and t.start_time = #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+          and t.end_time = #{endTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="reachStyle != null" >
+          and t.reach_style = #{reachStyle,jdbcType=TINYINT}
+      </if>
+      <if test="shopType != null" >
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="productType != null" >
+          and t.product_type = #{productType,jdbcType=TINYINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null" >
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_reach t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_reach t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_reach where id in (
+    select t.id from (select * from org_reach) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.discount.aide.OrgReachVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.name, 
+    t.label, 
+    t.title, 
+    t.start_time, 
+    t.end_time, 
+    t.reach_style, 
+    t.shop_type, 
+    t.product_type, 
+    t.status, 
+    t.create_admin_id, 
+    t.create_time
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <if test="query4User != null and query4User" >
+      	and t.start_time &lt; now()
+		and t.end_time &gt; now()
+		and exists (
+				select 1 from org_discount_scope odsc where
+				odsc.type_id = 5
+				and odsc.discount_id = t.id
+				and odsc.scope = #{orgUsersSession.source,jdbcType=TINYINT}
+			)
+		and (
+				(t.shop_type = 3 and exists (
+					select 1 from org_discount_shop ods where
+					ods.type_id = 5
+					and ods.discount_id = t.id
+					and ods.shop_id is not null
+					and ods.shop_id = #{orgUsersSession.orgShop.shopId,jdbcType=INTEGER}
+				)) or (t.shop_type = 2 and exists (
+					select 1 from org_discount_shop odsh where
+					odsh.type_id = 5
+					and odsh.discount_id = t.id
+					and odsh.city_code is not null
+					and left(odsh.city_code,4) = left(#{orgUsersSession.orgShop.areaCode,jdbcType=VARCHAR},4)
+				)) or t.shop_type = 1
+			) 
+      </if>
+      <if test="goodsId != null" >
+       and (exists (
+				SELECT 1 FROM org_discount_product odp  where t.id=odp.discount_id and odp.type_id=5
+	           and (
+	           		(odp.goods_id=#{goodsId,jdbcType=INTEGER} and t.product_type=3 )
+					or  (
+							(odp.class_id=(select opi.cat_id from org_product_item opi where opi.goods_id=#{goodsId,jdbcType=INTEGER})
+							or odp.class_id=( select oc.class_parent  from org_class oc where class_id = (select opi.cat_id from org_product_item opi where opi.goods_id=#{goodsId,jdbcType=INTEGER}))	
+							) 
+							and t.product_type=2
+					)
+					
+		      )
+           )
+           or  t.product_type=1  
+        )
+      </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+   <select id="DBTime" resultType="java.util.Date">
+  	select now();
+  </select>
+</mapper>

@@ -1,0 +1,61 @@
+.listview_control{
+	overflow:hidden;
+	clear:both;
+	margin-bottom:20px;
+}
+.listview_r{
+	width:55%;
+	float:left;
+	text-align:left;
+	vertical-align: middle;
+}
+.listview_r img, .listview_l img{
+	width: 100%;
+	vertical-align: middle;
+}
+.listview_l{
+	width:44%;
+	float:left;
+	text-align:left;
+	vertical-align: middle;
+	font-size: 12px;
+}
+.y_th{
+	background:#ffe546;
+	font-size:14px;
+
+}
+.table_control{
+	width: 100%;
+	padding:10px;
+}
+.table_control .listview_r thead th.y_th{
+	text-align: center;
+	padding: 10px;
+}
+.table_control .listview_r tbody td{
+	text-align: center;
+	font-size: 12px;
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+.listfloor p{
+	line-height: 20px;
+	border-bottom: 1px solid #666;
+}
+@media screen and (min-width: 400px) {
+	.listfloor p{
+		font-size: 16px;
+	}
+	.table_control .listview_r thead th.y_th{
+		text-align: center;
+		padding: 10px;
+		font-size: 19px;
+	}
+	.table_control .listview_r tbody td{
+		text-align: center;
+		font-size: 16px;
+		border: 1px solid #ddd;
+		padding: 5px;
+	}
+}

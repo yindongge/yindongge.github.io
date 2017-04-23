@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" media="screen" />
+<link href="../css/modal.css" rel="stylesheet" type="text/css" />
+<link href="../css/tab.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="../css/regin.css" rel="stylesheet" type="text/css" />
+<link href="../css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+
+
+
+		<style type="text/css">
+
+
+		/* 本例子css */
+.bottom_block_item .switch_btn{
+    z-index: 300;
+}
+.bottom_block_item .switch_btn a{
+	height: 60px;
+    width: 28px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    background: #333;
+    margin-top: -30px;
+}
+.bottom_block_item .switch_btn a.next{
+	right: 0px;
+	background: url(../img/slideright.png) no-repeat center;
+}
+.bottom_block_item .switch_btn a.prev{
+	left: 0px;
+	background: url(../img/sliderleft.png) no-repeat center;
+}
+.bottom_block_item .switch_btn .prevStop{ background-position:-60px 0; }
+.bottom_block_item .switch_btn .nextStop{ background-position:-60px -50px; }
+.bottom_block_item .superslide_wrapper ul{ overflow:hidden; zoom:1; }
+.bottom_block_item .superslide_wrapper ul li{ float:left; _display:inline; overflow:hidden; text-align:center;  }
+.bottom_block_item .superslide_wrapper ul li .pic{ text-align:center; }
+.bottom_block_item .superslide_wrapper ul li .pic img{ width:150px; height:90px; display:block;   }
+</style>
+
+	<div class="container">
+			<div class="bottom_block_item">
+				<div class="superslide_wrapper">
+				<ul class="picList">
+					<li>
+						<div class="pic">
+							<a href="#" target="_blank">
+								<img src="../img/e21.png" />
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="#" target="_blank">
+								<img src="../img/e22.png" />
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="#" target="_blank">
+								<img src="../img/e23.png" />
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="#" target="_blank">
+								<img src="../img/e24.png" />
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="#" target="_blank">
+								<img src="../img/e21.png" />
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="#" target="_blank">
+								<img src="../img/e22.png" />
+							</a>
+						</div>
+					</li>
+				</ul>
+				</div>
+					<div class="switch_btn">
+						<a class="next"></a>
+						<a class="prev"></a>
+					</div>
+				</div>
+			</div>
+
+
+	</div>
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/modal.js"></script>
+<script src="../js/common/me.js"></script>
+<script src="../js/common/addcart.js"></script>
+<script type="text/javascript" src="../js/common/superslide.js"></script>
+
+<script type="text/javascript">
+	jQuery(".bottom_block_item").slide({titCell:".switch_btn ul",mainCell:".superslide_wrapper ul",autoPage:true,effect:"left",autoPlay:false,vis:5,scroll:1,trigger:"click"});
+</script>
+
+</body>
+</html>

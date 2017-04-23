@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductPropertyValueMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductPropertyValue" >
+    <id column="property_value_id" property="propertyValueId" jdbcType="INTEGER" />
+    <result column="property_id" property="propertyId" jdbcType="INTEGER" />
+    <result column="property_value" property="propertyValue" jdbcType="VARCHAR" />
+    <result column="property_value1" property="propertyValue1" jdbcType="VARCHAR" />
+    <result column="property_value2" property="propertyValue2" jdbcType="VARCHAR" />
+    <result column="property_value3" property="propertyValue3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    property_value_id, property_id, property_value, property_value1, property_value2, 
+    property_value3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_property_value
+    where property_value_id = #{propertyValueId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_property_value
+    where property_value_id = #{propertyValueId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductPropertyValue" useGeneratedKeys="true" keyColumn="property_value_id" keyProperty="propertyValueId" >
+    insert into org_product_property_value (property_id, property_value, property_value1, 
+      property_value2, property_value3)
+    values (#{propertyId,jdbcType=INTEGER}, #{propertyValue,jdbcType=VARCHAR}, #{propertyValue1,jdbcType=VARCHAR}, 
+      #{propertyValue2,jdbcType=VARCHAR}, #{propertyValue3,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductPropertyValue" >
+    update org_product_property_value
+    <set >
+      <if test="propertyId != null" >
+        property_id = #{propertyId,jdbcType=INTEGER},
+      </if>
+      <if test="propertyValue != null" >
+        property_value = #{propertyValue,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyValue1 != null" >
+        property_value1 = #{propertyValue1,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyValue2 != null" >
+        property_value2 = #{propertyValue2,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyValue3 != null" >
+        property_value3 = #{propertyValue3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where property_value_id = #{propertyValueId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductPropertyValue" >
+    update org_product_property_value
+    set property_id = #{propertyId,jdbcType=INTEGER},
+      property_value = #{propertyValue,jdbcType=VARCHAR},
+      property_value1 = #{propertyValue1,jdbcType=VARCHAR},
+      property_value2 = #{propertyValue2,jdbcType=VARCHAR},
+      property_value3 = #{propertyValue3,jdbcType=VARCHAR}
+    where property_value_id = #{propertyValueId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductPropertyValueVo" extends="BaseResultMap" >
+ 	  <result column="property_name" property="propertyName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.property_value_id, 
+    t.property_id, 
+    t.property_value, 
+    t.property_value1, 
+    t.property_value2, 
+    t.property_value3
+    <if test="classId != null" >
+       ,opp.property_name
+     </if>
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_property_value t
+    where t.property_value_id = #{propertyValueId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="propertyValueId != null" >
+          and t.property_value_id = #{propertyValueId,jdbcType=INTEGER}
+      </if>
+      <if test="propertyId != null" >
+          and t.property_id = #{propertyId,jdbcType=INTEGER}
+      </if>
+      <if test="propertyValue != null" >
+          and t.property_value = #{propertyValue,jdbcType=VARCHAR}
+      </if>
+      <if test="propertyValue1 != null" >
+          and t.property_value1 = #{propertyValue1,jdbcType=VARCHAR}
+      </if>
+      <if test="propertyValue2 != null" >
+          and t.property_value2 = #{propertyValue2,jdbcType=VARCHAR}
+      </if>
+      <if test="propertyValue3 != null" >
+          and t.property_value3 = #{propertyValue3,jdbcType=VARCHAR}
+      </if>
+      <if test="propertyIds != null">
+	      <if test="propertyIds.size() > 0">
+	      	  and t.property_id in
+	      	  <foreach collection="propertyIds" index="index" item="item" open="(" separator="," close=")">
+	      	  	#{item}
+	      	  </foreach>
+	      </if>
+	      <if test="propertyIds.size() == 0">
+	      	  and 1=0
+	      </if>
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.property_value_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.property_value_id) from org_product_property_value t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_property_value t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_property_value where property_value_id in (
+    select t.property_value_id from (select * from org_product_property_value) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectVoByClassId" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from
+	org_product_property_value  t
+	left join org_product_type_link_product_property  optlpp on t.property_id=optlpp.property_id
+	left join  org_product_property opp on optlpp.property_id=opp.property_id
+	left join  org_class  oc on optlpp.product_type_id=oc.class_type
+	where oc.class_id=#{classId,jdbcType=INTEGER} and opp.property_input_type=2  
+  </select>
+</mapper>

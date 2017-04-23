@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopBindServiceMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopBindService" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="service_id" property="serviceId" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, shop_id, service_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_bind_service
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_bind_service
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopBindService" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_shop_bind_service (shop_id, service_id)
+    values (#{shopId,jdbcType=INTEGER}, #{serviceId,jdbcType=SMALLINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopBindService" >
+    update org_shop_bind_service
+    <set >
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="serviceId != null" >
+        service_id = #{serviceId,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopBindService" >
+    update org_shop_bind_service
+    set shop_id = #{shopId,jdbcType=INTEGER},
+      service_id = #{serviceId,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopBindServiceVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.shop_id, 
+    t.service_id
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_bind_service t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="serviceId != null" >
+          and t.service_id = #{serviceId,jdbcType=SMALLINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_shop_bind_service t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_bind_service t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_bind_service where id in (
+    select t.id from (select * from org_shop_bind_service) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

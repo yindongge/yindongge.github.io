@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script src="js/swiper3.1.0.min.js"></script>
+<script src="js/me.js"></script>
+<script src="js/iscroll.js"></script>
+</head>
+
+<body >
+	<div class="box padding-top  box-height-fixed box-gray">
+		<header class="header fixed">
+			<div class="indexhead">
+				<div class="indexhead_content ">
+					<div class="indexhead-overflow">
+						<span class="po"></span>
+						<span>自提点：三里屯SOHO店</span>
+						<span class="down"></span>
+					</div>
+				</div>
+			</div>
+		</header>
+	<!-- end header -->
+	<!-- <div class="fastbuy-title">
+		<a class="fastbuy-name"><img src="images/a.png" alt=""></a>
+		<div class="fastbuy-content-r">
+			<p>快捷健超市连锁（永安里店）</p>
+			<p>
+			<span>起送<i>￥0</i></span>
+			<span>配送<i>￥0</i></span>
+			<span>送达<i>一小时内</i></span>
+			</p>
+			<div class="scroll-header">
+				<div class="icon-scroll"><span class="voiceion"></span></div>
+				<div class="scroll-content"><h5>此处滚动此处</h5></div>
+			</div>
+
+
+		</div>
+	</div> -->
+	<!-- buy titele -->
+<!-- 	<div class="area third">
+		<a class="a on">商品介绍<span class="linebottom"></span></a>
+		<a class="a">商品评价<span class="linebottom"></span></a>
+		<a class="a">商品咨询<span class="linebottom"></span></a>
+	</div> -->
+<!-- buy nav -->
+	<div class="fastbuy">
+		<div id="wrapper1">
+			<div class="buy_left category_left">
+			<div class="scroll-controler">
+				<a ><span class="span1"></span>全部商品</a>
+				<div class="a-classfiy-buy">
+					<a ><span class="span2"></span>休闲零食<i class="downicon4"></i></a>
+					<ul class="a-classfiy-list">
+						<li>膨化食品</li>
+						<li class="on">膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+					</ul>
+				</div>
+				<div class="a-classfiy-buy">
+					<a  class="on"><span class="span3"></span>酒水饮料<i class="downicon4"></i></a>
+					<ul class="a-classfiy-list">
+						<li>膨化食品</li>
+						<li class="on">膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+					</ul>
+				</div>
+				<div class="a-classfiy-buy">
+					<a  class="on"><span class="span4"></span>主食快餐<i class="downicon4"></i></a>
+					<ul class="a-classfiy-list">
+						<li>膨化食品</li>
+						<li class="on">膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+					</ul>
+				</div>
+				<div class="a-classfiy-buy">
+					<a  class="on"><span class="span5"></span>办公用品<i class="downicon4"></i></a>
+					<ul class="a-classfiy-list">
+						<li>膨化食品</li>
+						<li class="on">膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+					</ul>
+				</div>
+				<div class="a-classfiy-buy">
+					<a  class="on"><span class="span6"></span>个人护理<i class="downicon4"></i></a>
+					<ul class="a-classfiy-list">
+						<li>膨化食品</li>
+						<li class="on">膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+					</ul>
+				</div>
+				<div class="a-classfiy-buy">
+					<a  class="on"><span class="span7"></span>粮油调料<i class="downicon4"></i></a>
+					<ul class="a-classfiy-list">
+						<li>膨化食品</li>
+						<li class="on">膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+						<li>膨化食品</li>
+					</ul>
+				</div>
+
+
+
+
+			</div>
+			</div>
+		</div>
+	<!-- wrapper -->
+	<div id="wrapper">
+		<div class="buy_right">
+			<div class="buyalllist">
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span class="jiaobiao1"></span>
+						<span class="jiaobiao2"></span>
+						<!-- 上边的两个角标  -->
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠3元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity" style="width:27px;">
+							<span class="plus"></span>
+
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠0元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity">
+							<span class="plus"></span>
+							<span class="num">1</span>
+							<span class="reduce"></span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="no-guide">无货</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠30元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+					<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+					<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+				<div class="buylist">
+					<div class="buylist_img">
+						<a><img src="images/3.jpg" alt=""></a>
+						<span></span>
+					</div>
+					<div class="buylist-text">
+						<div class="buylist-title">皓杨男装 秋冬2014春夏款新品男装</div>
+						<div class="buylist-youhui"><span>已优惠300元</span></div>
+						<div class="buylist-price">
+							<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+						</div>
+						<div class="add-quantity w_60">
+							<span class="guige">选择规格</span>
+						</div>
+					</div>
+				</div>
+
+				<!--  -->
+			</div>
+		</div>
+	</div>
+	<!-- wrapper -->
+	</div>
+	</div>
+	<!-- end box -->
+<!-- 加载详情页面 -->
+<div class="tranform-main hide">
+	<div class="swiper-container swipecontrol">
+			<div class="chazi5"></div>
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><a><img src="images/p17.jpg"></a></div>
+		        <div class="swiper-slide"><a><img src="images/p17.jpg"></a></div>
+		        <div class="swiper-slide"><a><img src="images/p17.jpg"></a></div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+	</div>
+	<div class="tansfrom-content">
+		<div class="transform-title same-padding15">
+			<h5 class="h5-title">西红柿接单饭</h5>
+			<p class="gray-p">已售8000分</p>
+			<span class="red"><i class="rmb">￥</i>122</span>
+			<div class="add-quantity">
+				<span class="plus"></span>
+				<span class="num">1</span>
+				<span class="reduce"></span>
+			</div>
+		</div>
+		<div class="transform-detail same-padding15">
+			<h5 class="h5-title">商品详情</h5>
+			<p class="t-d-p">12121222</p>
+		</div>
+		<div class="transform-list same-padding15">
+			<h5 class="h5-title">商品详情</h5>
+			<div class="assess ">
+			<div class="assess-list">
+				<div class="name name-control">
+					<div class="myname">Lijianjjunlio </div>
+					<div class="star control">
+						<a class="yellowicon"></a>
+						<a class="yellowicon"></a>
+						<a></a>
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			</div>
+			<div class="assess-list">
+				<div class="name name-control">
+					<div class="myname">Lijianjjunlio </div>
+					<div class="star control">
+						<a class="yellowicon"></a>
+						<a class="yellowicon"></a>
+						<a></a>
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			</div>
+			<div class="assess-list">
+				<div class="name name-control">
+					<div class="myname">Lijianjjunlio </div>
+					<div class="star control">
+						<a class="yellowicon"></a>
+						<a class="yellowicon"></a>
+						<a></a>
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			</div>
+
+		</div>
+		</div>
+	</div>
+</div>
+<!-- 加载详情页面-->
+<div class="mask hide"></div>
+<!-- 遮罩 -->
+<div class="alertall">
+	<div class="footerbar precent20">
+		<a href="#" >
+			<div class="iconfoot foot1 "></div>
+			<div class="iconfoottext">首页</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot2"></div>
+			<div class="iconfoottext">快捷购</div>
+		</a>
+		<a href="#"  >
+			<div class="iconfoot foot3"><span  class="redcount">19</span></div>
+			<div class="iconfoottext">购物车</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot4"></div>
+			<div class="iconfoottext">类目</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot5"></div>
+			<div class="iconfoottext">我的</div>
+		</a>
+	</div>
+<!-- 底部导航 -->
+	<!-- <div class="fixedshopcar gray">
+
+		<div class="shopcarnav">
+			<a href="#" class="pay-a">去结算</a>
+			<span class="pricespecial"><i class="weiruan">￥</i>共10000元</span>
+		</div>
+		<div class="car-circle">
+			<i>12</i>
+		</div>
+	</div> -->
+	<!-- 底部导航 -->
+	<!-- 弹出1 -->
+	<!-- <div class="showinfo hide">
+		<div class="buyalllist nopadding">
+			<div class="buylist">
+				<div class="buylist_img">
+					<a><img src="images/3.jpg" alt=""></a>
+					<span></span>
+				</div>
+				<div class="buylist-text">
+					<div class="buylist-title bigfont">皓杨男装 秋冬2014春夏款新品男装</div>
+					<div class="buylist-youhui"><span>已优惠30元</span></div>
+					<div class="buylist-price">
+						<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="select">
+			<h3>颜色</h3>
+			<div class="samelist colorlist">
+				<a href="#" class="on">红色</a>
+				<a href="#">黑色</a>
+				<a href="#">粉红色</a>
+			</div>
+			<h3>容量</h3>
+			<div class="samelist capacity">
+				<a href="#" class="on">红色</a>
+				<a href="#">黑色</a>
+				<a href="#">粉红色</a>
+			</div>
+			<h3>数量</h3>
+			<div class="addnum">
+				<div class="and">
+					<a  class="plus1"></a>
+					<a  class="num1">12</a>
+					<a class="reduce1"></a>
+					<a class="go">确定</a>
+				</div>
+			</div>
+		</div>
+		<div class="close"></div>
+	</div> -->
+	<!-- 弹出1 -->
+	<!-- 弹出2 -->
+	<div class="showinfo h_300 hide">
+		<ul class="infoul">
+			<li>
+				<span class="info_title">越来越多的很香椿222222</span>
+				<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+				<div class="add-quantity specialthis">
+					<span class="plus"></span>
+					<span class="num">1</span>
+					<span class="reduce"></span>
+				</div>
+			</li>
+			<li>
+				<span class="info_title">越来越多的很香椿</span>
+				<span class="yellow-price"><i class="weiruan">￥</i>12.00</span>
+				<div class="add-quantity specialthis">
+					<span class="plus"></span>
+					<span class="num">1</span>
+					<span class="reduce"></span>
+				</div>
+			</li>
+			<li>
+				<span class="info_title">越来越多的很香椿</span>
+				<span class="yellow-price"><i class="rmb">￥</i>12.00</span>
+				<div class="add-quantity specialthis">
+					<span class="plus"></span>
+					<span class="num">1</span>
+					<span class="reduce"></span>
+				</div>
+			</li>
+		</ul>
+		<div class="car-circle">
+			<i>12</i>
+		</div>
+	</div>
+	<!-- 弹出2 -->
+</div>
+<!-- 小按钮 -->
+<div class="backhome">
+	<div class="touchback">	</div>
+	<div class="touchlist">
+		<a href="" class="sideone"></a>
+		<a href="" class="sidetwo"></a>
+		<a href="" class="sidesecond"></a>
+		<a  class="sidefour"></a>
+	</div>
+</div>
+<!-- 小按钮 -->
+<script type="text/javascript">
+	$(function(){
+		var h=window.innerHeight-90;
+	 	$('.buy_left').css({"minHeight":h});
+	})
+</script>
+<script>
+ var myscroll,myscroll1;
+
+function loaded(){
+	setTimeout(function(){
+		  myscroll=new iScroll("wrapper",{
+			hScrollbar: false,
+				vScrollbar: false,
+				y:0,
+				hScroll:false,
+				checkDOMChanges:true
+		  });
+	},100)
+
+		setTimeout(function(){
+		  myscroll=new iScroll("wrapper1",{
+			hScrollbar: false,
+				vScrollbar: false,
+				y:0,
+				hScroll:false,
+				checkDOMChanges:true
+		  });
+	},100)
+
+ }
+ 　
+ window.addEventListener("load",loaded,false);
+</script>
+	 <script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay:2000,
+    observer:true,
+    observeParents:true,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+	initialSlide:0,
+
+  })
+  </script>
+
+</body>
+</html>

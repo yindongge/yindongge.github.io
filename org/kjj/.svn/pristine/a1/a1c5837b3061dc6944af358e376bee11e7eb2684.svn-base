@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<link rel="stylesheet" type="text/css" href="../css/weixin.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper3.1.0.min.css">
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/swiper3.1.0.min.js"></script>
+<script src="../js/common/me.js"></script>
+<script type="text/javascript" src="../js/common/addcart.js"></script>
+</head>
+<body >
+	<div class="box box-gray">
+		<header class="header">
+			<div class="head-content">抽奖记录</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+	<div class="dingdan-wrapper">
+		<div class="record-list">
+			<div class="rd_btn">去领取</div>
+			<div class="rd_item">
+				<div class="rd-left">
+					状态：
+				</div>
+				<div class="rd-right">
+					<span class="red">已领取，未领取，已过期</span>
+				</div>
+			</div>
+			<div class="rd_item">
+				<div class="rd-left">
+					抽奖号：
+				</div>
+				<div class="rd-right">
+					11111111111
+				</div>
+			</div>
+			<div class="rd_item">
+				<div class="rd-left">
+					过期时间：
+				</div>
+				<div class="rd-right">
+					2016-08-09
+				</div>
+			</div>
+			<div class="rd_mix">
+				<div class="rd_img"><img src= "../images/p14.jpg" alt=""></div>
+				<div class="rd_text">
+					<p class="rd_title">商品名称商品标题商品名称商品标题商品名称商品标题商品</p>
+					<p class="rd_date">2015-07-07 15:15:15</p>
+				</div>
+			</div>
+			<div class="rd_mix">
+				<div class="rd_img"><img src= "../images/p14.jpg" alt=""></div>
+				<div class="rd_text">
+					<p class="rd_title">商品名称商品标题商品名称商品标题商品名称商品标题商品</p>
+					<p class="rd_date">2015-07-07 15:15:15</p>
+				</div>
+			</div>
+		</div>
+		<div class="record-list">
+			<div class="rd_btn">去领取</div>
+			<div class="rd_item">
+				<div class="rd-left">
+					状态：
+				</div>
+				<div class="rd-right">
+					<span class="red">已领取，未领取，已过期</span>
+				</div>
+			</div>
+			<div class="rd_item">
+				<div class="rd-left">
+					抽奖号：
+				</div>
+				<div class="rd-right">
+					<span class="red">11111111111</span>
+				</div>
+			</div>
+			<div class="rd_item">
+				<div class="rd-left">
+					过期时间：
+				</div>
+				<div class="rd-right">
+					2016-08-09
+				</div>
+			</div>
+			<div class="rd_mix">
+				<div class="rd_img"><img src= "../images/p14.jpg" alt=""></div>
+				<div class="rd_text">
+					<p class="rd_title">商品名称商品标题商品名称商品标题商品名称商品标题商品</p>
+					<p class="rd_date">2015-07-07 15:15:15</p>
+				</div>
+			</div>
+			<div class="rd_mix">
+				<div class="rd_img"><img src= "../images/p14.jpg" alt=""></div>
+				<div class="rd_text">
+					<p class="rd_title">商品名称商品标题商品名称商品标题商品名称商品标题商品</p>
+					<p class="rd_date">2015-07-07 15:15:15</p>
+				</div>
+			</div>
+		</div>
+		<!-- 空的状态 -->
+		<div class="rd-empty">
+			<p class="p_f">目前没有抽奖记录</p>
+		</div>
+	</div>
+	<!-- 结束订单详情 -->
+	<footer class="footer">
+		<img src="../images/footer.png" alt="">
+	</footer>
+	</div>
+	<!-- end box -->
+
+</body>
+</html>

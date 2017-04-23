@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+
+</head>
+<body>	
+
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">店铺</a></li>
+		<li ><a href="#">店铺管理</a></li>
+		<li class="active">新增店铺</li>
+	</ul>
+	
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">店铺管理</div>
+		<div class="panel-body">
+					<form class="form-horizontal media-control">
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >店铺名称：</label>	
+						<div class="col-sm-9">
+							<input type="text" class="form-control"></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >店铺编号:</label>	
+						<div class="col-sm-9">
+							<input type="text" class="form-control"></input>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >所在区域:</label>	
+						<div class="col-sm-3">
+							<select class='form-control'>
+								<option>选择省或者市</option>
+								<option>河北省</option>
+								<option>天津市</option>
+							</select>
+							
+						</div>
+						<div class="col-sm-3">
+							<select class='form-control'>
+								<option>请选择市</option>
+								<option>石家庄</option>
+								<option>衡水</option>
+								<option>沧州</option>
+								<option>廊坊</option>
+							</select>
+							
+						</div>
+						<div class="col-sm-3">
+							<select class='form-control'>
+								<option>请选择区或县</option>
+								<option>桥东</option>
+								<option>桥西</option>
+								<option>请选择品牌</option>
+							</select>
+							
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >口味：</label>	
+						<div class="col-sm-9">
+							<div class="row margin-left">
+								<div class="col-sm-1">
+									<div class="form-group">
+										<input  type="text" class="form-control"></input>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<input  type="text" class="form-control"></input>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<input  type="text" class="form-control"></input>
+									</div>
+								</div>
+							</div>
+							<div class="row margin-left">
+								<div class="col-sm-1">
+									<div class="form-group">
+										<input  type="text" class="form-control"></input>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<input  type="text" class="form-control"></input>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<input  type="text" class="form-control"></input>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >规格：</label>	
+						<div class="col-sm-9">
+							<p>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										咖啡
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										免费WIFI
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										免费上网
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										后备箱服务
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										微波加热
+									</input>				
+								</label>	
+							</p>
+						</div>	
+							
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >配送范围:</label>	
+						<div class="col-sm-9">
+							<div class="row margin-left">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<input type="text" class="form-control"></input>
+									</div>									
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<button type="button" class="btn btn-default btn-black">添加</button>
+									</div>
+									
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-8">
+									<ul class="list-group">
+								
+									   <li class="list-group-item">
+									   <div class="list-group-left">
+									   		<span class="list-content-span">世贸天阶国际天梯</span>
+										   	<input type="text" class="form-control widthme">
+										 </div>
+										  	
+										 <div class="list-group-right"> 
+											<span class="badge reversebadge bg2">编辑</span>
+										    <span class="badge reversebadge bg2">删除</span>
+										    <span class="badge reversebadge bg1">取消</span>
+										    <span class="badge reversebadge bg1 btn-danger">确定</span>
+										   </div>
+									  </li>
+								
+								<li class="list-group-item">
+									  	<span class="list-content-span">世贸天阶国际天梯</span>
+									    <span class="badge reversebadge bg2">编辑</span>
+									    <span class="badge reversebadge bg2">删除</span>
+									    <span class="badge reversebadge bg1">取消</span>
+									    <span class="badge reversebadge bg1">确定</span>
+									   	<input type="text" class="form-control widthme">
+									  </li>
+								<li class="list-group-item">
+									  	<span class="list-content-span">世贸天阶国际天梯</span>
+									    <span class="badge reversebadge bg2">编辑</span>
+									    <span class="badge reversebadge bg2">删除</span>
+									    <span class="badge reversebadge bg1">取消</span>
+									    <span class="badge reversebadge bg1">确定</span>
+									   	<input type="text" class="form-control widthme">
+									  </li>
+								
+
+									   <li class="list-group-item">
+									  	<span class="list-content-span">世贸天阶国际天梯</span>
+									    <span class="badge reversebadge bg2">编辑</span>
+									    <span class="badge reversebadge bg2">删除</span>
+									    <span class="badge reversebadge bg1">取消</span>
+									    <span class="badge reversebadge bg1">确定</span>
+									   	<input type="text" class="form-control widthme">
+									  </li><li class="list-group-item">
+									  	<span class="list-content-span">世贸天阶国际天梯</span>
+									    <span class="badge reversebadge bg2">编辑</span>
+									    <span class="badge reversebadge bg2">删除</span>
+									    <span class="badge reversebadge bg1">取消</span>
+									    <span class="badge reversebadge bg1">确定</span>
+									   	<input type="text" class="form-control widthme">
+									  </li>
+									   <li class="list-group-item">
+									  	<span class="list-content-span">世贸天阶国际天梯</span>
+									    <span class="badge reversebadge bg2">编辑</span>
+									    <span class="badge reversebadge bg2">删除</span>
+									    <span class="badge reversebadge bg1">取消</span>
+									    <span class="badge reversebadge bg1">确定</span>
+									   	<input type="text" class="form-control widthme">
+									  </li>
+									</ul>
+								</div>
+								
+								
+							</div>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">配送说明：</label>
+						
+							<div class="col-sm-6">
+								<textarea rows="5" style="width:100%">111</textarea>
+							</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">配送时间：</label>
+						<div class="col-sm-8">
+							<div class="col-sm-4">
+								<label class="col-sm-4 control-label ">上午：</label>
+								<div class="col-sm-8">
+									<div class="form-group text-length">
+										<input type="text"  >	
+										-
+										<input type="text" >						
+									</div>								
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<label class="col-sm-4 control-label">下午：</label>
+								<div class="col-sm-8">
+									<div class="form-group text-length">
+										<input type="text"  >
+										-	
+										<input type="text" >						
+									</div>								
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<label class="col-sm-4 control-label">晚上：</label>
+								<div class="col-sm-8">
+									<div class="form-group text-length">
+										<input type="text"  >	
+										-
+										<input type="text" >						
+									</div>								
+								</div>
+							</div>
+
+															
+						</div>
+					</div>	
+					<div class="form-group">
+						<label class="col-sm-2 control-label">营业时间：</label>
+						<div class="col-sm-8">
+							<div class="col-sm-4">
+								<select class='form-control'>
+								<option>全部日期</option>
+								<option>仅工作日</option>								
+							</select>
+							</div>
+							<div class="col-sm-4">
+									<label class="col-sm-4 control-label ">时间：</label>
+								<div class="col-sm-8">
+									<div class="form-group text-length">
+										<input type="text"  >	
+										-
+										<input type="text" >						
+									</div>								
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<label class="checkbox">
+									<input type="checkbox">24小时营业
+								</label>
+							</div>													
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >补货周期：</label>	
+						<div class="col-sm-9">
+							<p>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周一
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周二
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周三
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周四
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周五
+									</input>				
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周六
+									</input>				
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										周日
+									</input>				
+								</label>									
+							</p>
+						</div>	
+							
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">地图标注：</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" rows="10"></textarea>
+						</div>
+					</div>
+				</form>
+		</div>
+	</div>
+	</br>
+		<div class="text-center">
+			<a type="button" class="btn btn-primary "  role="button" href="品牌管理.html">返回</a>
+			<button type="button" class="btn btn-primary " >确定</button>
+		</div>
+</div>
+</div>
+</body>
+</html>

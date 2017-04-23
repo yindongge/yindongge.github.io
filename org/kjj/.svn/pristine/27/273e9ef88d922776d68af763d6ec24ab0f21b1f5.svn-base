@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.ruixing.sqlmaps.user.BasvipMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.ruixing.entity.user.Basvip" >
+    <id column="MTEL" property="mtel" jdbcType="VARCHAR" />
+    <result column="VIPNAME" property="vipname" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="DECIMAL" />
+    <result column="SEX" property="sex" jdbcType="DECIMAL" />
+    <result column="BORN" property="born" jdbcType="TIMESTAMP" />
+    <result column="PAPERWORK" property="paperwork" jdbcType="VARCHAR" />
+    <result column="IDNO" property="idno" jdbcType="VARCHAR" />
+    <result column="ADDR" property="addr" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MTEL, VIPNAME, TYPE, SEX, BORN, PAPERWORK, IDNO, ADDR, TEL, EMAIL, FLAG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from BASVIP
+    where MTEL = #{mtel,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from BASVIP
+    where MTEL = #{mtel,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.ruixing.entity.user.Basvip" useGeneratedKeys="false" keyColumn="MTEL" keyProperty="mtel" >
+    insert into BASVIP (MTEL, VIPNAME, TYPE, SEX, 
+      BORN, PAPERWORK, IDNO, 
+      ADDR, TEL, EMAIL, FLAG
+      )
+    values (#{mtel,jdbcType=VARCHAR},#{vipname,jdbcType=VARCHAR}, #{type,jdbcType=DECIMAL}, #{sex,jdbcType=DECIMAL}, 
+      #{born,jdbcType=TIMESTAMP}, #{paperwork,jdbcType=VARCHAR}, #{idno,jdbcType=VARCHAR}, 
+      #{addr,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{flag,jdbcType=DECIMAL}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.ruixing.entity.user.Basvip" >
+    update BASVIP
+    <set >
+      <if test="vipname != null" >
+        VIPNAME = #{vipname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=DECIMAL},
+      </if>
+      <if test="born != null" >
+        BORN = #{born,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paperwork != null" >
+        PAPERWORK = #{paperwork,jdbcType=VARCHAR},
+      </if>
+      <if test="idno != null" >
+        IDNO = #{idno,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        ADDR = #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        TEL = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        FLAG = #{flag,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where MTEL = #{mtel,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.ruixing.entity.user.Basvip" >
+    update BASVIP
+    set VIPNAME = #{vipname,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=DECIMAL},
+      SEX = #{sex,jdbcType=DECIMAL},
+      BORN = #{born,jdbcType=TIMESTAMP},
+      PAPERWORK = #{paperwork,jdbcType=VARCHAR},
+      IDNO = #{idno,jdbcType=VARCHAR},
+      ADDR = #{addr,jdbcType=VARCHAR},
+      TEL = #{tel,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=DECIMAL}
+    where MTEL = #{mtel,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.ruixing.entity.user.aide.BasvipVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.MTEL, 
+    t.VIPNAME, 
+    t.TYPE, 
+    t.SEX, 
+    t.BORN, 
+    t.PAPERWORK, 
+    t.IDNO, 
+    t.ADDR, 
+    t.TEL, 
+    t.EMAIL, 
+    t.FLAG
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from BASVIP t
+    where t.MTEL = #{mtel,jdbcType=VARCHAR}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="mtel != null" >
+          and t.MTEL = #{mtel,jdbcType=VARCHAR}
+      </if>
+      <if test="vipname != null" >
+          and t.VIPNAME = #{vipname,jdbcType=VARCHAR}
+      </if>
+      <if test="type != null" >
+          and t.TYPE = #{type,jdbcType=DECIMAL}
+      </if>
+      <if test="sex != null" >
+          and t.SEX = #{sex,jdbcType=DECIMAL}
+      </if>
+      <if test="born != null" >
+          and t.BORN = #{born,jdbcType=TIMESTAMP}
+      </if>
+      <if test="paperwork != null" >
+          and t.PAPERWORK = #{paperwork,jdbcType=VARCHAR}
+      </if>
+      <if test="idno != null" >
+          and t.IDNO = #{idno,jdbcType=VARCHAR}
+      </if>
+      <if test="addr != null" >
+          and t.ADDR = #{addr,jdbcType=VARCHAR}
+      </if>
+      <if test="tel != null" >
+          and t.TEL = #{tel,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null" >
+          and t.EMAIL = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="flag != null" >
+          and t.FLAG = #{flag,jdbcType=DECIMAL}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.MTEL desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.MTEL) from BASVIP t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from BASVIP t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from BASVIP where MTEL in (
+    select t.MTEL from (select * from BASVIP) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

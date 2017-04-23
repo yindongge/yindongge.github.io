@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductInventoryClearMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductInventoryClear" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="shop_code" property="shopCode" jdbcType="VARCHAR" />
+    <result column="time_type" property="timeType" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, shop_code, time_type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_inventory_clear
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_inventory_clear
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductInventoryClear" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_product_inventory_clear (shop_code, time_type)
+    values (#{shopCode,jdbcType=VARCHAR}, #{timeType,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductInventoryClear" >
+    update org_product_inventory_clear
+    <set >
+      <if test="shopCode != null" >
+        shop_code = #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="timeType != null" >
+        time_type = #{timeType,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductInventoryClear" >
+    update org_product_inventory_clear
+    set shop_code = #{shopCode,jdbcType=VARCHAR},
+      time_type = #{timeType,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductInventoryClearVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.shop_code, 
+    t.time_type
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_inventory_clear t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopCode != null" >
+          and t.shop_code = #{shopCode,jdbcType=VARCHAR}
+      </if>
+      <if test="timeType != null" >
+          and t.time_type = #{timeType,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_product_inventory_clear t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_inventory_clear t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_inventory_clear where id in (
+    select t.id from (select * from org_product_inventory_clear) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <update id="updateMealInventoryNumZero" parameterType="java.util.Map" >
+    update org_product_inventory t set t.shop_amount = 0,t.update_time = now()  
+    where  t.shop_code in (select opic.shop_code from org_product_inventory_clear opic where opic.time_type = #{timeType,jdbcType=TINYINT})  
+	and  exists (select opi.goods_sn from org_product_item opi 
+    		left join org_class oc on opi.cat_id = oc.class_id 
+    		where t.goods_sn = opi.goods_sn 
+    		AND (oc.class_id=#{classId,jdbcType=INTEGER} OR oc.class_parent = #{classId,jdbcType=INTEGER}))
+  </update>
+  
+</mapper>

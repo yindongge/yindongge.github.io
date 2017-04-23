@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.consult.OrgConsultProblemMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.consult.OrgConsultProblem" >
+    <id column="consult_problem_id" property="consultProblemId" jdbcType="INTEGER"/>
+    <result column="consult_class_id" property="consultClassId" jdbcType="INTEGER"/>
+    <result column="consult_class_name" property="consultClassName" jdbcType="VARCHAR" />
+  	<result column="consult_type_id" property="consultTypeId" jdbcType="INTEGER" />
+    <result column="consult_type_name" property="consultTypeName" jdbcType="VARCHAR" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="consult_problem" property="consultProblem" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="reply_state" property="replyState" jdbcType="TINYINT" />
+    <result column="solve_state" property="solveState" jdbcType="TINYINT" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    consult_problem_id, consult_class_id, consult_class_name, consult_type_id, consult_type_name, 
+    goods_id, consult_problem, create_user, create_time, reply_state, solve_state, is_delete, 
+    is_active
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_consult_problem
+    where consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_consult_problem
+    where consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.consult.OrgConsultProblem" useGeneratedKeys="true" keyColumn="consult_problem_id" keyProperty="consultProblemId" >
+    insert into org_consult_problem (consult_class_id, consult_class_name, 
+      consult_type_id, consult_type_name, goods_id, 
+      consult_problem, create_user, create_time, 
+      reply_state, solve_state, is_delete, 
+      is_active)
+    values (#{consultClassId,jdbcType=INTEGER}, #{consultClassName,jdbcType=VARCHAR}, 
+      #{consultTypeId,jdbcType=INTEGER}, #{consultTypeName,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, 
+      #{consultProblem,jdbcType=VARCHAR}, #{createUser,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{replyState,jdbcType=TINYINT}, #{solveState,jdbcType=TINYINT}, #{isDelete,jdbcType=TINYINT}, 
+      #{isActive,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.consult.OrgConsultProblem" >
+    update org_consult_problem
+    <set >
+      <if test="consultClassId != null" >
+        consult_class_id = #{consultClassId,jdbcType=INTEGER},
+      </if>
+      <if test="consultClassName != null" >
+        consult_class_name = #{consultClassName,jdbcType=VARCHAR},
+      </if>
+      <if test="consultTypeId != null" >
+        consult_type_id = #{consultTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="consultTypeName != null" >
+        consult_type_name = #{consultTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="consultProblem != null" >
+        consult_problem = #{consultProblem,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyState != null" >
+        reply_state = #{replyState,jdbcType=TINYINT},
+      </if>
+      <if test="solveState != null" >
+        solve_state = #{solveState,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+    </set>
+    where consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.consult.OrgConsultProblem" >
+    update org_consult_problem
+    set consult_class_id = #{consultClassId,jdbcType=INTEGER},
+      consult_class_name = #{consultClassName,jdbcType=VARCHAR},
+      consult_type_id = #{consultTypeId,jdbcType=INTEGER},
+      consult_type_name = #{consultTypeName,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      consult_problem = #{consultProblem,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      reply_state = #{replyState,jdbcType=TINYINT},
+      solve_state = #{solveState,jdbcType=TINYINT},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      is_active = #{isActive,jdbcType=TINYINT}
+    where consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.consult.aide.OrgConsultProblemVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.consult_problem_id, 
+    t.consult_class_id, 
+    t.consult_class_name, 
+    t.consult_type_id, 
+    t.consult_type_name, 
+    t.goods_id, 
+    t.consult_problem, 
+    t.create_user, 
+    t.create_time, 
+    t.reply_state, 
+    t.solve_state, 
+    t.is_delete, 
+    t.is_active
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_consult_problem t
+    where t.consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="consultProblemId != null " >
+          and t.consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+      </if>
+      <if test="consultClassId != null and consultClassId > 0 " >
+          and t.consult_class_id = #{consultClassId,jdbcType=INTEGER}
+      </if>
+      <if test="consultClassName != null" >
+          and t.consult_class_name = #{consultClassName,jdbcType=VARCHAR}
+      </if>
+      <if test="consultTypeId != null and consultTypeId > 0 " >
+          and t.consult_type_id = #{consultTypeId,jdbcType=INTEGER}
+      </if>
+      <if test="consultTypeName != null" >
+          and t.consult_type_name = #{consultTypeName,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="consultProblem != null" >
+          and t.consult_problem = #{consultProblem,jdbcType=VARCHAR}
+      </if>
+      <if test="createUser != null" >
+          and t.create_user = #{createUser,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="replyState != null and replyState > 0 " >
+          and t.reply_state = #{replyState,jdbcType=TINYINT}
+      </if>
+      <if test="solveState != null and solveState > 0 " >
+          and t.solve_state = #{solveState,jdbcType=TINYINT}
+      </if>
+      <if test="isDelete != null" >
+          and t.is_delete = #{isDelete,jdbcType=TINYINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test=" consultProblemLike != null and consultProblemLike != ''">
+		  and t.consult_problem like concat('%',#{consultProblemLike},'%')
+	  </if>
+	  <if test="userNameLike != null and userNameLike  != ''">
+		  and ou.user_name like concat('%',#{userNameLike},'%')
+	  </if>
+	  <if test="goodsSnLike != null and goodsSnLike != ''">
+		  and opi.goods_sn  like concat('%',#{goodsSnLike},'%')
+	  </if>
+	  <if test="consultProblemIdLike != null and consultProblemIdLike != ''">
+		  and t.consult_problem_id  like concat('%',#{consultProblemIdLike},'%')
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.consult_problem_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.consult_problem_id) from org_consult_problem t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_consult_problem t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_consult_problem where consult_problem_id in (
+    select t.consult_problem_id from (select * from org_consult_problem) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <resultMap id="GoodsResultMap" type="com.kjj.commserver.entity.consult.aide.OrgConsultProblemGoodsVo" extends="VoResultMap" >
+   		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+   		<result column="consult_state_name" property="consultStateName" jdbcType="VARCHAR" />
+   		<result column="consult_state_name2" property="consultSolveStateName" jdbcType="VARCHAR" />
+   		<result column="consult_type_name" property="consultTypeName" jdbcType="VARCHAR" />
+   	<association property="orgProductItem" javaType="com.kjj.commserver.entity.goods.aide.OrgProductItemVo">
+	    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+	    <result column="goods_thumb" property="goodsThumb" jdbcType="VARCHAR" />
+	    <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Goods_Vo_List">
+  	 <include refid="Vo_Column_List" />,
+  	 opi.goods_name,
+     opi.goods_thumb,
+     opi.goods_sn,
+     ou.user_name,
+     ocs.consult_state_name,
+     ocs2.consult_state_name consult_state_name2,
+     oct.consult_type_name
+  </sql>
+  <select id="selectGoods" parameterType="java.util.Map" resultMap="GoodsResultMap">
+  	select 
+    <include refid="Goods_Vo_List" />
+    from org_consult_problem t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_users ou on t.create_user = ou.user_id
+    left join org_consult_state  ocs on t.reply_state = ocs.consult_state_id
+    left join org_consult_state ocs2 on t.solve_state=ocs2.consult_state_id
+    left join org_consult_type oct on t.consult_type_id = oct.consult_type_id
+    <include refid="Query_Where_Clause" />
+  </select>
+    <select id="selectCountGoods" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.consult_problem_id) from org_consult_problem t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_users ou on t.create_user = ou.user_id
+    left join org_consult_state  ocs on t.reply_state = ocs.consult_state_id
+    left join org_consult_state ocs2 on t.solve_state=ocs2.consult_state_id
+    left join org_consult_type oct on t.consult_type_id = oct.consult_type_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectByPrimaryKeyGoods" resultMap="GoodsResultMap" parameterType="java.lang.Integer" >
+    select 
+   <include refid="Goods_Vo_List" />
+    from org_consult_problem t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_users ou on t.create_user = ou.user_id
+    left join org_consult_state  ocs on t.reply_state = ocs.consult_state_id
+    left join org_consult_state ocs2 on t.solve_state=ocs2.consult_state_id
+    left join org_consult_type oct on t.consult_type_id = oct.consult_type_id
+    where consult_problem_id = #{consultProblemId,jdbcType=INTEGER}
+  </select>
+</mapper>

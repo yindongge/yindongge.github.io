@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script src="../js/common/add.js"></script>
+<script src="../js/common/layer/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>
+<div class="page-wrapper ">
+<div class="container-fluid">
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li><a href="#">运营</a></li>
+				<li><a href="#">促销管理</a></li>
+				<li class="active">满减满送</li>
+			</ul>
+			<div  class="bg-warning " style="padding:10px;">
+				<p><strong>备注：</strong></p>
+				<p>• 【一体化满减满送】由瑞星系统设置，线上可设定是否有效，如无效则线上不执行该满减活动；</p>
+				<p>• 【电商满减满送】是为线上独立设置的满减满送，线下不做同步；</p>
+				<p>•  电商满减满送权重高于一体化满减满送。</p>
+			</div>
+			<form class="form-inline">
+				<div class="well new_margin">
+					<div class="form-group">
+						<label>活动时间：</label>
+						<label>从</label>
+						<input type="text" class="form-control">
+						<label>到</label>
+						<input type="text" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>选择店铺：</label>
+						<input type="text" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="">活动状态</label>
+						<select name="" id="" class="form-control">
+							<option value="">全部</option>
+							<option value="">启用</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<button class="btn btn-success">搜索</button>
+					</div>
+				</div>
+			</form>
+			<!-- 切换 -->
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="width:30%;">
+			   <a href="#" class="btn btn-primary " role="button">一体化满减满送</a>
+			   <a href="#" class="btn btn-info" role="button">电商满减满送</a>
+		    </div>
+			<!-- 切换 -->
+			<div class="table-wrapper">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>活动名称</th>
+							<th>活动时间</th>
+							<th>活动状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>十一大促，部分商品5折起</td>
+							<td>2016-01-31 17:26:26 至 2016-03-31 00:00:00</td>
+							<td>有效</td>
+							<td>
+								<button class="btn btn-success btn-xs">启用</button>
+								<button class="btn btn-danger btn-xs">停用</button>
+								<button class="btn btn-info btn-xs">编辑</button>
+							</td>
+						</tr>
+						<tr>
+							<td>十一大促，部分商品5折起</td>
+							<td>2016-01-31 17:26:26 至 2016-03-31 00:00:00</td>
+							<td><span class="gray">无效</span></td>
+							<td>
+								<button class="btn btn-success btn-xs">启用</button>
+								<button class="btn btn-danger btn-xs">停用</button>
+								<button class="btn btn-info btn-xs">编辑</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<nav class="navbar navbar-default select-control">
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="到第几页">
+						</div>
+						<button type="submit" class="btn btn-default btn-info">确定</button>
+					</form>
+					<ul class="pagination pull-right">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						  </a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">.....</a></li>
+						<li><a href="#">15</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						  </a>
+						</li>
+					 </ul>
+					 <p class="navbar-text pull-right">共有200条记录 每页50条</p>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

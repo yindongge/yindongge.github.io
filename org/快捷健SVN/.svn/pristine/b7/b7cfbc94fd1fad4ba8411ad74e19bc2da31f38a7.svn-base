@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/load.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<title>车帮</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			   <li ><a href="#">会员管理</a></li>
+			  <li class="active">证件详情</li>
+			</ul>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="content">
+			<div class="table-wrapper text-left">
+				<!-- Single button -->
+				<div class="btn-group">
+					<button class="btn btn-info">基本信息</button>
+					<button class="btn btn-primary">证件信息</button>
+					<button class="btn btn-info">车辆信息</button>
+					<button class="btn btn-info">订单信息</button>
+					<button class="btn btn-info">财务信息</button>
+				</div>
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr class="info " >
+							<th colspan="6">身份信息</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>用户名：</td>
+							<td>lijianjunlove</td>
+							<td>手机：</td>
+							<td>189122121225</td>
+							<td>性别：</td>
+							<td>男</td>
+						</tr>
+						<tr>
+							<td>真实姓名：</td>
+							<td>lijianjunlove</td>
+							<td>邮箱：</td>
+							<td>大舍大得大师</td>
+							<td>注册时间：</td>
+							<td>201605121</td>
+						</tr>
+						<tr>
+							<td>状态：</td>
+							<td>正常</td>
+							<td>生日：</td>
+							<td>201605105</td>
+							<td>上次登录时间：</td>
+							<td>2015150215150215</td>
+						</tr>
+						<tr>
+							<td>兴趣爱好：</td>
+							<td>饮料</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+					<thead>
+						<tr class="info " >
+							<th colspan="6">地址信息</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>居住地：</td>
+							<td colspan="5"></td>
+						</tr>
+						<tr>
+							<td>所在区域：</td>
+							<td colspan="5"></td>
+						</tr>
+						<tr>
+							<td>详细地址：</td>
+							<td colspan="5"></td>
+						</tr>
+						<tr>
+							<td>家乡：</td>
+							<td colspan="5"></td>
+						</tr>
+						<tr>
+							<td>所在区域;</td>
+							<td colspan="5"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="buttoncenter"><button class="btn btn-default">返回</button></div>
+			</div>
+
+			<!-- 表单结束↑ -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

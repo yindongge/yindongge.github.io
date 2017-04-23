@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<link rel="stylesheet" type="text/css" href="../css/weixin.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper3.1.0.min.css">
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/swiper3.1.0.min.js"></script>
+<script src="../js/common/me.js"></script>
+<script src="../js/common/trigger.js"></script>
+<script type="text/javascript" src="../js/common/addcart.js"></script>
+</head>
+<body >
+	<div class="box box-gray">
+		<header class="header">
+			<div class="head-content">订单详情</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+	<div class="dingdan-wrapper">
+		<div class="list-detail">
+			<h5>您的订单已生成</h5>
+			<dl class="item-dingdan">商品订单24小时内未成功支付将自动取消，请尽快支付</dl>
+			<dl class="item-dingdan">
+				<dt>订单状态：</dt>
+				<dd ><span class="blue">未支付</span></dd>
+			</dl>
+			<dl class="item-dingdan">
+				<dt>订单编号：</dt>
+				<dd>123456789</dd>
+			</dl>
+			<dl class="item-dingdan">
+				<dt>下单时间：</dt>
+				<dd>2015.06.19</dd>
+			</dl>
+			<a class="btnsure" onclick="addConfrim()">去支付</a>
+			<div class="hidea">
+				<a class="bg-gray">申请取消订单</a>
+				<a class="bg-yellow">去支付</a>
+			</div>
+		</div>
+		<div class="list-detail ">
+			<dl class="item-dingdan">
+				<dt>总金额：</dt>
+				<dd><span class="red"><i class="rmb">￥</i>40.00</span>(在线支付)</dd>
+			</dl>
+			<dl class="item-dingdan">
+				<dt>收货地址：</dt>
+				<dd>987653411</dd>
+			</dl>
+				<dl class="item-dingdan">
+				<dt>收货人：</dt>
+				<dd>1223566</dd>
+			</dl>
+				<dl class="item-dingdan">
+				<dt>送货时间：</dt>
+				<dd>12348488787</dd>
+			</dl>
+				<dl class="item-dingdan">
+				<dt>发票信息：</dt>
+				<dd>个人</dd>
+			</dl>
+		</div>
+		<div class="list-detail ">
+			<div class="list-panel">
+				<span class="glyphicon glyphicon-star-empty"></span>	商品信息<span class="pull-right">总计一件商品</span>
+			</div>
+			<a class="listone" href="www.baidu.com">
+				<div class="leftimg">
+					<img src="../images/p14.jpg">
+				</div>
+				<div class="lefttext">
+					<p class="first-title">商天听这歌，竟然听得我心痒痒的(Ｔ▽Ｔ)忍不住想掉眼泪(ㄒoㄒ)题商商品标品</p>
+					<p class="red"><i class="rmb">￥</i>14.00</p>
+					<p><span >数量:1件</span></p>
+				</div>
+			</a>
+			<a class="listone" href="www.baidu.com">
+				<div class="leftimg">
+					<img src="../images/p14.jpg">
+				</div>
+				<div class="lefttext">
+					<p class="first-title">商天听这歌，竟然听得我心痒痒的(Ｔ▽Ｔ)忍不住想掉眼泪(ㄒoㄒ)题商商品标品</p>
+					<p class="red"><i class="rmb">￥</i>14.00</p>
+					<p><span >数量:1件</span></p>
+				</div>
+			</a>
+			<!-- 新增 -->
+			<div class="gray_bg_zeng" style="padding-left:0px">
+				<span>赠品可口可乐</span>
+				<span class="pull-right">x1</span>
+			</div>
+			<!-- 新增 -->
+			<div class="detail-price">
+				<p>配送费：+<span class="red"><i class="rmb">￥</i>15.00</span></p>
+				<p>实付：<span class="red"><i class="rmb">￥</i>15.00</span></p>
+			</div>
+		</div>
+	</div>
+	<!-- 结束订单详情 -->
+	<footer class="footer">
+		<img src="images/footer.png" alt="">
+	</footer>
+	</div>
+	<!-- add -->
+	<div class="trigger-box" style="display: block;">
+		<div class="trigger-showbox">
+			<div class="info-confrim text-cneter ">
+				<p class="info-c-title control-close">请输入提货码<span class="close"></span></p>
+				<p class="new_trigger"><input type="text"></p>
+				<p class="redtip">11111111111111111111111</p>
+				<div class="forget-box newforget_btn"><a href="" class="forget-password">确认</a></div>
+			</div>
+		</div>
+		<div class="trigger-cover"></div>
+	</div>
+</body>
+</html>

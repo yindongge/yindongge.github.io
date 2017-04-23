@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductLinkSalespecMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductLinkSalespec" >
+    <id column="goods_salespec_id" property="goodsSalespecId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="spec_id" property="specId" jdbcType="SMALLINT" />
+    <result column="spec_type_id" property="specTypeId" jdbcType="SMALLINT" />
+    <result column="spec_value" property="specValue" jdbcType="VARCHAR" />
+    <result column="spec_url" property="specUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    goods_salespec_id, goods_id, spec_id, spec_type_id, spec_value, spec_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_link_salespec
+    where goods_salespec_id = #{goodsSalespecId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_link_salespec
+    where goods_salespec_id = #{goodsSalespecId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductLinkSalespec" useGeneratedKeys="true" keyColumn="goods_salespec_id" keyProperty="goodsSalespecId" >
+    insert into org_product_link_salespec (goods_id, spec_id, spec_type_id, 
+      spec_value, spec_url)
+    values (#{goodsId,jdbcType=INTEGER}, #{specId,jdbcType=SMALLINT}, #{specTypeId,jdbcType=SMALLINT}, 
+      #{specValue,jdbcType=VARCHAR}, #{specUrl,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductLinkSalespec" >
+    update org_product_link_salespec
+    <set >
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="specId != null" >
+        spec_id = #{specId,jdbcType=SMALLINT},
+      </if>
+      <if test="specTypeId != null" >
+        spec_type_id = #{specTypeId,jdbcType=SMALLINT},
+      </if>
+      <if test="specValue != null" >
+        spec_value = #{specValue,jdbcType=VARCHAR},
+      </if>
+      <if test="specUrl != null" >
+        spec_url = #{specUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where goods_salespec_id = #{goodsSalespecId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductLinkSalespec" >
+    update org_product_link_salespec
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      spec_id = #{specId,jdbcType=SMALLINT},
+      spec_type_id = #{specTypeId,jdbcType=SMALLINT},
+      spec_value = #{specValue,jdbcType=VARCHAR},
+      spec_url = #{specUrl,jdbcType=VARCHAR}
+    where goods_salespec_id = #{goodsSalespecId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductLinkSalespecVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.goods_salespec_id, 
+    t.goods_id, 
+    t.spec_id, 
+    t.spec_type_id, 
+    t.spec_value, 
+    t.spec_url
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_link_salespec t
+    where t.goods_salespec_id = #{goodsSalespecId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="goodsSalespecId != null" >
+          and t.goods_salespec_id = #{goodsSalespecId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="specId != null" >
+          and t.spec_id = #{specId,jdbcType=SMALLINT}
+      </if>
+      <if test="specTypeId != null" >
+          and t.spec_type_id = #{specTypeId,jdbcType=SMALLINT}
+      </if>
+      <if test="specValue != null" >
+          and t.spec_value = #{specValue,jdbcType=VARCHAR}
+      </if>
+      <if test="specUrl != null" >
+          and t.spec_url = #{specUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="parentGoodsId != null">
+      	  and opi.parent_goods_id = #{parentGoodsId,jdbcType=INTEGER}
+      </if>
+      <if test="isDelete != null">
+      	  and opi.is_delete = #{isDelete,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.goods_salespec_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.goods_salespec_id) from org_product_link_salespec t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_link_salespec t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_link_salespec where goods_salespec_id in (
+    select t.goods_salespec_id from (select * from org_product_link_salespec) t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+	<select id="getSpecGroupByGoodsId" parameterType="int" resultMap="VoResultMap">
+		SELECT 
+		<include refid="Vo_Column_List" />
+		FROM org_product_link_salespec t
+		JOIN (SELECT * FROM org_product_item WHERE parent_goods_id= #{_parameter}) a ON t.goods_id = a.goods_id
+	</select>
+	<select id="getSpecGroupByItemId" parameterType="int" resultMap="VoResultMap">
+		SELECT 
+		<include refid="Vo_Column_List" />
+		FROM org_product_link_salespec t
+		JOIN (SELECT * FROM org_product_item WHERE goods_id= #{_parameter}) a ON t.goods_id = a.goods_id
+	</select>
+	<select id="getSpecTypeByItemId" parameterType="int" resultType="java.util.Map">
+		select DISTINCT CONCAT(CONVERT(t.spec_id,char),CONVERT('_',char),CONVERT(t.spec_type_id,char)) unionId,t.spec_value specValue ,t.spec_id specId,t.spec_type_id specTypeId
+		 from org_product_link_salespec t
+		 JOIN (SELECT * FROM org_product_item WHERE parent_goods_id= #{_parameter}) a ON t.goods_id = a.goods_id
+	</select>
+	
+</mapper>
+

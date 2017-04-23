@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgSaleSpecValueMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgSaleSpecValue" >
+    <id column="spec_value_id" property="specValueId" jdbcType="INTEGER" />
+    <result column="spec_id" property="specId" jdbcType="INTEGER" />
+    <result column="spec_value" property="specValue" jdbcType="VARCHAR" />
+    <result column="colour" property="colour" jdbcType="VARCHAR" />
+    <result column="is_active" property="isActive" jdbcType="CHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    spec_value_id, spec_id, spec_value, colour, is_active, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_sale_spec_value
+    where spec_value_id = #{specValueId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_sale_spec_value
+    where spec_value_id = #{specValueId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgSaleSpecValue" useGeneratedKeys="true" keyColumn="spec_value_id" keyProperty="specValueId" >
+    insert into org_sale_spec_value (spec_id, spec_value, colour, 
+      is_active, is_delete)
+    values (#{specId,jdbcType=INTEGER}, #{specValue,jdbcType=VARCHAR}, #{colour,jdbcType=VARCHAR}, 
+      #{isActive,jdbcType=CHAR}, #{isDelete,jdbcType=CHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgSaleSpecValue" >
+    update org_sale_spec_value
+    <set >
+      <if test="specId != null" >
+        spec_id = #{specId,jdbcType=INTEGER},
+      </if>
+      <if test="specValue != null" >
+        spec_value = #{specValue,jdbcType=VARCHAR},
+      </if>
+      <if test="colour != null" >
+        colour = #{colour,jdbcType=VARCHAR},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=CHAR},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=CHAR},
+      </if>
+    </set>
+    where spec_value_id = #{specValueId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgSaleSpecValue" >
+    update org_sale_spec_value
+    set spec_id = #{specId,jdbcType=INTEGER},
+      spec_value = #{specValue,jdbcType=VARCHAR},
+      colour = #{colour,jdbcType=VARCHAR},
+      is_active = #{isActive,jdbcType=CHAR},
+      is_delete = #{isDelete,jdbcType=CHAR}
+    where spec_value_id = #{specValueId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgSaleSpecValueVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.spec_value_id, 
+    t.spec_id, 
+    t.spec_value, 
+    t.colour, 
+    t.is_active, 
+    t.is_delete
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_sale_spec_value t
+    where t.spec_value_id = #{specValueId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="specValueId != null" >
+          and t.spec_value_id = #{specValueId,jdbcType=INTEGER}
+      </if>
+      <if test="specId != null" >
+          and t.spec_id = #{specId,jdbcType=INTEGER}
+      </if>
+      <if test="specValue != null" >
+          and t.spec_value = #{specValue,jdbcType=VARCHAR}
+      </if>
+      <if test="colour != null" >
+          and t.colour = #{colour,jdbcType=VARCHAR}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=CHAR}
+      </if>
+      <if test="isDelete != null" >
+          and t.is_delete = #{isDelete,jdbcType=CHAR}
+      </if>
+      <if test="saleSpecIds != null">
+	      <if test="saleSpecIds.size() > 0">
+	      	  and t.spec_id in
+	      	  <foreach collection="saleSpecIds" index="index" item="item" open="(" separator="," close=")">
+	      	  	#{item,jdbcType=INTEGER}
+	      	  </foreach>
+	      </if>
+	      <if test="saleSpecIds.size()== 0">
+	      	  and 1=0
+	      </if>
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.spec_value_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.spec_value_id) from org_sale_spec_value t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_sale_spec_value t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_sale_spec_value where spec_value_id in (
+    select t.spec_value_id from (select * from org_sale_spec_value) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

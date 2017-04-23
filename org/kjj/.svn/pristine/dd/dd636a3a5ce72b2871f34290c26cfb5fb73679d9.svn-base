@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.special.OrgSpecialLinkMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.special.OrgSpecialLink" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="special_id" property="specialId" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="image_path" property="imagePath" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="image_order" property="imageOrder" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, special_id, type, goods_id, url, image_path, title, image_order
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_special_link
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_special_link
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.special.OrgSpecialLink" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_special_link (special_id, type, goods_id, 
+      url, image_path, title, 
+      image_order)
+    values (#{specialId,jdbcType=INTEGER}, #{type,jdbcType=TINYINT}, #{goodsId,jdbcType=INTEGER}, 
+      #{url,jdbcType=VARCHAR}, #{imagePath,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{imageOrder,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.special.OrgSpecialLink" >
+    update org_special_link
+    <set >
+      <if test="specialId != null" >
+        special_id = #{specialId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="imagePath != null" >
+        image_path = #{imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="imageOrder != null" >
+        image_order = #{imageOrder,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.special.OrgSpecialLink" >
+    update org_special_link
+    set special_id = #{specialId,jdbcType=INTEGER},
+      type = #{type,jdbcType=TINYINT},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      image_path = #{imagePath,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      image_order = #{imageOrder,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_link t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="specialId != null" >
+          and t.special_id = #{specialId,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+          and t.type = #{type,jdbcType=TINYINT}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="url != null" >
+          and t.url = #{url,jdbcType=VARCHAR}
+      </if>
+      <if test="imagePath != null" >
+          and t.image_path = #{imagePath,jdbcType=VARCHAR}
+      </if>
+      <if test="title != null" >
+          and t.title = #{title,jdbcType=VARCHAR}
+      </if>
+      <if test="imageOrder != null" >
+          and t.image_order = #{imageOrder,jdbcType=TINYINT}
+      </if>
+       <include refid="Vo_Where_Clause" />
+    </where>
+       <if test="sorting != null" >
+           order by ${sorting},t.id desc
+      </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_special_link t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_link t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_special_link where id in (
+    select t.id from (select * from org_special_link) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.special.aide.OrgSpecialLinkVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.special_id, 
+    t.type, 
+    t.goods_id, 
+    t.url, 
+    t.image_path, 
+    t.title, 
+    t.image_order
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+	 <if test="noAnchor" >
+	         and t.type != 3
+	  </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+   <select id="selectMaxOrder" parameterType="java.lang.Integer" resultType="java.lang.Integer" >
+    select Max(t.image_order) from org_special_link t
+    where t.special_id = #{specialId,jdbcType=INTEGER}
+  </select>
+  
+</mapper>

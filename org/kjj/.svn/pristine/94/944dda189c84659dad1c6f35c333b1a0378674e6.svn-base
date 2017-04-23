@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/all.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../css/swiper.css">
+<title>快捷健触摸屏</title>
+</head>
+<body>
+	<div class="box">
+		<div class="box-content">
+			<header class="header">
+				<div class="logo fl">
+					<a href="#"><img src="../img/logo.png"></a>
+					<span class="shop_name">永安里店欢迎您</span>
+				</div>
+				<div class="search fl">
+					<div class="search-form">
+						<input type="text" class="text1" placeholder="开始搜索">
+						<span class="search-icon"></span>
+						<span class="search-icon2">
+							<img src="../img/tip3.png" alt="" />
+							<input type="text"  class="text_bling"  value="8888888888888" />
+						</span>
+						<a href="#" class="search-button">搜索</a>
+						<a href="" class="search-help">新手帮助</a>
+					</div>
+					<div class="search-classfiy">
+						<span class="c_head">热门搜索：</span>
+						<span>饮料</span>
+						<span>果汁</span>
+						<span>面包</span>
+						<span>饼干</span>
+						<span>护肤品</span>
+					</div>
+				</div>
+				<div class="search-right">
+					<div class="tel"><img src="../img/tel.png" alt="" /></div>
+					<div class="erwei">
+						<img src="../img/erweima.png" alt="" />
+						<span>关注快捷健</span>
+					</div>
+				</div>
+			</header>
+		</div>
+		<div class="article">
+			<div class="out">
+				<ul class="img_box">
+					<li style="display:block"><a href="#"><img src="../img/32.png" alt=""></a></li>
+					<li><a href="#"><img src="../img/1.jpg" alt=""></a></li>
+					<li><a href="#"><img src="../img/32.png" alt=""></a></li>
+					<li><a href="#"><img src="../img/32.png" alt=""></a></li>
+					<li><a href="#"><img src="../img/1.jpg" alt=""></a></li>
+				</ul>
+				<div class="mod"></div>
+			</div>
+		</div>
+		<!-- 结束 头 -->
+			<!-- 结束图片滚动 -->
+			<div class="box-content specialnav">
+				<section class="section">
+					<a href="javascript:;">
+						<div class="at-img img1">
+
+						</div>
+						<div class="at-text">精品购物</div>
+					</a>
+					<a href="javascript:;">
+						<div class="at-img img2">
+
+						</div>
+						<div class="at-text">防伪溯源</div>
+					</a>
+					<a href="javascript:;">
+						<div class="at-img img3">
+
+						</div>
+						<div class="at-text">会员服务</div>
+					</a>
+					<a href="javascript:;">
+						<div class="at-img img4">
+
+						</div>
+						<div class="at-text">优惠活动</div>
+					</a>
+					<a href="javascript:;">
+						<div class="at-img img5">
+
+						</div>
+						<div class="at-text">关于我们</div>
+					</a>
+				</section>
+			</div>
+			<!-- 结束列表 -->
+			<div class="box-content">
+				<footer class="footer">
+				    <div class="swiper-container">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide">
+				            	<h5>休闲零食</h5>
+				            	<div class="floor">
+				            		<div class="floor-left fl">
+				            			<a href="#"><img src="../img/3.png"></a>
+				            		</div>
+				            		<div class="floor-right fr">
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/4.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/7.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            		</div>
+				            	</div>
+				            </div>
+				            <div class="swiper-slide">
+				            	      	<h5>休闲零食</h5>
+				            	<div class="floor">
+				            		<div class="floor-left fl">
+				            			<a href="#"><img src="../img/3.png"></a>
+				            		</div>
+				            		<div class="floor-right fr">
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/4.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/7.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/8.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/m1.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            		</div>
+				            	</div>
+				            </div>
+				            <div class="swiper-slide">
+				            	      	<h5>休闲零食</h5>
+				            	<div class="floor">
+				            		<div class="floor-left fl">
+				            			<a href="#"><img src="../img/3.png"></a>
+				            		</div>
+				            		<div class="floor-right fr">
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/4.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/7.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/8.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/m1.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            		</div>
+				            	</div>
+				            </div>
+				            <div class="swiper-slide">
+				            	      	<h5>休闲零食</h5>
+				            	<div class="floor">
+				            		<div class="floor-left fl">
+				            			<a href="#"><img src="../img/3.png"></a>
+				            		</div>
+				            		<div class="floor-right fr">
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/4.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/7.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/8.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/m1.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            		</div>
+				            	</div>
+				            </div>
+				            <div class="swiper-slide">
+				            	      	<h5>休闲零食</h5>
+				            	<div class="floor">
+				            		<div class="floor-left fl">
+				            			<a href="#"><img src="../img/3.png"></a>
+				            		</div>
+				            		<div class="floor-right fr">
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/4.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/6.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/7.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/8.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            			<a href="#" class="f-all">
+				            				<div class="f-img">
+				            					<img src="../img/m1.png">
+				            				</div>
+				            				<span>售价：<i class="yellow">￥800</i></span>
+				            			</a>
+				            		</div>
+				            	</div>
+				            </div>
+				        </div>
+				        <!-- Add Pagination -->
+
+				        <div class="swiper-button-next same-btn"></div>
+				        <div class="swiper-button-prev same-btn"></div>
+				    </div>
+				</footer>
+			</div>
+	</div>
+
+	<!--  -->
+<script src="../js/common/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/common/swiper.min.js"></script>
+<script type="text/javascript" src="../js/common/wap-help.js"></script>
+<script>
+    var swiper = new Swiper('.footer .swiper-container', {
+    	direction: 'horizontal',
+        pagination: '.footer .swiper-pagination',
+        nextButton: '.footer .swiper-button-next',
+        prevButton: '.footer .swiper-button-prev',
+        slidesPerView: 3,
+        slidesPerGroup : 1,
+        paginationClickable: true,
+        spaceBetween: 99.5,
+        freeMode: true
+    });
+</script>
+</body>
+</html>

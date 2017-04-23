@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+		<script type="text/javascript" src="js/mui.js" ></script>
+		<title>扫一扫</title>
+	</head>
+	<body>
+		<div class="all">
+			<header class="mui-bar mui-bar-nav header-control">
+			    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			    <h1 class="mui-title">扫码页面</h1>
+			</header>
+			<!---->
+			<div class="mui-content">
+				<div id="slider" class="mui-slider" >
+				  <div class="mui-slider-group mui-slider-loop">
+				    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				    <div class="mui-slider-item mui-slider-item-duplicate">
+				      <a href="#">
+				        <img src="img/cbd.jpg">
+				      </a>
+				    </div>
+				    <!-- 第一张 -->
+				    <div class="mui-slider-item">
+				      <a href="#">
+				        <img src="img/muwu.jpg">
+				      </a>
+				    </div>
+				    <!-- 第二张 -->
+				    <div class="mui-slider-item">
+				      <a href="#">
+				        <img src="img/yuantiao.jpg">
+				      </a>
+				    </div>
+				    <!-- 第三张 -->
+				    <div class="mui-slider-item">
+				      <a href="#">
+				        <img src="img/cbd.jpg">
+				      </a>
+				    </div>
+				    <!-- 第四张 -->
+				    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				    <div class="mui-slider-item mui-slider-item-duplicate">
+				      <a href="#">
+				        <img src="img/muwu.jpg">
+				      </a>
+				    </div>
+				  </div>
+				  <div class="mui-slider-indicator">
+				    <div class="mui-indicator mui-active"></div>
+				    <div class="mui-indicator"></div>
+				    <div class="mui-indicator"></div>
+				  </div>
+				</div>
+				<!--结束slide-->
+				<div class="mui-card-control nomargin">
+					<div class="mui-card havebg1">
+						<div class="mui-card-content" style="text-align: center;">
+							<h4>赤霞珠干红葡萄酒2011</h4>
+							<p>生产厂家：澳洲阳光酒庄</p>
+						</div>
+					</div>
+					<div class="mui-card havebg2">
+						<div class="mui-card-header" >
+							<p class="mui-text-center color" style="color: #fff;">一物一码 防伪查询</p>
+						</div>
+						<div class="mui-card-content bgspecial">
+							<h5>这是该商品的首次查询，该商品是正品</h5>
+							<h5>唯一身份编码：XXXXXXXXXX</h5>
+							<h5>首次查询时间：2016-04-20 10:25:28</h5>
+							<p>注意事宜：首次查询时间为此防伪标识的认证时间，仅第一次查询有效，若您的首次查询时间与上述不符，请与商家联系，严防假冒！</p>						
+						</div>
+						<div class="fixed_mui_icon">
+							<img src="img/f4.png"/>
+						</div>
+					</div>
+					<div class="mui-card havebg3">
+						<div class="mui-card-header">
+							<p class="mui-text-center color" style="color: #fff;">产品溯源信息</p>
+						</div>
+						<div class="mui-card-content bgspecial2">
+							<table border="1" cellspacing="" cellpadding="" class="mui-table ">
+								<tr>
+									<td>原产国</td>
+									<td>澳大利亚</td>
+								</tr>
+								<tr>
+									<td>原产国</td>
+									<td>澳大利亚</td>
+								</tr>
+								<tr>
+									<td>原产国</td>
+									<td>澳大利亚</td>
+								</tr>
+								<tr>
+									<td>原产国</td>
+									<td>澳大利亚</td>
+								</tr><tr>
+									<td>原产国</td>
+									<td>澳大利亚</td>
+								</tr>
+							</table>
+						</div>
+						<div class="fixed_mui_icon">
+							<img src="img/f7.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--抽奖弹出框-->
+	<div class="self_set_alert">
+		<div>
+			<h3>中奖了</h3>
+			<div class="error_img_center">
+				<img src="img/cry.png"/>
+			</div>
+			<p class="error_text_center">恭喜您获得</p>
+			<p class="error_text_center">赤霞珠干红葡萄酒1瓶</p>
+			<button class="error_button">
+				立刻领取
+			</button>
+		</div>
+		<div class="alert_close"></div>
+	</div>
+	<div class="self_set_backdrop"></div>
+		<!--<a id="promptBtn" class="mui-btn mui-btn-danger mui-btn-block">点击我我就会弹出框</a>
+	 <script type="text/javascript">
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"	
+   		});
+   		
+    </script>	-->
+		<!--<script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var info = document.getElementById("info");
+
+			document.getElementById("promptBtn").addEventListener('tap', function(e) {
+				e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+				//var btnArray = ['取消', '确定'];
+				mui.prompt('输入口令码',  '', function(e) {
+					
+				})
+			});
+
+		</script>-->
+	</body>
+</html>

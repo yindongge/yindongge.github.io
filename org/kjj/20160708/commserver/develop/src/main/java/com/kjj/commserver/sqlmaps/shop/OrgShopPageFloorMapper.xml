@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopPageFloorMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopPageFloor" >
+    <id column="floorid" property="floorid" jdbcType="INTEGER" />
+    <result column="floorname" property="floorname" jdbcType="VARCHAR" />
+    <result column="floorname_url" property="floorNameUrl" jdbcType="VARCHAR" />
+    <result column="page_category" property="pageCategory" jdbcType="INTEGER" />
+    <result column="page_img" property="pageImg" jdbcType="VARCHAR" />
+    <result column="page_img_url" property="pageImgUrl" jdbcType="VARCHAR" />
+    <result column="pageid" property="pageid" jdbcType="INTEGER" />
+    <result column="isactive" property="isactive" jdbcType="INTEGER" />
+    <result column="page_1" property="page1" jdbcType="VARCHAR" />
+    <result column="page_2" property="page2" jdbcType="VARCHAR" />
+    <result column="page_3" property="page3" jdbcType="VARCHAR" />
+    <result column="page_4" property="page4" jdbcType="VARCHAR" />
+    <result column="page_5" property="page5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    floorid, floorname, floorname_url,page_category, page_img, page_img_url, pageid, isactive, page_1, 
+    page_2, page_3, page_4, page_5
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_page_floor
+    where floorid = #{floorid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_page_floor
+    where floorid = #{floorid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopPageFloor" useGeneratedKeys="true" keyColumn="floorid" keyProperty="floorid" >
+    insert into org_shop_page_floor (floorname, floorname_url, page_category, page_img, 
+      page_img_url, pageid, isactive, 
+      page_1, page_2, page_3, 
+      page_4, page_5)
+    values (#{floorname,jdbcType=VARCHAR}, #{floorNameUrl,jdbcType=VARCHAR}, #{pageCategory,jdbcType=INTEGER}, #{pageImg,jdbcType=VARCHAR}, 
+      #{pageImgUrl,jdbcType=VARCHAR}, #{pageid,jdbcType=INTEGER}, #{isactive,jdbcType=INTEGER}, 
+      #{page1,jdbcType=VARCHAR}, #{page2,jdbcType=VARCHAR}, #{page3,jdbcType=VARCHAR}, 
+      #{page4,jdbcType=VARCHAR}, #{page5,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopPageFloor" >
+    update org_shop_page_floor
+    <set >
+      <if test="floorname != null" >
+        floorname = #{floorname,jdbcType=VARCHAR},
+      </if>
+      <if test="floorNameUrl != null" >
+        floorname_url = #{floorNameUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="pageCategory != null" >
+        page_category = #{pageCategory,jdbcType=INTEGER},
+      </if>
+      <if test="pageImg != null" >
+        page_img = #{pageImg,jdbcType=VARCHAR},
+      </if>
+      <if test="pageImgUrl != null" >
+        page_img_url = #{pageImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="pageid != null" >
+        pageid = #{pageid,jdbcType=INTEGER},
+      </if>
+      <if test="isactive != null" >
+        isactive = #{isactive,jdbcType=INTEGER},
+      </if>
+      <if test="page1 != null" >
+        page_1 = #{page1,jdbcType=VARCHAR},
+      </if>
+      <if test="page2 != null" >
+        page_2 = #{page2,jdbcType=VARCHAR},
+      </if>
+      <if test="page3 != null" >
+        page_3 = #{page3,jdbcType=VARCHAR},
+      </if>
+      <if test="page4 != null" >
+        page_4 = #{page4,jdbcType=VARCHAR},
+      </if>
+      <if test="page5 != null" >
+        page_5 = #{page5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where floorid = #{floorid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopPageFloor" >
+    update org_shop_page_floor
+    set floorname = #{floorname,jdbcType=VARCHAR},
+      floorname_url = #{floorNameUrl,jdbcType=VARCHAR},
+      page_category = #{pageCategory,jdbcType=INTEGER},
+      page_img = #{pageImg,jdbcType=VARCHAR},
+      page_img_url = #{pageImgUrl,jdbcType=VARCHAR},
+      pageid = #{pageid,jdbcType=INTEGER},
+      isactive = #{isactive,jdbcType=INTEGER},
+      page_1 = #{page1,jdbcType=VARCHAR},
+      page_2 = #{page2,jdbcType=VARCHAR},
+      page_3 = #{page3,jdbcType=VARCHAR},
+      page_4 = #{page4,jdbcType=VARCHAR},
+      page_5 = #{page5,jdbcType=VARCHAR}
+    where floorid = #{floorid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopPageFloorVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.floorid, 
+    t.floorname, 
+    t.floorname_url,
+    t.page_category, 
+    t.page_img, 
+    t.page_img_url, 
+    t.pageid, 
+    t.isactive, 
+    t.page_1, 
+    t.page_2, 
+    t.page_3, 
+    t.page_4, 
+    t.page_5
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page_floor t
+    where t.floorid = #{floorid,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="floorid != null" >
+          and t.floorid = #{floorid,jdbcType=INTEGER}
+      </if>
+      <if test="floorname != null" >
+          and t.floorname = #{floorname,jdbcType=VARCHAR}
+      </if>
+      <if test="floorNameUrl != null" >
+          and t.floorname_url = #{floorNameUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="pageCategory != null" >
+          and t.page_category = #{pageCategory,jdbcType=INTEGER}
+      </if>
+      <if test="pageImg != null" >
+          and t.page_img = #{pageImg,jdbcType=VARCHAR}
+      </if>
+      <if test="pageImgUrl != null" >
+          and t.page_img_url = #{pageImgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="pageid != null" >
+          and t.pageid = #{pageid,jdbcType=INTEGER}
+      </if>
+      <if test="isactive != null" >
+          and t.isactive = #{isactive,jdbcType=INTEGER}
+      </if>
+      <if test="page1 != null" >
+          and t.page_1 = #{page1,jdbcType=VARCHAR}
+      </if>
+      <if test="page2 != null" >
+          and t.page_2 = #{page2,jdbcType=VARCHAR}
+      </if>
+      <if test="page3 != null" >
+          and t.page_3 = #{page3,jdbcType=VARCHAR}
+      </if>
+      <if test="page4 != null" >
+          and t.page_4 = #{page4,jdbcType=VARCHAR}
+      </if>
+      <if test="page5 != null" >
+          and t.page_5 = #{page5,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.floorid desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.floorid) from org_shop_page_floor t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page_floor t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_page_floor where floorid in (
+    select t.floorid from (select * from org_shop_page_floor) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <delete id="deleteByPageId" parameterType="java.util.HashMap">  
+     delete from org_shop_page_floor where pageid = #{pageId,jdbcType=INTEGER}
+  </delete>
+</mapper>

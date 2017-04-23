@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">   
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/me.js"></script> 
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.box2{
+	min-width: 320px;
+	max-width: 480px;
+	margin: 0px auto;
+	background: #fff;
+	overflow: hidden;
+	font-family: "Microsoft YaHei","Glyphicons";
+	background: #e72863;
+	}
+	.content2{
+		background: #e72863;
+		overflow: hidden;
+		clear: both;
+	}
+	.box2-top{
+
+	}
+	.box2-top img{
+		width: 100%;
+		text-a
+	}
+	.content2 h5{
+		width: 100%;
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+		margin-top: 20px;
+	}
+	.boxlist a{
+	 width: 46%;
+	 display: block;
+	 box-sizing:border-box;
+	 float: left;
+	 background: #fff;
+	 margin-left: 2%;
+	 margin-bottom: 10px;
+	 margin-right: 2%;
+	 position: relative;
+	 padding: 5px;
+	}
+	.b-listimg img{
+		width: 100%;
+		position: absolute;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+	}
+	.b-listimg:after{
+		content: "";
+		display: block;
+		width: 100%;
+		padding-top: 100%;
+		background: #fff;
+	}
+	.b-listimg{
+		width: 100%;
+		position: relative;
+	}
+	.b-listtext{
+		padding-left: 5px;
+	}
+	.b-price span{
+		display: block;
+		height: 20px;
+		line-height: 20px;
+	}
+	.b-price .gray-text{
+		color: #ccc;
+		text-decoration: line-through;
+		font-size: 14px;
+	}
+	.b-price .yellow-text{
+		color: #e72864;
+		font-size: 16px;
+		font-weight: 600;
+	}
+	.b-listtext h4{
+		height: 20px;
+		line-height: 20px;
+		color: #333;
+		font-size: 14px;
+		text-overflow:ellipsis;
+		word-wrap:normal;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.b-price{
+		height: 40px;
+		margin-bottom: 5px;
+		position: relative;
+	}
+	.b-price i{
+		background: url(img/hotspan.png) no-repeat;
+		width: 58px;
+		height: 30px;
+		display: inline-block;
+		position: absolute;
+		right: 0px;
+		top: 5px;
+	}
+</style>
+</head>
+
+<body>
+	<div class="box2 fixed-all">
+		<header class="box2-top"><img src="img/top3.png" alt="" /></header>
+		<div class="content2">
+			<h5><img src="img/top4.png"></h5>
+			<div class="boxlist">
+			<!-- 复制 -->
+				<a href="<%=basePath%>/shopping/search?goodsName=德国费德勒&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd1.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>德国费德勒黑啤酒5°听装500毫升</h4>
+						<div class="b-price">
+							<span class="gray-text">¥6.50</span>
+							<span class="yellow-text">¥3.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<!-- 复制结束 -->
+				<a href="<%=basePath%>/shopping/search?goodsName=美国星巴克咖啡&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd2.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>美国星巴克咖啡摩卡味281毫升</h4>
+						<div class="b-price">
+							<span class="gray-text">¥18.90</span>
+							<span class="yellow-text">¥11.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=碱法&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd3.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>碱法荔枝味苏打汽水500ml</h4>
+						<div class="b-price">
+							<span class="gray-text">¥4.50</span>
+							<span class="yellow-text">¥2.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=愤怒的小鸟&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd4.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>愤怒的小鸟酸奶油洋葱味薯片罐装160g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥19.00</span>
+							<span class="yellow-text">¥11.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=宾格瑞&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd5.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>宾格瑞香蕉味牛奶饮料盒装200ml</h4>
+						<div class="b-price">
+							<span class="gray-text">¥7.50</span>
+							<span class="yellow-text">¥4.99</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+					<a href="<%=basePath%>/shopping/search?goodsName=美国可口可乐&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd6.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>美国可口可乐原味355ml</h4>
+						<div class="b-price">
+							<span class="gray-text">¥7.50</span>
+							<span class="yellow-text">¥2.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=798&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd7.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>美国百事可乐原味355ml</h4>
+						<div class="b-price">
+							<span class="gray-text">¥2.90</span>
+							<span class="yellow-text">¥2.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=877&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd8.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>印度尼西亚丹麦皇冠曲奇饼干368克</h4>
+						<div class="b-price">
+							<span class="gray-text">¥58.00</span>
+							<span class="yellow-text">¥29.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=775&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd9.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>天喔开心果150克</h4>
+						<div class="b-price">
+							<span class="gray-text">¥40.40</span>
+							<span class="yellow-text">¥23.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=布丁&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd10.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>摩咔金奇异果味布丁125克单杯</h4>
+						<div class="b-price">
+							<span class="gray-text">¥5.50</span>
+							<span class="yellow-text">¥3.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=SPRINGVALLEY&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd11.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>法国SPRING VALLEY 橙汁纯果汁200ml</h4>
+						<div class="b-price">
+							<span class="gray-text">¥6.90</span>
+							<span class="yellow-text">¥3.20</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=957&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd12.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>今时代原味酸奶瓶装295g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥8.50</span>
+							<span class="yellow-text">¥6.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=977&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd13.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>大美美式生榨椰汁500克</h4>
+						<div class="b-price">
+							<span class="gray-text">¥6.00</span>
+							<span class="yellow-text">¥4.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- 结束第一部分 -->
+		<div class="content2">
+			<h5><img src="img/top5.png"></h5>
+			<div class="boxlist">
+				<a href="<%=basePath%>/shopping/search?goodsName=香飘飘椰果&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd14.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>香飘飘椰果巧克力奶茶80g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥3.50</span>
+							<span class="yellow-text">¥3.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<!-- 复制结束 -->
+				<a href="<%=basePath%>/product/detail?goodsId=400&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd15.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>雀巢咖啡卡布奇诺+香浓可可粉盒装（19g*5条）</h4>
+						<div class="b-price">
+							<span class="gray-text">¥19.90</span>
+							<span class="yellow-text">¥12.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=786&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd16.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>韩国KJ柚子茶560毫升</h4>
+						<div class="b-price">
+							<span class="gray-text">¥35.00</span>
+							<span class="yellow-text">¥35.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=219&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd17.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>可比可拿铁咖啡5包盒装105g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥15.20</span>
+							<span class="yellow-text">¥15.20</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=495&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd18.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>桂格即食燕麦片400g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥32.00</span>
+							<span class="yellow-text">¥12.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+					<a href="<%=basePath%>/product/detail?goodsId=118&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd19.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>雀巢优麦3合1即食牛奶燕麦片400g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥32.00</span>
+							<span class="yellow-text">¥32.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=韩国每日咖啡&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd20.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>韩国每日咖啡杯装250ml</h4>
+						<div class="b-price">
+							<span class="gray-text">¥16.90</span>
+							<span class="yellow-text">¥16.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=156&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd21.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>麦斯威尔咖啡原味11条装</h4>
+						<div class="b-price">
+							<span class="gray-text">¥16.60</span>
+							<span class="yellow-text">¥16.60</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=270&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd22.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>贝瑞斯塔黄金浅焙咖啡三合一盒装125g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥25.50</span>
+							<span class="yellow-text">¥25.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=271&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd23.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>贝瑞斯塔原味拿铁味咖啡盒装105g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥20.80</span>
+							<span class="yellow-text">¥20.80</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=761&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd24.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>贝瑞斯塔滤挂咖啡（综合味）盒装8g*5包</h4>
+						<div class="b-price">
+							<span class="gray-text">¥39.90</span>
+							<span class="yellow-text">¥39.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=398&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd25.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>雀巢咖啡1+2特浓7条盒装(13g*7条)</h4>
+						<div class="b-price">
+							<span class="gray-text">¥12.00</span>
+							<span class="yellow-text">¥12.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- 结束第二部分 -->
+		<div class="content2">
+			<h5><img src="img/top6.png"></h5>
+			<div class="boxlist">
+			<a href="<%=basePath%>/product/detail?goodsId=221&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd26.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>悠伴话梅102g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥12.80</span>
+							<span class="yellow-text">¥12.80</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<!-- 复制结束 -->
+				<a href="<%=basePath%>/product/detail?goodsId=303&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd27.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>溜溜梅食尚装润喉话梅袋装42g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥6.00</span>
+							<span class="yellow-text">¥6.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=乐事&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd28.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>乐事（美国经典原味）45g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥4.90</span>
+							<span class="yellow-text">¥4.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=506&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd29.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>好巴食乐香米400G</h4>
+						<div class="b-price">
+							<span class="gray-text">¥14.50</span>
+							<span class="yellow-text">¥14.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=黑熊&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd30.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>黑熊五粮红曲玄米卷袋装160g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥22.00</span>
+							<span class="yellow-text">¥22.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+					<a href="<%=basePath%>/shopping/search?goodsName=劲仔&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd31.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>劲仔小鱼50克装 4种口味可选</h4>
+						<div class="b-price">
+							<span class="gray-text">¥7.50</span>
+							<span class="yellow-text">¥7.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=趣多多&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd32.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>趣多多巧克力饼干95g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥5.00</span>
+							<span class="yellow-text">¥5.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/product/detail?goodsId=315&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd33.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>太平苏打饼干奶盐味100g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥3.70</span>
+							<span class="yellow-text">¥3.70</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=格力高&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd34.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>格力高百奇巧克力棒60g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥6.70</span>
+							<span class="yellow-text">¥6.70</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=益达木糖醇&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd35.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>益达木糖醇无糖口香糖多种口味56g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥11.20</span>
+							<span class="yellow-text">¥11.20</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="<%=basePath%>/shopping/search?goodsName=杯杯乐果冻盒装275g&shopId=${shopid}">
+					<div class="b-listimg">
+						<img src="img/hd36.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>自然素材杯杯乐果冻盒装275g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥19.90</span>
+							<span class="yellow-text">¥19.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="fixed-bottom">
+		<ul class="fixedlist">
+			<li class="fixeditem on"><a href="#" class="glyphicon glyphicon-home"><span>首页</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-tasks"><span>类目</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-log-in"><span>购物车</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-gift"><span>抽奖</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-user"><span>个人中心</span></a></li>
+		</ul>
+	</div>
+	<div class="gotop" style="display: block;"></div>
+	</div>
+</body>
+</html>

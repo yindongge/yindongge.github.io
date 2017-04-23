@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />  -->
+<title>商品分类</title>
+</head>
+<body>	
+<!--开始头部-->
+	<div class="wrapper">
+	
+		<!--结束登录-->
+		<nav class="navbar navbar-inverse navbar-fixed-top"  style="margin-top:30px;">
+			<div class="navbar-header">
+					<a href="index.html"  class="navbar-brand">
+					<img src="../img/logo.jpg"/>
+				</a>
+			</div>
+				<ul class="nav navbar-nav navbar-control">
+					<li class="active"><a href="#">控制台</a></li>
+					<li><a href="#">会员</a></li>
+					<li><a href="#">商品</a></li>
+					<li><a href="#">交易</a></li>
+					<li><a href="#">店铺</a></li>
+					<li><a href="#">运营</a></li>
+					<li><a href="#">设置</a></li>
+				</ul>
+				<ul class="nav navbar-nav pull-right header-control">
+				<li ><a><p class="text-danger">欢迎xx登录管理系统</p></a></li>
+				<li><a href="#"><i class="glyphicon glyphicon-arrow-left"></i>安全退出</a></li>
+				<li><a href="#"><i class="glyphicon glyphicon-star"></i> 账号管理</a></li>
+				<li><a href="#"><i class="glyphicon glyphicon-user"></i>  前台首页</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked side-nav">
+					<li ><a href="#"><i class="glyphicon glyphicon-folder-close"></i>商品管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-open"></i>商品添加</a></li>
+					<li class="active"><a href="#"> <i class="glyphicon glyphicon-align-justify"></i>分类管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-adjust"></i>类型管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-screenshot"></i>销售规格</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-star"></i>品牌管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-picture"></i>相册管理</a></li>
+				</ul>
+				
+		</nav><!--结束导航条-->
+
+	<!--结束头部-->
+	
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li ><a href="#">商品</a></li>
+				<li class="active">分类管理</li>
+			</ul>
+       <div class="icon1"> 
+		   <Button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+				添加分类
+			</Button>
+		</div>
+		
+<!--弹出框分割线-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">添加分类</h4>
+			</div>
+			<div class="modal-body">
+			<form class="form-horizontal">
+					<div class="form-group">
+						  <label  class="col-sm-3 control-label">分类名称：</label>
+						<div class="col-sm-6">
+						 <input type="text" class="form-control"  placeholder="Email">
+						</div>
+					</div>
+					<div class="form-group">
+                	  <label  class="col-sm-3 control-label">一级分类：</label>
+						<div class="col-sm-6">
+								<select class="form-control">
+								  <option>下拉选择分类</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								</select>
+						</div>
+					</div>
+					<div class="form-group">
+								<label  class="col-sm-3 control-label">二级分类：</label>
+								<div class="col-sm-6">
+								 <select class="form-control">
+									  <option>下拉选择分类</option>
+									  <option>2</option>
+									  <option>3</option>
+									  <option>4</option>
+									  <option>5</option>
+								</select>
+    				</div>
+                </div>
+					<div class="form-group">
+						  <label  class="col-sm-3 control-label">数量单位：</label>
+						<div class="col-sm-6">
+						 <input type="text" class="form-control"  placeholder="Email">
+						</div>
+					</div>
+					<div class="form-group">
+						  <label  class="col-sm-3 control-label">排序：</label>
+						<div class="col-sm-6">
+						 <input type="text" class="form-control"  placeholder="Email">
+						</div>
+					</div>
+				   <div class="form-group">
+						  <label  class="col-sm-3 control-label">菜单显示：</label>
+						<div class="col-sm-1">
+						 <input type="checkbox" class="form-control"  placeholder="Email" >
+						</div>
+					</div> 
+					<div class="form-group">
+						  <label  class="col-sm-3 control-label">高亮显示：</label>
+						<div class="col-sm-1">
+						 <input type="checkbox" class="form-control"  placeholder="Email" >
+						</div>
+					</div> 
+               
+                  <div class="form-group">
+                	  <label  class="col-sm-3 control-label">类型：</label>
+    				<div class="col-sm-6">
+     				 <select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+    				</div>
+                </div> 
+                
+					<div class="form-group">
+							<label  class="col-sm-3 control-label">分类关键字：</label>
+							<div class="col-sm-6">
+							<input type="text" class="form-control"  placeholder="Email">
+					</div>
+                </div>
+                <div class="form-group">
+						<label  class="col-sm-3 control-label">描述：</label>
+						<div class="col-sm-8">
+						<textarea class="form-control" rows="5"></textarea>
+						</div>
+                </div>
+            </form>
+        
+        	
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default modal-button" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary modal-button">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--结束弹出框分割线-->
+
+ <!--分割线------开始第一个table-->
+   <table class="table table-striped table-bordered table-hover table-control ">
+      <thead>
+        <tr class="info text-center">
+          <th class="tdfirst">分类名称</th>
+          <th>排序</th>
+          <th>商品类型</th>
+          <th>菜单显示</th>
+          <th>高亮显示</th>
+          <th>数量单位</th>
+          <th>商品数量</th>
+          <th class="tdlast">操作</th>
+        </tr>
+      </thead>
+      <!--开始第一个tabbody-->
+      <tbody class="tabbody">
+        <tr class="taball">
+          <td class="tdfirst "><i class="glyphicon glyphicon-plus-sign"></i> 联盟英雄</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td ><button type="button" href="#" class="btn btn-danger btn-go" data-toggle="modal" data-target="#myModal">编辑</button>
+		  <button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <!--二阶段-->
+  
+        <tr class=" tab1" >
+          <td class="tdfirst tdcontrol1" ><i class="glyphicon glyphicon-plus-sign"></i> 粮食1111</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i>脑残箭+溜溜球</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 "><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+
+         <!--结束二阶段-->
+       
+        <tr class=" tab1" >
+          <td class="tdfirst tdcontrol1" ><i class="glyphicon glyphicon-plus-sign"></i> 粮食2222222</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i>脑残箭+溜溜球</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 "><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+   </tbody>
+      <!--结束第一个TAB-->
+      
+      <!--开始第二个tabbody-->
+           <tbody class="tabbody">
+        <tr class="taball">
+          <td class="tdfirst "><i class="glyphicon glyphicon-plus-sign"></i> 部落恶鬼</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class=" tab1" >
+          <td class="tdfirst tdcontrol1" ><i class="glyphicon glyphicon-plus-sign"></i> 粮食</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2 " ><i class="glyphicon glyphicon-plus-sign"></i> 乌鸦红人制裁一波滚</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+        <tr class="tab2" >
+          <td class="tdfirst tdcontrol2"><i class="glyphicon glyphicon-plus-sign"></i> 脑残箭挡不住</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><button type="button" href="#" class="btn btn-danger btn-go">编辑</button><button type="button" href="#" class="btn btn-danger btn-go ">删除</button></td>
+        </tr>
+      </tbody>
+      <!--结束第一个tabbody-->
+    </table>
+     <!--分割线----结束第一个table--> 
+    
+   
+      
+     
+ 
+
+
+    </div>
+</div>
+</div>
+</body>
+</html>

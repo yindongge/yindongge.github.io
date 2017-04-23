@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">        
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/swiper3.1.0.min.js"></script>  
+<script src="js/me.js"></script>  
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+<title>手机</title>
+</head>
+
+<body  >
+<div class="all fixed-all">
+	<header class="head">
+		<div class="head_left">
+			<a href="index.html">三里屯SOHO店</a>
+			<span class="glyphicon glyphicon-triangle-bottom"></span>
+		</div>
+		<div class="head_right">
+			<input type="text" placeholder="Search" class="form-control">
+			<span class="glyphicon glyphicon-search"></span>
+		</div>
+	</header>
+		<nav class="nav fourlist">
+				<!-- <a>光华路 <span class="glyphicon glyphicon-menu-down"></span></a> -->
+				<a href="#" class="on">
+				全部
+					<span></span>
+				</a>
+				<a href="#">品牌
+					<span></span>
+				</a>
+		</nav>
+		<div class="swiper-container swipecontrol">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><a><img src="img/p17.jpg"></a></div>
+		        <div class="swiper-slide"><a><img src="img/p17.jpg"></a></div>
+		        <div class="swiper-slide"><a><img src="img/p17.jpg"></a></div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		</div>
+<!-- 	<div class="area samenav">
+			<a class="a selected"><i class="glyphicon glyphicon-th-large"></i>类目</a>
+			<a class="a"><i class="glyphicon glyphicon-save"></i>购物车</a>
+			<a class="a"><i class="glyphicon glyphicon-gift"></i>抽奖</a>
+			<a class="a"><i class="glyphicon glyphicon-cd"></i>我的</a>
+	</div> -->
+	<div class="content">
+		<h3>商品推荐</h3>
+		<div class="goods-list">
+			<div class="listitem">
+				<div class="listimg">
+					<a href="https://www.baidu.com"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="https://www.baidu.com"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="https://www.baidu.com"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="https://www.baidu.com"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+				<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p19.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">ddddddaddd111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+					<span class="blue-bc">限时6折</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+					<span class="blue-bc">限时6折</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p19.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题....</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p19.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题....</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+					<span class="blue-bc">限时6折</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p18.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题....</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+		</div>
+		<div class="load">
+				<a href="#">点击继续加载</a>
+		</div>
+	</div>
+	<div class="gotop"></div>
+	<footer class="footer"></footer>
+	<div class="fixed-bottom">
+		<ul class="fixedlist">
+			<li class="fixeditem on"><a href="#" class="glyphicon glyphicon-home"><span>首页</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-tasks"><span>类目</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-log-in"><span>购物车</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-gift"><span>抽奖</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-user"><span>个人中心</span></a></li>
+		</ul>
+	</div>
+</div>
+<!-- 加载 -->
+ <!--    <div class="loader hide">
+		
+     </div> -->
+   <!--   <div class="loading-reverse">
+     	<img src="img/load2.gif">	
+     </div> -->
+     <div class="alert1 hide">
+      	登录成功
+     </div>
+     <div class="loading3">
+     	<img src="img/load2.gif">	
+     	<p>请求加载中...</p>
+     </div>
+     <div class="mask white"></div>
+  <!-- 加载 -->
+ <script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay:2000,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+
+  })        
+  </script>
+</body>
+
+	
+
+</html>

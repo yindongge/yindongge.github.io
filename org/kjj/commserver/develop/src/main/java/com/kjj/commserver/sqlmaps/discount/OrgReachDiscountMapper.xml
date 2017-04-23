@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.discount.OrgReachDiscountMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.discount.OrgReachDiscount" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="rc_id" property="rcId" jdbcType="INTEGER" />
+    <result column="type_id" property="typeId" jdbcType="TINYINT" />
+    <result column="isloop" property="isloop" jdbcType="TINYINT" />
+    <result column="common" property="common" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, rc_id, type_id, isloop, common
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_reach_discount
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_reach_discount
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.discount.OrgReachDiscount" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_reach_discount (rc_id, type_id, isloop, 
+      common)
+    values (#{rcId,jdbcType=INTEGER}, #{typeId,jdbcType=TINYINT}, #{isloop,jdbcType=TINYINT}, 
+      #{common,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.discount.OrgReachDiscount" >
+    update org_reach_discount
+    <set >
+      <if test="rcId != null" >
+        rc_id = #{rcId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=TINYINT},
+      </if>
+      <if test="isloop != null" >
+        isloop = #{isloop,jdbcType=TINYINT},
+      </if>
+      <if test="common != null" >
+        common = #{common,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.discount.OrgReachDiscount" >
+    update org_reach_discount
+    set rc_id = #{rcId,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=TINYINT},
+      isloop = #{isloop,jdbcType=TINYINT},
+      common = #{common,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.discount.aide.OrgReachDiscountVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.rc_id, 
+    t.type_id, 
+    t.isloop, 
+    t.common
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_reach_discount t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="rcId != null" >
+          and t.rc_id = #{rcId,jdbcType=INTEGER}
+      </if>
+      <if test="typeId != null" >
+          and t.type_id = #{typeId,jdbcType=TINYINT}
+      </if>
+      <if test="isloop != null" >
+          and t.isloop = #{isloop,jdbcType=TINYINT}
+      </if>
+      <if test="common != null" >
+          and t.common = #{common,jdbcType=DECIMAL}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_reach_discount t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_reach_discount t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_reach_discount where id in (
+    select t.id from (select * from org_reach_discount) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

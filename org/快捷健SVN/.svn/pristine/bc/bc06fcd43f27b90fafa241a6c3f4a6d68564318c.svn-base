@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body >
+	<div class="box box-control">
+		<header class="header">
+			<div class="head-content">个人中心</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+		<div class="content">
+			<a class="floorfirst reverse-member" >
+				<div class="floor_h70">
+					<div class="floorname">
+						<div class="floorname-left">
+							<p href="#"><img src="images/p14.jpg" alt=""></p>
+						</div>
+						<div class="floorname-right">
+							<h4>好听的名字</h4>
+							<h5>普通会员</h5>
+						</div>
+					</div>
+				</div>
+			</a>
+			<div class="erweima-myself">
+				<img src="images/小图.jpg" alt="">
+				<p class="text-center">1234567890123</p>
+			</div>
+			<!--  -->
+		</div>
+
+
+	<!-- end fixedbar -->
+</body>
+</html>

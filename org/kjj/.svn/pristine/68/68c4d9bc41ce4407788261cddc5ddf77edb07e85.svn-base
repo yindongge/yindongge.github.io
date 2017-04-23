@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgClassLevelMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgClassLevel" >
+    <id column="class_level_id" property="classLevelId" jdbcType="INTEGER" />
+    <result column="class_levelName" property="classLevelname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    class_level_id, class_levelName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_class_level
+    where class_level_id = #{classLevelId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_class_level
+    where class_level_id = #{classLevelId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgClassLevel" useGeneratedKeys="true" keyColumn="class_level_id" keyProperty="classLevelId" >
+    insert into org_class_level (class_levelName)
+    values (#{classLevelname,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgClassLevel" >
+    update org_class_level
+    <set >
+      <if test="classLevelname != null" >
+        class_levelName = #{classLevelname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where class_level_id = #{classLevelId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgClassLevel" >
+    update org_class_level
+    set class_levelName = #{classLevelname,jdbcType=VARCHAR}
+    where class_level_id = #{classLevelId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgClassLevelVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.class_level_id, 
+    t.class_levelName
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_class_level t
+    where t.class_level_id = #{classLevelId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="classLevelId != null" >
+          and t.class_level_id = #{classLevelId,jdbcType=INTEGER}
+      </if>
+      <if test="classLevelname != null" >
+          and t.class_levelName = #{classLevelname,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.class_level_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.class_level_id) from org_class_level t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_class_level t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_class_level where class_level_id in (
+    select t.class_level_id from (select * from org_class_level) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>订单统计</title>
+<script>
+	$(function(){
+		$('.btn-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '111',
+    shadeClose: true,
+    shade: 0.8,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['400px', '250px'],
+    content: 'modal10.html' //iframe的url
+}); 
+		})
+	})
+</script>
+</head>
+<body>	
+<div class="page-wrapper goods-control">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">数据</a></li>
+		<li class="active">订单统计</li>
+	</ul>
+	<div class="well well-control">
+		<p class="bg-warning">
+			<span>有效订单数：<i class="badge">200000</i></span>
+			<span>有效订单总额：<i class="badge">100</i></span>
+			<span>客单价：<i class="badge">300</i></span>
+			<span>重复购买率：<i class="badge">100</i></span>
+			<span>退款订单：<i class="badge">300</i></span>
+			<span>退款总额（不含优惠卡券）：<i class="badge">300</i></span>
+		</p>
+	</div>
+	<form  class="form-inline" >
+	<div class="well" style="padding:5px;">
+		<div class="form-group">
+			<label>时间：</label>
+			<input type="text" class="form-control">	
+		</div>
+		<div class="form-group">
+			<label>到：</label>
+			<input type="text" class="form-control">	
+			<button type="button" class="btn btn-info btn-sm ">查询</button>	
+			<a type="button" class="btn btn-success btn-sm">生成订单报表</a>	
+		</div>
+		</div>
+	</form>
+	
+
+</div>
+
+</div>
+</body>
+</html>

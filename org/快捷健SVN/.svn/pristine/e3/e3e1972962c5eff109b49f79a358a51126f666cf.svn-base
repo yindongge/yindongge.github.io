@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+</head>
+<body >
+<div class="box">
+	<header class="header ">
+		<div class="head-content classify"><input type="text"><span class="searchicon"></span></div>
+		<div class="head-left"><a href="#" class="link"></a></div>
+	</header>
+	<div class="area area-control">
+		<a class="a on">默认<span class="linebottom"></span></a>
+		<a class="a">价格
+			<span class="linebottom"></span>
+			<span class="sameicon glyphicon-triangle-top on"></span>
+			<span class="sameicon glyphicon-triangle-bottom red"></span>
+		</a>
+	</div>
+	<div class="tip-special" style="background:#eee">
+		<span>以下商品可使用满50减10的优惠券</span>
+	</div>
+	<div class="procuct_control">
+				<div class="product_wrap">
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点赶紧出现吧赶紧出现吧</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"></div>
+							<div class="title_box">
+								<span>两行商品名称多</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price">￥15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price">￥15.00</span>
+							</div>
+						</a>
+					</div>
+				</div>
+		</div>
+		<div class="search_bottom  ">
+			<header class="header ">
+				<div class="head-content classify"><input type="text"><span class="searchicon"></span></div>
+			</header>
+		</div>
+</div>
+<div class="gotop" onclick="move()"></div>
+<!-- end box -->
+<script type="text/javascript">
+	
+$(function(){
+	$('.a').click(function(){
+		// 
+		var x=$(this).children('.sameicon').eq(0).hasClass('on');
+		var y=$(this).children('.sameicon').eq(1).hasClass('on');
+		if(	!x && !y)
+		{
+			$(this).find('.glyphicon-triangle-top').addClass('on');
+		}
+		if(x)
+		{	
+			$(this).find('.glyphicon-triangle-top').removeClass('on');
+			$(this).find('.glyphicon-triangle-bottom').addClass('on');
+		}
+		if(y)
+		{	
+			$(this).find('.glyphicon-triangle-bottom').removeClass('on');
+			$(this).find('.glyphicon-triangle-top').addClass('on');
+		}
+		$(this).siblings('.a').find('.sameicon').removeClass('on');
+	})
+});
+	$('.z-title').click(function(){
+		$(this).toggleClass('active');
+	})
+
+</script>
+
+</body>
+</html>

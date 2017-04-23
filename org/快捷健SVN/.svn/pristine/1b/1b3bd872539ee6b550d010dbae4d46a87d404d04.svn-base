@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="js/jquery.js"></script>
+<script src="js/me.js"></script>
+<script src="js/modal.js"></script>
+<link href="css/modal.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+<style type="text/css">
+	.center-content{
+		margin: 0px auto;
+	}
+	.center-content img.yure{
+		width: 100%;
+	}
+	.center-content.hot{
+		margin-top: 0px;
+	}
+	.hotbox{
+		background: #ea2262;
+	}
+	.hot-title{
+		width: 602px;
+		margin: 0px auto;
+		text-align: center;
+		margin-top: 15px;
+	}
+	.hot-list{
+		width: 290px;
+		height: 396px;
+		display: block;
+		float: left;
+		background: #fff;
+		overflow: hidden;
+		position: relative;
+		margin-right: 10px;
+		margin-bottom: 24px;
+		box-shadow:0 4px 8px rgba(0, 0, 0, 0.5);
+	}
+.hot-list:hover .hot-text {
+  background: #9cf7ff;
+}
+	.hot-a{
+
+	}
+	.hot-img{
+		width: 250px;
+		height: 250px;
+		overflow: hidden;
+		margin: 0px auto;
+		text-align: center;
+
+	}
+	.hot-img img{
+		width: 250px;
+		height: 250px;
+	}
+	.hot-text{
+		height: 146px;
+		padding-top: 8px;
+		position: relative;
+	}
+	.hot-text h4{
+		font-size: 18px;
+		color: #000;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 15px;
+		margin-top: 10px;
+		text-overflow:ellipsis;
+		word-wrap:normal;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.hot-price{
+		position: absolute;
+		height: 102px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+	}
+	.hot-icon{
+		display: inline-block;
+		width: 100px;
+		height: 52px;
+		background: url(img/hotspan.png) no-repeat;
+		position: absolute; right: 0px;
+		bottom: 18px;
+	}
+	.hot-delete{
+		display: block;
+		color: #b1acac;
+		font-size: 18px;
+		text-decoration: line-through;
+		left: 15px;
+		width: 138px;
+		bottom: 55px;
+		position: absolute;
+	}
+	.hot-normal{
+		display: block;
+		left: 15px;
+		bottom: 14px;
+		color: #ea2262;
+		font-size: 26px;
+		width: 138px;
+		position: absolute;
+	}
+	.hot-normal i{
+		font-size: 26px;
+		font-style: normal;
+	}
+
+	/**/
+	.floor-panel{
+	position: fixed;
+	top: 50%;
+	width:151px;
+	right: 0px;
+	display: none;
+	margin-top: -73px;
+}
+.floor-panel a {
+  display: block;
+  color: #F5F347;
+  width: 100%;
+  text-align: center;
+  height: 44px;
+  font-size: 19px;
+  line-height: 44px;
+  position: relative;
+  background: #F63B8F;
+}
+.floor-panel a.bottoma{
+	border-bottom: 0px;
+	cursor: pointer;
+	width:151px;
+	height:117px;
+	background: url(img/womentop.png) no-repeat;
+	margin-bottom: 5px;
+}
+
+.zhuantisame h5 span{
+	width: 4px;
+	height: 24px;
+	margin: 0px 5px;
+	background: #fff;
+	position: relative;
+	top: 3px;
+	display: inline-block;
+}
+.lowprice{
+	position: absolute;
+	width: 65px;
+	height: 65px;
+	background: url(img/low.png) no-repeat center;
+	display: block;
+	top: 9px;
+	right: 9px;
+	z-index: 999;
+}
+.new-year{
+	width: 100%;
+	height:730px;
+	background: #E4ECEF;
+	padding-top: 13px;
+	padding-left: 28px;
+}
+
+.thirdlink{
+	width: 1240px;
+	height: 701px;
+	margin: 0px auto;
+	position: relative;
+}
+.a1_l{
+	width: 370px;
+	height: 370px;
+	position: absolute;
+	top: 119px;
+	left: 0px;
+	background: transparent;
+	-webkit-border-radius: 100%;
+	-mozborder-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+	webkit-border-radius: 100%;
+}
+.a2_r{
+	height: 370px;
+	width: 370px;
+	position: absolute;
+	top: 119px;
+	right: 0px;
+	background: transparent;
+		-webkit-border-radius: 100%;
+	-mozborder-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+	webkit-border-radius: 100%;
+}
+.blackbox{
+
+}
+.bluebox{
+	background: url(img/blue-bg.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.lineyellow {
+  background: #F5F347;
+  height: 2px;
+  width: 90%;
+  display: block;
+  position: absolute;
+  z-index: 888;
+  left: 5%;
+}
+.bao {
+  width: 69px;
+  height: 130px;
+  background: url(img/bao.png);
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  bottom: 0px;
+  right: 92%;
+}
+.bluebox .hot-title.star{
+	width: 60%;
+	margin: 20px auto;
+
+}
+.hot-title.star{
+	width: 1200px;
+	margin: 0px auto;
+}
+.hot-title.star img{
+	width: 100%;
+}
+.center-content.bc{
+	background: url(img/all-bg.jpg) no-repeat center;
+}
+.well.no-padding{
+	margin-top: 0px;
+}
+.greenkbox{
+	background: #D5EBC7;
+}
+.songli-title img{
+ width: 100%;
+}
+.linebox{
+	background: url(img/songlibg.jpg) no-repeat center;
+}
+</style>
+</head>
+<body>
+<div class="all memberall">
+	<div class="top">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<ul class="nav navbar-nav fl">
+					<li class="showmenu">
+						<a href="#" class="yellow"><i class="glyphicon point"></i> 北京 </a>
+						<div class="hidemenu">
+							<p>请选择收货区域</p>
+							<p><a href="">北京</a><a href="">上海</a><a href="">天津</a><a href="">重庆</a></p>
+						</div>
+					</li>
+	            	<li><a href="#">您好，欢迎来到快捷健</a></li>
+	            	<li><a href="#">[登录]</a></li>
+	            	<li><a href="#">[免费成为会员]</a></li>
+				</ul>
+				<ul class="nav navbar-nav fr">
+					<li><a href="#">快捷健首页</a></li>
+					<li class="showmenu special2">
+						<a href="#" > 我的快捷健  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">我的订单</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><i class="glyphicon glyphicon-star point4"></i> 收藏夹</a></li>
+					<li><a href="#"><i class="glyphicon point2"></i> 消息</a></li>
+					<li><a href="#"><i class="glyphicon point3"></i> 手机快捷健</a></li>
+					<li class="showmenu special2">
+						<a href="#" > 客户服务  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">留言咨询</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- end top -->
+	<div class="header">
+		<div class="container">
+			<div class="logo fl">
+				<a href="index.html"><img src="img/logo.jpg"></a>
+				<div class="select-city">
+					<strong class="strong">光华路SOHO</strong>
+					<span class="small area-select">切换 <i class="glyphicon glyphicon glyphicon-menu-down"></i></span>
+					<div class="area hide">
+						<div class="area-title">
+								<div class="area-first fl">
+									<p>本店地址：朝阳区光华路22号光华路SOHO底商188号</p>
+									<P>电话：010-51887766</P>
+								</div>
+								<div class="area-second fl">
+									<p>详细配送范围</p>
+								</div>
+								<div class="close-mask"></div>
+						</div>
+						<div class="area-body">
+							<ul>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="search fl">
+					<div class="input-group">
+					      <input type="text" class="form-control" placeholder="Search for...">
+					      <i  class="icon1 glyphicon glyphicon-search"></i>
+					      <span class="input-group-btn">
+					        	<button class="btn btn-me" type="button">搜索</button>
+					      </span>
+				    </div>
+				    <div class="hotword">
+				    	<a href="">热门搜索:</a>
+				    	<a href="">咖啡</a>
+				    	<a href="">新疆</a>
+				    	<a href="">红酒</a>
+				    	<a href="">新疆红枣</a>
+				    	<a href="">黄飞鸿</a>
+				    	<a href="">叫一叫</a>
+				    </div>
+			</div>
+			<div class="shopcar fr">
+				<div class="shop">
+					<i  class="glyphicon icon2 icon"></i>
+					<i  class="glyphicon glyphicon-menu-down icon3 icon"></i>
+					<i  class="glyphicon icon4 icon">2</i>
+					<a href="#">去购物车结算</a>
+				</div>
+				<div class="space"></div>
+				<div class="sale">
+					<div class="nogoods">
+						<p class="spepcial3">购物车中还没有商品，赶紧选购吧</p>
+					</div>
+					<ul class="havegoods">
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+								<p>红牛多功能饮料来几箱比较好呢</p>
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-foot">
+								<p>共计<i class="blue">2</i>件商品共计￥<i class="blue">160.00元</i></p>
+								<p><button type="button" class="btn btn-warning pull-right">去购物车结算</button></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="center-content hot line-bg">
+		<!-- newyear -->
+		<a href="http://www.kjjhome.com/home"><img src="img/songli.jpg" alt="" / class="yure"></a>
+		<!-- 妇女节 -->
+		<div class="linebox" id="link2">
+			<div class="container">
+				<div class="hotitem">
+					<div class="songli-title"><img src="img/songli2.png" alt="" /></div>
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%BE%B7%E5%9B%BD%E8%B4%B9%E5%BE%B7%E5%8B%92&pageNow=1">
+
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444872020142_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>德国费德勒黑啤酒5°听装500毫升</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.50</span>
+									<span class="hot-normal"><i>¥ </i>3.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+						<span class="lowprice"></span>
+					</div>
+				</div>
+				<!--  -->
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=775">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444804086646_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>天喔开心果150克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥40.40</span>
+									<span class="hot-normal"><i>¥ </i>23.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%B8%83%E4%B8%81&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1445235170679_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>摩咔金奇异果味布丁125克单杯</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥5.50</span>
+									<span class="hot-normal"><i>¥ </i>3.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=SPRING%20VALLEY&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444891749128_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>大美美式生榨椰汁500克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.00</span>
+									<span class="hot-normal"><i>¥ </i>4.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="linebox" id="link2">
+			<div class="container">
+				<div class="hotitem">
+					<div class="songli-title"><img src="img/songli2.png" alt="" /></div>
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%BE%B7%E5%9B%BD%E8%B4%B9%E5%BE%B7%E5%8B%92&pageNow=1">
+
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444872020142_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>德国费德勒黑啤酒5°听装500毫升</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.50</span>
+									<span class="hot-normal"><i>¥ </i>3.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+						<span class="lowprice"></span>
+					</div>
+				</div>
+				<!--  -->
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=775">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444804086646_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>天喔开心果150克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥40.40</span>
+									<span class="hot-normal"><i>¥ </i>23.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%B8%83%E4%B8%81&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1445235170679_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>摩咔金奇异果味布丁125克单杯</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥5.50</span>
+									<span class="hot-normal"><i>¥ </i>3.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=SPRING%20VALLEY&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444891749128_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>大美美式生榨椰汁500克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.00</span>
+									<span class="hot-normal"><i>¥ </i>4.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--  -->
+<div class="well no-padding">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 ">
+					<div class="thumbnail">
+					      <img src="img/icon/icon11.png" alt="...">
+					      <div class="caption">
+					        <h5>会员服务</h5>
+					        <p><a href="">购物流程</a></p>
+					        <p><a href="">常见问题</a></p>
+					        <p><a href="">用户服务</a></p>
+					        <p><a href="">积分说明</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon12.png" alt="...">
+					      <div class="caption">
+					        <h5>支付问题</h5>
+					       	<p><a href="">在线支付</a></p>
+					        <p><a href="">礼品卡</a></p>
+					        <p><a href="">配送方式</a></p>
+					        <p><a href="">配送范围</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon13.png" alt="...">
+					      <div class="caption">
+					        <h5>售后服务</h5>
+					       <p><a href="">售后服务政策</a></p>
+					        <p><a href="">售后服务流程</a></p>
+					        <p><a href="">退款说明</a></p>
+					        <p><a href="">订单取消</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon14.png" alt="...">
+					      <div class="caption">
+					        <h5>关于我们</h5>
+					        <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon15.png" alt="...">
+					      <div class="caption">
+					        <h5>店面体验</h5>
+					       <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>电信与信息服务业务经营许可证：京ICP证120343号      食品流通许可证：SP1101131210068873（1-1）     工信部备案：京ICP备20130356号         客服热线：400-666-7777</p>
+				<p>Copyright © 2013 Cndlbz.com Inc. All Rights Reserved. 快捷健连锁超市版权所有</p>
+			</div>
+	</div>
+</div>
+
+</div>
+<!-- <div class="floor-panel" >
+		<span class="bao"></span>
+		<a class="bottoma">top</a>
+		<a href="#link2" target="_parent">超值特价<span class="lineyellow">	</span></a>
+		<a href="#link3" target="_parent">冬季冲饮<span  class="lineyellow">	</span></a>
+		<a href="#link4" target="_parent">零食饼干</a>
+
+</div> -->
+	<script type="text/javascript">
+$(function(){
+		$(window).scroll(function(){
+		if($(window).scrollTop()>400){
+			$(" .floor-panel").fadeIn();
+		}
+		else{
+			$(".floor-panel").hide();
+		}
+	});
+
+	$(".floor-panel .bottoma").click(function(){
+		$('html,body').animate({'scrollTop':0},900);
+	});
+})
+
+
+</script>
+</body>
+</html>

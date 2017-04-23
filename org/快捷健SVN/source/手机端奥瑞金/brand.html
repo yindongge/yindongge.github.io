@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">        
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/TouchSlide.1.1.js"></script> 
+<script src="js/me.js"></script> 
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+
+<body>
+<div class="all fixed-all">
+	<header class="head">
+		<div class="head_left">
+			<a href="index.html">三里屯SOHO店</a>
+		</div>
+		<div class="head_right">
+			<input type="text" placeholder="Search" class="form-control">
+			<span class="glyphicon glyphicon-search"></span>
+		</div>
+	</header>
+		<nav class="nav fourlist">
+				<!-- <a>光华路 <span class="glyphicon glyphicon-menu-down"></span></a> -->
+				<a href="#" >
+				全部
+					<span></span>
+				</a>
+				<a href="#" class="on">品牌
+					<span></span>
+				</a>
+				
+		</nav>
+		<div id="focus" class="focus">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul>
+						<li><a href="#"><img src="img/p11.jpg"  /></a></li>
+                        <li><a href="#"><img src="img/p12.jpg"  /></a></li>
+                        <li><a href="#"><img src="img/p11.jpg"  /></a></li>
+                        <li><a href="#"><img src="img/p12.jpg"  /></a></li>
+                        <li><a href="#"><img src="img/p13.jpg"  /></a></li>
+					</ul>
+				</div>
+		</div>
+	<nav class="mylist nav">
+				<a href="#" class="active">
+					全部商品
+				</a>
+				<a href="#">热卖
+				</a>
+				<a href="#">魔兽世界预告
+				</a>
+				<a  class="toggleup t1" >分类
+					<span class="glyphicon glyphicon-circle-arrow-down"></span>
+				</a>
+				<div class="toggledown t2">
+					<a href="#">手机</a>
+					<a href="#">冰箱</a>
+					<a href="#">洗衣粉</a>
+					<a href="#">赵四</a>
+					<a href="#">口香糖</a>
+					<a href="#">手机</a>
+					<a href="#">冰箱</a>
+					<a href="#">洗衣粉</a>
+					<a href="#">赵四</a>
+					<a href="#">口香糖</a>
+					<a href="#">手机</a>
+					<a href="#">冰箱</a>
+					<a href="#">洗衣粉</a>
+					<a href="#">赵四</a>
+					<a href="#">口香糖</a>
+				</div>
+	</nav>
+
+		<div class="floor">
+			<a href=""><img src="img/p15.jpg" class="thumbnail"></a>
+		</div>
+		<div class="floor">
+			<a href=""><img src="img/p16.jpg" class="thumbnail"></a>
+		</div>
+		<div class="floor">
+			<a href=""><img src="img/p17.jpg" class="thumbnail"></a>
+		</div>
+		<div class="load">
+				<a href="#">点击继续加载</a>
+		</div>
+	<div class="gotop"></div>
+	<footer class="footer"></footer>
+	<div class="fixed-bottom">
+		<ul class="fixedlist">
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-home"><span>首页</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-tasks"><span>类目</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-log-in"><span>购物车</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-gift"><span>抽奖</span></a></li>
+			<li class="fixeditem"><a href="#" class="glyphicon glyphicon-user"><span>个人中心</span></a></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+	<script type="text/javascript">
+				TouchSlide({ 
+					slideCell:"#focus",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd ul", 
+					effect:"left", 
+					autoPlay:true,//自动播放
+					autoPage:true, //自动分页
+					switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+				});
+				
+	</script>
+	<script>
+$(function(){
+	
+	function move(){
+	h = $(window).height()/50;
+	t = $(document).scrollTop();
+	if(t > h)
+	{
+		$('.gotop').show();
+	}
+	else
+	{
+		$('.gotop').hide();
+	}
+}
+//
+$(function() {
+	move();
+	$(window).scroll(function(e){
+	move();	
+	
+	$('.gotop').click(function(e){
+		$(document).scrollTop(0);	
+	})
+});
+});
+	})
+
+</script>
+
+</html>

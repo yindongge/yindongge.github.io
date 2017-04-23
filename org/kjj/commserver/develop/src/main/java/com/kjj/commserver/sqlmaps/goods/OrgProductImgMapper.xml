@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductImgMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductImg" >
+    <id column="img_id" property="imgId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="img_desc" property="imgDesc" jdbcType="VARCHAR" />
+    <result column="thumb_url" property="thumbUrl" jdbcType="VARCHAR" />
+    <result column="img_original" property="imgOriginal" jdbcType="VARCHAR" />
+    <result column="item_goods_id" property="itemGoodsId" jdbcType="INTEGER" />
+    <result column="product_class_id" property="productClassId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    img_id, goods_id, img_url, img_desc, thumb_url, img_original, item_goods_id, product_class_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_img
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_img
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductImg" useGeneratedKeys="true" keyColumn="img_id" keyProperty="imgId" >
+    insert into org_product_img (goods_id, img_url, img_desc, 
+      thumb_url, img_original, item_goods_id, 
+      product_class_id)
+    values (#{goodsId,jdbcType=INTEGER}, #{imgUrl,jdbcType=VARCHAR}, #{imgDesc,jdbcType=VARCHAR}, 
+      #{thumbUrl,jdbcType=VARCHAR}, #{imgOriginal,jdbcType=VARCHAR}, #{itemGoodsId,jdbcType=INTEGER}, 
+      #{productClassId,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductImg" >
+    update org_product_img
+    <set >
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="imgUrl != null" >
+        img_url = #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgDesc != null" >
+        img_desc = #{imgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbUrl != null" >
+        thumb_url = #{thumbUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgOriginal != null" >
+        img_original = #{imgOriginal,jdbcType=VARCHAR},
+      </if>
+      <if test="itemGoodsId != null" >
+        item_goods_id = #{itemGoodsId,jdbcType=INTEGER},
+      </if>
+      <if test="productClassId != null" >
+        product_class_id = #{productClassId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductImg" >
+    update org_product_img
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      img_desc = #{imgDesc,jdbcType=VARCHAR},
+      thumb_url = #{thumbUrl,jdbcType=VARCHAR},
+      img_original = #{imgOriginal,jdbcType=VARCHAR},
+      item_goods_id = #{itemGoodsId,jdbcType=INTEGER},
+      product_class_id = #{productClassId,jdbcType=INTEGER}
+    where img_id = #{imgId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductImgVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.img_id, 
+    t.goods_id, 
+    t.img_url, 
+    t.img_desc, 
+    t.thumb_url, 
+    t.img_original, 
+    t.item_goods_id, 
+    t.product_class_id
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_img t
+    where t.img_id = #{imgId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="imgId != null" >
+          and t.img_id = #{imgId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="imgUrl != null" >
+          and t.img_url = #{imgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="imgDesc != null" >
+          and t.img_desc = #{imgDesc,jdbcType=VARCHAR}
+      </if>
+      <if test="thumbUrl != null" >
+          and t.thumb_url = #{thumbUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="imgOriginal != null" >
+          and t.img_original = #{imgOriginal,jdbcType=VARCHAR}
+      </if>
+      <if test="itemGoodsId != null" >
+          and t.item_goods_id = #{itemGoodsId,jdbcType=INTEGER}
+      </if>
+      <if test="productClassId != null" >
+          and t.product_class_id = #{productClassId,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.img_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select 
+    <choose>
+    <when test="isAlbumQuery == true">
+    count(distinct t.img_url) 
+    </when>
+    <otherwise>
+    count(t.img_id) 
+    </otherwise>
+    </choose>
+    from org_product_img t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <choose>
+    <when test="isAlbumQuery == true">
+    distinct t.img_url
+    </when>
+    <otherwise>
+    <include refid="Vo_Column_List" />
+    </otherwise>
+    </choose>
+    from org_product_img t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <sql id="Delete_Where_Clause" >
+    <where >
+      <if test="imgId != null" >
+          and img_id = #{imgId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="imgUrl != null" >
+          and img_url = #{imgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="imgDesc != null" >
+          and img_desc = #{imgDesc,jdbcType=VARCHAR}
+      </if>
+      <if test="thumbUrl != null" >
+          and thumb_url = #{thumbUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="imgOriginal != null" >
+          and img_original = #{imgOriginal,jdbcType=VARCHAR}
+      </if>
+      <if test="itemGoodsId != null" >
+          and item_goods_id = #{itemGoodsId,jdbcType=INTEGER}
+      </if>
+      <if test="productClassId != null" >
+          and product_class_id = #{productClassId,jdbcType=INTEGER}
+      </if>
+    </where>
+  </sql>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_img
+    <include refid="Delete_Where_Clause" />
+  </delete>
+</mapper>

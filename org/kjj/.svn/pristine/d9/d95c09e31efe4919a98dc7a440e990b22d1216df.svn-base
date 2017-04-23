@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.discount.OrgCouponMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.discount.OrgCoupon" >
+    <id column="coupon_id" property="couponId" jdbcType="INTEGER" />
+    <result column="coupon_name" property="couponName" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="limit_days" property="limitDays" jdbcType="SMALLINT" />
+    <result column="amount" property="amount" jdbcType="INTEGER" />
+    <result column="user_limit" property="userLimit" jdbcType="TINYINT" />
+    <result column="condition_money" property="conditionMoney" jdbcType="DECIMAL" />
+    <result column="discount_money" property="discountMoney" jdbcType="DECIMAL" />
+    <result column="coupon_desc" property="couponDesc" jdbcType="VARCHAR" />
+    <result column="check_phone" property="checkPhone" jdbcType="TINYINT" />
+    <result column="shop_type" property="shopType" jdbcType="TINYINT" />
+    <result column="product_type" property="productType" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_admin_id" property="createAdminId" jdbcType="SMALLINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    coupon_id, coupon_name, start_time, end_time, limit_days, amount, user_limit, condition_money, 
+    discount_money, coupon_desc, check_phone, shop_type, product_type, status, create_admin_id, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_coupon
+    where coupon_id = #{couponId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_coupon
+    where coupon_id = #{couponId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.discount.OrgCoupon" useGeneratedKeys="true" keyColumn="coupon_id" keyProperty="couponId" >
+    insert into org_coupon (coupon_name, start_time, end_time, 
+      limit_days, amount, user_limit, 
+      condition_money, discount_money, coupon_desc, 
+      check_phone, shop_type, product_type, 
+      status, create_admin_id, create_time
+      )
+    values (#{couponName,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{limitDays,jdbcType=SMALLINT}, #{amount,jdbcType=INTEGER}, #{userLimit,jdbcType=TINYINT}, 
+      #{conditionMoney,jdbcType=DECIMAL}, #{discountMoney,jdbcType=DECIMAL}, #{couponDesc,jdbcType=VARCHAR}, 
+      #{checkPhone,jdbcType=TINYINT}, #{shopType,jdbcType=TINYINT}, #{productType,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{createAdminId,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.discount.OrgCoupon" >
+    update org_coupon
+    <set >
+      <if test="couponName != null" >
+        coupon_name = #{couponName,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="limitDays != null" >
+        limit_days = #{limitDays,jdbcType=SMALLINT},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="userLimit != null" >
+        user_limit = #{userLimit,jdbcType=TINYINT},
+      </if>
+      <if test="conditionMoney != null" >
+        condition_money = #{conditionMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="discountMoney != null" >
+        discount_money = #{discountMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="couponDesc != null" >
+        coupon_desc = #{couponDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="checkPhone != null" >
+        check_phone = #{checkPhone,jdbcType=TINYINT},
+      </if>
+      <if test="shopType != null" >
+        shop_type = #{shopType,jdbcType=TINYINT},
+      </if>
+      <if test="productType != null" >
+        product_type = #{productType,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createAdminId != null" >
+        create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where coupon_id = #{couponId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.discount.OrgCoupon" >
+    update org_coupon
+    set coupon_name = #{couponName,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      limit_days = #{limitDays,jdbcType=SMALLINT},
+      amount = #{amount,jdbcType=INTEGER},
+      user_limit = #{userLimit,jdbcType=TINYINT},
+      condition_money = #{conditionMoney,jdbcType=DECIMAL},
+      discount_money = #{discountMoney,jdbcType=DECIMAL},
+      coupon_desc = #{couponDesc,jdbcType=VARCHAR},
+      check_phone = #{checkPhone,jdbcType=TINYINT},
+      shop_type = #{shopType,jdbcType=TINYINT},
+      product_type = #{productType,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where coupon_id = #{couponId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.discount.aide.OrgCouponVo" extends="BaseResultMap" >
+  	<association property="orgReachCoupon" javaType="com.kjj.commserver.entity.discount.aide.OrgReachCouponVo">
+  		<result column="orc_id" property="id" jdbcType="INTEGER" />
+	    <result column="orc_rd_id" property="rdId" jdbcType="INTEGER" />
+	    <result column="orc_coupon_id" property="couponId" jdbcType="INTEGER" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.coupon_id, 
+    t.coupon_name, 
+    t.start_time, 
+    t.end_time, 
+    t.limit_days, 
+    t.amount, 
+    t.user_limit, 
+    t.condition_money, 
+    t.discount_money, 
+    t.coupon_desc, 
+    t.check_phone, 
+    t.shop_type, 
+    t.product_type, 
+    t.status, 
+    t.create_admin_id, 
+    t.create_time
+    <if test="reachDiscountId != null">
+	,orc.id as orc_id,
+	orc.rd_id as orc_rd_id,
+	orc.coupon_id as orc_coupon_id
+	</if>
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_coupon t
+    where t.coupon_id = #{couponId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="couponId != null" >
+          and t.coupon_id = #{couponId,jdbcType=INTEGER}
+      </if>
+      <if test="couponName != null" >
+          and t.coupon_name = #{couponName,jdbcType=VARCHAR}
+      </if>
+      <if test="startTime != null" >
+          and t.start_time = #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+          and t.end_time = #{endTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="limitDays != null" >
+          and t.limit_days = #{limitDays,jdbcType=SMALLINT}
+      </if>
+      <if test="amount != null" >
+          and t.amount = #{amount,jdbcType=INTEGER}
+      </if>
+      <if test="userLimit != null" >
+          and t.user_limit = #{userLimit,jdbcType=TINYINT}
+      </if>
+      <if test="conditionMoney != null" >
+          and t.condition_money = #{conditionMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="discountMoney != null" >
+          and t.discount_money = #{discountMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="couponDesc != null" >
+          and t.coupon_desc = #{couponDesc,jdbcType=VARCHAR}
+      </if>
+      <if test="checkPhone != null" >
+          and t.check_phone = #{checkPhone,jdbcType=TINYINT}
+      </if>
+      <if test="shopType != null" >
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="productType != null" >
+          and t.product_type = #{productType,jdbcType=TINYINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null" >
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="couponNameLike != null and couponNameLike != '' ">
+		  and t.coupon_name like concat('%',#{couponNameLike,jdbcType=VARCHAR},'%')
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.coupon_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.coupon_id) from org_coupon t
+    <if test="reachDiscountId != null and reachDiscountId != '' ">
+		  left join org_reach_coupon orc on t.coupon_id=orc.coupon_id and  orc.rd_id = #{reachDiscountId,jdbcType=INTEGER}
+	 </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_coupon t
+    <if test="reachDiscountId != null and reachDiscountId != '' ">
+		  left join org_reach_coupon orc on t.coupon_id=orc.coupon_id and  orc.rd_id = #{reachDiscountId,jdbcType=INTEGER}
+	  </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_coupon where coupon_id in (
+    select t.coupon_id from (select * from org_coupon) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

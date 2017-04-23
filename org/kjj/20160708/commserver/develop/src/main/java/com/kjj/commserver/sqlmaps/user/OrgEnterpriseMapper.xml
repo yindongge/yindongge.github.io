@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgEnterpriseMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgEnterprise" >
+    <id column="enterprise_id" property="enterpriseId" jdbcType="INTEGER" />
+    <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="province_code" property="provinceCode" jdbcType="INTEGER" />
+    <result column="city_code" property="cityCode" jdbcType="INTEGER" />
+    <result column="county_code" property="countyCode" jdbcType="INTEGER" />
+    <result column="reference_tel" property="referenceTel" jdbcType="VARCHAR" />
+    <result column="employees" property="employees" jdbcType="TINYINT" />
+    <result column="industry" property="industry" jdbcType="TINYINT" />
+    <result column="nature" property="nature" jdbcType="TINYINT" />
+    <result column="contact_name" property="contactName" jdbcType="VARCHAR" />
+    <result column="contact_email" property="contactEmail" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="TINYINT" />
+    <result column="landlines" property="landlines" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="is_locked" property="isLocked" jdbcType="TINYINT" />
+    <result column="organization_code_img" property="organizationCodeImg" jdbcType="VARCHAR" />
+    <result column="business_licen_img" property="businessLicenImg" jdbcType="VARCHAR" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    enterprise_id, enterprise_name, address, province_code, city_code, county_code, reference_tel, employees, 
+    industry, nature, contact_name, contact_email, department, landlines, mobile, status, 
+    user_id, is_locked, organization_code_img, business_licen_img,create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_enterprise
+    where enterprise_id = #{enterpriseId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_enterprise
+    where enterprise_id = #{enterpriseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgEnterprise" useGeneratedKeys="true" keyColumn="enterprise_id" keyProperty="enterpriseId" >
+    insert into org_enterprise (enterprise_name, address, province_code, 
+      city_code, county_code, reference_tel, 
+      employees, industry, nature, 
+      contact_name, contact_email, department, 
+      landlines, mobile, status, 
+      user_id, is_locked, organization_code_img, 
+      business_licen_img,create_time)
+    values (#{enterpriseName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{provinceCode,jdbcType=INTEGER}, 
+      #{cityCode,jdbcType=INTEGER}, #{countyCode,jdbcType=INTEGER}, #{referenceTel,jdbcType=VARCHAR}, 
+      #{employees,jdbcType=TINYINT}, #{industry,jdbcType=TINYINT}, #{nature,jdbcType=TINYINT}, 
+      #{contactName,jdbcType=VARCHAR}, #{contactEmail,jdbcType=VARCHAR}, #{department,jdbcType=TINYINT}, 
+      #{landlines,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{userId,jdbcType=INTEGER}, #{isLocked,jdbcType=TINYINT}, #{organizationCodeImg,jdbcType=VARCHAR}, 
+      #{businessLicenImg,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgEnterprise" >
+    update org_enterprise
+    <set >
+      <if test="enterpriseName != null" >
+        enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        province_code = #{provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=INTEGER},
+      </if>
+      <if test="countyCode != null" >
+        county_code = #{countyCode,jdbcType=INTEGER},
+      </if>
+      <if test="referenceTel != null" >
+        reference_tel = #{referenceTel,jdbcType=VARCHAR},
+      </if>
+      <if test="employees != null" >
+        employees = #{employees,jdbcType=TINYINT},
+      </if>
+      <if test="industry != null" >
+        industry = #{industry,jdbcType=TINYINT},
+      </if>
+      <if test="nature != null" >
+        nature = #{nature,jdbcType=TINYINT},
+      </if>
+      <if test="contactName != null" >
+        contact_name = #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactEmail != null" >
+        contact_email = #{contactEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null" >
+        department = #{department,jdbcType=TINYINT},
+      </if>
+      <if test="landlines != null" >
+        landlines = #{landlines,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="isLocked != null" >
+        is_locked = #{isLocked,jdbcType=TINYINT},
+      </if>
+      <if test="organizationCodeImg != null" >
+        organization_code_img = #{organizationCodeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenImg != null" >
+        business_licen_img = #{businessLicenImg,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where enterprise_id = #{enterpriseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgEnterprise" >
+    update org_enterprise
+    set enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=INTEGER},
+      city_code = #{cityCode,jdbcType=INTEGER},
+      county_code = #{countyCode,jdbcType=INTEGER},
+      reference_tel = #{referenceTel,jdbcType=VARCHAR},
+      employees = #{employees,jdbcType=TINYINT},
+      industry = #{industry,jdbcType=TINYINT},
+      nature = #{nature,jdbcType=TINYINT},
+      contact_name = #{contactName,jdbcType=VARCHAR},
+      contact_email = #{contactEmail,jdbcType=VARCHAR},
+      department = #{department,jdbcType=TINYINT},
+      landlines = #{landlines,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      user_id = #{userId,jdbcType=INTEGER},
+      is_locked = #{isLocked,jdbcType=TINYINT},
+      organization_code_img = #{organizationCodeImg,jdbcType=VARCHAR},
+      business_licen_img = #{businessLicenImg,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR}
+    where enterprise_id = #{enterpriseId,jdbcType=TIMESTAMP}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgEnterpriseVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.enterprise_id, 
+    t.enterprise_name, 
+    t.address, 
+    t.province_code, 
+    t.city_code, 
+    t.county_code, 
+    t.reference_tel, 
+    t.employees, 
+    t.industry, 
+    t.nature, 
+    t.contact_name, 
+    t.contact_email, 
+    t.department, 
+    t.landlines, 
+    t.mobile, 
+    t.status, 
+    t.user_id, 
+    t.is_locked, 
+    t.organization_code_img, 
+    t.business_licen_img,
+    t.create_time,
+    f.user_name 
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_enterprise t
+    where t.enterprise_id = #{enterpriseId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="enterpriseId != null" >
+          and t.enterprise_id = #{enterpriseId,jdbcType=INTEGER}
+      </if>
+      <if test="enterpriseName != null" >
+          and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+      </if>
+      <if test="address != null" >
+          and t.address = #{address,jdbcType=VARCHAR}
+      </if>
+      <if test="provinceCode != null" >
+          and t.province_code = #{provinceCode,jdbcType=INTEGER}
+      </if>
+      <if test="cityCode != null" >
+          and t.city_code = #{cityCode,jdbcType=INTEGER}
+      </if>
+      <if test="countyCode != null" >
+          and t.county_code = #{countyCode,jdbcType=INTEGER}
+      </if>
+      <if test="referenceTel != null" >
+          and t.reference_tel = #{referenceTel,jdbcType=VARCHAR}
+      </if>
+      <if test="employees != null" >
+          and t.employees = #{employees,jdbcType=TINYINT}
+      </if>
+      <if test="industry != null" >
+          and t.industry = #{industry,jdbcType=TINYINT}
+      </if>
+      <if test="nature != null" >
+          and t.nature = #{nature,jdbcType=TINYINT}
+      </if>
+      <if test="contactName != null" >
+          and t.contact_name = #{contactName,jdbcType=VARCHAR}
+      </if>
+      <if test="contactEmail != null" >
+          and t.contact_email = #{contactEmail,jdbcType=VARCHAR}
+      </if>
+      <if test="department != null" >
+          and t.department = #{department,jdbcType=TINYINT}
+      </if>
+      <if test="landlines != null" >
+          and t.landlines like concat('%',#{landlines},'%')
+      </if>
+      <if test="mobile != null" >
+          and t.mobile = #{mobile,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="isLocked != null" >
+          and t.is_locked = #{isLocked,jdbcType=TINYINT}
+      </if>
+      <if test="organizationCodeImg != null" >
+          and t.organization_code_img = #{organizationCodeImg,jdbcType=VARCHAR}
+      </if>
+      <if test="businessLicenImg != null" >
+          and t.business_licen_img = #{businessLicenImg,jdbcType=VARCHAR}
+      </if>
+      <if test="userName != null" >
+          and f.user_name like concat('%',#{userName},'%')
+      </if>
+      <if test="createTimeStart != null and createTimeStart != ''" >
+          and t.create_time &gt;= str_to_date(#{createTimeStart},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="createTimeEnd != null and createTimeEnd != ''" >
+          and t.create_time &lt;= str_to_date(#{createTimeEnd},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="enterpriseNameLike != null" >
+          and t.enterprise_name like concat('%',#{enterpriseNameLike},'%')
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.enterprise_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(1) from org_enterprise t left join org_users f on f.user_id = t.user_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_enterprise t left join org_users f on f.user_id = t.user_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_enterprise where enterprise_id in (
+    select t.enterprise_id from (select * from org_enterprise) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

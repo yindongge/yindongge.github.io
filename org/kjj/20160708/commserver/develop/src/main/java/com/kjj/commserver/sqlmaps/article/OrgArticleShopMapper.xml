@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.article.OrgArticleShopMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.article.OrgArticleShop" >
+    <id column="articleId" property="articleid" jdbcType="INTEGER" />
+    <id column="shopId" property="shopid" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_article_shop
+    where articleId = #{articleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.article.OrgArticleShop" useGeneratedKeys="true" keyColumn="articleId" keyProperty="articleid" >
+    insert into org_article_shop (articleId,shopId)
+    values (#{articleid,jdbcType=INTEGER},#{shopid,jdbcType=INTEGER})
+  </insert>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.article.aide.OrgArticleShopVo" extends="BaseResultMap">
+  	<result column="shop_name" property="shopName" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.articleId, 
+    t.shopId
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_article_shop t
+    where t.articleId = #{articleid,jdbcType=INTEGER}
+      and t.shopId = #{shopid,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="articleid != null" >
+          and t.articleId = #{articleid,jdbcType=INTEGER}
+      </if>
+      <if test="shopid != null" >
+          and t.shopId = #{shopid,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.articleId desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.articleId) from org_article_shop t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    ,shop_name
+    from org_article_shop t
+    left join org_shop os on t.shopId=os.shop_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_article_shop where articleId = #{articleid,jdbcType=INTEGER}
+  </delete>
+</mapper>

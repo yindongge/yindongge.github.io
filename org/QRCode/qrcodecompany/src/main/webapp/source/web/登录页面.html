@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<title>字段信息管理</title>
+</head>
+<body>
+<div class="box">
+	<div class="all-blue">
+		<div class="center_wrapper">
+			<div class="form_wrapper">
+				<h5>二维码溯源营销管理系统</h5>
+				<form action="" class="form_box">
+					<div class="login_top_name">
+						用户登录
+						<p class="top_line"></p>
+					</div>
+					<div class="login_error">
+						<span class="error">您输入的用户不正确</span>
+					</div>
+					<div class="login_input">
+						<input type="text" class="form-control"  placeholder="请输入所属企业名称" />
+
+						<i class="qiye"></i>
+					</div>
+					<div class="login_input">
+						<input type="text" class="form-control"  placeholder="请输入用户名" />
+
+						<i class="user"></i>
+					</div>
+					<div class="login_input">
+						<input type="text" class="form-control" placeholder="请输入密码" />
+
+						<i class="pass"></i>
+					</div>
+					<div class="login_input">
+						<span class="model_checkbox on"></span><span>记住企业名称</span>
+						<!-- 选中的话带ON -->
+					</div>
+					<button class="btn btn-info btn-speical">登录</button>
+				</form>
+			</div>
+		</div>
+		<div class="copy_bottom">奥瑞金版权所有  京ICP备09081259号</div>
+	</div>
+</div>
+
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".model_checkbox ").on("click",function(){
+			// if(!$(this).hasClass('on'))
+			// {
+			// 	$(this).addClass('on');
+			// }
+			// else{
+			// 	$(this).removeClass('on');
+
+			// }
+			$(this).toggleClass('on');
+		});
+	});
+</script>
+</body>
+</html>

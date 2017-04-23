@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">        
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/TouchSlide.1.1.js"></script>  
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+
+<body>
+<div class="all ">
+	<div class="header">
+		<h2>登录<a href="javascript:;"><span class="glyphicon glyphicon-menu-left"></span></a></h2>
+	</div>
+	<div class="wrapper">
+		<div class="item item-tips">
+			账号未注册，请输入正确的账号，如有疑问请咨询快捷健客服400-777-8888
+		</div>
+		<div class="item item-user">
+			<input type="text" class="form-control" placeholder="邮箱/手机号" autofocus required>
+		</div>
+		<div class="item item-passwords">
+			<input type="password" class="form-control" placeholder="请填写密码" autocomplete="off" autofocus required>
+		</div>
+		<div class="item item-check">
+			<input type="text" class="form-control" placeholder="请输入验证码" maxlength="6" required>
+			<span class="checkspan">dasd</span>
+		</div>
+		<div class="item item-text">
+			登录成功后的快捷健账号后，该账号将成为您默认登录的快捷健账号。
+		</div>
+		<div class="item item-btn item-active">
+			<a href="#" class="btna">登录</a>
+		</div>
+		<div class="item item-op">
+			<a href="#">注册新账号</a>
+		</div>
+	</div>
+</div>
+</html>

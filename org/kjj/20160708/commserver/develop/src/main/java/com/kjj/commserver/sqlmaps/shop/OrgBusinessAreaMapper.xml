@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgBusinessAreaMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgBusinessArea" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="business_area_order" property="businessAreaOrder" jdbcType="SMALLINT" />
+    <result column="range_explain" property="rangeExplain" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, area_code, business_area_order, range_explain, status, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_business_area
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_business_area
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgBusinessArea" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_business_area (name, area_code, business_area_order, 
+      range_explain, status, create_time, 
+      update_time)
+    values (#{name,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, #{businessAreaOrder,jdbcType=SMALLINT}, 
+      #{rangeExplain,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgBusinessArea" >
+    update org_business_area
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessAreaOrder != null" >
+        business_area_order = #{businessAreaOrder,jdbcType=SMALLINT},
+      </if>
+      <if test="rangeExplain != null" >
+        range_explain = #{rangeExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgBusinessArea" >
+    update org_business_area
+    set name = #{name,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      business_area_order = #{businessAreaOrder,jdbcType=SMALLINT},
+      range_explain = #{rangeExplain,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgBusinessAreaVo" extends="BaseResultMap" >
+ 	<result column="shop_count" property="shopCount" jdbcType="INTEGER" />
+   	<association property="orgArea" javaType="com.kjj.commserver.entity.shop.OrgArea">
+	  	<result column="area_name" property="name" jdbcType="VARCHAR" />
+	    <result column="area_show" property="show" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.name, 
+    t.area_code, 
+    t.business_area_order, 
+    t.range_explain, 
+    t.status, 
+    t.create_time, 
+    t.update_time,
+    oa.name as area_name,
+    oa.show as area_show,
+    (select count(os.shop_id) from org_shop os where os.business_area_id = t.id) AS shop_count
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_business_area t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="areaCode != null" >
+          and t.area_code = #{areaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="businessAreaOrder != null" >
+          and t.business_area_order = #{businessAreaOrder,jdbcType=SMALLINT}
+      </if>
+      <if test="rangeExplain != null" >
+          and t.range_explain = #{rangeExplain,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="nameLike != null" >
+          and t.name like concat('%',#{nameLike,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="areaCodeLike != null" >
+          and t.area_code like concat(#{areaCodeLike,jdbcType=VARCHAR},'%')
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_business_area t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_business_area t
+    left join org_area oa on t.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_business_area where id in (
+    select t.id from (select * from org_business_area) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/load.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<title>车帮</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			   <li ><a href="#">会员管理</a></li>
+			  <li class="active">会员详情</li>
+			</ul>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="content">
+			<div class="table-wrapper">
+				<!-- Single button -->
+				<div class="btn-group">
+					<button class="btn btn-info">基本信息</button>
+					<button class="btn btn-info">证件信息</button>
+					<button class="btn btn-info">车辆信息</button>
+					<button class="btn btn-info">订单信息</button>
+					<button class="btn btn-primary">财务信息</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-danger">手动调整金额</button>
+				</div>
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr class="info" >
+							<th>动作</th>
+							<th>单号</th>
+							<th>支付方式</th>
+							<th>金额（元）</th>
+							<th>时间</th>
+							<th>余额（元）</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>充值</td>
+							<td>195555</td>
+							<td>微信</td>
+							<td class="td-right">100.00</td>
+							<td>122:26:33</td>
+							<td class="td-right">200.00</td>
+							<td>正常</td>
+						</tr>
+						<tr>
+							<td>交押金</td>
+							<td>195555</td>
+							<td>支付宝</td>
+							<td class="td-right">100.00</td>
+							<td>122:26:33</td>
+							<td class="td-right">200.00</td>
+							<td>正常</td>
+						</tr>
+						<tr>
+							<td>充值</td>
+							<td>195555</td>
+							<td>提现</td>
+							<td class="td-right">-100.00</td>
+							<td>122:26:33</td>
+							<td class="td-right">200.00</td>
+							<td>正常</td>
+						</tr>
+						<tr>
+							<td>退押金</td>
+							<td>195555</td>
+							<td>网银</td>
+							<td class="td-right">100.00</td>
+							<td>122:26:33</td>
+							<td class="td-right">-200.00</td>
+							<td>正常</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<!-- 表单结束↑ -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

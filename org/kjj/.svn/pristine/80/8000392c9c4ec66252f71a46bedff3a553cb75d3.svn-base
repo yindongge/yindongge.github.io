@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgTouchPageBannerMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgTouchPageBanner" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="page_id" property="pageId" jdbcType="INTEGER" />
+    <result column="banner_img" property="bannerImg" jdbcType="VARCHAR" />
+    <result column="banner_url" property="bannerUrl" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="image_order" property="imageOrder" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, page_id, banner_img, banner_url, title, image_order
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_touch_page_banner
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_touch_page_banner
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgTouchPageBanner" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_touch_page_banner (page_id, banner_img, banner_url, 
+      title, image_order)
+    values (#{pageId,jdbcType=INTEGER}, #{bannerImg,jdbcType=VARCHAR}, #{bannerUrl,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{imageOrder,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgTouchPageBanner" >
+    update org_touch_page_banner
+    <set >
+      <if test="pageId != null" >
+        page_id = #{pageId,jdbcType=INTEGER},
+      </if>
+      <if test="bannerImg != null" >
+        banner_img = #{bannerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bannerUrl != null" >
+        banner_url = #{bannerUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="imageOrder != null" >
+        image_order = #{imageOrder,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgTouchPageBanner" >
+    update org_touch_page_banner
+    set page_id = #{pageId,jdbcType=INTEGER},
+      banner_img = #{bannerImg,jdbcType=VARCHAR},
+      banner_url = #{bannerUrl,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      image_order = #{imageOrder,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgTouchPageBannerVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.page_id, 
+    t.banner_img, 
+    t.banner_url, 
+    t.title, 
+    t.image_order
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_touch_page_banner t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="pageId != null" >
+          and t.page_id = #{pageId,jdbcType=INTEGER}
+      </if>
+      <if test="bannerImg != null" >
+          and t.banner_img = #{bannerImg,jdbcType=VARCHAR}
+      </if>
+      <if test="bannerUrl != null" >
+          and t.banner_url = #{bannerUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="title != null" >
+          and t.title = #{title,jdbcType=VARCHAR}
+      </if>
+      <if test="imageOrder != null" >
+          and t.image_order = #{imageOrder,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_touch_page_banner t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_touch_page_banner t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_touch_page_banner where id in (
+    select t.id from (select * from org_touch_page_banner) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectMaxOrder" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+  	select max(t.image_order) from org_touch_page_banner t where 
+  	t.page_id = #{pageId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Banner_List_Clause">
+  	<where>
+  		<if test="pageId != null">
+  			and t.page_id = #{pageId,jdbcType=VARCHAR}
+  		</if>
+  		<if test="areaCode != null">
+  			and otp.area_code = #{areaCode,jdbcType=VARCHAR}
+  		</if>
+  		<if test="shopId != null">
+  			and otp.shop_id = #{shopId,jdbcType=INTEGER}
+  		</if>
+  		<if test="shopId == null">
+  			and otp.shop_id is null
+  		</if>
+  		<if test="status != null">
+  			and otp.status = #{status,jdbcType=TINYINT}
+  		</if>
+  		order by t.id asc
+  	</where>
+  </sql>
+  
+  <select id="queryBannerList" parameterType="java.util.Map" resultMap="VoResultMap">
+  	select
+  	<include refid="Vo_Column_List" />
+  	from org_touch_page_banner t  left join org_touch_page otp  on otp.id = t.page_id
+  	<include refid="Query_Banner_List_Clause"/>
+  </select>
+</mapper>

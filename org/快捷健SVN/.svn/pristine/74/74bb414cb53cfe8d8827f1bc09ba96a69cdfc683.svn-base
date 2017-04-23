@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">商品</a></li>
+		<li class="active">添加商品</li>
+	</ul>
+	<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+	   <a href="添加商品.html" class="btn btn-info " role="button">基本信息</a>
+	   <a href="详情描述.html" class="btn btn-primary" role="button">SKU信息</a>
+	   <a href="相关商品.html" class="btn btn-info" role="button">相关商品</a>
+	   <a href="其他信息.html" class="btn btn-info" role="button">其他信息</a>
+    </div>
+	<table class="table table-bordered table-hover table-firsttd">
+		<tbody>
+			<tr>
+				<td>选择SKU：</td>
+				<td>
+					<button class="btn btn-default">蓝色50CM</button>
+					<button class="btn btn-danger">绿色50CM</button>
+					<button class="btn btn-default">红色50CM</button>
+				</td>
+			</tr>
+			<tr>
+				<td>*SKU图片：</td>
+				<td>
+					<div class="row row-control">
+						<div class="change-area">
+							<a class="changebutton active">上传新图片</a>
+							<a class="changebutton">从相册中选择</a>
+						</div>
+						<div class="change-select1">
+							<div class="change-img" style="overflow:hidden">
+								<div class="img_show">
+										<div class="thumbnail">
+											<div style="text-align:center;position:relative"><img src="../img/photo7.jpg" class="img-col-md-2">
+											 <input type="text" style="position:absolute;height:100%;width:100%;right:10px;left:0px;opacity:0;">
+											</div>
+											<div class="caption " style="padding:0px; margin-top:10px;">
+												<div class="row caption-control">
+												  <div class="col-md-2 col-md-offset-1 ">
+														<a class="thumbnail active">
+														 	 <img src="../img/photo7.jpg">
+														</a>
+													 </div>
+													<div class="col-md-2 ">
+														<a class="thumbnail">
+														  <img src="../img/photo7.jpg">
+														</a>
+													 </div>
+														<div class="col-md-2 ">
+														<a class="thumbnail">
+														  <img src="../img/photo7.jpg">
+														</a>
+													 </div>
+													<div class="col-md-2 ">
+														<a class="thumbnail">
+														  <img src="../img/photo7.jpg">
+														</a>
+													 </div>
+													 <div class="col-md-2 ">
+														<a class="thumbnail">
+														  <img src="../img/photo7.jpg">
+														</a>
+													 </div>
+												</div>
+											</div>
+										</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/dasdasd.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/dasda.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+									<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-right"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+									<div class="thumbnail">
+											<img src="../img/photo7.jpg" class="img-col-md-2">
+											<p class="thumbnail-photo text-center">
+													<a href="#" class="btn btn-default btn-sm" role="button"><i class="glyphicon glyphicon-arrow-left"></i></a>
+													<a href="#" class="btn btn-danger btn-sm" role="button"><i class="glyphicon glyphicon-remove"></i></a>
+											</p>
+									</div>
+								</div>
+								<div class="img_show">
+								<div class="thumbnail addplus">
+										<p class="img-col-md-2">
+										</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<!--  -->
+
+						<!-- 结束第一个 -->
+						<!-- 开始第二个 -->
+
+						<!-- 结束第二个 -->
+					</div>
+					<p>上传商品默认轮播图，如多销售规格值时将默认使用该组图片或上传各销售规格轮播图；支持jpg、gif、png格式上传或从图片空间中选择，建议使用尺寸800x800像素以上、大小不超过500K的正方形图片为宜，上传后的图片将会自动保存在图片空间的所属商品分类中。</p>
+				</td>
+			</tr>
+			<tr>
+				<td>SKU属性：</td>
+				<td>
+					<table class="table table-bordered table-firsttd">
+								<tbody>
+									<tr>
+										<td>是否进口商品：</td>
+										<td>
+											<input type="radio">
+											<label>是</label>
+  										</td>
+									</tr>
+									<tr>
+										<td>条形码：</td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td><span class="red">*</span>产地：</td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td><span class="red"></span>商品保质期：</td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td><span class="red"></span>商品规格：</td>
+										<td><input type="text"></td>
+									</tr>
+									<tr>
+										<td>是否有机：</td>
+										<td>
+											<input type="radio">
+											<label>是</label>
+											<input type="radio">
+											<label>是</label>
+										</td>
+									</tr>
+									<tr>
+										<td>适宜季节：</td>
+										<td>
+											<input type="checkbox">
+											<label>是</label>
+											<input type="checkbox">
+											<label>是</label>
+											<input type="checkbox">
+											<label>是</label>
+											<input type="checkbox">
+											<label>是</label>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="red">*</span>SKU描述：</td>
+				<td>编辑器</td>
+			</tr>
+			<tr>
+				<td>显示设定：</td>
+				<td>
+					<p class="switch-control">
+						<button class="btn btn-default btn-nocircle">显示</button>
+						<button class="btn btn-primary btn-nocircle">关闭</button>
+						<span>0库存是否显示  关闭后，当商品库存为0时，前台所有页面隐藏此商品。</span>
+					</p>
+					<p class="switch-control">
+						<button class="btn btn-default btn-nocircle">显示</button>
+						<button class="btn btn-primary btn-nocircle">关闭</button>
+						<span>前台显示  关闭后时，前台所有页面隐藏此商品。</span>
+					</p>
+					<p class="switch-control">
+						<select name="" id="" class="form-control" style="width:100px;float:left">
+							<option value="">所有级别会员</option>
+							<option value="">指定会员级别</option>
+						</select>
+						<span>开放会员组，默认对所有级别会员开放购买，如有限制，会员在前台登录浏览时提示：未开放购买。</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+		<div class="text-center">
+			<button type="button" class="btn btn-primary ">保存</button>
+		</div>
+</div>
+</body>
+</html>

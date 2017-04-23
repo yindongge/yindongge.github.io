@@ -1,0 +1,40 @@
+/*智能屏*/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset,  th, td
+{margin: 0; padding: 0; border: 0; outline: none;}
+ul, li{
+	list-style: none;
+}
+
+body{
+	background: #fff;
+	color: #333;
+	font-family: "Microsoft YaHei",Arial,sans-serif;
+	font-size: 12px;
+	height: 100%;
+}
+*{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+a{
+	text-decoration: none;
+}
+div{
+	display: block;
+}
+.hide{
+	display: none;
+}
+.header, .box-contern{
+	clear: both;
+	content: "";
+}
+
+/*public*/

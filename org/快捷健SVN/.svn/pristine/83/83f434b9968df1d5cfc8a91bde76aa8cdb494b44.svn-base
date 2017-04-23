@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+<script>
+$(function(){
+		$('.btn2-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '选择分类',
+    shadeClose: true,
+    shade: 0.8,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: 'modal5.html' //iframe的url
+		}); 
+		})
+	})
+</script>
+</head>
+<body>	
+
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">商品</a></li>
+		<li ><a href="#">品牌管理</a></li>
+		<li class="active">添加品牌</li>
+	</ul>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label  class="col-sm-2 control-label">品牌名称：</label>
+			<div class="col-sm-5">
+			  <input type="text" class="form-control"  placeholder="text">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label  class="col-sm-2 control-label">选择分类：</label>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-danger btn2-click">点击选择<i class='caret'></i></button>
+			</div>
+			<div class="col-sm-6" style="width:auto">
+			<div class="control-delete">
+				<p class="delete-span"><span >您选择了：</span></p>
+				<p class="delete-span"><span>粮油></span><span>粮食></span><span>大米</span><span><i class="glyphicon glyphicon-remove"></i></span></p>
+				<p class="delete-span"><span>粮油></span><span>粮食></span><span>大米</span><span><i class="glyphicon glyphicon-remove"></i></span></p>
+				<p class="delete-span"><span>粮油></span><span>粮食></span><span>大米</span><span><i class="glyphicon glyphicon-remove"></i></span></p>
+				
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label  class="col-sm-2 control-label">排序：</label>
+			<div class="col-sm-5">
+			  <input type="text" class="form-control"  placeholder="text">
+			</div>
+		</div>
+		<div class="form-group">
+			<label  class="col-sm-2 control-label">品牌名称：</label>
+			
+			<div class="col-sm-3 aa">
+				<a><input type="file" > </button></a>
+				<img src="" styl="width:100px; height:100px"/>
+			</div>
+			<div class="col-sm-5">
+				<p>支持格式gif、jpg、jpeg、png，上传宽高比例为5：3，建议上传尺寸：300px*180px</p>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label  class="col-sm-2 control-label">品牌简介：</label>
+			<div class="col-sm-5">
+				<textarea class="form-control" rows="7"></textarea>
+			</div>
+		</div>
+		
+	</form>	
+		<div class="text-center">
+			<a type="button" class="btn btn-primary "  role="button" href="品牌管理.html">返回</a>
+			<button type="button" class="btn btn-primary " >确定</button>
+		</div>
+</div>
+</div>
+</body>
+</html>

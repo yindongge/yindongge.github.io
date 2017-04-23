@@ -1,0 +1,84 @@
+/*红酒*/
+.box{
+	background: #fff;
+	position: relative;
+	margin: 20px auto;
+}
+.join{
+	width: 400px;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -150px;/*
+	background: #efefef;*/
+	position: fixed;
+}
+.control-label{
+	color: #666;
+	font-size: 12px;
+}
+.box .form-control{
+	height: 32px;
+	line-height: 32px;
+
+}
+.form-inline .form-group{
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.btn{
+	padding:3px 12px
+}
+.btn-groupcontrol{
+	padding-bottom: 3px;
+}
+.btn-xs{
+	height: 20px;
+	padding: 0px 2px;
+	margin-bottom: 10px;
+}
+.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th{
+	text-align: center;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+	color: #666;
+	font-size: 12px;
+}
+.pagination{
+	margin: 0px;
+	margin-top: 8px;
+}
+.select-control{
+	padding-right: 20px;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+	background: #5BC0DE;
+}
+.modal.in .modal-dialog{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -260px;
+	margin-left: -420px;
+	width: 840px;
+}
+.form-horizontal .form-me .form-group{
+
+}
+.textarea-control{
+	width: 100%;
+}
+.add1{
+	width: 112px;
+}
+.red{
+	color:#f00;
+}
+.modal.in .modal-dialog.w400{
+	width: 400px;
+	margin-left: -200px;
+}
+.modal.in .modal-dialog.w460{
+	width: 460px;
+	margin-left: -230px;
+}

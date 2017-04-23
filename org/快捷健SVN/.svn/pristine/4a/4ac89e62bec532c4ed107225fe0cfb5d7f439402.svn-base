@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+</head>
+<body >
+<div class="box box-gray">
+	<header class="header ">
+		<div class="head-content classify"><input type="text" placeholder="搜索相关超频"><span class="searchicon"></span></div>
+		<div class="head-left"><a href="#" class="link"></a></div>
+	</header>
+	<div class="search-wrapper">
+		<div class="search-list">
+			<p class="search-title">最近搜索<span class="clear">清除</span></p>
+			<div class="search-item">
+				<a href="">可口</a>
+				<a href="">斌麟</a>
+				<a href="">什么</a>
+				<a href="">这个字</a>
+				<a href="">来个六个字的</a>
+			</div>
+		</div>
+		<div class="search-list">
+			<p class="search-title">最近搜索<span class="clear">换一批</span></p>
+			<div class="search-item">
+				<a href="">可口</a>
+				<a href="">斌麟</a>
+				<a href="">什么</a>
+				<a href="">这个字</a>
+				<a href="">来个六个字的</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- end box -->
+</body>
+</html>

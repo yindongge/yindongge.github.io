@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+ <script src="../js/layer.js"></script> 
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+<script>
+	$(function(){
+		$('.btn-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '111',
+    shadeClose: true,
+    shade: 0.8,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: 'modal11.html' //iframe的url
+}); 
+		})
+	})
+</script>
+</head>
+<body>	
+<div class="page-wrapper goods-control">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">交易</a></li>
+		<li class="active"><a href="订单管理.html">订单管理</a></li>	
+		<li class="active">订单详情</li>
+	</ul>
+	
+	</br>
+
+	
+	<table class="table table-hover table-bordered ">
+		<thead>
+			<tr class="info">				
+				<th width="150px;">基本信息</th>
+				<th></th>
+				<th width="150px"></th>
+				<th></th>
+				<th width="150px;"></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="strong-b">订单号:</td>
+				<td><span class="text-info">10150500001</span></td>
+				<td class="strong-b">订单状态：</td>
+				<td>店铺未确认</td>
+				<td  class="strong-b">付款状态：</td>
+				<td>未付款</td>
+			</tr>
+			<tr>
+				<td class="strong-b">用户名：</td>
+				<td><span class="text-info">beiping</span></td>
+				<td class="strong-b">下单时间：</td>
+				<td>2015-05-13 13:20:58</td>
+				<td  class="strong-b">支付方式：</td>
+				<td>POS刷卡　<strong class="text-info">[修改]</strong></td>
+			</tr>
+			<tr>
+				<td class="strong-b">店铺：</td>
+				<td>BJ001（北京 光华路店）</td>
+				<td class="strong-b">发货时间：</td>
+				<td>2015-05-13 13:20:58</td>
+				<td  class="strong-b">确认时间：</td>
+				<td>2015-05-13 13:20:58</td>
+			</tr>
+			<tr>
+				<td class="strong-b">配送方式：</td>
+				<td>货到付款　<strong class="text-info">[修改]</strong></td>
+				<td class="strong-b">支付时间：</td>
+				<td></td>
+				<td  class="strong-b">订单来源：</td>
+				<td>PC端</td>
+			</tr>
+			<thead>
+			<tr class="info">				
+				<th width="150px;">收货信息</th>
+				<th><button type="button" >修改收货信息</button></th>
+				<th width="150px"></th>
+				<th></th>
+				<th width="150px;"></th>
+				<th></th>
+			</tr>
+		</thead>
+			<tr>
+				<td class="strong-b">收货人：</td>
+				<td>赵先生</td>
+				<td class="strong-b">手机/电话：</td>
+				<td>13701023110 010-85211869-8011</td>
+				<td  class="strong-b">E-mail:</td>
+				<td>zhaobeiping@kjjhome.com</td>
+			</tr>
+			<tr>
+				<td class="strong-b">地址：</td>
+				<td>北京市朝阳区建国门外大街永安东里8号华彬中心15层</td>
+				<td class="strong-b"></td>
+				<td></td>
+				<td  class="strong-b"></td>
+				<td></td>
+			</tr>
+			<tr class="success">
+				<td class="strong-b">收货信息</td>
+				<td>（修改后的收货信息如下）</td>
+				<td class="strong-b"></td>
+				<td></td>
+				<td  class="strong-b"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="strong-b">收货人：</td>
+				<td>赵先生</td>
+				<td class="strong-b">手机/电话：</td>
+				<td>13701030318</td>
+				<td  class="strong-b">E-mail:</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="strong-b">地址：</td>
+				<td>北京市朝阳区建国门外大街永安东里8号华彬中心6层</td>
+				<td class="strong-b"></td>
+				<td></td>
+				<td class="strong-b"></td>
+				<td></td>
+			</tr>
+		<thead>
+			<tr class="info">				
+				<th width="150px;">商品信息</th>
+				<th></th>
+				<th width="150px"></th>
+				<th></th>
+				<th width="150px;"></th>
+				<th></th>
+			</tr>
+			<tr class="active">				
+				<th width="150px;">商品货号</th>
+				<th>商品</th>
+				<th width="150px">单价（元）</th>
+				<th>数量</th>
+				<th width="150px;">优惠</th>
+				<th>小计（元）</th>
+			</tr>
+		</thead>
+			
+			<tr>
+				<td >1000394889</td>
+				<td><span class="text-info">好丽友蛋黄派140g，2015最新包装上市</span><br>
+					<span class="text-danger" >口味：巧克力味</span>
+				</td>
+				<td ><span style="text-decoration:line-through">￥15.58</span><br><span class="text-danger" >￥14.00</span></td>
+				<td>×1</td>
+				<td >限时折扣<br><span style="background:#3DD998; padding:1px 5px;">省1.58元</span></td>
+				<td><span class="text-danger" >14.00</span></td>
+			</tr>
+			<tr>
+				<td >1000394889</td>
+				<td><span class="text-info">好丽友蛋黄派140g，2015最新包装上市</span><br>
+					<span class="text-danger" >口味：巧克力味</span>
+				</td>
+				<td ><span style="text-decoration:line-through">￥15.58</span><br><span class="text-danger" >￥14.00</span></td>
+				<td>×1</td>
+				<td >限时折扣<br><span style="background:#3DD998; padding:1px 5px;">省1.58元</span></td>
+				<td><span class="text-danger" >14.00</span></td>
+			</tr>
+			<tr>
+				<td colspan="6"  style="text-align:right; padding-right:50px;">-优惠券10元-积分300点折现3元</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="text-align:left" >发票： 是　抬头：赵鸿瑾</td>
+				<td class="strong-b">合计：</td>
+				<td ><strong class="text-danger">￥29.98</strong></td>
+			</tr>
+			<thead>
+			<tr class="info">				
+				<th width="150px;">操作信息</th>
+				<th></th>
+				<th width="150px"></th>
+				<th></th>
+				<th width="150px;"></th>
+				<th></th>
+			</tr>
+		</thead>
+			<tr class="tr11">
+				<td class="strong-b">备注：</td>
+				<td colspan="3" style="text-align:left;">
+					<textarea rows="6" style="width:500px;">
+						
+					</textarea>
+					<br>
+					<button>确认</button>
+					<button>货到已付款</button>
+					<button>取消</button>
+					<button>无效</button>
+					<button>发货</button>
+					<button>退货</button>
+				</td>
+				<td class="strong-b"></td>
+				<td></td>
+			</tr>
+			
+		<thead>
+			<tr class="info">				
+				<th width="150px;">操作员</th>
+				<th>操作时间</th>
+				<th width="150px">付款状态</th>
+				<th>订单状态</th>
+				<th width="150px;">发货状态</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+			<tr>
+				<td class="strong-b">admin</td>
+				<td>2015-05-18 11:02:37</td>
+				<td class="strong-b">未付款</td>
+				<td>已确认</td>
+				<td class="strong-b">未发货</td>
+				<td>店面确认订单</td>
+			</tr>
+			<tr>
+				<td class="strong-b">admin</td>
+				<td>2015-05-18 11:02:37</td>
+				<td class="strong-b">未付款</td>
+				<td>已确认</td>
+				<td class="strong-b">未发货</td>
+				<td>店面确认订单</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+</div>
+
+
+<div class="maskme"></div>
+<div class="alertme">
+	<div class="title">
+		提货码 <span  class="close2 glyphicon glyphicon-remove-circle"></span>
+	</div>
+	<div class="content">
+		<dl class="floor">
+			<dt>提货码:</dt>
+			<dd><input type="text" class="form-control" style="width:90%;"></dd>
+			<dd><b>11111</b></dd>
+		</dl>
+		<p class="text-center buttonme"><button type="button" class="btn btn-default">取消</button><button class="btn btn-danger">确定</button></p>
+	</div>
+</div>
+</body>
+</html>

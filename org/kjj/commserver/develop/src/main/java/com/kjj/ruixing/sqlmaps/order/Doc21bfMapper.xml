@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjj.ruixing.sqlmaps.order.Doc21bfMapper">
+  <resultMap id="BaseResultMap" type="com.kjj.ruixing.entity.order.Doc21bf">
+    <id column="DOCNO" jdbcType="VARCHAR" property="docno" />
+    <result column="SHPNO" jdbcType="VARCHAR" property="shpno" />
+    <result column="DOCDAT" jdbcType="TIMESTAMP" property="docdat" />
+    <result column="VIPNO" jdbcType="VARCHAR" property="vipno" />
+    <result column="SLAMT" jdbcType="DECIMAL" property="slamt" />
+    <result column="DISAMT" jdbcType="DECIMAL" property="disamt" />
+    <result column="PSAMT" jdbcType="DECIMAL" property="psamt" />
+    <result column="STATUS" jdbcType="TINYINT" property="status" />
+    <result column="DSC" jdbcType="VARCHAR" property="dsc" />
+    <result column="DIFFAMT" jdbcType="DECIMAL" property="diffamt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DOCNO, SHPNO, DOCDAT, VIPNO, SLAMT, DISAMT, PSAMT, STATUS, DSC, DIFFAMT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from DOC21BF
+    where DOCNO = #{docno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from DOC21BF
+    where DOCNO = #{docno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.ruixing.entity.order.Doc21bf">
+    insert into DOC21BF (DOCNO, SHPNO, DOCDAT, VIPNO, 
+      SLAMT, DISAMT, PSAMT, 
+      STATUS, DSC, DIFFAMT
+      )
+    values (#{docno,jdbcType=VARCHAR},#{shpno,jdbcType=VARCHAR}, #{docdat,jdbcType=TIMESTAMP}, #{vipno,jdbcType=VARCHAR}, 
+      #{slamt,jdbcType=DECIMAL}, #{disamt,jdbcType=DECIMAL}, #{psamt,jdbcType=DECIMAL}, 
+      #{status,jdbcType=TINYINT}, #{dsc,jdbcType=VARCHAR}, #{diffamt,jdbcType=DECIMAL}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.ruixing.entity.order.Doc21bf">
+    update DOC21BF
+    <set>
+      <if test="shpno != null">
+        SHPNO = #{shpno,jdbcType=VARCHAR},
+      </if>
+      <if test="docdat != null">
+        DOCDAT = #{docdat,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vipno != null">
+        VIPNO = #{vipno,jdbcType=VARCHAR},
+      </if>
+      <if test="slamt != null">
+        SLAMT = #{slamt,jdbcType=DECIMAL},
+      </if>
+      <if test="disamt != null">
+        DISAMT = #{disamt,jdbcType=DECIMAL},
+      </if>
+      <if test="psamt != null">
+        PSAMT = #{psamt,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="dsc != null">
+        DSC = #{dsc,jdbcType=VARCHAR},
+      </if>
+      <if test="diffamt != null">
+        DIFFAMT = #{diffamt,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where DOCNO = #{docno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.ruixing.entity.order.Doc21bf">
+    update DOC21BF
+    set SHPNO = #{shpno,jdbcType=VARCHAR},
+      DOCDAT = #{docdat,jdbcType=TIMESTAMP},
+      VIPNO = #{vipno,jdbcType=VARCHAR},
+      SLAMT = #{slamt,jdbcType=DECIMAL},
+      DISAMT = #{disamt,jdbcType=DECIMAL},
+      PSAMT = #{psamt,jdbcType=DECIMAL},
+      STATUS = #{status,jdbcType=TINYINT},
+      DSC = #{dsc,jdbcType=VARCHAR},
+      DIFFAMT = #{diffamt,jdbcType=DECIMAL}
+    where DOCNO = #{docno,jdbcType=VARCHAR}
+  </update>
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.kjj.ruixing.entity.order.aide.Doc21bfVo" />
+  <sql id="Vo_Column_List">
+    t.DOCNO, 
+    t.SHPNO, 
+    t.DOCDAT, 
+    t.VIPNO, 
+    t.SLAMT, 
+    t.DISAMT, 
+    t.PSAMT, 
+    t.STATUS, 
+    t.DSC, 
+    t.DIFFAMT
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from DOC21BF t
+    where t.DOCNO = #{docno,jdbcType=VARCHAR}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="docno != null">
+          and t.DOCNO = #{docno,jdbcType=VARCHAR}
+      </if>
+      <if test="shpno != null">
+          and t.SHPNO = #{shpno,jdbcType=VARCHAR}
+      </if>
+      <if test="docdat != null">
+          and t.DOCDAT = #{docdat,jdbcType=TIMESTAMP}
+      </if>
+      <if test="vipno != null">
+          and t.VIPNO = #{vipno,jdbcType=VARCHAR}
+      </if>
+      <if test="slamt != null">
+          and t.SLAMT = #{slamt,jdbcType=DECIMAL}
+      </if>
+      <if test="disamt != null">
+          and t.DISAMT = #{disamt,jdbcType=DECIMAL}
+      </if>
+      <if test="psamt != null">
+          and t.PSAMT = #{psamt,jdbcType=DECIMAL}
+      </if>
+      <if test="status != null">
+          and t.STATUS = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="dsc != null">
+          and t.DSC = #{dsc,jdbcType=VARCHAR}
+      </if>
+      <if test="diffamt != null">
+          and t.DIFFAMT = #{diffamt,jdbcType=DECIMAL}
+      </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.DOCNO desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.DOCNO) from DOC21BF t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from DOC21BF t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from DOC21BF where DOCNO in (
+    select t.DOCNO from (select * from DOC21BF) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

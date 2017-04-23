@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.discount.OrgDiscountTriggerMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.discount.OrgDiscountTrigger" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="type_id" property="typeId" jdbcType="TINYINT" />
+    <result column="discount_id" property="discountId" jdbcType="INTEGER" />
+    <result column="trigger_type" property="triggerType" jdbcType="TINYINT" />
+    <result column="trigger_amount" property="triggerAmount" jdbcType="TINYINT" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="limit_money" property="limitMoney" jdbcType="DECIMAL" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_admin_id" property="createAdminId" jdbcType="SMALLINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, type_id, discount_id, trigger_type, trigger_amount, start_time, end_time, limit_money, 
+    reason, status, create_admin_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_discount_trigger
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_discount_trigger
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.discount.OrgDiscountTrigger" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_discount_trigger (type_id, discount_id, trigger_type, 
+      trigger_amount, start_time, end_time, 
+      limit_money, reason, status, 
+      create_admin_id, create_time)
+    values (#{typeId,jdbcType=TINYINT}, #{discountId,jdbcType=INTEGER}, #{triggerType,jdbcType=TINYINT}, 
+      #{triggerAmount,jdbcType=TINYINT}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{limitMoney,jdbcType=DECIMAL}, #{reason,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{createAdminId,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.discount.OrgDiscountTrigger" >
+    update org_discount_trigger
+    <set >
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=TINYINT},
+      </if>
+      <if test="discountId != null" >
+        discount_id = #{discountId,jdbcType=INTEGER},
+      </if>
+      <if test="triggerType != null" >
+        trigger_type = #{triggerType,jdbcType=TINYINT},
+      </if>
+      <if test="triggerAmount != null" >
+        trigger_amount = #{triggerAmount,jdbcType=TINYINT},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="limitMoney != null" >
+        limit_money = #{limitMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createAdminId != null" >
+        create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.discount.OrgDiscountTrigger" >
+    update org_discount_trigger
+    set type_id = #{typeId,jdbcType=TINYINT},
+      discount_id = #{discountId,jdbcType=INTEGER},
+      trigger_type = #{triggerType,jdbcType=TINYINT},
+      trigger_amount = #{triggerAmount,jdbcType=TINYINT},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      limit_money = #{limitMoney,jdbcType=DECIMAL},
+      reason = #{reason,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.discount.aide.OrgDiscountTriggerVo" extends="BaseResultMap" >
+  	<association property="orgCoupon" javaType="com.kjj.commserver.entity.discount.OrgCoupon">
+	    <result column="coupon_name" property="couponName" jdbcType="VARCHAR" />
+	    <result column="condition_money" property="conditionMoney" jdbcType="VARCHAR" />
+	    <result column="discount_money" property="discountMoney" jdbcType="VARCHAR" />
+	    <result column="product_type" property="productType" jdbcType="VARCHAR" />
+	    <result column="shop_type" property="shopType" jdbcType="VARCHAR" />
+        <result column="start_time" property="startTime" jdbcType="VARCHAR" />
+        <result column="end_time" property="endTime" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.type_id, 
+    t.discount_id, 
+    t.trigger_type, 
+    t.trigger_amount, 
+    t.start_time, 
+    t.end_time, 
+    t.limit_money, 
+    t.reason, 
+    t.status, 
+    t.create_admin_id, 
+    t.create_time
+    <if test=" typeId != null and typeId == 2 ">
+	    ,oc.coupon_name,
+		oc.condition_money,
+		oc.discount_money,
+		oc.product_type,
+		oc.shop_type,
+		oc.start_time,
+		oc.end_time
+   </if>
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_discount_trigger t
+    <if test=" typeId != null and typeId == 2 ">
+    	left join org_coupon oc on oc.coupon_id = t.discount_id
+    </if>
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="typeId != null" >
+          and t.type_id = #{typeId,jdbcType=TINYINT}
+      </if>
+      <if test="discountId != null" >
+          and t.discount_id = #{discountId,jdbcType=INTEGER}
+      </if>
+      <if test="triggerType != null" >
+          and t.trigger_type = #{triggerType,jdbcType=TINYINT}
+          <if test="triggerType == 1 ">
+		  	and t.start_time &lt; now()
+			and t.end_time &gt; now()
+		  </if>
+      </if>
+      <if test="triggerAmount != null" >
+          and t.trigger_amount = #{triggerAmount,jdbcType=TINYINT}
+      </if>
+      <if test="startTime != null" >
+          and t.start_time = #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null" >
+          and t.end_time = #{endTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="limitMoney != null" >
+          and t.limit_money = #{limitMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="reason != null" >
+          and t.reason = #{reason,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null" >
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="couponNameLike != null and couponNameLike != '' ">
+		  and oc.coupon_name like concat('%',#{ couponNameLike },'%')
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_discount_trigger t
+    <if test=" typeId != null and typeId == 2 ">
+    	left join org_coupon oc on oc.coupon_id = t.discount_id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_discount_trigger t
+    <if test=" typeId != null and typeId == 2 ">
+    	left join org_coupon oc on oc.coupon_id = t.discount_id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_discount_trigger where id in (
+    select t.id from (select * from org_discount_trigger) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

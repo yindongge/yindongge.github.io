@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.activity.OrgActivityAwardMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.activity.OrgActivityAward" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="activity_id" property="activityId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="ticket_id" property="ticketId" jdbcType="INTEGER" />
+    <result column="ticket_number" property="ticketNumber" jdbcType="INTEGER" />
+    <result column="award_type" property="awardType" jdbcType="TINYINT" />
+    <result column="prize_type" property="prizeType" jdbcType="TINYINT" />
+    <result column="prize_id" property="prizeId" jdbcType="INTEGER" />
+    <result column="prize_name" property="prizeName" jdbcType="VARCHAR" />
+    <result column="mobile_phone" property="mobilePhone" jdbcType="VARCHAR" />
+    <result column="draw_time" property="drawTime" jdbcType="TIMESTAMP" />
+    <result column="get_time" property="getTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, activity_id, shop_id, ticket_id, ticket_number, award_type, prize_type, prize_id, 
+    prize_name, mobile_phone, draw_time, get_time, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_activity_award
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_activity_award
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.activity.OrgActivityAward" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_activity_award (activity_id, shop_id, ticket_id, 
+      ticket_number, award_type, prize_type, 
+      prize_id, prize_name, mobile_phone, 
+      draw_time, get_time, status
+      )
+    values (#{activityId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, #{ticketId,jdbcType=INTEGER}, 
+      #{ticketNumber,jdbcType=INTEGER}, #{awardType,jdbcType=TINYINT}, #{prizeType,jdbcType=TINYINT}, 
+      #{prizeId,jdbcType=INTEGER}, #{prizeName,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
+      #{drawTime,jdbcType=TIMESTAMP}, #{getTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.activity.OrgActivityAward" >
+    update org_activity_award
+    <set >
+      <if test="activityId != null" >
+        activity_id = #{activityId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="ticketId != null" >
+        ticket_id = #{ticketId,jdbcType=INTEGER},
+      </if>
+      <if test="ticketNumber != null" >
+        ticket_number = #{ticketNumber,jdbcType=INTEGER},
+      </if>
+      <if test="awardType != null" >
+        award_type = #{awardType,jdbcType=TINYINT},
+      </if>
+      <if test="prizeType != null" >
+        prize_type = #{prizeType,jdbcType=TINYINT},
+      </if>
+      <if test="prizeId != null" >
+        prize_id = #{prizeId,jdbcType=INTEGER},
+      </if>
+      <if test="prizeName != null" >
+        prize_name = #{prizeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null" >
+        mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="drawTime != null" >
+        draw_time = #{drawTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getTime != null" >
+        get_time = #{getTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.activity.OrgActivityAward" >
+    update org_activity_award
+    set activity_id = #{activityId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      ticket_id = #{ticketId,jdbcType=INTEGER},
+      ticket_number = #{ticketNumber,jdbcType=INTEGER},
+      award_type = #{awardType,jdbcType=TINYINT},
+      prize_type = #{prizeType,jdbcType=TINYINT},
+      prize_id = #{prizeId,jdbcType=INTEGER},
+      prize_name = #{prizeName,jdbcType=VARCHAR},
+      mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      draw_time = #{drawTime,jdbcType=TIMESTAMP},
+      get_time = #{getTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_activity_award t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="activityId != null" >
+          and t.activity_id = #{activityId,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="ticketId != null" >
+          and t.ticket_id = #{ticketId,jdbcType=INTEGER}
+      </if>
+      <if test="ticketNumber != null" >
+          and t.ticket_number = #{ticketNumber,jdbcType=INTEGER}
+      </if>
+      <if test="awardType != null" >
+          and t.award_type = #{awardType,jdbcType=TINYINT}
+      </if>
+      <if test="prizeType != null" >
+          and t.prize_type = #{prizeType,jdbcType=TINYINT}
+      </if>
+      <if test="prizeId != null" >
+          and t.prize_id = #{prizeId,jdbcType=INTEGER}
+      </if>
+      <if test="prizeName != null" >
+          and t.prize_name = #{prizeName,jdbcType=VARCHAR}
+      </if>
+      <if test="mobilePhone != null" >
+          and t.mobile_phone = #{mobilePhone,jdbcType=VARCHAR}
+      </if>
+      <if test="drawTime != null" >
+          and t.draw_time = #{drawTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="getTime != null" >
+          and t.get_time = #{getTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_activity_award t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_activity_award t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_activity_award where id in (
+    select t.id from (select * from org_activity_award) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.activity.aide.OrgActivityAwardVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.activity_id, 
+    t.shop_id, 
+    t.ticket_id, 
+    t.ticket_number, 
+    t.award_type, 
+    t.prize_type, 
+    t.prize_id, 
+    t.prize_name, 
+    t.mobile_phone, 
+    t.draw_time, 
+    t.get_time, 
+    t.status
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<form action="" class="form-inline">
+			<div class="well form-well">
+				<div class="form-group">
+					<label for="">企业名称：</label>
+					<input type="text" class="form-control" />
+				</div>
+				<div class="form-group">
+					<button class="btn btn-info">查询</button>
+				</div>
+			</div>
+		</form>
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			  <li class="active">企业申请列表</li>
+			</ul>
+		</div>
+		<div class="btn-group">
+			<!-- <button class="btn btn-info" data-toggle="modal" data-target="#myModal">新增</button> -->
+			<button class="btn btn-primary">提交审核</button>
+		</div>
+		<div class="table table-control">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>企业名称</th>
+						<th>详细地址</th>
+						<th>申请日期</th>
+						<th>状态</th>
+						<th style="width:150px;">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td  class="text_center">1</td>
+						<td>酒业</td>
+						<td>大声道大师打断阿达撒</td>
+						<td>2016-02-23</td>
+						<td class="text_center">拟制中</td>
+						<td>
+							<button class="btn btn-success btn-xs" >查看</button>
+							<button class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="pageselect">
+			<div class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="到第几页">
+				</div>
+				<button type="submit" class="btn btn-sm btn-info">确定</button>
+			</div>
+			<ul class="pagination pull-right pagination-sm">
+				<li>
+				  <a href="#" aria-label="Previous">
+					<span aria-hidden="true">«</span>
+				  </a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">.....</a></li>
+				<li><a href="#">15</a></li>
+				<li>
+				  <a href="#" aria-label="Next">
+					<span aria-hidden="true">»</span>
+				  </a>
+				</li>
+			 </ul>
+		 	<span class=" pull-right">共有200条记录 每页50条</span>
+		</div>
+	</div>
+</div>
+<!-- 弹出窗口 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">修改企业</h4>
+      </div>
+      <div class="modal-body">
+      	<!-- start form -->
+        <form class="form-horizontal apply_control">
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span>企业名称：</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="inputEmail3" value="123" disabled="true">
+		      <p class="p_gray">需与营业执照上的名称完全一致，信息审核成功后，企业名称不可修改</p>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span>所在地区：</label>
+		    <div class="col-sm-3">
+		     	<select  class="form-control">
+			      	<option value="">请选择</option>
+			      	<option value="">省</option>
+		      	</select>
+		    </div>
+		    <div class="col-sm-3">
+		     	<select  class="form-control">
+			      	<option value="">请选择</option>
+			      	<option value="">省</option>
+		      	</select>
+		    </div>
+		    <div class="col-sm-3">
+		     	<select  class="form-control">
+			      	<option value="">请选择</option>
+			      	<option value="">省</option>
+		      	</select>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span>详细地址：</label>
+		    <div class="col-sm-10">
+				<input type="text" class="form-control" >
+		    </div>
+		  </div>
+		  <div class="form-group">
+		  		<h5 class="nopadding_h5">营业执照</h5>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span> 法定代言人：</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control"  >
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span>  工商执照注册号：</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control"  >
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label  class="col-sm-2 control-label">经营范围：</label>
+		    <div class="col-sm-10">
+		      <textarea name="" id="" cols="50" rows="10"></textarea>
+		      <p class="p_gray">经营范围需与营业执照中经营范围保持一致</p>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span>  营业执照附件：</label>
+		    <div class="col-sm-8">
+		      <input type="text" class="form-control"  >
+		      <p class="p_gray">添加营业执照原件扫描件或复印件加盖鲜章照片，支持JPG、PNG等多种图片格式，大小不能超过300KB</p>
+		    </div>
+		    <div class="col-sm-2">
+		     <a href="" class="btn btn-default">添加附件</a>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		  		<h5 class="nopadding_h5">营业执照</h5>
+		  </div>
+		<div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span> 代码：</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control"  >
+		      <p class="p_gray">组织机构代码，示例60006368-9</p>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label"><span class="red">*</span>  组织机构代码证附件：</label>
+		    <div class="col-sm-8">
+		      <input type="text" class="form-control"  >
+		      <p class="p_gray">添加组织机构代码证原件扫描件或复印件加盖鲜章照片，支持JPG、PNG等多种图片格式，大小不能超过300KB</p>
+		    </div>
+		    <div class="col-sm-2">
+		     <a href="" class="btn btn-default">添加附件</a>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label  class="col-sm-2 control-label">备注：</label>
+		    <div class="col-sm-10">
+		      <textarea name="" id="" cols="50" rows="10"></textarea>
+		    </div>
+		  </div>
+		  <!-- 以下是查看的表格 -->
+		  <div class="form-group">
+		  		<h5 class="nopadding_h5">审核流程</h5>
+		  </div>
+		  <div class="table table-control">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>操作类型</th>
+						<th>操作人</th>
+						<th>操作结果</th>
+						<th>操作意见</th>
+						<th >操作时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>审核</td>
+						<td>酒业</td>
+						<td>通过</td>
+						<td>通过</td>
+						<td>
+							2016-03-22 16:35:26
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</form>
+		<!-- end form -->
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-primary">保存</button>
+      	<button type="button" class="btn btn-info">提交审核</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+</body>
+</html>

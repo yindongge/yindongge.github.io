@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+</head>
+<body >
+<div class="box box-gray">
+	<header class="header">
+		<div class="head-content">限时抢购</div>
+		<div class="head-left"><a href="#" class="link"></a></div>
+		<div class="timebuycar"><i>3</i></div>
+	</header>
+	<!-- end top -->
+	<div class="timebuy">
+		<div class="timebuy-adverse">
+			<a href="#"><img src="images/positionhead.png" alt=""></a>
+		</div>
+		<div class="timebuy-wrapper">
+			<div class="timebuy-title">
+				<div class="timebuy-t-left">抢购中 10：00开抢</div>
+				 <div class="timebuy-t-right">距结束：<span>10</span>:<span>11</span>:<span>12</span></div>
+			</div>
+			<div class="timebuy-list">
+				<div class="timebuy-leftimg">
+					<a href="#"><img src="images/p14.jpg" alt=""></a>
+				</div>
+				<div class="timebuy-righttext">
+					<a class="timebuy-r-text">皓杨男装 秋冬2014春夏款新品男装很多司芬克斯的就是杜甫</a>
+					<p class="timebuy-price"><i class="rmb">￥</i>12.00</p>
+					<p class="timebuy-deleteprice"><i class="rmb">￥</i>12.00</p>
+					<a href="#" class="timebuy-join">加入购物车</a>
+				</div>
+			</div>
+			<div class="timebuy-list">
+				<div class="timebuy-leftimg">
+					<a href="#"><img src="images/p14.jpg" alt=""></a>
+				</div>
+				<div class="timebuy-righttext">
+					<a class="timebuy-r-text">皓杨男装 秋冬2014春夏款新品男装很多司芬克斯的就是杜甫</a>
+					<p class="timebuy-price"><i class="rmb">￥</i>12.00</p>
+					<p class="timebuy-deleteprice"><i class="rmb">￥</i>12.00</p>
+					<a href="#" class="timebuy-join">加入购物车</a>
+				</div>
+			</div>
+			<div class="timebuy-list">
+				<div class="timebuy-leftimg">
+					<a href="#"><img src="images/p14.jpg" alt=""></a>
+				</div>
+				<div class="timebuy-righttext">
+					<a class="timebuy-r-text">皓杨男装 秋冬2014春夏款新品男装很多司芬克斯的就是杜甫</a>
+					<p class="timebuy-price"><i class="rmb">￥</i>12.00</p>
+					<p class="timebuy-deleteprice"><i class="rmb">￥</i>12.00</p>
+					<a href="#" class="timebuy-join">加入购物车</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end timebuy -->
+</div>
+<div class="backhome ">
+	<div class="touchback">	</div>
+	<div class="touchlist">
+		<a href="" class="sideone"></a>
+		<a href="" class="sidetwo"></a>
+		<a href="" class="sidesecond"></a>
+		<a class="sidefour"></a>
+	</div>
+</div>
+<!-- end box -->
+<script type="text/javascript">
+	$(function(){
+		//var w=window.innerWidth;
+		var h=window.innerHeight-44;
+	 	$('.buy_left').css({"height":h});
+
+	 	leftcontrol();
+
+	})
+</script>
+</body>
+</html>

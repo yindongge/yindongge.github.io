@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+ <script src="../js/layer.js"></script> 
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../css/layer.ext.css" rel="stylesheet" type="text/css" /> -->
+<title>购物清单</title>
+<script>
+	$(function(){
+		$('.btn-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '111',
+    shadeClose: true,
+    shade: 0.8,
+    shift:-1,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: 'modal11.html' //iframe的url
+}); 
+		})
+	})
+</script>
+</head>
+<body>	
+<div class="alertbox">
+	<div class="container-fluid ">
+		<div class="row alertcontrol">
+			<div class="col-md-4">
+				<img src="../img/logo1.jpg">
+			</div>
+			<div class="col-md-4 text-center">
+				<span class="redlist">购物清单</span>
+			</div>
+			<div class="col-md-4">
+				<span class="pull-right redlist">
+					(客户留存)
+				</span>
+			</div>
+		</div>
+		<div class="well well3">
+			<div class="row">
+				<div class="col-md-3">
+					<span>订单编号：</span>
+					<span>12212123123321</span>
+				</div>
+				<div class="col-md-3">
+					<span>下单时间：</span>
+					<span>2015.15.15.89.9</span>
+				</div>
+				<div class="col-md-3">
+					<span>客户姓名：</span>
+					<span>叫我李大爷</span>
+				</div>
+				<div class="col-md-2">
+					<span>商品总数：</span>
+					<span>3</span>
+				</div>
+			</div>
+		</div>
+		<table class="table table-bordered table-striped" style="margin-bottom:250px;">
+			<thead>
+				<tr>
+					<th>商品名称</th>
+					<th>商品编号</th>
+					<th>属性</th>
+					<th>价格</th>
+					<th>数量</th>
+					<th>小计</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>test商品new</td>
+					<td>esc123456789</td>
+					<td></td>
+					<td>￥1200.00元</td>
+					<td></td>
+					<td>￥1200.00元</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="erweima">
+			<img src="../img/alerterweima.png">
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	window.print
+</script>
+</body>
+</html>

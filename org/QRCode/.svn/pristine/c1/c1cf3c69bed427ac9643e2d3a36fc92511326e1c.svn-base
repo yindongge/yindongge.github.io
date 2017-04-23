@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+        
+	<!-- 自动扫描注解 -->
+	<context:component-scan base-package="com.org"/>
+	
+	<!-- 定时任务 -->
+	<task:annotation-driven scheduler="myScheduler"/>
+	<task:scheduler id="myScheduler" pool-size="5"/>
+	
+	<!-- 数据库配置 -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<!-- 加载数据库属性配置文件 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
+		<property name="user" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.password}" />
+		<!--c3p0将建一张名为test的空表，并使用其自带的查询语句进行测试。你不能在这张表上进行任何操作，它将只供c3p0测试使用。Default: null-->
+		<property name="automaticTestTable" value="test"></property>
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}"/>
+        <property name="minPoolSize" value="${jdbc.minPoolSize}"/>
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
+        <!-- 当连接池中的连接用完时一次性建立连接的个数 -->
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}"/>
+        <!-- 当连接空闲超过多少秒则释放连接 若为0则永不丢弃。Default: 0-->
+        <property name="maxIdleTime"  value="${jdbc.maxIdleTime}"/>
+        <!-- 每隔多少秒检查空闲的连接数，默认0为不检查 -->
+        <property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}"></property>
+        <!-- 连接池为数据源单个Connection缓存的PreparedStatement数 -->
+        <property name="maxStatementsPerConnection" value="${jdbc.maxStatementsPerConnection}"></property>
+        <!-- 防止ORACLE数据库发生APPARENT DEADLOCKS -->
+        <!-- <property name="statementCacheNumDeferredCloseThreads" value="1"></property> -->
+        <!-- 在提交连接时验证其有效性，默认为false -->
+    	<!-- <property name="testConnectionOnCheckout" value="true"/> -->
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"></property>  
+        <property name="mapperLocations" value="classpath:com/org/baseserver/sqlmaps/**/*Mapper.xml"></property>
+    </bean>
+    
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">         
+ 		<constructor-arg index="0" ref="sqlSessionFactory" />
+ 	</bean>
+  
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+            <tx:method name="get*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="is*" read-only="true" />
+			<tx:method name="has*" read-only="true" />
+			<tx:method name="load*" read-only="true" />
+			<tx:method name="check*" read-only="true" />
+			<tx:method name="export*" read-only="true" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="merge*" propagation="REQUIRED" />
+			<tx:method name="sync*" propagation="REQUIRED" />
+			<tx:method name="lock*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="serviceOperation"
+			expression="execution(public * com.org.baseserver.service..*.*(..))" />
+		<aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice" />
+	</aop:config>
+</beans>

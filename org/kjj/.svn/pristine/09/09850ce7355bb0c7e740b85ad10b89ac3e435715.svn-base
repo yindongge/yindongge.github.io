@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgTradeSnapshootMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgTradeSnapshoot" >
+    <id column="trade_snapshoot_id" property="tradeSnapshootId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.kjj.commserver.entity.goods.OrgTradeSnapshoot" extends="BaseResultMap" >
+    <result column="pc_goods_desc" property="pcGoodsDesc" jdbcType="LONGVARCHAR" />
+    <result column="mobile_goods_desc" property="mobileGoodsDesc" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    trade_snapshoot_id, goods_id, goods_sn, goods_name, create_time, img_url
+  </sql>
+  <sql id="Blob_Column_List" >
+    pc_goods_desc, mobile_goods_desc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from org_trade_snapshoot
+    where trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_trade_snapshoot
+    where trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshoot" useGeneratedKeys="true" keyColumn="trade_snapshoot_id" keyProperty="tradeSnapshootId" >
+    insert into org_trade_snapshoot (goods_id, goods_sn, goods_name, 
+      create_time, img_url, pc_goods_desc, 
+      mobile_goods_desc)
+    values (#{goodsId,jdbcType=INTEGER}, #{goodsSn,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{imgUrl,jdbcType=VARCHAR}, #{pcGoodsDesc,jdbcType=LONGVARCHAR}, 
+      #{mobileGoodsDesc,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshoot" >
+    update org_trade_snapshoot
+    <set >
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsSn != null" >
+        goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null" >
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgUrl != null" >
+        img_url = #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="pcGoodsDesc != null" >
+        pc_goods_desc = #{pcGoodsDesc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="mobileGoodsDesc != null" >
+        mobile_goods_desc = #{mobileGoodsDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshoot" >
+    update org_trade_snapshoot
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      pc_goods_desc = #{pcGoodsDesc,jdbcType=LONGVARCHAR},
+      mobile_goods_desc = #{mobileGoodsDesc,jdbcType=LONGVARCHAR}
+    where trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshoot" >
+    update org_trade_snapshoot
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      img_url = #{imgUrl,jdbcType=VARCHAR}
+    where trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgTradeSnapshootVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.trade_snapshoot_id, 
+    t.goods_id, 
+    t.goods_sn, 
+    t.goods_name, 
+    t.create_time, 
+    t.img_url
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_trade_snapshoot t
+    where t.trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="tradeSnapshootId != null" >
+          and t.trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsSn != null" >
+          and t.goods_sn = #{goodsSn,jdbcType=VARCHAR}
+      </if>
+      <if test="goodsName != null" >
+          and t.goods_name = #{goodsName,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="imgUrl != null" >
+          and t.img_url = #{imgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="pcGoodsDesc != null" >
+          and t.pc_goods_desc = #{pcGoodsDesc,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="mobileGoodsDesc != null" >
+          and t.mobile_goods_desc = #{mobileGoodsDesc,jdbcType=LONGVARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.trade_snapshoot_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.trade_snapshoot_id) from org_trade_snapshoot t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_trade_snapshoot t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_trade_snapshoot where trade_snapshoot_id in (
+    select t.trade_snapshoot_id from (select * from org_trade_snapshoot) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/me.js"></script>  
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+
+<body>
+<div class="all  all-control">
+	<header class="head list_head">
+		<div class="head_left">
+			<a href="index.html"><span class='glyphicon glyphicon-menu-left'></span></a>
+		</div>
+		<div class="head_right">
+			<input type="text" placeholder="Search" class="form-control">
+			<span class="glyphicon glyphicon-search"></span>
+		</div>
+		<div class="head_right2">
+			<a href="#">筛选</a>
+		</div>
+	</header>
+	<div class="area area-control">
+			<a class="a selected">默认</a>
+			<a class="a">销量
+				<span class="glyphicon glyphicon-triangle-top "></span>
+				<span class="glyphicon glyphicon-triangle-bottom "></span>
+			</a>
+			<a class="a">价格
+				<span class="glyphicon glyphicon-triangle-top "></span>
+				<span class="glyphicon glyphicon-triangle-bottom"></span>
+			</a>
+	</div>
+	<div class="tip-special" style="background:#fff">
+		<span>以下商品可使用满50减10的优惠券</span>
+	</div>
+	<div class="content">
+		<div class="goods-list">
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/2.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/2.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">ddddddaddd111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/3.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/4.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题....</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/5.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题....</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+			<div class="listitem">
+				<div class="listimg">
+					<a href="#"><img src="img/p2.jpg"></a>
+				</div>
+				<div class="listtext">
+					<a href="#">商品名称 商品标题..商品名称 商品标题...商品名称 商品名称 商品标题..商品名称 商品标题...商品名称 商品商品标题....</a>
+				</div>
+				<div class="listprice">
+					<span class="red">￥15.00</span>
+				</div>
+				<div class="listcoment">
+					<span>306人评价</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gotop"></div>
+	<footer class="footer btn1">
+		<div class="b1"><a  >全部</a></div>
+		<div class="b1"><a >品牌</a></div>
+		<div class="b1"><a >特价</a></div>
+	</footer>
+	<div class="search_bottom">
+			<input type="text" placeholder="Search" class="form-control">
+			<span class="glyphicon glyphicon-search"></span>
+		</div>
+</div>
+<div class="sidebar">
+<aside class="aside">
+	<div class="aside-head">
+		<div class="a-head">
+			筛选
+			<a class="a3">取消</a>
+			<a href=""class="a4">确定</a>
+		</div>
+		<span class="line1"></span>
+	</div>
+	<div class="aside-all">
+		<div class="a-content">
+			<!-- 一级滑动框 -->
+			<div class="member-content">
+				<ul>
+					<li> 品牌<em class="emadd">天龙天龙八部3D八部3D</em> <span class="glyphicon glyphicon-menu-right"></span></li>
+					<li>类别  <span class="glyphicon glyphicon-menu-right"></span></li>
+					<li>  产地 <span class="glyphicon glyphicon-menu-right"></span></li>
+					<li> 品牌 <em class="emadd">天龙天龙八部3D八部3D</em><span class="glyphicon glyphicon-menu-right"></span></li>
+					<li>类别 <em class="emadd">天龙天龙八部3D八部3D</em> <span class="glyphicon glyphicon-menu-right"></span></li>
+					<li>  产地 <span class="glyphicon glyphicon-menu-right"></span></li>
+					<li class="no-border"> 价格      <span class="glyphicon glyphicon-menu-right"></span></li>
+				</ul>
+			</div>
+			<!--end  一级滑动框 -->
+		</div>
+		<!-- 二级品牌滑动框 -->
+		<div class="a-content">
+			<h4 class="c-title">
+				<strong>已选择：</strong>
+				<span>康师傅，哇哈哈康师傅，哇哈哈康师傅，哇哈哈</span>
+				<span class="c-r">等2个</span>
+			</h4>
+			<div class="member-content">
+				<ul>
+					<li>康师傅<span class="checkme checked"></span></li>
+					<li>康师傅 <span class="checkme "></span></li>
+					<li>康师傅<span class="checkme "></span> </li>
+				</ul>
+			</div>
+		</div>
+		<!-- end 二级滑动框 -->
+
+		<!-- 二级折叠滑动框 -->
+		<div class="a-content">
+			<h4 class="c-title">
+				<strong>已选择：</strong>全部分类
+				
+			</h4>
+			<div class="member-content">
+				<ul>
+					<li>
+						<h5 class="z-title ">电脑商城<span class="glyphicon glyphicon-menu-down "></span></h5>
+						<div class="zhedie special3 ">
+							<p>平板<span class="checkme "></span></p>
+							<p>平板</p>
+							<p>平板</p> 
+						</div>
+					</li>
+						<li>
+						<h5 class="z-title ">电脑商城</h5>
+						<div class="zhedie special3 ">
+							<p>平板<span class="checkme "></span></p>
+							<p>平板</p>
+							<p>平板</p> 
+						</div>
+					</li>
+						<li>
+						<h5 class="z-title ">电脑商城</h5>
+						<div class="zhedie special3 ">
+							<p>平板<span class="checkme "></span></p>
+							<p>平板</p>
+							<p>平板</p> 
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end 二级折叠滑动框 -->
+				<!-- 二级价格滑动框 -->
+		<div class="a-content">
+			<h4 class="c-title">
+				<strong>已选择：</strong>什么价格
+			</h4>
+			<div class="member-content">
+				<ul>
+					<li>康师傅<span class="checkme checked"></span></li>
+					<li>康师傅 <span class="checkme "></span></li>
+					<li>康师傅<span class="checkme "></span> </li>
+				</ul>
+			</div>
+			<div class="search-price">
+				<input type="text">
+				<span>—</span>
+				<input type="text">
+				<a href="#" class="sure2">确认</a>
+			</div>
+		</div>
+		<!-- end 二级滑动框 -->
+		<div class="a-footer">
+			<a class="a5">清除选项</a>
+		</div>
+	</div>
+</aside>
+</div>
+<div class="slide-mask"></div>
+</body>
+<script type="text/javascript">
+	$('.head_right2').click(function(){
+		var wh = $('div.all_bc').height();
+		$('div.slide-mask').css('height', wh).show();
+		
+		// $('.aside').css('height', wh).addClass('moved');
+		$('.aside').addClass('moved');
+	})
+	$('div.slide-mask').on('click', function(){
+		$('div.slide-mask').hide();
+		$('.aside').removeClass('moved');
+	});
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$('.a').click(function(){
+		// 
+		var x=$(this).children('.glyphicon').eq(0).hasClass('red');
+		var y=$(this).children('.glyphicon').eq(1).hasClass('red');
+		if(	!x && !y)
+		{
+			$(this).find('.glyphicon-triangle-top').addClass('red');
+		}
+		if(x)
+		{	
+			$(this).find('.glyphicon-triangle-top').removeClass('red');
+			$(this).find('.glyphicon-triangle-bottom').addClass('red');
+		}
+		if(y)
+		{	
+			$(this).find('.glyphicon-triangle-bottom').removeClass('red');
+			$(this).find('.glyphicon-triangle-top').addClass('red');
+		}
+		$(this).siblings('.a').find('.glyphicon').removeClass('red');
+	})
+});
+	$('.z-title').click(function(){
+		$(this).toggleClass('active');
+	})
+
+</script>
+</html>

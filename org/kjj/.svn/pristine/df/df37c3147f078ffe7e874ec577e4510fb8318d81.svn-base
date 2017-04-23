@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.activity.OrgActivityTicketMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.activity.OrgActivityTicket" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="activity_id" property="activityId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="shop_code" property="shopCode" jdbcType="VARCHAR" />
+    <result column="ticket_number" property="ticketNumber" jdbcType="INTEGER" />
+    <result column="ticket_create_time" property="ticketCreateTime" jdbcType="TIMESTAMP" />
+    <result column="ticket_price" property="ticketPrice" jdbcType="DECIMAL" />
+    <result column="attend_num" property="attendNum" jdbcType="TINYINT" />
+    <result column="gain_num" property="gainNum" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, activity_id, shop_id, shop_code, ticket_number, ticket_create_time, ticket_price, 
+    attend_num, gain_num
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_activity_ticket
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_activity_ticket
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.activity.OrgActivityTicket" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_activity_ticket (activity_id, shop_id, shop_code, 
+      ticket_number, ticket_create_time, ticket_price, 
+      attend_num, gain_num)
+    values (#{activityId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, #{shopCode,jdbcType=VARCHAR}, 
+      #{ticketNumber,jdbcType=INTEGER}, #{ticketCreateTime,jdbcType=TIMESTAMP}, #{ticketPrice,jdbcType=DECIMAL}, 
+      #{attendNum,jdbcType=TINYINT}, #{gainNum,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.activity.OrgActivityTicket" >
+    update org_activity_ticket
+    <set >
+      <if test="activityId != null" >
+        activity_id = #{activityId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="shopCode != null" >
+        shop_code = #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketNumber != null" >
+        ticket_number = #{ticketNumber,jdbcType=INTEGER},
+      </if>
+      <if test="ticketCreateTime != null" >
+        ticket_create_time = #{ticketCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ticketPrice != null" >
+        ticket_price = #{ticketPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="attendNum != null" >
+        attend_num = #{attendNum,jdbcType=TINYINT},
+      </if>
+      <if test="gainNum != null" >
+        gain_num = #{gainNum,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.activity.OrgActivityTicket" >
+    update org_activity_ticket
+    set activity_id = #{activityId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      shop_code = #{shopCode,jdbcType=VARCHAR},
+      ticket_number = #{ticketNumber,jdbcType=INTEGER},
+      ticket_create_time = #{ticketCreateTime,jdbcType=TIMESTAMP},
+      ticket_price = #{ticketPrice,jdbcType=DECIMAL},
+      attend_num = #{attendNum,jdbcType=TINYINT},
+      gain_num = #{gainNum,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_activity_ticket t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="activityId != null" >
+          and t.activity_id = #{activityId,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="shopCode != null" >
+          and t.shop_code = #{shopCode,jdbcType=VARCHAR}
+      </if>
+      <if test="ticketNumber != null" >
+          and t.ticket_number = #{ticketNumber,jdbcType=INTEGER}
+      </if>
+      <if test="ticketCreateTime != null" >
+          and t.ticket_create_time = #{ticketCreateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="ticketPrice != null" >
+          and t.ticket_price = #{ticketPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="attendNum != null" >
+          and t.attend_num = #{attendNum,jdbcType=TINYINT}
+      </if>
+      <if test="gainNum != null" >
+          and t.gain_num = #{gainNum,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_activity_ticket t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_activity_ticket t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_activity_ticket where id in (
+    select t.id from (select * from org_activity_ticket) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.activity.aide.OrgActivityTicketVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.activity_id, 
+    t.shop_id, 
+    t.shop_code, 
+    t.ticket_number, 
+    t.ticket_create_time, 
+    t.ticket_price, 
+    t.attend_num, 
+    t.gain_num
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

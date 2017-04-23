@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>	
+
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">商品</a></li>
+		<li ><a href="#">品牌管理</a></li>
+		<li class="active">s商品属性</li>
+	</ul>
+		<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+		   <a href="添加商品.html" class="btn btn-info " role="button">基本信息</a>
+		   <a href="详情描述.html" class="btn btn-info" role="button">详细描述</a>
+		   <a href="商品属性.html" class="btn btn-info active" role="button">商品属性</a>
+		   <a href="相关商品.html" class="btn btn-info" role="button">相关商品</a>
+		   <a href="价格体系.html" class="btn btn-info" role="button">价格体系</a>
+		   <a href="其他信息.html" class="btn btn-info" role="button">其他信息</a>  
+    </div>
+	<form class="form-horizontal media-control">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				固定属性
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label class="col-sm-2 control-label" >是否进口商品:</label>								
+					<div class="col-sm-5">
+						<div class="checkbox">
+							<label>
+							<input type="checkbox">
+												是
+							</label>
+										</div>
+				</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" >条形码</label>								
+					<div class="col-sm-5">
+						<input type="text" class="form-control"  placeholder="Placeholder">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" >选择类型</label>								
+					<div class="col-sm-3">
+						<select class="form-control" >
+							<option>零食类别集成</option>
+							<option>零食类别集成</option>
+							<option>零食类别集成</option>
+							<option>零食类别集成</option>
+						</select>
+					</div>
+					<div class="col-sm-7">
+						<p style="margin-top:8px;">类型默认继承类别所挂接类型，如有个别商品不相符，请为此商品独立建立或选择类型。</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" ><i class="glyphicon glyphicon-star"></i>产地:</label>								
+					<div class="col-sm-5">
+						<input type="text" class="form-control"  placeholder="Placeholder">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" ><i class="glyphicon glyphicon-star"></i> 商品保质期</label>								
+					<div class="col-sm-5">
+						<input type="text" class="form-control"  placeholder="Placeholder">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" ><i class="glyphicon glyphicon-star"></i> 商品规格</label>								
+					<div class="col-sm-5">
+						<input type="text" class="form-control"  placeholder="Placeholder">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" >是否有机</label>								
+					<div class="col-sm-5">
+						<p>
+							<label class="radio-inline">
+								<input type="radio" name="1">是</input>
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name='1'>否</input>
+							</label>
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" >适宜季节：</label>								
+					<div class="col-sm-8">
+						<p>
+							<label class="checkbox-inline">
+									<input type="checkbox">春</input>
+							</label>
+							<label class="checkbox-inline">
+									<input type="checkbox">夏</input>
+							</label>
+							<label class="checkbox-inline">
+									<input type="checkbox">秋</input>
+							</label>
+							<label class="checkbox-inline">
+									<input type="checkbox">冬</input>
+							</label>
+						</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+	</form>
+	</br>
+		<div class="text-center">
+			<button type="button" class="btn btn-primary " >保存</button>
+		</div>
+</div>
+</div>
+</body>
+</html>

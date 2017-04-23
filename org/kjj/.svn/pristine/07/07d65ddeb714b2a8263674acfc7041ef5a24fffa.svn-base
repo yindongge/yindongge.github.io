@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgRefundOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgRefundOrder" >
+    <id column="refund_order_id" property="refundOrderId" jdbcType="INTEGER" />
+    <result column="refund_serial_no" property="refundSerialNo" jdbcType="BIGINT" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="order_serial_no" property="orderSerialNo" jdbcType="BIGINT" />
+    <result column="return_order_id" property="returnOrderId" jdbcType="INTEGER" />
+    <result column="return_serial_no" property="returnSerialNo" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="refund_style" property="refundStyle" jdbcType="TINYINT" />
+    <result column="online_refund_style" property="onlineRefundStyle" jdbcType="TINYINT" />
+    <result column="refund_status" property="refundStatus" jdbcType="TINYINT" />
+    <result column="refund_money" property="refundMoney" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="refund_admin_id" property="refundAdminId" jdbcType="SMALLINT" />
+    <result column="refund_time" property="refundTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    refund_order_id, refund_serial_no, order_id, order_serial_no, return_order_id, return_serial_no, 
+    user_id, shop_id, refund_style, online_refund_style, refund_status, refund_money, 
+    create_time, remark, refund_admin_id, refund_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_refund_order
+    where refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_refund_order
+    where refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgRefundOrder" useGeneratedKeys="true" keyColumn="refund_order_id" keyProperty="refundOrderId" >
+    insert into org_refund_order (refund_serial_no, order_id, order_serial_no, 
+      return_order_id, return_serial_no, user_id, 
+      shop_id, refund_style, online_refund_style, 
+      refund_status, refund_money, create_time, 
+      remark, refund_admin_id, refund_time
+      )
+    values (#{refundSerialNo,jdbcType=BIGINT}, #{orderId,jdbcType=INTEGER}, #{orderSerialNo,jdbcType=BIGINT}, 
+      #{returnOrderId,jdbcType=INTEGER}, #{returnSerialNo,jdbcType=BIGINT}, #{userId,jdbcType=INTEGER}, 
+      #{shopId,jdbcType=INTEGER}, #{refundStyle,jdbcType=TINYINT}, #{onlineRefundStyle,jdbcType=TINYINT}, 
+      #{refundStatus,jdbcType=TINYINT}, #{refundMoney,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{refundAdminId,jdbcType=SMALLINT}, #{refundTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgRefundOrder" >
+    update org_refund_order
+    <set >
+      <if test="refundSerialNo != null" >
+        refund_serial_no = #{refundSerialNo,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSerialNo != null" >
+        order_serial_no = #{orderSerialNo,jdbcType=BIGINT},
+      </if>
+      <if test="returnOrderId != null" >
+        return_order_id = #{returnOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="returnSerialNo != null" >
+        return_serial_no = #{returnSerialNo,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="refundStyle != null" >
+        refund_style = #{refundStyle,jdbcType=TINYINT},
+      </if>
+      <if test="onlineRefundStyle != null" >
+        online_refund_style = #{onlineRefundStyle,jdbcType=TINYINT},
+      </if>
+      <if test="refundStatus != null" >
+        refund_status = #{refundStatus,jdbcType=TINYINT},
+      </if>
+      <if test="refundMoney != null" >
+        refund_money = #{refundMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="refundAdminId != null" >
+        refund_admin_id = #{refundAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="refundTime != null" >
+        refund_time = #{refundTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgRefundOrder" >
+    update org_refund_order
+    set refund_serial_no = #{refundSerialNo,jdbcType=BIGINT},
+      order_id = #{orderId,jdbcType=INTEGER},
+      order_serial_no = #{orderSerialNo,jdbcType=BIGINT},
+      return_order_id = #{returnOrderId,jdbcType=INTEGER},
+      return_serial_no = #{returnSerialNo,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      refund_style = #{refundStyle,jdbcType=TINYINT},
+      online_refund_style = #{onlineRefundStyle,jdbcType=TINYINT},
+      refund_status = #{refundStatus,jdbcType=TINYINT},
+      refund_money = #{refundMoney,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      refund_admin_id = #{refundAdminId,jdbcType=SMALLINT},
+      refund_time = #{refundTime,jdbcType=TIMESTAMP}
+    where refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgRefundOrderVo" extends="BaseResultMap" >
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+    <result column="admin_name" property="adminName" jdbcType="VARCHAR" />
+  	<association property="orgOrder" javaType="com.kjj.commserver.entity.order.OrgOrder">
+	  <result column="order_money" property="orderMoney" jdbcType="DECIMAL" />
+	  <result column="deposit_money" property="depositMoney" jdbcType="DECIMAL" />
+	  <result column="deposit_refund" property="depositRefund" jdbcType="DECIMAL" />
+	  <result column="pay_money" property="payMoney" jdbcType="DECIMAL" />
+  	</association>
+  	<association property="orgReturnOrder" javaType="com.kjj.commserver.entity.order.OrgReturnOrder">
+  	  <result column="order_goods_id" property="orderGoodsId" jdbcType="INTEGER" />
+  	  <result column="amount" property="amount" jdbcType="INTEGER" />
+      <result column="reason" property="reason" jdbcType="VARCHAR" />
+      <result column="return_contact" property="returnContact" jdbcType="VARCHAR" />
+      <result column="return_address" property="returnAddress" jdbcType="VARCHAR" />
+      <result column="return_tel" property="returnTel" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.refund_order_id, 
+    t.refund_serial_no, 
+    t.order_id, 
+    t.order_serial_no, 
+    t.return_order_id, 
+    t.return_serial_no, 
+    t.user_id, 
+    t.shop_id, 
+    t.refund_style, 
+    t.online_refund_style, 
+    t.refund_status, 
+    t.refund_money, 
+    t.create_time, 
+    t.remark, 
+    t.refund_admin_id, 
+    t.refund_time,
+    oo.order_money,
+    oo.deposit_money,
+    oo.deposit_refund,
+    oo.pay_money,
+    oro.order_goods_id,
+    oro.amount,
+    oro.reason,
+    oro.return_contact,
+    oro.return_address,
+    oro.return_tel,
+    ou.user_name,
+    os.shop_name,
+    oau.user_name as admin_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_refund_order t
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_return_order oro on t.return_order_id = oro.return_order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on oau.user_id = t.refund_admin_id
+    where t.refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="refundOrderId != null" >
+          and t.refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+      </if>
+      <if test="refundSerialNo != null" >
+          and t.refund_serial_no = #{refundSerialNo,jdbcType=BIGINT}
+      </if>
+      <if test="orderId != null" >
+          and t.order_id = #{orderId,jdbcType=INTEGER}
+      </if>
+      <if test="orderSerialNo != null" >
+          and t.order_serial_no = #{orderSerialNo,jdbcType=BIGINT}
+      </if>
+      <if test="returnOrderId != null" >
+          and t.return_order_id = #{returnOrderId,jdbcType=INTEGER}
+      </if>
+      <if test="returnSerialNo != null" >
+          and t.return_serial_no = #{returnSerialNo,jdbcType=BIGINT}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="refundStyle != null" >
+          and t.refund_style = #{refundStyle,jdbcType=TINYINT}
+      </if>
+      <if test="onlineRefundStyle != null" >
+          and t.online_refund_style = #{onlineRefundStyle,jdbcType=TINYINT}
+      </if>
+      <if test="refundStatus != null" >
+          and t.refund_status = #{refundStatus,jdbcType=TINYINT}
+      </if>
+      <if test="refundMoney != null" >
+          and t.refund_money = #{refundMoney,jdbcType=DECIMAL}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="refundAdminId != null" >
+          and t.refund_admin_id = #{refundAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="refundTime != null" >
+          and t.refund_time = #{refundTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="shopIds != null" >
+          <if test="shopIds.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopIds" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+          </if>
+          <if test="shopIds.size() == 0" >
+          and 1 = 0
+      	  </if>
+      </if>
+      <if test="shopSelect != null and shopSelect.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopSelect" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+      </if>
+      <if test="refundOrderLike != null and refundOrderLike != '' ">
+		  and t.refund_order_id like concat('%',#{refundOrderLike},'%')
+	  </if>
+	  <if test="orderLike != null and orderLike != '' ">
+		  and t.order_id like concat('%',#{orderLike},'%')
+	  </if>
+	  <if test="userNameLike != null and userNameLike != '' ">
+		  and ou.user_name like concat('%',#{userNameLike},'%')
+	  </if>
+	  <if test="createTimeStart != null">
+		  and t.create_time &gt;= #{createTimeStart,jdbcType=TIMESTAMP}
+	  </if>
+	  <if test="createTimeEnd != null">
+		  and t.create_time &lt;= #{createTimeEnd,jdbcType=TIMESTAMP}
+	  </if>
+    </where>
+    <if test="sorting != null" >
+       order by ${sorting},t.refund_order_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.refund_order_id) from org_refund_order t
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_return_order oro on t.return_order_id = oro.return_order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on oau.user_id = t.refund_admin_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_refund_order t
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_return_order oro on t.return_order_id = oro.return_order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on oau.user_id = t.refund_admin_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_refund_order where refund_order_id in (
+    select t.refund_order_id from (select * from org_refund_order) t
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_return_order oro on t.return_order_id = oro.return_order_id
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectByPrimaryKey4Update" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_refund_order
+    where refund_order_id = #{refundOrderId,jdbcType=INTEGER}
+    for update
+  </select>
+</mapper>

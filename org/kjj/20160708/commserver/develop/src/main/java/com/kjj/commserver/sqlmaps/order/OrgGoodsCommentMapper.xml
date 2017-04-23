@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgGoodsCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgGoodsComment" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="order_goods_id" property="orderGoodsId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="star_score" property="starScore" jdbcType="TINYINT" />
+    <result column="goods_comment" property="goodsComment" jdbcType="VARCHAR" />
+    <result column="reply" property="reply" jdbcType="VARCHAR" />
+    <result column="reply_admin_id" property="replyAdminId" jdbcType="SMALLINT" />
+    <result column="reply_status" property="replyStatus" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="reply_time" property="replyTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, order_id, order_goods_id, goods_id, star_score, goods_comment, reply, 
+    reply_admin_id, reply_status, status, create_time, reply_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_goods_comment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_goods_comment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgGoodsComment" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_goods_comment (user_id, order_id, order_goods_id, 
+      goods_id, star_score, goods_comment, 
+      reply, reply_admin_id, reply_status, 
+      status, create_time, reply_time, 
+      update_time)
+    values (#{userId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{orderGoodsId,jdbcType=INTEGER}, 
+      #{goodsId,jdbcType=INTEGER}, #{starScore,jdbcType=TINYINT}, #{goodsComment,jdbcType=VARCHAR}, 
+      #{reply,jdbcType=VARCHAR}, #{replyAdminId,jdbcType=SMALLINT}, #{replyStatus,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{replyTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgGoodsComment" >
+    update org_goods_comment
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderGoodsId != null" >
+        order_goods_id = #{orderGoodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="starScore != null" >
+        star_score = #{starScore,jdbcType=TINYINT},
+      </if>
+      <if test="goodsComment != null" >
+        goods_comment = #{goodsComment,jdbcType=VARCHAR},
+      </if>
+      <if test="reply != null" >
+        reply = #{reply,jdbcType=VARCHAR},
+      </if>
+      <if test="replyAdminId != null" >
+        reply_admin_id = #{replyAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="replyStatus != null" >
+        reply_status = #{replyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyTime != null" >
+        reply_time = #{replyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgGoodsComment" >
+    update org_goods_comment
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      order_goods_id = #{orderGoodsId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      star_score = #{starScore,jdbcType=TINYINT},
+      goods_comment = #{goodsComment,jdbcType=VARCHAR},
+      reply = #{reply,jdbcType=VARCHAR},
+      reply_admin_id = #{replyAdminId,jdbcType=SMALLINT},
+      reply_status = #{replyStatus,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      reply_time = #{replyTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgGoodsCommentVo" extends="BaseResultMap" >
+  		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+  		<result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+  		<result column="level_name" property="levelName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.user_id, 
+    t.order_id, 
+    t.order_goods_id, 
+    t.goods_id, 
+    t.star_score, 
+    t.goods_comment, 
+    t.reply, 
+    t.reply_admin_id, 
+    t.reply_status, 
+    t.status, 
+    t.create_time, 
+    t.reply_time, 
+    t.update_time,
+    ou.user_name,
+    opi.goods_name,
+    oul.level_name  
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_goods_comment t
+    left join org_users ou on t.user_id = ou.user_id
+	left join org_product_item opi on t.goods_id = opi.goods_id
+	left join org_user_level oul on ou.level_id=oul.level_id
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="orderId != null" >
+          and t.order_id = #{orderId,jdbcType=INTEGER}
+      </if>
+      <if test="orderGoodsId != null" >
+          and t.order_goods_id = #{orderGoodsId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="starScore != null" >
+          and t.star_score = #{starScore,jdbcType=TINYINT}
+      </if>
+      <if test="goodsComment != null" >
+          and t.goods_comment = #{goodsComment,jdbcType=VARCHAR}
+      </if>
+      <if test="reply != null" >
+          and t.reply = #{reply,jdbcType=VARCHAR}
+      </if>
+      <if test="replyAdminId != null" >
+          and t.reply_admin_id = #{replyAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="replyStatus != null and replyStatus > -1 " >
+          and t.reply_status = #{replyStatus,jdbcType=TINYINT}
+      </if>
+      <if test="status != null and status > -1 " >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="replyTime != null" >
+          and t.reply_time = #{replyTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="goodsCommentLike != null and goodsCommentLike != '' ">
+		  and t.goods_comment like concat('%',#{goodsCommentLike},'%')
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_goods_comment t
+    left join org_users ou on t.user_id = ou.user_id
+	left join org_product_item opi on t.goods_id = opi.goods_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_goods_comment t
+    left join org_users ou on t.user_id = ou.user_id
+	left join org_product_item opi on t.goods_id = opi.goods_id
+	left join org_user_level oul on ou.level_id=oul.level_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_goods_comment where id in (
+    select t.id from (select * from org_goods_comment) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

@@ -1,0 +1,62 @@
+
+/*清除默认样式*/
+
+body,
+h1-h6,
+p,
+dl,
+dd,
+form{
+margin: 0;
+}
+a{ 
+text-decoration: none;
+color: #777777;
+}
+img{
+border: none;
+vertical-align: top;
+}
+ul,
+ol{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+input,
+textarea{
+margin: 0;
+padding: 0;
+outline: none;
+}
+textarea{
+resize: none;
+overflow: hidden;
+}
+table{
+border-collapse: collapse;
+}
+th,
+td{
+padding: 0;
+}
+.clearFix{
+zoom: 1;
+}
+.clearFix:after {
+content:"";
+clear: both;
+display: block;
+}
+
+/*头部导航栏*/
+
+.all{
+    width:100%;
+    background: #f0f0f0;
+}
+.container{
+    width: 1190px;
+    margin: 0 auto;
+}
+

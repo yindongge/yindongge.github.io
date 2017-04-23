@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+</head>
+<body >
+	<div class="box">
+		<header class="header">
+			<div class="head-content">个人中心</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+		<div class="paper gray">
+			<div class="paper_list h75">
+				<a href="#" class="on">要发票</a>
+				<a href="#">不要发票</a>
+			</div>
+			<div class="paper_list h90">
+				<h2 class="paper-title">
+					发票类型：
+				</h2>
+				<div class="paper-select">
+					<a class="select-a"><span class="circle on"></span>普通发票</a>
+					<a class="select-a"><span class="circle"></span>电子发票</a>
+				</div>
+			</div>
+			<div class="paper_list h140">
+				<h2 class="paper-title">
+					发票抬头：
+				</h2>
+				<div class="paper-select paperspecial">
+					<div class="writepaper">
+						<input type="text" placeholder="个人" class="write">
+						<span class="circle on"></span>
+						<span class="circle-lable">个人</span>
+					</div>
+				</div>
+				<div class="paper-select paperspecial  ">
+					<div class="writepaper noborder">
+						<input type="text" placeholder="公司名称" class="write">
+						<span class="circle"></span>
+						<span class="circle-lable">公司</span>
+					</div>
+				</div>
+			</div>
+			<div class="paper_list h140">
+				<h2 class="paper-title">
+					普通商品发票内容：
+				</h2>
+				<div class="paper-select paperspecial  ">
+					<div class="writepaper noborder">
+						<span class="circle"></span>
+						<span class="circle-lable">明细</span>
+					</div>
+				</div>
+				<div class="paper-select paperspecial  ">
+					<div class="writepaper noborder">
+						<span class="circle on"></span>
+						<span class="circle-lable">办公用品</span>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+			<div class="buttonsure">
+				<a class="surea" onclick="autoAlert()">确定</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- end box -->
+
+</body>
+</html>

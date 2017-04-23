@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+</head>
+<body >
+<div class="box box-gray">
+	<header class="header">
+		<div class="head-content">商品评价</div>
+		<div class="head-left"><a href="#" class="link"></a></div>
+	</header>
+	<!-- end top -->
+	<nav class="nav">
+		<a href="#" class="on">
+			待评价(12)
+			<span></span>
+		</a>
+		<a href="#">已评价(11)
+			<span></span>
+		</a>
+	</nav>
+	<div class="nolist">无待评价的商品</div>
+	<!-- end nav -->
+	<div class="comment">
+		<div class=" commetntlist">
+			<a class="listone" href="www.baidu.com">
+				<div class="leftimg">
+					<img src="images/p14.jpg">
+				</div>
+				<div class="lefttext">
+					商天听这歌，竟然听得我心痒痒的(Ｔ▽Ｔ)忍不住想掉眼泪(ㄒoㄒ)题商商品标品
+					<span class="glyphicon glyphicon-menu-right"></span>
+				</div>
+			</a>
+			<div class="buff">
+				<div class="buff-right toggleup">
+					<a class="gopay">评价</a>
+				</div>
+			</div>
+			<div class="toggledown">
+				<dl class="togglelist">
+					<dt>评分:</dt>
+						<dd><span class=" star on"></span>
+							<span class=" star"></span>
+							<span class=" star"></span>
+							<span class=" star"></span>
+							<span class=" star"></span>
+						</dd>
+				</dl>
+				<dl class="togglelist">
+					<dt>评价:</dt>
+					<dd><textarea name="" id="" cols="30" rows="10">
+						简历中的自我评价（中英文对照）mature，dynamic and honest.思想成熟、精明能干、为人诚实。Ex
+					</textarea></dd>
+				</dl>
+				<div class="toggle_btn"><a href="http://bbs.csdn.net/topics/320049761" class="yellow-submit" onclick="return false" disabled >提交评价<span class="disableding"></span></a></div>
+			</div>
+		</div>
+		<div class=" commetntlist">
+			<a class="listone" href="www.baidu.com">
+				<div class="leftimg">
+					<img src="img/p14.jpg">
+				</div>
+				<div class="lefttext">
+					商天听这歌，竟然听得我心痒痒的(Ｔ▽Ｔ)忍不住想掉眼泪(ㄒoㄒ)题商商品标品
+					<span class="glyphicon glyphicon-menu-right"></span>
+				</div>
+			</a>
+			<div class="buff">
+				<div class="buff-right toggleup">
+					<a class="gopay">评价</a>
+				</div>
+			</div>
+		</div>
+		<div class=" commetntlist">
+			<a class="listone" href="www.baidu.com">
+				<div class="leftimg">
+					<img src="img/p14.jpg">
+				</div>
+				<div class="lefttext">
+					商天听这歌，竟然听得我心痒痒的(Ｔ▽Ｔ)忍不住想掉眼泪(ㄒoㄒ)题商商品标品
+					<span class="glyphicon glyphicon-menu-right"></span>
+				</div>
+			</a>
+			<div class="buff">
+				<div class="buff-right">
+					<a class="gopay" onclick="AutoAlert()">评价</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- end box -->
+	<script type="text/javascript">
+		$(function(){
+			togglelist();
+		})
+		function togglelist(){
+		$('.toggleup').click(function(){
+			$(this).parent('.buff').siblings(".toggledown").toggle();
+		})
+	}
+	</script>
+</body>
+</html>

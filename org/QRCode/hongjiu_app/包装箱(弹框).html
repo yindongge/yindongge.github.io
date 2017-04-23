@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+	<title>扫一扫</title>
+</head>
+<body class="grey_body">
+	<div class="all">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #fff;"></a>
+			<h1 class="mui-title">发货</h1>
+			<a href="#" class="mui-btn mui-btn-link mui-pull-right set_color">退出</a>
+		</header>
+		<div class="mui-content">
+			<h5 class="set_h5" style="border-bottom: 1px solid #ccc;">你好吗？</h5>
+			<p class="mui_set_title mui-ellipsis">产品名称：斑马虎系列赤霞珠干红葡萄酒2011</p>
+			<div class="set_card_arap">
+				<div class="mui-card set_card">
+					<div class="mui-card-header">
+						箱码信息
+					</div>
+					<div class="mui-card-content">
+						<table border="" cellspacing="" cellpadding="" class="mui-table">
+							<tbody>
+								<tr>
+									<td>箱码编号</td>
+									<td>10000202022</td>
+								</tr>
+								<tr>
+									<td>容纳数量</td>
+									<td>7</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+					<div class="mui-card-footer">
+							<a href=""></a>
+							<!--
+                            	上边要留着，控制位置的
+                            -->
+							<a class="mui-card-link mui-btn  mui-btn-set_danger" id='promptBtn'><span class="mui-icon mui-icon-gear"></span>设置容纳数量</a>
+					</div>
+				</div>
+			</div>
+			<div class="solo_a">
+				<a href=""><img src="img/sao.png"/>逐一扫产品码</a>
+			</div>
+			<button class="mui-btn mui-btn-block mui-btn-blue set_margin_block">查看包装箱</button>
+		</div>
+	</div>
+	<div class="alert_self_set">
+		<div class="title_set_alert">
+			欢迎加入什么什么
+		</div>
+		<a href="">确定</a>
+	</div>
+	<div class="mui-popup-backdrop mui-active" style="display: block;"></div>
+	<script type="text/javascript" src="js/mui.js" ></script>
+    <script type="text/javascript">
+
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+
+   		});
+
+    </script>
+    <script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var info = document.getElementById("info");
+
+			document.getElementById("promptBtn").addEventListener('tap', function(e) {
+				e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+				//var btnArray = ['取消', '确定'];
+				mui.prompt('容纳数量：',  '', function(e) {
+
+				})
+			});
+
+		</script>
+</body>
+</html>

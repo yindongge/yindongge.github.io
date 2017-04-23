@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgMobilePageCustomizeMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgMobilePageCustomize" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="page_id" property="pageId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.kjj.commserver.entity.shop.OrgMobilePageCustomize" extends="BaseResultMap" >
+    <result column="html_text" property="htmlText" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, page_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    html_text
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from org_mobile_page_customize
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_mobile_page_customize
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageCustomize" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_mobile_page_customize (page_id, html_text)
+    values (#{pageId,jdbcType=INTEGER}, #{htmlText,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageCustomize" >
+    update org_mobile_page_customize
+    <set >
+      <if test="pageId != null" >
+        page_id = #{pageId,jdbcType=INTEGER},
+      </if>
+      <if test="htmlText != null" >
+        html_text = #{htmlText,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageCustomize" >
+    update org_mobile_page_customize
+    set page_id = #{pageId,jdbcType=INTEGER},
+      html_text = #{htmlText,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgMobilePageCustomize" >
+    update org_mobile_page_customize
+    set page_id = #{pageId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgMobilePageCustomizeVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.page_id
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page_customize t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="pageId != null" >
+          and t.page_id = #{pageId,jdbcType=INTEGER}
+      </if>
+      <if test="htmlText != null" >
+          and t.html_text = #{htmlText,jdbcType=LONGVARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_mobile_page_customize t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page_customize t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_mobile_page_customize where id in (
+    select t.id from (select * from org_mobile_page_customize) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+   <select id="selectBlob" parameterType="java.util.Map" resultMap="ResultMapWithBLOBs" >
+    select 
+    <include refid="Vo_Column_List" />,
+    <include refid="Blob_Column_List" />
+    from org_mobile_page_customize t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectForOne" parameterType="java.util.Map" resultMap="ResultMapWithBLOBs">
+  	select
+  	 <include refid="Vo_Column_List" />,
+     <include refid="Blob_Column_List" />
+  	from org_mobile_page_customize t  left join org_mobile_page omp  on omp.id = t.page_id
+  	<include refid="Query_For_One_Clause"/>
+  </select> 
+  <sql id="Query_For_One_Clause">
+  	<where>
+  		<if test="pageId != null">
+  			and t.page_id = #{pageId,jdbcType=VARCHAR}
+  		</if>
+  		<if test="areaCode != null">
+  			and omp.area_code = #{areaCode,jdbcType=VARCHAR}
+  		</if>
+  		<if test="shopId != null">
+  			and omp.shop_id = #{shopId,jdbcType=INTEGER}
+  		</if>
+  		<if test="shopId == null">
+  			and omp.shop_id is null
+  		</if>
+  		<if test="status != null">
+  			and omp.status = #{status,jdbcType=TINYINT}
+  		</if>
+  	</where>
+  </sql>
+</mapper>

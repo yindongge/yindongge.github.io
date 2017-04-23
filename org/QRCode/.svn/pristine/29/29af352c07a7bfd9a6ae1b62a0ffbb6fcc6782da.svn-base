@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<title>买赠订单</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="row print_head">
+			<h3 class="h3">北京澳华阳光酒业有限公司</h3>
+			<h4 class="h4">销售订单</h4>
+			<img src="../img/print_logo.png" alt="" class="logo_p" />
+			<div class="print_span_box">
+				<span>订单编号：261662626015</span>
+				<span>订单时间：2016年11月15日</span>
+				<button class="btn btn-default btn-xs">日期</button>
+			</div>
+		</div>
+		<div class=" table-control print_control">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td colspan="7">非销售商品申领单位（个人）：<input type="text"  /></td>
+					</tr>
+					</tr>
+					<tr class="fix_center">
+						<th style="width:30px;">序列</th>
+						<th style="width:120px">商品编号</th>
+						<th>商品名称</th>
+						<th style="width:50px;">单位</th>
+						<th style="width:50px;">数量</th>
+						<th style="width:90px;">核销单价（元）</th>
+						<th style="width:90px;">核销金额（元）</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td><button class="btn btn-info btn-xs pull-right">选择</button></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td><button class="btn btn-info btn-xs pull-right">选择</button></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td></td>
+						<td><button class="btn btn-info btn-xs pull-right">选择</button></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="4">合计</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3" colspan="2">收货人信息</td>
+						<td colspan="5">收货单位（个人）全称：<button class="btn btn-info btn-xs">选择</button></td>
+					</tr>
+					<tr>
+						<td colspan="1">收货地址：</td>
+						<td colspan="4">收货人电话</td>
+					</tr>
+					<tr>
+						<td colspan="5">收货人姓名：</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row_reinfie">
+			<div class="row">
+				<div class="col-md-6">订单申请人：</div>
+				<div class="col-md-6">制单人：</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">部门负责人：</div>
+				<div class="col-md-6">公司负责人：</div>
+			</div>
+		</div>
+		<div class="bottom_btn">
+			<button class="btn btn-info">保存</button>
+			<button class="btn btn-success">打印订单</button>
+			<button class="btn btn-default">取消</button>
+		</div>
+	</div>
+</div>
+
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>会员级别</title>
+</head>
+<script>
+</script>
+<body >
+
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li ><a href="#">商品</a></li>
+				<li ><a href="#">级别管理</a></li>
+				<li class="active">等级规则</li>
+			</ul>
+			<div class="well well-control">
+				<p class="bg-warning">备注：会员类型分为个人会员和企业会员，个人会员等级间状态可以转换，消费至上限自动升级；个人类型会员和企业类型会员不能进行升级操作。</p>
+			</div>
+
+		</br>
+		<div class="breadcrumb breadcrumb-title ">会员级别<button type="button" class=" btn btn-danger pull-right">同步会员级别</button></div>
+		<table class="table table-bordered  borded-striped table-control table-4 special">
+			<thead>
+				<tr class="info text-center">
+					<th>名称</th>
+					<th>类型</th>
+					<th>消费下限</th>
+					<th>消费上限</th>
+					<th>-</th>
+					<th >操作</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>普通会员</td>
+				<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+				<td><input type="text" placeholder="0"/></td>
+				<td><input type="text" placeholder="500.00"/></td>
+				<td><input type="text" placeholder="-"/></td>
+				<td>
+					<button type="button" href="#" class="btn btn-danger " >修改</button>
+				</td>
+			</tr>
+			<tr>
+				<td>VIP会员</td>
+				<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+				<td><input type="text" placeholder="0"/></td>
+				<td><input type="text" placeholder="500.00"/></td>
+				<td><input type="text" placeholder="-"/></td>
+				<td>
+					<button type="button" href="#" class="btn btn-danger " >修改</button>
+				</td>
+			</tr>
+			<tr class="success">
+				<td>企业会员</td>
+				<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+				<td><input type="text" placeholder="0"/></td>
+				<td><input type="text" placeholder="500.00"/></td>
+				<td><input type="text" placeholder="-"/></td>
+				<td>
+					<button type="button" href="#" class="btn btn-danger " >修改</button>
+				</td>
+			</tr>
+			<tr class="success">
+				<td>高级企业会员</td>
+				<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+				<td><input type="text" placeholder="0"/></td>
+				<td><input type="text" placeholder="500.00"/></td>
+				<td><input type="text" placeholder="-"/></td>
+				<td>
+					<button type="button" href="#" class="btn btn-danger " >修改</button>
+				</td>
+			</tr>
+		</table>
+		<nav class="navbar navbar-default select-control" >
+			<div class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="到第几页">
+				</div>
+				<button type="submit" class="btn btn-default btn-info" onclick="AutoAlert()">确定</button>
+			</div>
+			<ul class="pagination pull-right">
+				<li>
+				  <a href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				  </a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href='#'>.....</a></li>
+				<li><a href="#">15</a></li>
+				<li>
+				  <a href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				  </a>
+				</li>
+			 </ul>
+			 <p class="navbar-text pull-right">共有200条记录 每页50条</p>
+		</nav>
+</div>
+</div>
+</body>
+</html>

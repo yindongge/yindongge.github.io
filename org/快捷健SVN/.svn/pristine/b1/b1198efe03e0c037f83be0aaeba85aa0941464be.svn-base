@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="js/jquery.js"></script>
+<script src="js/me.js"></script>
+<script src="js/modal.js"></script>
+
+<link href="css/modal.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+<div class="all">
+	<!-- end top -->
+	<div class="header">
+		<div class="container container-width margin-control">
+			<div class="logo fl">
+				<a href="index.html"><img src="img/logo.jpg"></a>
+			</div>
+			<div class="right-tip">
+				<p>想起密码？现在<a href="#">登录</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="regin">
+		<div class="regin-center">
+			<div class="regin-center-title">找回密码</div>
+			<div class="regin-line">
+				<div class="active">
+					<span class="firsr-span"><i>✔</i></span>
+					<span class="second-span">验证身份</span>
+				</div>
+				<div >
+					<span class="firsr-span"><i></i></span>
+					<span class="second-span">验证身份</span>
+				</div>
+				<div >
+					<span class="firsr-span"><i></i></span>
+					<span class="second-span">验证身份</span>
+				</div>
+			</div>
+			<div class="regin-center-content">
+				<form>
+				<div class="form-list">
+					<div class="form-center">
+						<input type="text" name="text1" placeholder="手机号">
+					</div>
+					<div class="check-mistake"><span class="red">你输入错了</span></div>
+				</div>
+				<div class="form-list">
+					<div class="form-center">
+						<input type="text" name="text1" class="f-special1" placeholder="验证码">
+						<button type="button" class="btn btn-primary gray">免费获取验证码</button>
+					</div>
+					<div class="check-mistake"><span class="gray">你输入错了</span></div>
+				</div>
+				<div class="form-list">
+					<div class="form-center">
+						<a href="" class="next-click">下一步</a>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<!-- footer -->
+<div class="link">
+	<div class="container">
+		<div class="link-list">
+			<a href="">关于我们</a>
+			｜
+			<a href="">常见问题</a>
+			｜
+			<a href="">用户协议</a>
+			｜
+		<span>客服电话：400-666-7777（每天9:00 - 22:00）</span></div>
+	</div>
+	<div class="copyright">食品流通许可证：SP1101131210068873（1-1）| 工信部备案：京ICP备20130356号 | Copyright © 2013 Kjjhome.com Inc. All Rights Reserved. 快捷健连锁超市版权所有 </div>
+</div>
+</div>
+</body>
+</html>

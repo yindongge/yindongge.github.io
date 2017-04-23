@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgEnterpriseInvitationUserMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgEnterpriseInvitationUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="easy_invitation_id" property="easyInvitationId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, easy_invitation_id, user_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_enterprise_invitation_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_enterprise_invitation_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgEnterpriseInvitationUser" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_enterprise_invitation_user (easy_invitation_id, user_id, create_time
+      )
+    values (#{easyInvitationId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgEnterpriseInvitationUser" >
+    update org_enterprise_invitation_user
+    <set >
+      <if test="easyInvitationId != null" >
+        easy_invitation_id = #{easyInvitationId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgEnterpriseInvitationUser" >
+    update org_enterprise_invitation_user
+    set easy_invitation_id = #{easyInvitationId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgEnterpriseInvitationUserVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.easy_invitation_id, 
+    t.user_id, 
+    t.create_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_enterprise_invitation_user t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="easyInvitationId != null" >
+          and t.easy_invitation_id = #{easyInvitationId,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_enterprise_invitation_user t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_enterprise_invitation_user t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_enterprise_invitation_user where id in (
+    select t.id from (select * from org_enterprise_invitation_user) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

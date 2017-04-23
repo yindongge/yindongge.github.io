@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.discount.OrgLimitTimeDiscountMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.discount.OrgLimitTimeDiscount" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="start_date" property="startDate" jdbcType="DATE" />
+    <result column="end_date" property="endDate" jdbcType="DATE" />
+    <result column="start_time" property="startTime" jdbcType="TIME" />
+    <result column="end_time" property="endTime" jdbcType="TIME" />
+    <result column="seckill" property="seckill" jdbcType="TINYINT" />
+    <result column="seckill_time_length" property="seckillTimeLength" jdbcType="SMALLINT" />
+    <result column="check_phone" property="checkPhone" jdbcType="TINYINT" />
+    <result column="shop_type" property="shopType" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_admin_id" property="createAdminId" jdbcType="SMALLINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, title, start_date, end_date, start_time, end_time, seckill, seckill_time_length, 
+    check_phone, shop_type, status, create_admin_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_limit_time_discount
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_limit_time_discount
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeDiscount" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_limit_time_discount (name, title, start_date, 
+      end_date, start_time, end_time, 
+      seckill, seckill_time_length, check_phone, 
+      shop_type, status, create_admin_id, 
+      create_time)
+    values (#{name,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, 
+      #{endDate,jdbcType=DATE}, #{startTime,jdbcType=TIME}, #{endTime,jdbcType=TIME}, 
+      #{seckill,jdbcType=TINYINT}, #{seckillTimeLength,jdbcType=SMALLINT}, #{checkPhone,jdbcType=TINYINT}, 
+      #{shopType,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, #{createAdminId,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeDiscount" >
+    update org_limit_time_discount
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        end_date = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIME},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIME},
+      </if>
+      <if test="seckill != null" >
+        seckill = #{seckill,jdbcType=TINYINT},
+      </if>
+      <if test="seckillTimeLength != null" >
+        seckill_time_length = #{seckillTimeLength,jdbcType=SMALLINT},
+      </if>
+      <if test="checkPhone != null" >
+        check_phone = #{checkPhone,jdbcType=TINYINT},
+      </if>
+      <if test="shopType != null" >
+        shop_type = #{shopType,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createAdminId != null" >
+        create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeDiscount" >
+    update org_limit_time_discount
+    set name = #{name,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=DATE},
+      end_date = #{endDate,jdbcType=DATE},
+      start_time = #{startTime,jdbcType=TIME},
+      end_time = #{endTime,jdbcType=TIME},
+      seckill = #{seckill,jdbcType=TINYINT},
+      seckill_time_length = #{seckillTimeLength,jdbcType=SMALLINT},
+      check_phone = #{checkPhone,jdbcType=TINYINT},
+      shop_type = #{shopType,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      create_admin_id = #{createAdminId,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.discount.aide.OrgLimitTimeDiscountVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.name, 
+    t.title, 
+    t.start_date, 
+    t.end_date, 
+    t.start_time, 
+    t.end_time, 
+    t.seckill, 
+    t.seckill_time_length, 
+    t.check_phone, 
+    t.shop_type, 
+    t.status, 
+    t.create_admin_id, 
+    t.create_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_limit_time_discount t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="title != null" >
+          and t.title = #{title,jdbcType=VARCHAR}
+      </if>
+      <if test="startDate != null" >
+          and t.start_date = #{startDate,jdbcType=DATE}
+      </if>
+      <if test="endDate != null" >
+          and t.end_date = #{endDate,jdbcType=DATE}
+      </if>
+      <if test="startTime != null" >
+          and t.start_time = #{startTime,jdbcType=TIME}
+      </if>
+      <if test="endTime != null" >
+          and t.end_time = #{endTime,jdbcType=TIME}
+      </if>
+      <if test="seckill != null" >
+          and t.seckill = #{seckill,jdbcType=TINYINT}
+      </if>
+      <if test="seckillTimeLength != null" >
+          and t.seckill_time_length = #{seckillTimeLength,jdbcType=SMALLINT}
+      </if>
+      <if test="checkPhone != null" >
+          and t.check_phone = #{checkPhone,jdbcType=TINYINT}
+      </if>
+      <if test="shopType != null" >
+          and t.shop_type = #{shopType,jdbcType=TINYINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createAdminId != null" >
+          and t.create_admin_id = #{createAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test=" nameLike != null and nameLike != '' ">
+		  and t.name like concat('%',#{nameLike},'%')
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_limit_time_discount t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_limit_time_discount t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_limit_time_discount where id in (
+    select t.id from (select * from org_limit_time_discount) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

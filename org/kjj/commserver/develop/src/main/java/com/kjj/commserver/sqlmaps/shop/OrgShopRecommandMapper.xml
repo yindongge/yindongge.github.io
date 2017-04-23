@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopRecommandMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopRecommand" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="pageid" property="pageid" jdbcType="INTEGER" />
+    <result column="recommand_img_1" property="recommandImg1" jdbcType="VARCHAR" />
+    <result column="recommand_img_2" property="recommandImg2" jdbcType="VARCHAR" />
+    <result column="recommend_img_url" property="recommendImgUrl" jdbcType="VARCHAR" />
+    <result column="recommend_alt" property="recommendAlt" jdbcType="VARCHAR" />
+    <result column="r_1" property="r1" jdbcType="VARCHAR" />
+    <result column="r_2" property="r2" jdbcType="VARCHAR" />
+    <result column="r_3" property="r3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pageid, recommand_img_1, recommand_img_2, recommend_img_url, recommend_alt, r_1, 
+    r_2, r_3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_recommand
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_recommand
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopRecommand" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_shop_recommand (pageid, recommand_img_1, recommand_img_2, 
+      recommend_img_url, recommend_alt, r_1, 
+      r_2, r_3)
+    values (#{pageid,jdbcType=INTEGER}, #{recommandImg1,jdbcType=VARCHAR}, #{recommandImg2,jdbcType=VARCHAR}, 
+      #{recommendImgUrl,jdbcType=VARCHAR}, #{recommendAlt,jdbcType=VARCHAR}, #{r1,jdbcType=VARCHAR}, 
+      #{r2,jdbcType=VARCHAR}, #{r3,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopRecommand" >
+    update org_shop_recommand
+    <set >
+      <if test="pageid != null" >
+        pageid = #{pageid,jdbcType=INTEGER},
+      </if>
+      <if test="recommandImg1 != null" >
+        recommand_img_1 = #{recommandImg1,jdbcType=VARCHAR},
+      </if>
+      <if test="recommandImg2 != null" >
+        recommand_img_2 = #{recommandImg2,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendImgUrl != null" >
+        recommend_img_url = #{recommendImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendAlt != null" >
+        recommend_alt = #{recommendAlt,jdbcType=VARCHAR},
+      </if>
+      <if test="r1 != null" >
+        r_1 = #{r1,jdbcType=VARCHAR},
+      </if>
+      <if test="r2 != null" >
+        r_2 = #{r2,jdbcType=VARCHAR},
+      </if>
+      <if test="r3 != null" >
+        r_3 = #{r3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopRecommand" >
+    update org_shop_recommand
+    set pageid = #{pageid,jdbcType=INTEGER},
+      recommand_img_1 = #{recommandImg1,jdbcType=VARCHAR},
+      recommand_img_2 = #{recommandImg2,jdbcType=VARCHAR},
+      recommend_img_url = #{recommendImgUrl,jdbcType=VARCHAR},
+      recommend_alt = #{recommendAlt,jdbcType=VARCHAR},
+      r_1 = #{r1,jdbcType=VARCHAR},
+      r_2 = #{r2,jdbcType=VARCHAR},
+      r_3 = #{r3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByImg1" parameterType="java.util.HashMap">  
+       update org_shop_recommand 
+       set recommand_img_1 =#{newpath},
+       recommend_img_url=#{url} 
+	   where recommand_img_1=#{oldpath}
+  </update>
+  <update id="updateByImg2" parameterType="java.util.HashMap">  
+       update org_shop_recommand 
+       set recommand_img_2 =#{newpath},
+       recommend_img_url=#{url}  
+	   where recommand_img_2=#{oldpath}
+  </update>
+  <update id="updateUrlByImg1" parameterType="java.util.HashMap">  
+       update org_shop_recommand 
+       set recommend_img_url=#{url}  
+	   where recommand_img_1=#{oldpath}
+  </update>
+  <delete id="deleteRecommandByImg1" parameterType="java.util.HashMap">
+    delete from org_shop_recommand
+    where recommand_img_1=#{oldpath}
+  </delete>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopRecommandVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.pageid, 
+    t.recommand_img_1, 
+    t.recommand_img_2, 
+    t.recommend_img_url, 
+    t.recommend_alt, 
+    t.r_1, 
+    t.r_2, 
+    t.r_3
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_recommand t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="pageid != null" >
+          and t.pageid = #{pageid,jdbcType=INTEGER}
+      </if>
+      <if test="recommandImg1 != null" >
+          and t.recommand_img_1 = #{recommandImg1,jdbcType=VARCHAR}
+      </if>
+      <if test="recommandImg2 != null" >
+          and t.recommand_img_2 = #{recommandImg2,jdbcType=VARCHAR}
+      </if>
+      <if test="recommendImgUrl != null" >
+          and t.recommend_img_url = #{recommendImgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="recommendAlt != null" >
+          and t.recommend_alt = #{recommendAlt,jdbcType=VARCHAR}
+      </if>
+      <if test="r1 != null" >
+          and t.r_1 = #{r1,jdbcType=VARCHAR}
+      </if>
+      <if test="r2 != null" >
+          and t.r_2 = #{r2,jdbcType=VARCHAR}
+      </if>
+      <if test="r3 != null" >
+          and t.r_3 = #{r3,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_shop_recommand t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_recommand t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_recommand where id in (
+    select t.id from (select * from org_shop_recommand) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

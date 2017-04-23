@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductInventoryMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductInventory" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+    <result column="shop_code" property="shopCode" jdbcType="VARCHAR" />
+    <result column="shop_amount" property="shopAmount" jdbcType="INTEGER" />
+    <result column="warehouse_amount" property="warehouseAmount" jdbcType="INTEGER" />
+    <result column="source_price" property="sourcePrice" jdbcType="DECIMAL" />
+    <result column="sell_price" property="sellPrice" jdbcType="DECIMAL" />
+    <result column="barcode" property="barcode" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, goods_sn, shop_code, shop_amount, warehouse_amount, source_price, sell_price, 
+    barcode, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_inventory
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_inventory
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductInventory" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_product_inventory (goods_sn, shop_code, shop_amount, 
+      warehouse_amount, source_price, sell_price, 
+      barcode, update_time)
+    values (#{goodsSn,jdbcType=VARCHAR}, #{shopCode,jdbcType=VARCHAR}, #{shopAmount,jdbcType=INTEGER}, 
+      #{warehouseAmount,jdbcType=INTEGER}, #{sourcePrice,jdbcType=DECIMAL}, #{sellPrice,jdbcType=DECIMAL}, 
+      #{barcode,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductInventory" >
+    update org_product_inventory
+    <set >
+      <if test="goodsSn != null" >
+        goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="shopCode != null" >
+        shop_code = #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopAmount != null" >
+        shop_amount = #{shopAmount,jdbcType=INTEGER},
+      </if>
+      <if test="warehouseAmount != null" >
+        warehouse_amount = #{warehouseAmount,jdbcType=INTEGER},
+      </if>
+      <if test="sourcePrice != null" >
+        source_price = #{sourcePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="sellPrice != null" >
+        sell_price = #{sellPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="barcode != null" >
+        barcode = #{barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductInventory" >
+    update org_product_inventory
+    set goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      shop_code = #{shopCode,jdbcType=VARCHAR},
+      shop_amount = #{shopAmount,jdbcType=INTEGER},
+      warehouse_amount = #{warehouseAmount,jdbcType=INTEGER},
+      source_price = #{sourcePrice,jdbcType=DECIMAL},
+      sell_price = #{sellPrice,jdbcType=DECIMAL},
+      barcode = #{barcode,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductInventoryVo" extends="BaseResultMap">
+  	<result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="class_name" property="className" jdbcType="VARCHAR" />
+    <result column="shop_name"  property="shopName"  jdbcType="VARCHAR" />
+    <result column="is_direct" property="isDirect"   jdbcType="TINYINT" />
+    <result column="opssid" property="opssId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.goods_sn, 
+    t.shop_code, 
+    t.shop_amount, 
+    t.warehouse_amount, 
+    t.source_price, 
+    t.sell_price, 
+    t.barcode, 
+    t.update_time,
+    opi.is_direct
+     ,opss.id opssid
+     ,opss.status
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_inventory t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="goodsSn != null and goodsSn != ''" >
+          and t.goods_sn = #{goodsSn,jdbcType=VARCHAR}
+      </if>
+      <if test="shopCode != null and shopCode != ''" >
+          and t.shop_code = #{shopCode,jdbcType=VARCHAR}
+      </if>
+      <if test="shopAmount != null" >
+          and t.shop_amount = #{shopAmount,jdbcType=INTEGER}
+      </if>
+      <if test="warehouseAmount != null" >
+          and t.warehouse_amount = #{warehouseAmount,jdbcType=INTEGER}
+      </if>
+      <if test="sourcePrice != null" >
+          and t.source_price = #{sourcePrice,jdbcType=DECIMAL}
+      </if>
+      <if test="sellPrice != null" >
+          and t.sell_price = #{sellPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="barcode != null" >
+          and t.barcode = #{barcode,jdbcType=VARCHAR}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="goodsSns != null " >
+	      <if test="goodsSns.size() > 0">
+	          and t.goods_sn in 
+	          <foreach collection="goodsSns" index="index" item="item" open="(" separator="," close=")">
+	          	#{item,jdbcType=INTEGER}
+	          </foreach>
+	      </if>
+	      <if test="goodsSns.size() == 0">
+	          and 1=0
+	      </if>
+      </if>
+      <if test="classId != null and classId != ''">
+	      and (	opi.cat_id = #{classId,jdbcType=INTEGER} or oc.class_parent = #{classId,jdbcType=INTEGER})
+	  </if>
+	  <if test="goodsName != null and goodsName != ''">
+	      and opi.goods_name like concat('%',#{goodsName},'%')
+	  </if>
+	  <if test="isOnSale != null" >
+          and op.is_on_sale = #{isOnSale,jdbcType=TINYINT}
+      </if>
+      <if test="isDelete != null" >
+          and opi.is_delete = #{isDelete,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_product_inventory t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select distinct 
+    <include refid="Vo_Column_List" />
+    from org_product_inventory t 
+    left join org_product_item opi on opi.goods_sn=t.goods_sn and opi.is_delete=0
+    left join org_product_shop_sale opss on t.id=opss.inventory_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_inventory where id in (
+    select t.id from (select * from org_product_inventory) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <sql id="Meal_Column_List" >
+    t.id, 
+    t.goods_sn, 
+    t.shop_code, 
+    t.shop_amount, 
+    t.warehouse_amount, 
+    t.source_price, 
+    t.sell_price, 
+    t.barcode, 
+    t.update_time,
+    opi.goods_name,
+    os.shop_name,
+    oc.class_name
+    <if test="isOnSaleInShop" >
+     ,opss.id opssid
+     ,opss.status
+    </if>
+  </sql>
+  <select id="selectMeal" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Meal_Column_List" />
+    from org_product_inventory t left join org_product_item opi on t.goods_sn = opi.goods_sn join org_product op on opi.parent_goods_id=op.goods_id join org_shop os on t.shop_code = os.shop_code join org_class oc on opi.cat_id = oc.class_id 
+    <if test="isOnSaleInShop" >
+       left join org_product_shop_sale opss on t.id=opss.inventory_id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectMealCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(1) org_product_inventory t left join org_product_item opi on t.goods_sn = opi.goods_sn  join org_shop os on t.shop_code = os.shop_code join org_class oc on opi.cat_id = oc.class_id 
+    <if test="isOnSaleInShop" >
+      left join org_product_shop_sale opss on t.id=opss.inventory_id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectByPrimaryKey4Update" resultMap="VoResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_inventory
+    where id = #{id,jdbcType=INTEGER}
+    for update
+  </select>
+</mapper>

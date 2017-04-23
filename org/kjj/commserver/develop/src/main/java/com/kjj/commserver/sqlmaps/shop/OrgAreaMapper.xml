@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgAreaMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgArea" >
+    <id column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="TINYINT" />
+    <result column="show" property="show" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    code, name, parent_code, level, 'show'
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_area
+    where code = #{code,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from org_area
+    where code = #{code,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgArea" useGeneratedKeys="true" keyColumn="code" keyProperty="code" >
+    insert into org_area (name, parent_code, level, 
+      show)
+    values (#{name,jdbcType=VARCHAR}, #{parentCode,jdbcType=VARCHAR}, #{level,jdbcType=TINYINT}, 
+      #{show,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgArea" >
+    update org_area
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCode != null" >
+        parent_code = #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=TINYINT},
+      </if>
+      <if test="show != null" >
+        show = #{show,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where code = #{code,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgArea" >
+    update org_area
+    set name = #{name,jdbcType=VARCHAR},
+      parent_code = #{parentCode,jdbcType=VARCHAR},
+      level = #{level,jdbcType=TINYINT},
+      show = #{show,jdbcType=VARCHAR}
+    where code = #{code,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgAreaVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.code, 
+    t.name, 
+    t.parent_code, 
+    t.level, 
+    t.show
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_area t
+    where t.code = #{code,jdbcType=VARCHAR}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="code != null" >
+          and t.code = #{code,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="parentCode != null" >
+          and t.parent_code = #{parentCode,jdbcType=VARCHAR}
+      </if>
+      <if test="level != null" >
+          and t.level = #{level,jdbcType=TINYINT}
+      </if>
+      <if test="show != null" >
+          and t.show = #{show,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.code desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.code) from org_area t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_area t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_area where code in (
+    select t.code from (select * from org_area) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

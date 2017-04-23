@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<TITLE> ZTREE DEMO - checkbox</TITLE>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/demo.css" type="text/css">
+	<link rel="stylesheet" href="../css/zTreeStyle.css" type="text/css">
+
+
+
+<style type="text/css">
+	.ztree li span.button {
+    line-height: 0;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0 none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-image: url("../img/zTreeStandard.png");
+</style>
+</head>
+<body>
+
+<div class="box">
+	<div class="container-fluid">
+
+		<ul id="treeDemo" class="ztree"></ul>
+	<div class="right hide" >
+	<input type="checkbox" id="py" class="checkbox first"  />
+	<input type="checkbox" id="sy" class="checkbox first"  />
+	<input type="checkbox" id="pn" class="checkbox first"  />
+	<input type="checkbox" id="sn" class="checkbox first"  />
+	</div>
+</div>
+</div>
+	<script type="text/javascript" src="../js/common/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../js/common/jquery.ztree.core.js"></script>
+	<script type="text/javascript" src="../js/common/jquery.ztree.excheck.js"></script>
+	<script type="text/javascript">
+
+	var setting = {
+            view: {
+                dblClickExpand: false
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            check: {
+                enable: true ,
+                chkboxType: { "Y" : "p", "N" : "ps" }
+            },
+            /*callback: {
+                onRightClick: OnRightClick,
+                onRename:onRename,
+            }*/
+
+        };
+
+
+
+		var zNodes =[
+			{ id:1, pId:0, name:"随意勾选 1", open:true},
+			{ id:11, pId:1, name:"随意勾选 1-1", open:true},
+			{ id:111, pId:11, name:"随意勾选 1-1-1"},
+			{ id:112, pId:11, name:"随意勾选 1-1-2"},
+			{ id:12, pId:1, name:"随意勾选 1-2", open:true},
+			{ id:121, pId:12, name:"随意勾选 1-2-1"},
+			{ id:122, pId:12, name:"随意勾选 1-2-2"},
+			{ id:2, pId:0, name:"随意勾选 2", checked:false, open:true},
+			{ id:21, pId:2, name:"随意勾选 2-1"},
+			{ id:22, pId:2, name:"随意勾选 2-2", open:true},
+			{ id:221, pId:22, name:"随意勾选 2-2-1", checked:false},
+			{ id:222, pId:22, name:"随意勾选 2-2-2"},
+			{ id:23, pId:2, name:"随意勾选 2-3"}
+		];
+
+		var code;
+
+		function setCheck() {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+			py = $("#py").attr("checked")? "p":"",
+			sy = $("#sy").attr("checked")? "s":"",
+			pn = $("#pn").attr("checked")? "p":"",
+			sn = $("#sn").attr("checked")? "s":"",
+			type = { "Y":py + sy, "N":pn + sn};
+			zTree.setting.check.chkboxType = type;
+			showCode('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" };');
+		}
+		function showCode(str) {
+			if (!code) code = $("#code");
+			code.empty();
+			code.append("<li>"+str+"</li>");
+		}
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			setCheck();
+			$("#py").bind("change", setCheck);
+			$("#sy").bind("change", setCheck);
+			$("#pn").bind("change", setCheck);
+			$("#sn").bind("change", setCheck);
+		});
+		//-->
+		function zTreeOnCheck(event, treeId, treeNode) {
+    //alert(treeNode.tId + ", " + treeNode.name + "," + treeNode.checked);
+//    var node = treeNode.isParent;
+//    if (node==true) {
+//    	treeNode.chkDisabled=true;
+//	}
+
+	var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+	var dsblNodes = zTree.getNodesByParam("chkDisabled", true);
+	for (var i=0, l=dsblNodes.length; i < l; i++) {
+		zTree.setChkDisabled(dsblNodes[i], false);
+		dsblNodes[i].checked=true;
+
+	}
+	alert(treeNode.getParentNode().name);
+
+
+
+//	$(treeNode).siblings().find('.checkbox_false_disable').css({
+//		"background-position":"-14px 0"
+//	})
+
+
+
+
+
+};
+	</script>
+</body>
+
+</html>

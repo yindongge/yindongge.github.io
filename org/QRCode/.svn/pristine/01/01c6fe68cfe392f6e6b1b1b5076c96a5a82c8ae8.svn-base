@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.dtpicker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+		<script type="text/javascript" src="js/mui.js" ></script>
+		<title>管理收货地址改</title>
+	</head>
+	<body class="wx_set_body">
+		<div class="all">
+			<header class="mui-bar mui-bar-nav header-control">
+			    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			    <h1 class="mui-title">管理收货地址</h1>
+			</header>
+			<!---->
+			<div class="mui-content" style="padding-bottom: 60px;">
+				<div class="wx_set_ul">
+					<div class="wx_set_list">
+						<div class="wx_set_item">
+							<p><span class="wx_set_item_lable">收货人：</span>李四 <i class="wx_set_badge">默认</i></p>
+							<p><span class="wx_set_item_lable">手机号码：</span>15800000000</p>
+							<p><span class="wx_set_item_lable">收货地址：</span>北京市朝阳区建外大街华彬中心</p>
+							<span class="wx_set_check on"></span>
+						</div>
+						<div class="wx_set_list_bottom ">
+							<div class="mui-pull-right">
+								<a href=""><span class="wx_seticonediter"></span>编辑</a>
+								<a id="promptBtn"><span class="wx_seticondelete"></span>删除</a>
+							</div>
+
+						</div>
+					</div>
+					<div class="wx_set_list">
+						<div class="wx_set_item">
+							<p><span class="wx_set_item_lable">收货人：</span>李四 <i class="wx_set_badge">默认</i></p>
+							<p><span class="wx_set_item_lable">手机号码：</span>15800000000</p>
+							<p><span class="wx_set_item_lable">收货地址：</span>北京市朝阳区建外大街华彬中心</p>
+							<span class="wx_set_check"></span>
+						</div>
+						<div class="wx_set_list_bottom ">
+							<div class="mui-set_gear">
+								<span class="mui-icon mui-icon-gear"></span>设为默认地址
+							</div>
+							<div class="mui-pull-right">
+								<a href=""><span class="wx_seticonediter"></span>编辑</a>
+								<a ><span class="wx_seticondelete"></span>删除</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="mui-btn mui-btn-block fixed_bottom_new">新增收货地址</button>
+			</div>
+		</div>
+<script type="text/javascript" src="js/mui.picker.js" ></script>
+<script type="text/javascript" src="js/mui.dtpicker.js" ></script>
+
+<script type="text/javascript">
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   		});
+</script>
+	<script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var info = document.getElementById("info");
+
+			document.getElementById("promptBtn").addEventListener('tap', function(e) {
+				e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+				//var btnArray = ['取消', '确定'];
+				mui.prompt('确定删除该收货地址吗?',  '', function(e) {
+
+				})
+			});
+
+		</script>
+
+	</body>
+</html>

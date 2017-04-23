@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.dtpicker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+		<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<title>个人信息</title>
+	</head>
+	<body class="wx_set_body">
+		<div class="all">
+			<header class="mui-bar mui-bar-nav header-control">
+			    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			    <h1 class="mui-title">个人信息</h1>
+			</header>
+			<!---->
+			<div class="mui-content ">
+				<div class="swiper-container swipecontrol">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide"><a><img src="img/shuijiao.jpg"></a></div>
+				        <div class="swiper-slide"><a><img src="img/shuijiao.jpg"></a></div>
+				        <div class="swiper-slide"><a><img src="img/shuijiao.jpg"></a></div>
+				    </div>
+				    <!-- 如果需要分页器 -->
+				    <div class="swiper-pagination"></div>
+				</div>
+				<!-- end 滑动 -->
+
+				<div class="mui_set_artical">
+					<h5>
+						<img src="img/h5title.png" alt="">
+					</h5>
+					<p><img src="img/aqy.png" alt=""></p>
+					<p><img src="img/aqy.png" alt=""></p>
+				</div>
+			</div>
+
+		</div>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+	<script type="text/javascript" src="js/mui.js" ></script>
+	<script src="js/swiper3.1.0.min.js"></script>
+	<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay:2000,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+
+  });
+  </script>
+	</body>
+</html>

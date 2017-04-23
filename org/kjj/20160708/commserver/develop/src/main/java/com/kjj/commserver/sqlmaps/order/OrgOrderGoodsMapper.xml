@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgOrderGoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgOrderGoods" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="order_serial_no" property="orderSerialNo" jdbcType="BIGINT" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+    <result column="trade_snapshoot_id" property="tradeSnapshootId" jdbcType="INTEGER" />
+    <result column="unit_accounts" property="unitAccounts" jdbcType="DECIMAL" />
+    <result column="unit_discount" property="unitDiscount" jdbcType="DECIMAL" />
+    <result column="unit_price" property="unitPrice" jdbcType="DECIMAL" />
+    <result column="amount" property="amount" jdbcType="INTEGER" />
+    <result column="return_amount" property="returnAmount" jdbcType="INTEGER" />
+    <result column="refund_amount" property="refundAmount" jdbcType="INTEGER" />
+    <result column="comment_status" property="commentStatus" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_id, order_serial_no, shop_id, goods_id, goods_sn, trade_snapshoot_id, unit_accounts, unit_discount, 
+    unit_price, amount, return_amount, refund_amount, comment_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_order_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_order_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgOrderGoods" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_order_goods (order_id, order_serial_no, shop_id, 
+      goods_id, goods_sn, trade_snapshoot_id, unit_accounts, 
+      unit_discount, unit_price, amount, 
+      return_amount, refund_amount, comment_status
+      )
+    values (#{orderId,jdbcType=INTEGER}, #{orderSerialNo,jdbcType=BIGINT}, #{shopId,jdbcType=INTEGER}, 
+      #{goodsId,jdbcType=INTEGER}, #{goodsSn,jdbcType=VARCHAR}, #{tradeSnapshootId,jdbcType=INTEGER}, #{unitAccounts,jdbcType=DECIMAL}, 
+      #{unitDiscount,jdbcType=DECIMAL}, #{unitPrice,jdbcType=DECIMAL}, #{amount,jdbcType=INTEGER}, 
+      #{returnAmount,jdbcType=INTEGER}, #{refundAmount,jdbcType=INTEGER}, #{commentStatus,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgOrderGoods" >
+    update org_order_goods
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSerialNo != null" >
+        order_serial_no = #{orderSerialNo,jdbcType=BIGINT},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsSn != null" >
+        goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeSnapshootId != null" >
+        trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER},
+      </if>
+      <if test="unitAccounts != null" >
+        unit_accounts = #{unitAccounts,jdbcType=DECIMAL},
+      </if>
+      <if test="unitDiscount != null" >
+        unit_discount = #{unitDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="unitPrice != null" >
+        unit_price = #{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="returnAmount != null" >
+        return_amount = #{returnAmount,jdbcType=INTEGER},
+      </if>
+      <if test="refundAmount != null" >
+        refund_amount = #{refundAmount,jdbcType=INTEGER},
+      </if>
+      <if test="commentStatus != null" >
+        comment_status = #{commentStatus,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgOrderGoods" >
+    update org_order_goods
+    set order_id = #{orderId,jdbcType=INTEGER},
+      order_serial_no = #{orderSerialNo,jdbcType=BIGINT},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_sn = #{goodsSn,jdbcType=VARCHAR},
+      trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER},
+      unit_accounts = #{unitAccounts,jdbcType=DECIMAL},
+      unit_discount = #{unitDiscount,jdbcType=DECIMAL},
+      unit_price = #{unitPrice,jdbcType=DECIMAL},
+      amount = #{amount,jdbcType=INTEGER},
+      return_amount = #{returnAmount,jdbcType=INTEGER},
+      refund_amount = #{refundAmount,jdbcType=INTEGER},
+      comment_status = #{commentStatus,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgOrderGoodsVo" extends="BaseResultMap" >
+    <result column="shop_code" property="shopCode" jdbcType="VARCHAR" />
+    <result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+  	<association property="orgOrder" javaType="com.kjj.commserver.entity.order.OrgOrder">
+	    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+	    <result column="send_style" property="sendStyle" jdbcType="TINYINT" />
+	    <result column="user_id" property="userId" jdbcType="INTEGER" />
+	    <result column="pay_style" property="payStyle" jdbcType="TINYINT" />
+	    <result column="local_pay_style" property="localPayStyle" jdbcType="TINYINT" />
+	    <result column="online_pay_style" property="onlinePayStyle" jdbcType="TINYINT" />
+	    <result column="source" property="source" jdbcType="TINYINT" />
+	    <result column="pay_status" property="payStatus" jdbcType="TINYINT" />
+	    <result column="status" property="status" jdbcType="TINYINT" />
+	    <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
+	    <result column="invoice" property="invoice" jdbcType="VARCHAR" />
+        <result column="consignee_email" property="consigneeEmail" jdbcType="VARCHAR" />
+        <result column="consignee_mobile" property="consigneeMobile" jdbcType="VARCHAR" />
+        <result column="consignee" property="consignee" jdbcType="VARCHAR" />
+        <result column="consignee_address" property="consigneeAddress" jdbcType="VARCHAR" />
+        <result column="discount" property="discount" jdbcType="DECIMAL" />
+        <result column="pay_money" property="payMoney" jdbcType="DECIMAL" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="order_money" property="orderMoney" jdbcType="DECIMAL" />
+        <result column="deposit_money" property="depositMoney" jdbcType="DECIMAL" />
+    	<result column="deposit_refund" property="depositRefund" jdbcType="DECIMAL" />
+  	</association>
+  	<association property="orgProductItem" javaType="com.kjj.commserver.entity.goods.aide.OrgProductItemVo">
+	    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+	    <result column="goods_thumb" property="goodsThumb" jdbcType="VARCHAR" />
+	    <result column="goods_name_style" property="goodsNameStyle" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.order_id, 
+    t.order_serial_no, 
+    t.shop_id, 
+    t.goods_id, 
+    t.goods_sn, 
+	t.trade_snapshoot_id,
+    t.unit_accounts, 
+    t.unit_discount, 
+    t.unit_price, 
+    t.amount, 
+    t.return_amount, 
+    t.refund_amount, 
+    t.comment_status,
+    opi.goods_name,
+    opi.goods_thumb,
+    opi.goods_name_style,
+    oo.create_time,
+    oo.user_id,
+    oo.send_style,
+	oo.pay_style,
+	oo.local_pay_style,
+	oo.online_pay_style,
+	oo.source,
+	oo.pay_status,
+	oo.status,
+	oo.pay_time,
+	oo.order_money,
+	oo.deposit_money,
+	oo.deposit_refund,
+	os.shop_code,
+	os.shop_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="orderId != null" >
+          and t.order_id = #{orderId,jdbcType=INTEGER}
+      </if>
+      <if test="orderSerialNo != null" >
+          and t.order_serial_no = #{orderSerialNo,jdbcType=BIGINT}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsSn != null" >
+          and t.goods_sn = #{goodsSn,jdbcType=VARCHAR}
+      </if>
+      <if test="tradeSnapshootId != null" >
+          and t.trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+      </if>
+      <if test="unitAccounts != null" >
+          and t.unit_accounts = #{unitAccounts,jdbcType=DECIMAL}
+      </if>
+      <if test="unitDiscount != null" >
+          and t.unit_discount = #{unitDiscount,jdbcType=DECIMAL}
+      </if>
+      <if test="unitPrice != null" >
+          and t.unit_price = #{unitPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="amount != null" >
+          and t.amount = #{amount,jdbcType=INTEGER}
+      </if>
+      <if test="returnAmount != null" >
+          and t.return_amount = #{returnAmount,jdbcType=INTEGER}
+      </if>
+      <if test="refundAmount != null" >
+          and t.refund_amount = #{refundAmount,jdbcType=INTEGER}
+      </if>
+      <if test="commentStatus != null and commentStatus != -1 " >
+          and t.comment_status = #{commentStatus,jdbcType=TINYINT}
+      </if>
+      <if test="orderIds != null" >
+          <if test="orderIds.size() > 0" >
+          and t.order_id in 
+          <foreach collection="orderIds" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+      	  </if>
+          <if test="orderIds.size() == 0" >
+          and 1 = 0
+      	  </if>
+      </if>
+      <if test="userId != null" >
+          and oo.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="orderStatus != null" >
+          and oo.status = #{orderStatus,jdbcType=TINYINT}
+      </if>
+       <if test="returnLtBuy != null and returnLtBuy" >
+          and t.return_amount &lt; t.amount
+      </if>
+      <if test="shopIds != null" >
+          <if test="shopIds.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopIds" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+          </if>
+          <if test="shopIds.size() == 0" >
+          and 1 = 0
+      	  </if>
+      </if>
+      <if test="shopSelect != null and shopSelect.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopSelect" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+      </if>
+      <if test="queryStatus != null">
+	      <if test="queryStatus > -1 and 10 > queryStatus">
+			and oo.status = #{queryStatus,jdbcType=TINYINT}
+		  </if>
+		  <if test="queryStatus == 12">
+			and oo.status = 2 and oo.send_style = 0
+		  </if>
+	      <if test="queryStatus == 22">
+			and oo.status = 2 and oo.send_style = 1
+	      </if>
+		  <if test="queryStatus == 13">
+			and oo.status = 3 and oo.send_style = 0
+		  </if>
+		  <if test="queryStatus == 23">
+			and oo.status = 3 and oo.send_style = 1
+		  </if>
+	  </if>
+	  <if test="orderIdLike != null and orderIdLike != '' ">
+			and t.order_id like concat('%',#{orderIdLike},'%')
+	  </if>
+	  <if test="goodsNameLike != null and goodsNameLike != '' ">
+			and opi.goods_name like concat('%',#{goodsNameLike},'%')
+	  </if>
+	  <if test="goodsSnLike != null and goodsSnLike != '' ">
+			and opi.goods_sn like concat('%',#{goodsSnLike},'%')
+	  </if>
+	  <if test="createTimeStart != null">
+		    and oo.create_time &gt;= #{createTimeStart,jdbcType=TIMESTAMP}
+	  </if>
+	  <if test="createTimeEnd != null">
+			and oo.create_time &lt;= #{createTimeEnd,jdbcType=TIMESTAMP}
+	  </if>
+	  <if test="unitAccountsNeZero != null and unitAccountsNeZero">
+			and t.unit_accounts != 0
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_order_goods where id in (
+    select t.id from (select * from org_order_goods) t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectCountOther" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select
+      <if test="countLastReturnGoods != null and countLastReturnGoods " >
+        sum(t.amount-t.return_amount)
+      </if>
+      <if test="countLastRefundGoods != null and countLastRefundGoods " >
+        sum(t.amount-t.refund_amount)
+      </if>
+    from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <resultMap id="CommentVoResultMap"  type="com.kjj.commserver.entity.order.aide.OrgOrderGoodsCommentVo" extends="VoResultMap">
+  	<association property="orgGoodsComment" javaType="com.kjj.commserver.entity.order.OrgGoodsComment">
+	    <result column="star_score" property="starScore" jdbcType="TINYINT" />
+	    <result column="goods_comment" property="goodsComment" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Comment_Vo_Column_List">
+  	 <include refid="Vo_Column_List" />,
+  	 ogc.star_score,
+  	 ogc.goods_comment
+  </sql>
+  <select id="selectComment" parameterType="java.util.Map" resultMap="CommentVoResultMap">
+  	select 
+    <include refid="Comment_Vo_Column_List" />
+    from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_goods_comment ogc on t.id = ogc.order_goods_id
+    left join org_shop os on t.shop_id = os.shop_id
+    <include refid="Query_Where_Clause" />
+    order by t.id desc
+  </select>
+   <select id="selectCountComment" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_goods_comment ogc on t.id = ogc.order_goods_id
+    left join org_shop os on t.shop_id = os.shop_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectByPrimaryKey4Update" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_order_goods
+    where id = #{id,jdbcType=INTEGER}
+    for update
+  </select>
+  
+  <resultMap id="OrderReportVoResultMap"  type="com.kjj.commserver.entity.order.aide.OrgOrderGoodsOrderReportVo" extends="VoResultMap">
+ 	 <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+ 	 <result column="show" property="show" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="OrderReport_Vo_Column_List">
+  	 <include refid="Vo_Column_List" />,
+  	 ou.user_name,
+  	 oa.show,
+  	 oo.pay_money,
+	 oo.discount,
+	 oo.consignee_address,
+	 oo.consignee,
+	 oo.consignee_mobile,
+	 oo.consignee_email,
+	 oo.invoice,
+	 oo.remark
+  </sql>
+  <select id="selectOrderReport" parameterType="java.util.Map" resultMap="OrderReportVoResultMap">
+  	select 
+    <include refid="OrderReport_Vo_Column_List" />
+    from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_shop os on t.shop_id = os.shop_id
+    left join org_users ou on oo.user_id = ou.user_id
+    left join org_area oa on os.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  
+  <resultMap  id="GoodsReportVoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgGoodsReportVo" extends="BaseResultMap">
+ 	<result column="goods_name" property="goodsName"  jdbcType="VARCHAR"/>
+ 	<result column="goods_sn" property="goodsSn" jdbcType="VARCHAR" />
+ 	<result column="shop_name" property="shopName" jdbcType="VARCHAR"/>
+ 	<result column="amount_goods" property="amountGoods" jdbcType="DECIMAL"/>
+ 	<result column="avg_price" property="avgPrice" jdbcType="DECIMAL"/>
+ 	<result column="total_money" property="totalMoney" jdbcType="DECIMAL"/>
+  </resultMap> 
+  <select id="selectCountGoodsReport"  parameterType="java.util.Map" resultType="java.lang.Long">
+  	select count(*) from (
+  	select count(t.id) from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_shop os on t.shop_id = os.shop_id
+  	<include refid="Query_Where_Clause" />
+  	group by t.goods_sn,opi.goods_name
+	<if test="isAsShop == true" >
+	,oo.shop_id,os.shop_name
+	</if>
+	) as A
+  </select>
+  <sql id="GoodsReport_Vo_Column_List">
+    t.goods_sn,
+    opi.goods_name,
+    sum(t.amount) amount_goods,
+	round(sum(t.amount*t.unit_price)/sum(t.amount),2) avg_price,
+    sum(t.amount*t.unit_price) total_money
+    <if test="isAsShop == true" >
+	  ,os.shop_name
+    </if>
+  </sql>
+  <select id="selectGoodsReport" parameterType="java.util.Map" resultMap="GoodsReportVoResultMap">
+  	select
+  	<include refid="GoodsReport_Vo_Column_List" />
+  	from org_order_goods t
+    left join org_product_item opi on t.goods_id = opi.goods_id
+    left join org_order oo on t.order_id = oo.order_id
+    left join org_shop os on t.shop_id = os.shop_id
+  	<include refid="Query_Where_Clause" />
+  	group by t.goods_sn,opi.goods_name
+	<if test="isAsShop == true" >
+	  ,oo.shop_id,os.shop_name
+	</if>
+  </select>
+</mapper>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="js/jquery.js"></script>
+<script src="js/me.js"></script>
+<script src="js/modal.js"></script>
+<link href="css/modal.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<link href="css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+<div class="all memberall">
+	<div class="top">
+		<nav class="navbar navbar-default">
+			<div class="container container-width">
+				<ul class="nav navbar-nav fl">
+					<li class="showmenu">
+						<a href="#" class="yellow"><i class="glyphicon point"></i> 北京 </a>
+						<div class="hidemenu">
+							<p>请选择收货区域</p>
+							<p><a href="">北京</a><a href="">上海</a><a href="">天津</a><a href="">重庆</a></p>
+						</div>
+					</li>
+	            	<li><a href="#">您好，欢迎来到快捷健</a></li>
+	            	<li><a href="#">[登录]</a></li>
+	            	<li><a href="#">[免费成为会员]</a></li>
+				</ul>
+				<ul class="nav navbar-nav fr">
+					<li><a href="#">快捷健首页</a></li>
+					<li class="showmenu special2">
+						<a href="#" > 我的快捷健  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">我的订单</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><i class="glyphicon glyphicon-star point4"></i> 收藏夹</a></li>
+					<li><a href="#"><i class="glyphicon point2"></i> 消息</a></li>
+					<li><a href="#"><i class="glyphicon point3"></i> 手机快捷健</a></li>
+					<li class="showmenu special2">
+						<a href="#" > 客户服务  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">留言咨询</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- end top -->
+	<div class="header header-member">
+		<div class="container container-width">
+			<div class="severce-head">
+			<div class="logo fl">
+				<a href="index.html"><img src="img/icon/member-logo.png"></a>
+				<div class="text-position">
+					<strong>个人中心</strong>
+				</div>
+			</div>
+			<div class="shopcar fr">
+				<div class="shop">
+					<i  class="glyphicon icon2 icon"></i>
+					<i  class="glyphicon glyphicon-menu-down icon3 icon"></i>
+					<i  class="glyphicon icon4 icon">2</i>
+					<a href="#">去购物车结算</a>
+				</div>
+				<div class="space"></div>
+				<div class="sale">
+					<div class="nogoods">
+						<p class="spepcial3">购物车中还没有商品，赶紧选购吧</p>
+					</div>
+					<ul class="havegoods">
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+								<p>红牛多功能饮料来几箱比较好呢</p>
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-foot">
+								<p>共计<i class="blue">2</i>件商品共计￥<i class="blue">160.00元</i></p>
+								<p><button type="button" class="btn btn-warning pull-right">去购物车结算</button></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="search fr">
+					<div class="input-group">
+					      <input type="text" class="form-control" >
+					      <span class="input-group-btn">
+					        	<button class="btn btn-me" type="button">搜索</button>
+					      </span>
+				    </div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	<div class="center-content">
+		<div class="container container-width  ">
+			<div class="member-left fl">
+			<div class="d-group">
+				<dl class="d1">
+					<dt>订单中心</dt>
+					<dd>我的订单</dd>
+					<dd>我的评价</dd>
+				</dl>
+				<dl class="d2">
+					<dt>我的收藏</dt>
+					<dd>收藏的商品</dd>
+				</dl>
+				<dl class="d3">
+					<dt>客户服务</dt>
+					<dd>投诉管理</dd>
+					<dd>留言咨询</dd>
+				</dl>
+				<dl class="d4">
+					<dt>设置</dt>
+					<dd>个人信息</dd>
+					<dd>收货地址</dd>
+					<dd>账户安全</dd>
+				</dl>
+			</div>
+			</div>
+			<!-- member-left -->
+			<div class="member-right">
+				<div class="mlist information ">
+					<h5 >基本资料</h5>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>会员等级：<strong class="red">   普通会员</strong></p>
+						</div>
+						<div class="basic-right">
+
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>用户名：<span>   feitiandapeng</span></p>
+						</div>
+						<div class="basic-right">
+							<a href="">修改用户名</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>密码：<span>   *********</span></p>
+						</div>
+						<div class="basic-right">
+							<a href="">修改密码</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>手机号：<span>   18888888888</span></p>
+						</div>
+						<div class="basic-right">
+							<a href="">绑定其他手机</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>邮箱：<strong class="red">   未绑定</strong></p>
+						</div>
+						<div class="basic-right">
+							<a href="">马上绑定</a><span><strong>提示：</strong>绑定邮箱后，您也可以使用邮箱进行登录，找回密码等操作
+							</span>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>上次登录：<span >   2015-06-02 15:32:60</span></p>
+						</div>
+						<div class="basic-right">
+
+						</div>
+					</div>
+				</div>
+				<div class="mlist information special">
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>企业资料：<span>  <strong class="red"> 待完善</strong></span></p>
+						</div>
+						<div class="basic-right">
+							<a href=""> 完善基本资料</a>
+							<a href=""> 上传资质</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>邀请码：<strong class="red"> 30</strong>个可用，<strong class="red"> 30</strong>不可用</p>
+						</div>
+						<div class="basic-right">
+							<a href=""> 复制</a>
+							<span><strong>提示：</strong>绑定邮箱后，您也可以使用邮箱进行登录，找回密码等操作
+							</span>
+							<a href="">详情>></a>
+						</div>
+					</div>
+				</div>
+				<!-- special -->
+				<div class="mlist information special">
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>邀请码：<span>  123*****22/<strong class="red">未激活</strong></span></p>
+						</div>
+						<div class="basic-right">
+							<a href=""> 激活</a>
+						</div>
+					</div>
+				</div>
+				<!--  -->
+				<div class="mlist information ">
+					<h5 >激活企业邀请码</h5>
+						<div class="safeset-tip2">
+								温馨提示：激活成功后，您将成为<strong class="red">企业会员</strong>，享受<strong class="red">更优惠的价格</strong>。 <a href="#"> 会员等级说明》</a>
+						</div>
+						<div class="safeset">
+						<div class="form-list">
+							<div class="form-left">
+									姓名：
+							</div>
+							<div class="form-center">
+								<input type="text" name="text1" placeholder="您的姓名">
+							</div>
+							<div class="form-right">
+								<p class="normal"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+								<span class="red" style="font-size:16px;">*</span>邀请码：
+							</div>
+							<div class="form-center">
+								<input type="text" name="text1" placeholder="9位数字">
+							</div>
+							<div class="form-right">
+								<p class="false"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">确定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- same-first -->
+				<!-- second -->
+				<div class="mlist information ">
+					<h5 >绑定邮箱</h5>
+					<div class="safeset">
+					<form>
+						<div class="form-list">
+							<div class="form-left">
+									邮箱：
+							</div>
+							<div class="form-center form-active1">
+								<input type="text" name="text1" placeholder="手机/邮箱">
+							</div>
+							<div class="form-right">
+								<p class="false "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+									 验证码：
+							</div>
+							<div class="form-center form-active2">
+								<input type="text" name="text1" class="f-special1">
+								<button type="button" class="btn btn-primary">免费获取验证码</button>
+							</div>
+							<div class="form-right">
+								<p class="normal "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">立即绑定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</form>
+
+					</div>
+				</div>
+				<!-- third -->
+				<div class="mlist information ">
+					<h5 >绑定手机</h5>
+					<div class="safeset">
+					<form>
+						<div class="form-list">
+							<div class="form-left">
+									手机号：
+							</div>
+							<div class="form-center form-active1">
+								<input type="text" name="text1" placeholder="手机/邮箱">
+							</div>
+							<div class="form-right">
+								<p class="false "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+									 验证码：
+							</div>
+							<div class="form-center form-active2">
+								<input type="text" name="text1" class="f-special1">
+								<button type="button" class="btn btn-primary">免费获取验证码</button>
+							</div>
+							<div class="form-right">
+								<p class="normal "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">立即绑定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</form>
+
+					</div>
+				</div>
+				<!-- four -->
+				<div class="mlist information ">
+					<h5 >绑定新邮箱</h5>
+					<div class="safeset">
+					<form>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<p class="text-center f-special3"><span class="icon-right"></span> 验证已通过</p>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+									邮箱：
+							</div>
+							<div class="form-center form-active1">
+								<input type="text" name="text1" placeholder="手机/邮箱">
+							</div>
+							<div class="form-right">
+								<p class="false "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+									 验证码：
+							</div>
+							<div class="form-center form-active2">
+								<input type="text" name="text1" class="f-special1">
+								<button type="button" class="btn btn-primary">免费获取验证码</button>
+							</div>
+							<div class="form-right">
+								<p class="normal "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">立即绑定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</form>
+
+					</div>
+				</div>
+				<!-- five -->
+				<div class="mlist information ">
+					<h5 >绑定新手机</h5>
+					<div class="safeset">
+					<form>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<p class="text-center f-special3"><span class="icon-right"></span> 验证已通过</p>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+									手机：
+							</div>
+							<div class="form-center form-active1">
+								<input type="text" name="text1" placeholder="手机/邮箱">
+							</div>
+							<div class="form-right">
+								<p class="false "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+									 验证码：
+							</div>
+							<div class="form-center form-active2">
+								<input type="text" name="text1" class="f-special1">
+								<button type="button" class="btn btn-primary">免费获取验证码</button>
+							</div>
+							<div class="form-right">
+								<p class="normal "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">立即绑定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</form>
+
+					</div>
+				</div>
+				<!-- six -->
+				<div class="mlist information ">
+				<h5 >验证邮箱</h5>
+				<div class="safeset">
+					<form>
+					<div class="form-list">
+						<div class="form-left">
+						</div>
+						<div class="form-center">
+							<p>您当前绑定的手机号码为：<span class="red">96*****76@qq.com</span></p>
+						</div>
+						<div class="form-right">
+						</div>
+					</div>
+						<div class="form-list">
+							<div class="form-left">
+									 验证码：
+							</div>
+							<div class="form-center form-active2">
+								<input type="text" name="text1" class="f-special1">
+								<button type="button" class="btn btn-primary">免费获取验证码</button>
+							</div>
+							<div class="form-right">
+								<p class="normal "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true "><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">立即验证</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</form>
+
+					</div>
+				</div>
+				<!-- seven -->
+				<div class="mlist information ">
+					<h5 >验证手机</h5>
+					<div class="safeset">
+					<form>
+					<div class="form-list">
+						<div class="form-left">
+						</div>
+						<div class="form-center">
+							<p>您当前绑定的手机号码为：<span class="red">51*****34</span></p>
+						</div>
+						<div class="form-right">
+						</div>
+					</div>
+						<div class="form-list">
+							<div class="form-left">
+									 验证码：
+							</div>
+							<div class="form-center form-active2">
+								<input type="text" name="text1" class="f-special1">
+								<button type="button" class="btn btn-primary">免费获取验证码</button>
+							</div>
+							<div class="form-right">
+								<p class="normal "><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+								<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">立即验证</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</form>
+
+					</div>
+				</div>
+				<!-- eight -->
+				<div class="mlist information ">
+					<h5 >修改密码</h5>
+					<div class="safeset">
+						<div class="form-list">
+							<div class="form-left">
+									旧密码：
+							</div>
+							<div class="form-center">
+								<input type="password" name="text1">
+							</div>
+							<div class="form-right">
+								<p class="normal"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+								新密码：
+							</div>
+							<div class="form-center">
+								<input type="password" name="text1">
+							</div>
+							<div class="form-right">
+								<p class="normal"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+								 确认密码：
+							</div>
+							<div class="form-center">
+								<input type="password" name="text1">
+							</div>
+							<div class="form-right">
+								<p class="false"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">确定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- nine -->
+				<div class="mlist information ">
+					<h5 >修改用户名</h5>
+					<div class="safeset">
+						<div class="form-list">
+							<div class="form-left">
+									用户名：
+							</div>
+							<div class="form-center">
+								<input type="text" name="text1">
+							</div>
+							<div class="form-right">
+								<p class="normal"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+							</div>
+						</div>
+						<div class="form-list">
+							<div class="form-left">
+							</div>
+							<div class="form-center">
+								<button type="button" class="btn btn-warning">确定</button>
+							</div>
+							<div class="form-right">
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- ten -->
+				<div class="mlist information ">
+					<h5 >基本资料</h5>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>用户名：<span>   feitiandapeng</span></p>
+						</div>
+						<div class="basic-right">
+							<a href="">修改用户名</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>密码：<span>   *********</span></p>
+						</div>
+						<div class="basic-right">
+							<a href="">修改密码</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>手机号：<span>   18888888888</span></p>
+						</div>
+						<div class="basic-right">
+							<a href="">绑定其他手机</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>邮箱：<strong class="red">   96*****76@qq.com</strong></p>
+						</div>
+						<div class="basic-right">
+							<a href="">绑定其他邮箱</a>
+						</div>
+					</div>
+					<div class="basic-info">
+						<div class="basic-left">
+							<p>上次登录：<span >   2015-06-02 15:32:60</span></p>
+						</div>
+						<div class="basic-right">
+
+						</div>
+					</div>
+				</div>
+				<!--  add 11-->
+					<div class="company-regin-box">
+
+						<!-- first floor -->
+						<div class="copmanyfloor">
+							<div class="copmany-title">账户信息</div>
+							<div class="company-content">
+								<form>
+								<div class="form-list">
+									<div class="form-left">
+										<span class="red-star">*</span>用户名：
+									</div>
+									<div class="form-center form-active1">
+										<input type="text" name="text1" placeholder="手机/邮箱">
+									</div>
+									<div class="form-right">
+										<p class="false false-overflow"><!-- <span class="glyphicon glyphicon-remove-sign"></span> --> 请输入您的号码/邮箱</p>
+										<p class="true hide"><span class="glyphicon glyphicon-ok"></span></p>
+									</div>
+								</div>
+								<div class="form-list">
+									<div class="form-left">
+										<span class="red-star">*</span>请设置密码：
+									</div>
+									<div class="form-center">
+										<input type="password" name="text1">
+									</div>
+									<div class="form-right">
+										<p class="normal"><!-- <span class="glyphicon glyphicon-info-sign"></span>  -->自己填写吧</p>
+									</div>
+								</div>
+								<div class="form-list">
+									<div class="form-left">
+										<span class="red-star">*</span>请确认密码：
+									</div>
+									<div class="form-center">
+										<input type="text" name="text1">
+									</div>
+									<div class="form-right">
+										<p><!-- <span class="glyphicon glyphicon-info-sign"></span> --></p>
+									</div>
+								</div>
+								</form>
+							</div>
+						</div>
+						<!-- second floor -->
+						<div class="copmanyfloor">
+							<div class="copmany-title">公司信息</div>
+							<div class="company-content">
+								<form>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>公司名称：
+										</div>
+										<div class="form-center ">
+											<input type="text" name="text1" placeholder="">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>公司所在区域：
+										</div>
+										<div class="form-center">
+											<select name="" id="" class="city-select">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+											<select name="" id="" class="city-select">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+											<select name="" id="" class="city-select">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>公司详细地址：
+										</div>
+										<div class="form-center">
+											<input type="text" name="text1">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											推荐人手机：
+										</div>
+										<div class="form-center">
+											<input type="text" name="text1">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											企业人数：
+										</div>
+										<div class="form-center">
+											<select name="" id="" class="city-select">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											公司行业：
+										</div>
+										<div class="form-center">
+											<select name="" id="" class="city-select w360">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											公司性质：
+										</div>
+										<div class="form-center">
+											<select name="" id="" class="city-select">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- third floor -->
+						<div class="copmanyfloor">
+							<div class="copmany-title">联系人信息</div>
+							<div class="company-content">
+								<form>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>联系人姓名：
+										</div>
+										<div class="form-center ">
+											<input type="text" name="text1" placeholder="">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>所在部门：
+										</div>
+										<div class="form-center">
+											<select name="" id="" class="city-select">
+												<option value="">请选择</option>
+												<option value=""></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>固定电话：
+										</div>
+										<div class="form-center">
+											<input type="text" name="text1">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>验证手机：
+										</div>
+										<div class="form-center">
+											<input type="text" name="text1">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>短信验证码：
+										</div>
+										<div class="form-center form-active2">
+											<input type="text" name="text1" class="f-special1">
+											<button type="button" class="btn btn-primary huoqu">免费获取验证码</button>
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											联系人邮箱：
+										</div>
+										<div class="form-center">
+											<input type="text" name="text1">
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+											<span class="red-star">*</span>验证码：
+										</div>
+										<div class="form-center">
+											<input type="text" name="text1" class="f-special1">
+											<span class=" btn-maxspace">验证码</span>
+											<div class="changema">
+												<a>看不清？</a>
+												<a href="">换一张</a>
+											</div>
+										</div>
+									</div>
+									<div class="form-list form-list-special1">
+										<div class="form-left">
+
+										</div>
+										<div class="form-center">
+											<input type="checkbox" name="text1" class="f-special2" style="
+											width:15px;">
+											<p class="xieyi">阅读并接受 <a href="#">《快捷健用户协议》</a></p>
+										</div>
+										<div class="form-right">
+
+										</div>
+									</div>
+									<div class="form-list">
+										<div class="form-left">
+
+										</div>
+										<div class="form-center">
+											<button type="button" class="btn btn-warning">保存</button>
+										</div>
+										<div class="form-right">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- four floor -->
+					</div>
+				<!--add 11 -->
+				<!-- add12 -->
+				<div class="mlist information ">
+					<div class="switch-item" style="display: block;">
+					<div class="s-item2">
+						<p class="switch-title"><span class="glyphicon glyphicon-exclamation-sign"></span>您提供的证照信息快捷健将予以严格的加密保护，保证此证照信息仅用于注册审核。
+						</p>
+						<!-- 两种情况 -->
+						<div class="switch-step clearfix">
+							<div class=" second-same-step ">
+								<a><img src="img/80.png" alt=""></a>
+							</div>
+							<div class=" second-same-step">
+
+							</div>
+							<div class="step-right second-same-step">
+								<a><img src="img/80.png" alt=""></a>
+							</div>
+						</div>
+						<div class="switch-step clearfix margin-top ">
+							<div class=" second-same-step special-step">
+								<a><img src="img/card2.png" alt=""></a>
+							</div>
+
+							<div class="step-right second-same-step special-step">
+								<a><img src="img/card3.png" alt=""></a>
+							</div>
+						</div>
+						<div class="switch-sumbit">
+							<a href="">我已上传图片</a>
+						</div>
+						<div class="switch-tips">
+							<span class="red">请您在手机扫描二维码并上传成功后点击“我已上传图片”，进行确认。</span>图片尺寸最大不超过5M，照片支持jpg/jpeg/bmp/png格式
+						</div>
+					</div>
+					</div>
+					<div class="switch-backbtn">
+						<a href="">保存</a>
+					</div>
+				</div>
+				<!-- add12 -->
+			</div>
+
+			<!-- end memberright -->
+		</div>
+	</div>
+
+<!--  -->
+<div class="well">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 ">
+					<div class="thumbnail">
+					      <img src="img/icon/icon11.png" alt="...">
+					      <div class="caption">
+					        <h5>会员服务</h5>
+					        <p><a href="">购物流程</a></p>
+					        <p><a href="">常见问题</a></p>
+					        <p><a href="">用户服务</a></p>
+					        <p><a href="">积分说明</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon12.png" alt="...">
+					      <div class="caption">
+					        <h5>支付问题</h5>
+					       	<p><a href="">在线支付</a></p>
+					        <p><a href="">礼品卡</a></p>
+					        <p><a href="">配送方式</a></p>
+					        <p><a href="">配送范围</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon13.png" alt="...">
+					      <div class="caption">
+					        <h5>售后服务</h5>
+					       <p><a href="">售后服务政策</a></p>
+					        <p><a href="">售后服务流程</a></p>
+					        <p><a href="">退款说明</a></p>
+					        <p><a href="">订单取消</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon14.png" alt="...">
+					      <div class="caption">
+					        <h5>关于我们</h5>
+					        <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon15.png" alt="...">
+					      <div class="caption">
+					        <h5>店面体验</h5>
+					       <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>电信与信息服务业务经营许可证：京ICP证120343号      食品流通许可证：SP1101131210068873（1-1）     工信部备案：京ICP备20130356号         客服热线：400-666-7777</p>
+				<p>Copyright © 2013 Cndlbz.com Inc. All Rights Reserved. 快捷健连锁超市版权所有</p>
+			</div>
+	</div>
+</div>
+</div>
+<div class="modify modify2 add-basic ">
+	<h5>邀请码 <button type="vbutton" class="close">x</button></h5>
+	<div class="add-basic-wrapper">
+		<div class="add-basic-title">已使用 <span>50</span>，未使用 <span>0</span></div>
+		<div class="add-basic-content">
+			<h4 >未使用邀请码</h4>
+			<div class="span-item">
+				<span>123456789</span><span>123456789</span><span>123456789</span><span>123456789</span>
+				<span>123456789</span><span>123456789</span><span>123456789</span><span>123456789</span>
+				<span>123456789</span><span>123456789</span><span>123456789</span><span>123456789</span>
+				<span>123456789</span><span>123456789</span><span>123456789</span><span>123456789</span>
+				<span>123456789</span><span>123456789</span><span>123456789</span><span>123456789</span>
+			</div>
+		</div>
+		<!-- 第一种 -->
+		<div class="add-basic-content ">
+			<h4 class="no-active">未使用邀请码</h4>
+			<div class="span-item second">
+				<a href="">再次邀请50验证码</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

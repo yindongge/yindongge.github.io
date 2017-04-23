@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<link rel="stylesheet" type="text/css" href="../css/weixin.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper3.1.0.min.css">
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/swiper3.1.0.min.js"></script>
+<script src="../js/common/me.js"></script>
+<script type="text/javascript" src="../js/common/addcart.js"></script>
+</head>
+<body >
+	<div class="box box-gray">
+		<header class="header">
+			<div class="head-content">
+			<div class="switch_method">
+				<a href="#" >上门提货</a>
+				<a href="#" class="on">送货上门</a>
+			</div>
+			<a href="" class="addnew">新增</a>
+			</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+		<div class="ziti-wrapper">
+			<div class="floor">
+				<p class="blue ziti-title">当前位置：建外大街永安东里8号楼华彬中心<span class="icon-right">	</span></p>
+			</div>
+		</div>
+		<div class="address border-top">
+			<div class="pay_list h90 padding on">
+				<div class="new-built padding-control">
+					<p class="builtitem"><span class="builtname">赵本山嘿呦</span><span class="builtphone">1191191191911</span></p>
+					<p class="built-address"><span></span>北京市朝阳区建外大街永安东里8号华彬大厦1515患得患失开始卡的</p>
+					<span class="pencil"></span>
+				</div>
+			</div>
+			<div class="pay_list h90 padding">
+				<div class="new-built padding-control">
+					<p class="builtitem"><span class="builtname">赵本山嘿呦</span><span class="builtphone">1191191191911</span></p>
+					<p class="built-address"><span></span>北京市朝阳区建外大街永安东里8号华彬大厦1515患得患失开始卡的</p>
+					<span class="pencil"></span>
+				</div>
+			</div>
+			<div class="h114">
+				<div class="pay_list padding no">
+					<div class="new-built padding-control">
+						<p class="builtitem"><span class="builtname">赵本山嘿呦</span><span class="builtphone">1191191191911</span></p>
+						<p class="built-address"><span></span>北京市朝阳区建外大街永安东里8号华彬大厦1515患得患失开始卡的</p>
+						<span class="pencil"></span>
+					</div>
+					<div class="nouse-icon"></div>
+				</div>
+				<div class="tipred">对不起，我们已取消对“<span class="blue">华彬中心</span>”的配送，请重新编辑</div>
+			</div>
+
+			<div class="pay_list h50">
+				<span class="paper_news">新增收货地址</span>
+				<span class="addcircle pull-right"></span>
+			</div>
+		</div>
+	</div>
+	<!-- end box -->
+
+</body>
+</html>

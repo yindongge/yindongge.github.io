@@ -1,0 +1,2523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" media="screen" />
+<link href="../css/modal.css" rel="stylesheet" type="text/css" />
+<link href="../css/tab.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="../css/regin.css" rel="stylesheet" type="text/css" />
+<link href="../css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+<style type="text/css">
+	.switch_wrapper{
+		height: 392px;
+		overflow: hidden;
+	}
+</style>
+</head>
+<body>
+
+<div class="all" style="background:#f5f5f5">
+	<div class="advertisement">
+		<img src="../img/adv.png" alt="" />
+		<span class="delete_img_icon"></span>
+	</div>
+	<div class="top">
+		<nav class="navbar navbar-default">
+			<div class="container  ">
+				<ul class="nav navbar-nav fl">
+					<li class="showmenu">
+						<a href="#" ><i class="glyphicon point"></i> 北京 </a>
+						<div class="hidemenu" >
+							<p>请选择收货区域</p>
+							<p><a href="">北京</a><a href="">上海</a><a href="">天津</a><a href="">重庆</a></p>
+						</div>
+					</li>
+	            	<li><a href="#">您好，欢迎来到快捷健!</a></li>
+	            	<li><a href="#" class="yellow_a">[请登录]</a></li>
+	            	<li><a href="#">[快速注册会员]</a></li>
+				</ul>
+				<ul class="nav navbar-nav fr">
+					<li class="backindex"><a href="#">快捷健首页</a></li>
+					<li class="showmenu special2">
+						<a href="#"> 我的快捷健  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu" style="display: none;">
+							<li><a href="">我的订单</a></li>
+						</ul>
+					</li>
+
+
+					<li class="showmenu special3">
+						<a href="#"> <span class="mobile_icon"></span>手机版 <i class="glyphicon glyphicon-menu-down"></i></a>
+						<div class="hidemenu" style="display: none;">
+							<img src="img/erweima.jpg" class="erweima">
+							<p class="guanzhu">关注快捷健微店</p>
+						</div>
+					</li>
+					<li class="showmenu special2">
+						<a href="#"> 客户服务  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu" style="display: none;">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">留言咨询</a></li>
+						</ul>
+					</li>
+					<li class="showmenu special3">
+						<a href="#"> 咨询订阅</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- end top -->
+	<div class="header">
+		<div class="container ">
+			<div class="logo fl logo_new">
+				<a href="index.html"><img src="../img/logo_new.png"></a>
+				<div class="select-city">
+					<strong class="strong">光华路SOHO</strong>
+					<span class="small area-select">切换 <i class="glyphicon glyphicon glyphicon-menu-down"></i></span>
+					<!-- 新做选择区域页面 -->
+					<div class="change_wrapper hide">
+						<div class="change_shop_title">
+							<img src="../img/small_logo.png" alt="" class="small_logo" />
+							<span class="change_text">快捷健商城 - 请选择离您最近的门店</span>
+							<span class="close_change"></span>
+							<span class="back_his" style="display:none"><i class="icon_back"></i>返回</span>
+							<span class="back_his"><i class="icon_sear"></i></span>
+						</div>
+						<div class="change_shop_content" style="display:none">
+							<div class="change_shop_left">
+								<h5>配送范围</h5>
+								<ul class="ul_first">
+									<li>政治部第二干休所</li>
+									<li>政治部第二干休所</li>
+									<li>政治部第二干休所</li>
+									<li>政治部第二干休所</li>
+									<li>政治部第二干休所</li>
+
+								</ul>
+								<h5>历史记录</h5>
+								<ul class="ul_second">
+									<li>用哪里</li>
+									<li>永安里</li>
+								</ul>
+							</div>
+							<div class="change_shop_right">
+								<div class="change_shop_select">
+									<div class="select_first ">
+										<div class="select_top ">
+											<span class="">北京</span>
+											<i class="glyphicon glyphicon-menu-down"></i>
+										</div>
+										<div class="select_content">
+											<ul>
+												<li>北京</li>
+												<li class="active">南京</li>
+												<li>上海</li>
+												<li>云南</li>
+												<li>什么</li>
+											</ul>
+										</div>
+									</div>
+									<div class="select_second ">
+										<div class="select_top_second ">
+											<input type="text" placeholder="请输入你的位置(小区,或写字楼)" class="select_input" />
+										</div>
+										<div class="select_content">
+											<ul>
+												<li>北京</li>
+												<li class="active">南京</li>
+												<li>上海</li>
+												<li>云南</li>
+												<li>什么</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="change_shop_list">
+									<div class="change_shop_item on">
+										<img src="../img/8.png" alt="" />
+										<h5>快捷健超市（永安里店） <span>距离约<i>1km</i></span></h5>
+										<p>朝阳区光华路22号光华路SOHO底商188号 </p>
+										<p>电话：010-51887766<span>1:00－22:00</span></p>
+									</div>
+									<div class="change_shop_item">
+										<img src="../img/8.png" alt="" />
+										<h5>快捷健超市（永安里店） <span>距离约<i>1km</i></span></h5>
+										<p>朝阳区光华路22号光华路SOHO底商188号 </p>
+										<p>电话：010-51887766<span>1:00－22:00</span></p>
+									</div>
+									<div class="change_shop_item">
+										<img src="../img/8.png" alt="" />
+										<h5>快捷健超市（永安里店） <span>距离约<i>1km</i></span></h5>
+										<p>朝阳区光华路22号光华路SOHO底商188号 </p>
+										<p>电话：010-51887766<span>1:00－22:00</span></p>
+									</div>
+									<div class="change_shop_item">
+										<img src="../img/8.png" alt="" />
+										<a class="newshopicon"></a>
+										<h5>快捷健超市（永安里店） <span>距离约<i>1km</i></span></h5>
+										<p>朝阳区光华路22号光华路SOHO底商188号 </p>
+										<p>电话：010-51887766<span>1:00－22:00</span></p>
+									</div>
+
+
+
+								</div>
+							</div>
+
+						</div>
+						<!-- 2 -->
+						<div class="change_shop_content">
+							<div class="change_shop_new">
+								<h5 class="change_new_title">
+									<span class="strong">历史</span>
+									<a href="">永安里店</a>
+									<a href="">朝外店</a>
+									<span class="right_span">仅显示最近所选择的3家门店</span>
+								</h5>
+								<div class=""></div>
+								<h4 class="bg_gray">
+									<p class="first_list_city"><span class="strong">城市</span><a class="active">北京</a><a>北京</a><a>北京</a></p>
+									<p class="second_list_area"><span class="strong">区域</span><a class="on">北京</a><a>北京</a><a>北京</a></p>
+								</h4>
+								<div class="change_new_content">
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+										<div class="change_hover">
+											<span><i class="icon_t"></i>010-11111111</span>
+											<span><i class="icon_s"></i>08:00-20:00</span>
+										</div>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/bc.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+										<div class="change_hover">
+											<span><i class="icon_t"></i>010-11111111</span>
+											<span><i class="icon_s"></i>08:00-20:00</span>
+										</div>
+
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+										<div class="change_hover">
+											<span><i class="icon_t"></i>010-11111111</span>
+											<span><i class="icon_s"></i>08:00-20:00</span>
+										</div>
+
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+									<div class="change_item">
+										<div class="change_word">
+											<h5>朝外soho店</h5>
+											<p>朝阳区东三环中路39号院，建外SOHO  15号楼1516室</p>
+										</div>
+										<img src="../img/6.png" alt="" />
+										<span class="icon_position"></span>
+										<span class="line_through"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 新做选择区域页面 -->
+
+				</div>
+			</div>
+			<div class="search fl">
+					<div class="input-group">
+					      <input type="text" class="form-control" placeholder="Search for...">
+					      <i  class="icon1 glyphicon glyphicon-search"></i>
+					      <span class="input-group-btn">
+					        	<button class="btn btn-me" type="button">搜索</button>
+					      </span>
+				    </div>
+				    <div class="hotword">
+				    	<a href="" class="hotword_yellow">热门搜索:</a>
+				    	<a href="">咖啡</a>
+				    	<a href="">新疆</a>
+				    	<a href="" class="hotword_yellow">红酒</a>
+				    	<a href="">新疆红枣</a>
+				    	<a href="">黄飞鸿</a>
+				    	<a href="">叫一叫</a>
+				    </div>
+			</div>
+			<div class="top_intro_list">
+				<a ><span class="top_intro_icon1"></span>正品保障</a>
+				<a ><span class="top_intro_icon2"></span>急速送达</a>
+				<a ><span class="top_intro_icon3"></span>实体门店</a>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+		<div class="nav-index">
+			<div class="container  ">
+				<div class="nav-side-reverse ">
+					<div class="a-control">
+						<a href="#">全部商品分类</a>
+					</div>
+
+				</div>
+				<div class="nav-sideright">
+					<ul>
+						<li class="active"><a href="" >首页</a></li>
+						<li><a href="">品牌</a></li>
+						<li><a href="">进口专区</a></li>
+						<li><a href="">午餐</a></li>
+						<li><a href="">车帮</a></li>
+					</ul>
+					<div class="top_link_a_list">
+						<a href="" class="reda"><span class="t_l_icon1"></span>优惠活动</a>
+						<a href="" class="yellowa"><span class="t_l_icon2"></span>会员俱乐部</a>
+						<a href="" class="bluea"><span class="t_l_icon3"></span>门店查询</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- end nav-index -->
+
+	<div class="container-fluid all_bg_set">
+		<div class="container">
+			<!-- start right float -->
+			<div class="carousel-modal">
+				<h5>快捷简报</h5>
+				<ul class="carousel-list">
+					<li class="on"><a href=""><span>[店内特惠]</span>休闲零食促销，超优惠</a></li>
+					<li><a href=""><span>[公告]</span>我们这里要开业列啊</a></li>
+					<li><a href=""><span>[特惠]</span>休闲零食促销，超优惠</a></li>
+					<li><a href=""><span>[公告]</span>休闲零食促销，超优惠</a></li>
+					<li><a href=""><span>[特惠]</span>休闲零食促销，超优惠</a></li>
+				</ul>
+				<h4>店内服务</h4>
+				<div class="row">
+					  <div class="col-sm-4">
+					    <a  class="thumbnail">
+					      <img src="../img/icon/service1.png" alt="微波加热">
+					    </a>
+					  </div>
+					    <div class="col-sm-4">
+					    <a  class="thumbnail">
+					      <img src="../img/icon/service2.png" alt="现磨咖啡">
+					    </a>
+					  </div>
+					    <div class="col-sm-4">
+					    <a  class="thumbnail">
+					      <img src="../img/icon/service3.png" alt="USB充电">
+					    </a>
+					  </div>
+					    <div class="col-sm-4">
+					    <a  class="thumbnail">
+					      <img src="../img/icon/service4.png" alt="送货上门">
+					    </a>
+					  </div>
+					    <div class="col-sm-4">
+					    <a  class="thumbnail">
+					      <img src="../img/icon/service7.png" alt="免费WIFI">
+					    </a>
+					  </div>
+					    <div class="col-sm-4">
+					    <a  class="thumbnail">
+					      <img src="../img/icon/service6.png" alt="上网服务">
+					    </a>
+					  </div>
+
+				</div>
+			</div>
+			<!-- end right float -->
+		<!--所有分类 Start-->
+			<div class="wrap">
+				<div class="all-sort-list">
+				<!-- 1 -->
+					<div class="item ">
+						<div class="item-list clearfix" >
+							<div class="subitem">
+								<dl class="fore1">
+									<dd>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+									</dd>
+								</dl>
+								<div class="line2 l1">
+									<img src="img/img1.jpg">
+								</div>
+							</div>
+
+						</div>
+						<h3>
+							<a href="" class="special">休闲零食</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<span class="glyphicon glyphicon-menu-right pull-right"></span>
+							<!-- <b></b> -->
+							<div class="navitem_icon1 samenavicon"></div>
+							<span class="zhe_bg_white"></span>
+						</h3>
+
+					</div>
+					<div class="item ">
+						<h3>
+							<a href="" class="special">主食快餐</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<span class="glyphicon glyphicon-menu-right pull-right"></span>
+							<!-- <b></b> -->
+							<div class="navitem_icon2 samenavicon"></div>
+							<span class="zhe_bg_white"></span>
+						</h3>
+						<div class="item-list clearfix" >
+							<div class="subitem">
+								<dl class="fore1">
+									<dd>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+									</dd>
+								</dl>
+								<div class="line2 l2">
+										<img src="img/img2.jpg">
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="item  ">
+						<h3>
+							<a href="" class="special">酒水饮料</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<span class="glyphicon glyphicon-menu-right pull-right"></span>
+							<!-- <b></b> -->
+							<div class="navitem_icon3 samenavicon"></div>
+							<span class="zhe_bg_white"></span>
+						</h3>
+						<div class="item-list clearfix" >
+							<div class="subitem">
+								<dl class="fore1">
+									<dd>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+									</dd>
+								</dl>
+								<div class="line2 l3">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="item ">
+						<h3>
+							<a href="" class="special">粮油调味品</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<span class="glyphicon glyphicon-menu-right pull-right"></span>
+							<!-- <b></b> -->
+							<div class="navitem_icon4 samenavicon"></div>
+						</h3>
+						<div class="item-list clearfix" >
+							<div class="subitem">
+								<dl class="fore1">
+									<dd>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+									</dd>
+								</dl>
+								<div class="line2 l4">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="item ">
+						<h3>
+							<a href="" class="special">办公用品</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<span class="glyphicon glyphicon-menu-right pull-right"></span>
+							<!-- <b></b> -->
+							<div class="navitem_icon5 samenavicon"></div>
+						</h3>
+						<div class="item-list clearfix" >
+							<div class="subitem">
+								<dl class="fore1">
+									<dd>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+									</dd>
+								</dl>
+								<div class="line2 l5">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="item ">
+						<h3>
+							<a href="" class="special">个人护理</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<a href="">水果</a>
+							<a href="">饼干</a>
+							<span class="glyphicon glyphicon-menu-right pull-right"></span>
+							<!-- <b></b> -->
+							<div class="navitem_icon6 samenavicon"></div>
+							<span class="zhe_bg_white"></span>
+						</h3>
+						<div class="item-list clearfix" >
+							<div class="subitem">
+								<dl class="fore1">
+									<dd>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">肉包子</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+										<a href="">面包</a>
+									</dd>
+								</dl>
+								<div class="line2 ">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!--所有分类 End-->
+			</div>
+			<div class="focus_top_slide" style="width:100%;">
+				<div class="hd">
+					<ul><li></li><li></li><li></li></ul>
+				</div>
+				<div class="bd">
+					<ul>
+						<a href="#"><li style="height: 395px;background: url(../img/example1.png) 50% 0px no-repeat #f00;background-size:750px 395px"></li></a>
+						<a href="#"><li style="height: 395px;background: url(../img/example2.png) 50% 0px no-repeat #333;background-size:750px 395px"></li></a>
+						<li style="height: 395px;background: url(../img/example4.png) 50% 0px no-repeat #ff8a00;background-size:750px 395px"></li>
+					</ul>
+				</div>
+				<a class="prev" href="javascript:void(0)"><span></span></a>
+				<a class="next" href="javascript:void(0)"><span></span></a>
+			</div>
+	</div>
+  <!-- end carsouel -->
+
+  <!-- add new -->
+	<div class="container">
+		<div class="slide_bradn_wrapper">
+			<div class="show_brand_left fl">
+				<a href=""><img src="../img/example.png" alt=""  class="scaleimg" /></a>
+			</div>
+			<div class="show_brand_center fl">
+				<div class="top_block_item">
+					<a href=""><img src="../img/example1.png" alt="" class="scaleimg"/></a>
+					<a href=""><img src="../img/example4.png" alt="" class="scaleimg"/></a>
+					<a href=""><img src="../img/example3.jpg" alt="" class="scaleimg"/></a>
+				</div>
+				<div class="bottom_block_item">
+					<div class="superslide_wrapper">
+					<ul class="picList">
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e31.png" />
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e32.png" />
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e33.png" />
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e31.png" />
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e32.png" />
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e33.png" />
+								</a>
+							</div>
+						</li>
+					</ul>
+					</div>
+					<div class="switch_btn">
+						<a  class="next"><span></span></a>
+						<a  class="prev"><span></span></a>
+					</div>
+				</div>
+			</div>
+			<div class="show_brand_right fl">
+				<a href=""><img src="../img/example2.png" alt="" class="scaleimg"/></a>
+				<a href=""><img src="../img/example2.png" alt="" class="scaleimg"/></a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="switch_wrapper">
+			<div class="switch_title_nav">
+				<a  class="on">今日推荐<span class="down_arraw_iocn"> </span></a>
+				<a >热卖商品<span class="down_arraw_iocn"> </span></a>
+				<a >新品上架<span class="down_arraw_iocn"> </span></a>
+				<a >特价抢购<span class="down_arraw_iocn"> </span></a>
+			</div>
+			<!-- 1111111 -->
+			<div class="switch_content_list" style="display:block">
+				<div class="superslide_wrapper">
+					<ul class="picList">
+						<li>
+							<div class="pic havetitle">
+								<a href="#" target="_blank">
+									<img src="../img/f1.png" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+								<div class="pic_bottom_title">
+									<h4>好丽友薯愿薯片三连包原味+牛排+蜂薯愿薯片三连包原味+牛排+蜂</h4>
+									<h5><span class="rmb">￥</span>36.90</h5>
+								</div>
+							</div>
+							<div class="cut_line"> </div>
+						</li>
+						<li>
+							<div class="pic on">
+								<a href="#" target="_blank">
+									<img src="../img/e22.png" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+							<div class="cut_line"> </div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e23.png" />
+								</a>
+								<div class="block_bottom_join gray">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+							<div class="cut_line"> </div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e24.png" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+							<div class="cut_line"> </div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e21.png" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+							<div class="cut_line"> </div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/e22.png" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+							<div class="cut_line"> </div>
+						</li>
+					</ul>
+			<!-- 		<div class=" cut divider_line1"></div>
+					<div class=" cut divider_line1"></div>
+					<div class=" cut divider_line1"></div>
+					<div class=" cut divider_line1"></div> -->
+				</div>
+				<!-- <span class="divder_vertical_line line4"></span>
+				<span class="divder_vertical_line line5"></span>
+				<span class="divder_vertical_line line6"></span> -->
+				<div class="switch_btn">
+					<a class="next"><span></span></a>
+					<a class="prev"><span></span></a>
+				</div>
+			</div>
+			<!-- 2222 -->
+			<div class="switch_content_list"  >
+				<div class="superslide_wrapper">
+					<ul class="picList">
+						<li>
+							<div class="pic havetitle">
+								<a href="#" target="_blank">
+									<img src="../img/22.jpg" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+								<div class="pic_bottom_title">
+									<h4>好丽友薯愿薯片三连包原味+牛排+蜂薯愿薯片三连包原味+牛排+蜂</h4>
+									<h5><span class="rmb">￥</span>36.90</h5>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="pic on">
+								<a href="#" target="_blank">
+									<img src="../img/22.jpg" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/22.jpg" />
+								</a>
+								<div class="block_bottom_join gray">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/22.jpg" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/22.jpg" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="#" target="_blank">
+									<img src="../img/22.jpg" />
+								</a>
+								<div class="block_bottom_join">加入购物车
+									<span class="hover_car_join"></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="switch_content_list">
+				33333
+			</div>
+			<div class="switch_content_list">
+				44
+			</div>
+		</div>
+	</div>
+  <!-- end add new  -->
+
+  <!-- start future -->
+
+	<div class="future" id="floor1">
+		<div class="container">
+		<div class="title clearfix on">
+		<!-- 添加ON 激活背景颜色 -->
+			<span>休闲食品</span>
+			<ul>
+				<li ><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="">商品推荐</a></li>
+				<li><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<!-- <li><a href="" class="last_special">商品推荐</a></li> -->
+				<li><a href="" class="last_special" >商品推荐</a></li>
+			</ul>
+		</div>
+		<div class="content">
+				<div class="content-left">
+					<a href=""><img src="../img/bigexample1.png"></a>
+					<div class="fix_inline_a">
+						<a href="">巧克力</a>
+						<a href="">巧克力</a>
+						<a href="">巧克</a>
+						<a href="">巧克</a>
+						<a href="">巧克</a>
+						<a href="">巧克力</a>
+					</div>
+				</div>
+				<div class="content-right">
+					<div class="row">
+						<div class="col-sm-3">
+						    <div class="thumbnail set_special">
+						  		<img src="../img/f2.png" alt="" />
+						  		<p class="c_t_price">
+								    <a  class="hover_new_car"></a>
+							    </p>
+						    </div>
+						</div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<a class="c-t-title">tiaoshi快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</a>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a  class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail" id="findme">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..." id="ceshiimg"></a>
+								       <div class="caption">
+									      	<p class="c-t-title">
+									      	调试快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a  class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						 <span class="divder_line"></span>
+						<span class="divder_vertical_line"></span>
+						<span class="divder_vertical_line line2"></span>
+						<span class="divder_vertical_line line3"></span>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	<div class="future" id="floor2">
+		<div class="container">
+		<div class="title clearfix">
+			<span>主食快餐</span>
+			<ul>
+				<li ><a href="" class="active">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="">商品推荐</a></li>
+				<li><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="" class="last_special">商品推荐</a></li>
+			</ul>
+		</div>
+		<div class="content">
+				<div class="content-left">
+					<a href=""><img src="../img/bigexample1.png"></a>
+				</div>
+				<div class="content-right">
+					<div class="row">
+						<div class="col-sm-3">
+						   <div class="thumbnail set_special">
+						  		<img src="../img/f2.png" alt="" />
+						  		<p class="c_t_price">
+								    <a href="#" class="hover_new_car"></a>
+							    </p>
+						    </div>
+						</div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						 <span class="divder_line"></span>
+						<span class="divder_vertical_line"></span>
+						<span class="divder_vertical_line line2"></span>
+						<span class="divder_vertical_line line3"></span>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	<div class="future" id="floor3">
+		<div class="container">
+		<div class="title clearfix">
+			<span>酒水饮料</span>
+			<ul>
+				<li ><a href="" class="active">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="">商品推荐</a></li>
+				<li><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="" class="last_special">商品推荐</a></li>
+			</ul>
+		</div>
+		<div class="content">
+				<div class="content-left">
+					<a href=""><img src="../img/bigexample1.png"></a>
+				</div>
+				<div class="content-right">
+					<div class="row">
+						<div class="col-sm-3">
+						    <div class="thumbnail">
+							     <a href=""> <img src="../img/17.jpg"  class="scaleimg" alt="..."></a>
+							      <div class="caption">
+								      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么</p>
+
+								        <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+
+							      </div>
+						    </div>
+						</div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						 <span class="divder_line"></span>
+						<span class="divder_vertical_line"></span>
+						<span class="divder_vertical_line line2"></span>
+						<span class="divder_vertical_line line3"></span>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	<div class="future" id="floor4">
+		<div class="container">
+		<div class="title clearfix">
+			<span>粮油调味</span>
+			<ul>
+				<li ><a href="" class="active">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="">商品推荐</a></li>
+				<li><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="" class="last_special">商品推荐</a></li>
+			</ul>
+		</div>
+		<div class="content">
+				<div class="content-left">
+					<a href=""><img src="../img/bigexample1.png"></a>
+				</div>
+				<div class="content-right">
+					<div class="row">
+						<div class="col-sm-3">
+						    <div class="thumbnail">
+							     <a href=""> <img src="../img/17.jpg"  class="scaleimg" alt="..."></a>
+							      <div class="caption">
+								      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么</p>
+
+								        <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+
+							      </div>
+						    </div>
+						</div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						 <span class="divder_line"></span>
+						<span class="divder_vertical_line"></span>
+						<span class="divder_vertical_line line2"></span>
+						<span class="divder_vertical_line line3"></span>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	<div class="future" id="floor5">
+		<div class="container">
+		<div class="title clearfix">
+			<span>办公日用</span>
+			<ul>
+				<li ><a href="" class="active">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="">商品推荐</a></li>
+				<li><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="" class="last_special">商品推荐</a></li>
+			</ul>
+		</div>
+		<div class="content">
+				<div class="content-left">
+					<a href=""><img src="../img/bigexample1.png"></a>
+				</div>
+				<div class="content-right">
+					<div class="row">
+						<div class="col-sm-3">
+						    <div class="thumbnail">
+							     <a href=""> <img src="../img/17.jpg"  class="scaleimg" alt="..."></a>
+							      <div class="caption">
+								      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么</p>
+
+								        <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+
+							      </div>
+						    </div>
+						</div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						 <span class="divder_line"></span>
+						<span class="divder_vertical_line"></span>
+						<span class="divder_vertical_line line2"></span>
+						<span class="divder_vertical_line line3"></span>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	<div class="future" id="floor6">
+		<div class="container">
+		<div class="title clearfix">
+			<span>个人护理</span>
+			<ul>
+				<li ><a href="" class="active">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="">商品推荐</a></li>
+				<li><a href="">烟台红富士</a></li>
+				<li><a href="">赵县雪花梨</a></li>
+				<li><a href="">深州蜜桃</a></li>
+				<li><a href="" class="last_special">商品推荐</a></li>
+			</ul>
+		</div>
+		<div class="content">
+				<div class="content-left">
+					<a href=""><img src="../img/bigexample1.png"></a>
+				</div>
+				<div class="content-right">
+					<div class="row">
+						<div class="col-sm-3">
+						    <div class="thumbnail set_special">
+						  		<img src="../img/f2.png" alt="" />
+						  		<p class="c_t_price">
+								    <a href="#" class="hover_new_car"></a>
+							    </p>
+						    </div>
+						</div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								      <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌什么什么墨鱼干有品牌什么什么墨鱼有品牌什么什么墨鱼</p>
+
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						  <div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+
+						<div class="col-sm-3">
+							    <div class="thumbnail">
+								       <a href=""><img src="../img/17.jpg" class="scaleimg" alt="..."></a>
+								       <div class="caption">
+									      	<p class="c-t-title">快捷健自有品牌 什么什么墨鱼干</p>
+									      <p class="c_t_price">
+									        <span class="yellow">￥37</span>
+									        <span class="line-delete">原价：￥37</span>
+									        <a href="#" class="hover_new_car"></a>
+								        </p>
+								      </div>
+							    </div>
+						  </div>
+						 <span class="divder_line"></span>
+						<span class="divder_vertical_line"></span>
+						<span class="divder_vertical_line line2"></span>
+						<span class="divder_vertical_line line3"></span>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+<!-- end start -->
+
+<!--
+<div class="well">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 ">
+					<div class="thumbnail">
+					      <img src="../img/footnewicon.png" alt="...">
+					      <div class="caption">
+					        <h5>购物指南</h5>
+					        <p><a href="">注册登录</a></p>
+					        <p><a href="">购物流程</a></p>
+					        <p><a href="">常见问题</a></p>
+					        <p><a href="">发票制度</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="../img/footnewicon-02.png" alt="...">
+					      <div class="caption">
+					        <h5>支付方式</h5>
+					       	<p><a href="">货到付款</a></p>
+					        <p><a href="">线上支付</a></p>
+					        <p><a href="">优惠券使用</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="../img/footnewicon-03.png" alt="...">
+					      <div class="caption">
+					        <h5>售后服务</h5>
+					       <p><a href="">联系客服</a></p>
+					        <p><a href="">退换货</a></p>
+					        <p><a href="">退换货流程</a></p>
+					        <p><a href="">退款说明</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="../img/footnewicon-04.png" alt="...">
+					      <div class="caption">
+					        <h5>配送服务</h5>
+					        <p><a href="">自提服务</a></p>
+					        <p><a href="">配送方式</a></p>
+					        <p><a href="">配送范围</a></p>
+					        <p><a href="">验货与签收</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="../img/footnewicon-05.png" alt="...">
+					      <div class="caption">
+					        <h5>关于我们</h5>
+					       <p><a href="">联系我们</a></p>
+					        <p><a href="">关于快捷健</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">会员介绍</a></p>
+					      </div>
+				    </div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>电信与信息服务业务经营许可证：京ICP证120343号      食品流通许可证：SP1101131210068873（1-1）     工信部备案：京ICP备20130356号         客服热线：400-666-7777</p>
+				<p>Copyright © 2013 Cndlbz.com Inc. All Rights Reserved. 快捷健连锁超市版权所有</p>
+			</div>
+	</div>
+</div> -->
+<div class="bottom_wrapper">
+	<div class="bottom_w_top">
+		<div class="server_bottom_left">
+			<div class="server_bottom_list">
+				<h2><img src="../img/bottom-02.png" alt="" />购物指南</h2>
+				<div class="a_item">
+					<a href="">注册登录</a>
+					<a href="">购物流程</a>
+					<a href="">常见问题</a>
+					<a href="">发票制度</a>
+				</div>
+			</div>
+			<div class="server_bottom_list">
+				<h2><img src="../img/bottom-05.png" alt="" />支付方式</h2>
+				<div class="a_item">
+					<a href="">注册登录</a>
+					<a href="">购物流程</a>
+					<a href="">常见问题</a>
+					<a href="">发票制度</a>
+				</div>
+			</div>
+			<div class="server_bottom_list">
+				<h2><img src="../img/bottom.png" alt="" />售后服务</h2>
+				<div class="a_item">
+					<a href="">注册登录</a>
+					<a href="">购物流程</a>
+					<a href="">常见问题</a>
+					<a href="">发票制度</a>
+				</div>
+			</div>
+			<div class="server_bottom_list">
+				<h2><img src="../img/bottom-03.png" alt="" />配送服务</h2>
+				<div class="a_item">
+					<a href="">注册登录</a>
+					<a href="">购物流程</a>
+					<a href="">常见问题</a>
+					<a href="">购物流程</a>
+					<a href="">发票制度</a>
+				</div>
+			</div>
+			<div class="server_bottom_list">
+				<h2><img src="../img/bottom-04.png" alt="" />关于我们</h2>
+				<div class="a_item">
+					<a href="">注册登录</a>
+					<a href="">购物流程</a>
+					<a href="">常见问题</a>
+					<a href="">发票制度</a>
+				</div>
+			</div>
+		</div>
+		<div class="server_bottom_right">
+			<img src="../img/bottom_erweima2.jpg" alt="" />
+			<h5>关注微信商城</h5>
+			<p>扫一扫</p>
+			<p>手机下单更便捷</p>
+		</div>
+	</div>
+	<div class="bottom_w_center">
+		<div class="linka_list">
+			<a href="">关于快捷健</a>
+			<a href="">联系我们</a>
+			<a href="">联系客服</a>
+			<a href="">人才招聘</a>
+			<a href="">隐私声明</a>
+			<a href="">站点地图</a>
+			<a href="">网店拓展</a>
+		</div>
+		<div class="copy_bottom">
+			<p>
+			<a ><span>电信与信息服务业务经营许可证：京ICP证120343号</span></a>
+			<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502031892" target="_blank"><span><i><img src="../img/police.png" alt="" /></i>京公网安备：11010502031892号</span></a>
+			<a href="http://www.kjjhome.com/html/license/businessICPLicense.html" target="_blank"><span>京ICP证160185号</span></a>
+			<a href="http://www.kjjhome.com/html/license/businesslicense.html" target="_blank"><span>营业执照 统一社会信用代码：91110105344398147M</span></a>
+			<span>客服热线：<span style="color:#676767">4000-306-603</span></span>
+			</p>
+			<p>Copyright @ 2015-2016　北京快捷健电子商务有限公司Kjjhome.com 版权所有　地址：北京市朝阳区建国门外大街永安东里8号15层1501B室</p>
+		</div>
+	</div>
+	<div class="bottom_w_bottom">
+		<a href="https://ss.knet.cn/verifyseal.dll?sn=e16042911010563321dxoa000000&amp;ct=df&amp;a=1&amp;pa=0.1319143262137692" target="_blank" ><img src="http://rr.knet.cn/static/images/logo/cnnic.png" width="87" height="40"></a>
+		<a href=""><img src="../img/bo-02.png" alt="" /></a>
+		<a href="http://www.bj.cyberpolice.cn/index.jsp"><img src="../img/bo-04.png" alt="" /></a>
+		<a href="http://www.bjjubao.org/"><img src="../img/bo-07.png" alt="" /></a>
+
+	</div>
+</div>
+<div class="mask-modal hide ">
+	<div class="mask-title">
+		<div class="close-mask"></div>
+		<div class=" zhe">
+				<a href="index.html"><img src="img/logo.png"></a>
+			</div>
+	</div>
+	<div class="mask-body">
+		<dl class="dtone">
+			<dt >热门城市：</dt>
+			<dd class="blue">北京</dd>
+		</dl>
+		<dl class="dianpulist">
+			<i></i>
+			<dt>所有店铺：</dt>
+			<dd>
+				<a href="" class="active">光华路店</a><a href="">光华路店</a>
+				<a href="">光华路店</a><a href="">光华路店</a>
+				<a href="">光华路店</a><a href="">光华路店</a>
+				<a href="" class="active">光华路店</a><a href="">光华路店</a>
+			</dd>
+		</dl>
+		<p class="red red-control">温馨提示：在店铺1公里范围内可享受阿健免费配送服务
+</p>
+	</div>
+
+</div>
+<!-- <div class="mask-index show"></div> -->
+<!--login mask -->
+	<div class="alertkjjj  hide">
+		 <div class="title">
+			登录快捷健账号<span></span>
+		</div>
+	<div class="login-form">
+				<form>
+					<div class="login-fault">
+						<p class="red"><span class="glyphicon glyphicon-minus-sign"></span> 账号和密码不匹配，请重新输入</p>
+					</div>
+					<div class="login-title">
+						<h2>登录</h2>
+						<div class="login-register">
+							<a href="#">免费注册</a>
+						</div>
+					</div>
+					<div class="login-item login-item1 login-focus">
+						<label for="loginname"></label>
+						<input  type="text" id="cc" name="vv" class="login-text" autocomplete="off" placeholder="手机号/邮箱">
+						<span class="close">x</span>
+					</div>
+					<div class="login-item login-item2 focus-normal">
+						<label for="password"></label>
+						<input type="password" class="login-text" placeholder="密码">
+						<span class="close">x</span>
+					</div>
+					<div class="check">
+						<div class="check-code">
+							<p>请输入验证码</p>
+							<input type="text" class="check-text">
+							<span>看不清</span>
+							<a href="">YYyy</a>
+						</div>
+
+					</div>
+					<div class="login-item no-border">
+						<div class="login-auto">
+							<span>
+								<input type="checkbox">
+								<a>自动登录</a>
+							</span>
+							<a href="" class="pull-right">忘记登录密码?</a>
+						</div>
+					</div>
+					<p class="sure"><button type="button" class="btn btn-warning">登录</button></p>
+				</form>
+	</div>
+	</div>
+	<!-- <div class="login-mask  "></div> -->
+	<!-- login mask -->
+	<!--  -->
+</div>
+<div class="side_left_toolbar">
+	<a href="#floor1" class="floor_a1 on">休闲零食</a>
+	<a href="#floor2" class="floor_a2 ">主食快餐</a>
+	<a href="#floor3" class="floor_a3 ">酒水饮料</a>
+	<a href="#floor4" class="floor_a4 ">粮油调味</a>
+	<a href="#floor5" class="floor_a5 ">办公日用</a>
+	<a href="#floor6" class="floor_a6 ">个人护理</a>
+</div>
+<div class="side-toolbar">
+	<div class="side-fistlist">
+		<div class="side_item side_1" ><em></em></div>
+		<div class="side_item side_2">
+			<em></em>
+			<span class="red_count">12</span>
+		</div>
+		<div class="side_item side_3"><em></em></div>
+		<div class="side_item side_4"><em></em></div>
+	</div>
+	<div class="side-secondlist">
+		<div class="side_item side_5" ><em></em></div>
+		<div class="side_item side_6">
+			<em></em>
+			<div class="side_erweima">
+				<img src="../img/erweima3.jpg" alt="" />
+				<span>扫描并关注</span>
+			</div>
+		</div>
+		<div class="side_item side_7"><em></em></div>
+	</div>
+</div>
+<!-- side shopcar  -->
+<div class="side-shopcar">
+	<div class="side_shopcar_content ">
+		<h5 class="side_s_title">
+			<input type="checkbox" />全选
+			<a href="">进入购物车</a>
+		</h5>
+		<div class="side_s_list">
+			<div class="white_title">
+				午餐（淡菜）
+				<span class="gray">提示：每个餐盒最多可放<i class="yellow_tip">3</i>个菜</span>
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					一号餐盒
+					<span class="yellow_tip">午餐将放入此餐盒</span>
+				</h4>
+				<div class="side_s_item_content">
+					<ul>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count on"></span>
+									<span class="count">10</span>
+									<span class="add_conut on"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+								<div class="mask_img">剩余15件</div>
+							</div>
+						</li>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="../img/3.jpg" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+								<div class="mask_img">剩余15件</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="alert-pp">
+					每个餐盒最多可放3个菜，请更换餐盒
+				</div>
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					一号餐盒
+					<span class="yellow_tip">午餐将放入此餐盒</span>
+				</h4>
+				<div class="side_s_item_content">
+					<ul>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 多余三个提示 -->
+				<div class="alert-pp">
+					每个餐盒最多可放3个菜，请更换餐盒
+				</div>
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					三号餐盒
+					<span class="gray_tip">如需分盒请点击此处</span>
+				</h4>
+				<div class="side_s_item_content">
+					<p class="no-canhe">餐盒空空</p>
+				</div>
+			</div>
+				<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					三号餐盒
+					<span class="gray_tip">如需分盒请点击此处</span>
+				</h4>
+				<div class="side_s_item_content">
+					<p class="no-canhe">餐盒空空</p>
+				</div>
+			</div>
+				<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					三号餐盒
+					<span class="gray_tip">如需分盒请点击此处</span>
+				</h4>
+				<div class="side_s_item_content">
+					<p class="no-canhe">餐盒空空</p>
+				</div>
+			</div>
+			<div class="side_s_zengpin">
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+			</div>
+		</div>
+			<div class="side_s_list">
+			<div class="white_title">
+				普通商品
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="manjian-circle">满减</span>
+					满100，减20
+				</h4>
+				<div class="side_s_item_content">
+					<ul>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count on"></span>
+									<span class="count">10</span>
+									<span class="add_conut on"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="side_s_zengpin">
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+		<div class="side_s_footer">
+			<div class="side_s_f_title">
+				已选<i class="yellow_tip">13</i>件
+				<span class="yellow_tip right_control">￥150..</span>
+			</div>
+			<div class="gogopay">
+				<button class="subminta">去结算<span class="go_right"></span></button>
+			</div>
+		</div>
+	<!-- 购物车为空的时候 -->
+<!-- 	<div class="side_shopcar_content empty hide">
+		<h5 class="side_s_title">
+			<a href="">进入购物车</a>
+		</h5>
+		<div class="empty_box">
+			<div class="empty_img"></div>
+			<div class="empty_text">
+				<p>您的购物车空着哦，快去逛逛吧</p>
+				<a href="" class="yellow_tip">去首页看看</a>
+			</div>
+		</div>
+		<div class="side_s_footer">
+			<div class="side_s_f_title">
+				已选<i class="yellow_tip">13</i>件
+				<span class="yellow_tip right_control">￥150..</span>
+			</div>
+			<div class="gogopay">
+				<button class="subminta">去结算<span class="go_right"></span></button>
+			</div>
+		</div>
+	</div> -->
+</div>
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/modal.js"></script>
+<script src="../js/common/me.js"></script>
+<script src="../js/common/addcart.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.hover_new_car').on('click',function(e){
+	animateAddCart($('.side_item.side_2'),$(this).parents('#findme').find('img'));
+	e.preventDefault();
+});
+});
+
+function animateAddCart(cartEnd,imgtodrag){
+		var imgclone = imgtodrag.clone().offset({
+			top: imgtodrag.offset().top + 50,
+			left: imgtodrag.offset().left + 50
+		}).css({
+			'opacity': '0.5',
+			'position': 'absolute',
+			'height': '100px',
+			'width': '100px',
+			'z-index': '100'
+		}).appendTo($('body')).animate({
+			'top': cartEnd.offset().top + 0,
+			'left': cartEnd.offset().left + 0,
+			'width': 40,
+			'height': 40
+		}, 1000, 'easeInOutExpo');
+		setTimeout(function () {
+			cartEnd.effect('shake', { times: 2}, 300);//购物车抖动次数
+		}, 1500);//购物车抖动
+		imgclone.animate({
+			'width': 0,
+			'height': 0
+		}, function () {
+			$(this).detach();
+		});
+}
+</script>
+<script type="text/javascript" src="../js/common/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+		jQuery(".switch_content_list").slide({titCell:".switch_btn ul",mainCell:".superslide_wrapper ul",autoPage:true,effect:"left",autoPlay:false,vis:4,scroll:1,trigger:"click"});
+</script>
+<script type="text/javascript">
+	jQuery(".bottom_block_item").slide({titCell:".switch_btn ul",mainCell:".superslide_wrapper ul",autoPage:true,effect:"left",autoPlay:false,vis:5,scroll:1,trigger:"click"});
+</script>
+<script type="text/javascript">
+	$(function(){
+		$('.focus_top_slide').hover(function(){
+			$(this).find('.prev, .next').stop(true).show();
+		},function(){
+			$(this).find('.prev, .next').stop(true).hide();
+		});
+	});
+	jQuery(".focus_top_slide").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,delayTime:500});
+</script>
+<script type="text/javascript">
+$(function(){
+	// $(window).scroll(function(){
+	// if($(window).scrollTop()>800){
+	// 	$(" .go-top").fadeIn();
+	// }
+	// else{
+	// 	$(".go-top").hide();
+	// }
+	// });
+	// $(".go-top").click(function(){
+	// 	$('html,body').animate({'scrollTop':0},900);
+	// });
+	$(window).scroll(function() {
+		var indexStop=$(document).scrollTop();
+		var slideBar=$('.side_left_toolbar');
+		var future=$('.all').find('.future');
+		var shoeFuture=$('#floor1').offset().top;
+		var curID='';
+		if(indexStop>shoeFuture-200)
+		{
+			slideBar.show();
+		}
+		else{
+			slideBar.hide();
+		}
+		future.each(function(){
+			var _this=$(this);
+			var futureTop=_this.offset().top;
+			if(indexStop>futureTop-50)
+			{
+				curID="#"+_this.attr('id');
+			}
+			else{
+				return false;
+			}
+			var curLink=slideBar.find('.on');
+			if(curID&&curLink.attr("href") !=curID)
+			{
+				curLink.removeClass('on');
+				slideBar.find('[href='+ curID +']').addClass('on');
+			}
+		});
+
+	});
+	$('.select_top').click(function(){
+		$(this).toggleClass('on').next('.select_content').toggleClass('active');
+	});
+	$('.select_input').focus(function(){
+		$(this).parents('.select_second ').find('.select_content').addClass('active');
+	});
+	$('.pic').hover(function(){
+		$(this).addClass('on');
+		$(this).find('.block_bottom_join').stop().animate({
+			"bottom":"0px",
+		},"fast");
+	},function(){
+		$(this).removeClass('on');
+		$(this).find('.block_bottom_join').stop().animate({
+			"bottom":"-60px",
+		});
+	});
+	$(".thumbnail").hover(function(){
+		$(this).find('.hover_new_car').show();
+	},function(){
+		$(this).find('.hover_new_car').hide();
+	});
+	// $('.switch_title_nav a').hover(function(){
+	// 	$(this).addClass('on').siblings('a').removeClass('on');
+	// });
+});
+
+</script>
+<script type="text/javascript">
+	var x=$(' .switch_title_nav a');
+	x.hover(function(){
+		$(this).addClass('on').siblings().removeClass("on");
+		var index=x.index(this);
+		$('.switch_content_list').eq(index).show().siblings(".switch_content_list").hide();
+	});
+</script>
+
+<!-- <div class="mask-index show "></div> -->
+<!-- <script src="http://kxlogo.knet.cn/seallogo.dll?sn=e16042911010563321dxoa000000&amp;size=4"></script>
+<a href="https://ss.knet.cn/verifyseal.dll?sn=e16042911010563321dxoa000000&amp;ct=df&amp;a=1&amp;pa=0.1319143262137692" target="_blank" kx_type="缩放式" style="display:inline-block;position:relative;width:102px;height:37px;"><img src="http://rr.knet.cn/static/images/logo/cnnic.png" h="37" w="102" onmouseover="showFull(this)" onmouseout="showMin(this)" style="left: 0px; position: absolute; top: 0px; border: none;" width="102" height="37"></a>
+<div style="display:none;" class="jqPreload0">sdsdssdsd</div> -->
+</body>
+</html>

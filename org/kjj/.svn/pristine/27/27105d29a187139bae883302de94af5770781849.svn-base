@@ -1,0 +1,62 @@
+package com.kjj.commserver.dao.order.impl;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
+
+import com.kjj.commserver.dao.order.OrgOrderGoodsDao;
+import com.kjj.commserver.entity.order.OrgOrderGoods;
+import com.kjj.core.dao.BaseDaoImpl;
+
+@Repository
+public class OrgOrderGoodsDaoImpl extends BaseDaoImpl<OrgOrderGoods, Integer> implements OrgOrderGoodsDao {
+	
+	public static final String SELECT_ID_COMMENT = "selectComment";
+	public static final String SELECT_ID_COUNT_COMMENT= "selectCountComment";
+	public static final String SELECT_ID_COUNT_OTHER = "selectCountOther";
+	private static final String SQL_ID_SELECT_4UPDATE = "selectByPrimaryKey4Update";
+	public static final String SELECT_ID_ORDER_REPORT = "selectOrderReport";
+	
+	private long selectCountComment(OrgOrderGoods query) {
+			return selectCount(query,SELECT_ID_COUNT_COMMENT);
+	}
+	
+	@Override
+	public Page<OrgOrderGoods> selectPageListComment(OrgOrderGoods query, Pageable pageable) {
+		List<OrgOrderGoods> contentList = sqlSession.selectList(getSqlName(SELECT_ID_COMMENT),getParams(query, pageable));
+		return new PageImpl<OrgOrderGoods>(contentList, pageable, selectCountComment(query));
+	}
+	
+	@Override
+	public List<OrgOrderGoods> selectListComment(OrgOrderGoods query) {
+		return selectList(query,SELECT_ID_COMMENT);
+	}
+	
+	@Override
+	public long selectOtherCount(OrgOrderGoods query) {
+		return selectCount(query,SELECT_ID_COUNT_OTHER);
+	}
+
+	@Override
+	public OrgOrderGoods selectById4Update(Integer orderGoodsId) {
+		return selectById(orderGoodsId,SQL_ID_SELECT_4UPDATE);
+	}
+
+	@Override
+	public List<OrgOrderGoods> queryList4OrderReport(OrgOrderGoods query) {
+		return selectList(query,SELECT_ID_ORDER_REPORT);
+	}
+	@Override
+	public Page<OrgGoodsReportVo> queryPageList(OrgOrderGoodsQuery query,
+			Pageable pageable) {
+		try{
+		List<OrgGoodsReportVo> contentList = this.sqlSession.selectList(getSqlName(SELECT_PAGE_GOODS),getParams(query, pageable));
+		return new PageImpl<OrgGoodsReportVo>(contentList,pageable,this.selectCount(query));
+		} catch(Exception e){
+			throw new DaoException(String.format("根据分页对象查询列表出错！语句:%s", getSqlName(SELECT_PAGE_GOODS)), e);
+		}
+	}
+}

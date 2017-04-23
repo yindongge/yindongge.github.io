@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<form action="" class="form-inline form_group_control ">
+			<div class="well form-well">
+				<div class="form-group">
+					<label for="">产品名称：</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="">状态：</label>
+					<select class="form-control">
+						<option value="">全部</option>
+						<option value="">已发布</option>
+						<option value="">已作废</option>
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="">状态：</label>
+					<select class="form-control">
+						<option value="">全部</option>
+						<option value="">已发布</option>
+						<option value="">已作废</option>
+						<option value=""></option>
+					</select>
+				</div>
+				<br />
+				<div class="form-group">
+					<label for="">发布日期：</label>
+					<input type="date" class="form-control">
+				</div>
+				<div class="form-group">
+					——
+				</div>
+				<div class="form-group">
+					<label for=""></label>
+					<input type="date" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-info">查询</button>
+				</div>
+			</div>
+		</form>
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			  <li class="active">查看管理列表</li>
+			</ul>
+		</div>
+<!-- 		<div class="btn-group">
+			<button class="btn btn-info" data-toggle="modal" data-target="#myModal">新增</button>
+			<button class="btn btn-primary">删除</button>
+		</div> -->
+		<div class="table table-control">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>产品名称</th>
+						<th>所属企业</th>
+						<th>产品分类</th>
+						<th>品牌</th>
+						<th>规格</th>
+						<th>发布日期</th>
+						<th>状态</th>
+						<th style="width:150px;">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text_center">1</td>
+						<td>马虎系列赤霞珠干红葡萄酒201</td>
+						<td>酒业</td>
+						<td>阳光酒庄>斑马虎系列</td>
+						<td>品牌S</td>
+						<td>500ml</td>
+						<td class="text_center">2016-2-3</td>
+						<td class="text_center">已发布</td>
+						<td>
+							<button class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">查看</button>
+							<button class="btn btn-info btn-xs">作废</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="text_center">1</td>
+						<td>马虎系列赤霞珠干红葡萄酒201</td>
+						<td>酒业</td>
+						<td>阳光酒庄>斑马虎系列</td>
+						<td>品牌S</td>
+						<td>500ml</td>
+						<td class="text_center">2016-2-3</td>
+						<td class="text_center">已发布</td>
+						<td>
+							<button class="btn btn-success btn-xs">查看</button>
+							<button class="btn btn-info btn-xs">作废</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="text_center">1</td>
+						<td>马虎系列赤霞珠干红葡萄酒201</td>
+						<td>酒业</td>
+						<td>阳光酒庄>斑马虎系列</td>
+						<td>品牌S</td>
+						<td>500ml</td>
+						<td class="text_center">2016-2-3</td>
+						<td class="text_center">已发布</td>
+						<td>
+							<button class="btn btn-success btn-xs">查看</button>
+							<button class="btn btn-info btn-xs">作废</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="pageselect">
+					<div class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="到第几页">
+						</div>
+						<button type="submit" class="btn btn-sm btn-info">确定</button>
+					</div>
+					<ul class="pagination pull-right pagination-sm">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						  </a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">.....</a></li>
+						<li><a href="#">15</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						  </a>
+						</li>
+					 </ul>
+				 	<span class=" pull-right">共有200条记录 每页50条</span>
+				</div>
+	</div>
+</div>
+<!-- 弹出窗口 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">查看产品</h4>
+      </div>
+      <div class="modal-body">
+      	<!-- start form -->
+        <div class="read-text">
+      			<div class="read-list">
+      				<div class="read-item-left">产品分类：酒水饮料》红酒</div>
+      				<div class="read-item-right">品牌：阳光酒庄</div>
+      			</div>
+      			<div class="read-list">
+      				产品名称：马虎系列赤霞珠干红葡萄酒2011
+      			</div>
+      			<div class="read-list">
+      				<div class="read-item-left">所属企业：酒业</div>
+      				<div class="read-item-right">规格：500ml</div>
+      			</div>
+      			<div class="read-list">
+      				<div class="read-item-left">外包装材料：金属</div>
+      				<div class="read-item-right">赋码方式：激光喷码</div>
+      			</div>
+      			<div class="read-list only_special" >
+					<span class="padding_title">商品图片：</span>
+					<div class="img_list_read">
+						<img src="" alt="" />
+						<img src="" alt="" />
+						<img src="" alt="" />
+						<img src="" alt="" />
+						<img src="" alt="" />
+					</div>
+      			</div>
+      			<div class="read-list only_special" >
+					<span class="padding_title">字段信息:</span>
+					<select name="" class="form-control" style="width:50%" multiple="">
+						<option value="">原产国原产国</option>
+						<option value="">1</option>
+						<option value="">1</option>
+						<option value=""></option>
+						<option value=""></option>
+					</select>
+      			</div>
+				<div class="read-list only_special" >
+					<span class="padding_title">备注：</span>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+      			</div>
+      		</div>
+		<!-- end form -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+      <div class="modal_mask"></div>
+    </div>
+  </div>
+</div>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+</body>
+</html>

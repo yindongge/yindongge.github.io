@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.system.OrgSystemParameterMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.system.OrgSystemParameter" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="parameter_name" property="parameterName" jdbcType="VARCHAR" />
+    <result column="parameter_value" property="parameterValue" jdbcType="VARCHAR" />
+    <result column="parameter_desc" property="parameterDesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, parameter_name, parameter_value, parameter_desc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_system_parameter
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_system_parameter
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.system.OrgSystemParameter" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_system_parameter (parameter_name, parameter_value, parameter_desc
+      )
+    values (#{parameterName,jdbcType=VARCHAR}, #{parameterValue,jdbcType=VARCHAR}, #{parameterDesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.system.OrgSystemParameter" >
+    update org_system_parameter
+    <set >
+      <if test="parameterName != null" >
+        parameter_name = #{parameterName,jdbcType=VARCHAR},
+      </if>
+      <if test="parameterValue != null" >
+        parameter_value = #{parameterValue,jdbcType=VARCHAR},
+      </if>
+      <if test="parameterDesc != null" >
+        parameter_desc = #{parameterDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.system.OrgSystemParameter" >
+    update org_system_parameter
+    set parameter_name = #{parameterName,jdbcType=VARCHAR},
+      parameter_value = #{parameterValue,jdbcType=VARCHAR},
+      parameter_desc = #{parameterDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.system.aide.OrgSystemParameterVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.parameter_name, 
+    t.parameter_value, 
+    t.parameter_desc
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_system_parameter t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="parameterName != null" >
+          and t.parameter_name = #{parameterName,jdbcType=VARCHAR}
+      </if>
+      <if test="parameterValue != null" >
+          and t.parameter_value = #{parameterValue,jdbcType=VARCHAR}
+      </if>
+      <if test="parameterDesc != null" >
+          and t.parameter_desc = #{parameterDesc,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_system_parameter t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_system_parameter t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_system_parameter where id in (
+    select t.id from (select * from org_system_parameter) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <update id="updateByName" parameterType="com.kjj.commserver.entity.system.OrgSystemParameter" >
+    update org_system_parameter
+    set parameter_value = #{parameterValue,jdbcType=VARCHAR}
+    where parameter_name = #{parameterName,jdbcType=VARCHAR}
+  </update>
+</mapper>

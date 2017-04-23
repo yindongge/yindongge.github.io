@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+<script>
+	$(function(){
+		$('.btn17-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '111',
+    shadeClose: true,
+    shade: 0.8,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: '优惠券选择店铺.html' //iframe的url
+}); 
+		})
+	})
+</script>
+</head>
+<body>	
+
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">运营</a></li>
+		<li ><a href="#">促销管理</a></li>
+		<li ><a href="#"> 红包优惠券管理</a></li>
+		<li class="active">添加优惠券</li>
+	</ul>
+	
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">添加优惠券</div>
+		<div class="panel-body">
+					<form class="form-horizontal media-control">
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>优惠券名称：</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control"></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>有效期:</label>	
+						<div class="col-sm-3">
+							<select class='form-control'>
+								<option class="span21">指定日期</option>
+								<option class="span22">有效时常</option>
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control">
+						</div>
+						<div class="col-sm-1" style="text-align:center">至</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control">
+						</div>
+						<!-- 如果是有效时常的话，隐藏中 -->
+						<div class="col-sm-2">
+							<input type="text" class="form-control">
+						</div>
+						<div class="com-sm-5 span23">天，自注册日起 X 天内有效</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>面额:</label>	
+						<div class="col-sm-3">
+							<input type="text" class="form-control" placeholder="元"></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>生成数量:</label>	
+						<div class="col-sm-3">
+							<input type="text" class="form-control"></input>
+						</div>
+						<div class="col-sm-4">
+							<span class="gray">0为无限制，单次不能大于1,000,000</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" >每人限领:</label>	
+						<div class="col-sm-3">
+							<input type="text" class="form-control"></input>
+						</div>
+						<div class="col-sm-4">
+							<span class="gray">0为无限制</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>消费金额:</label>	
+						<div class="col-sm-3">
+							<input type="text" class="form-control" placeholder="元"></input>
+						</div>
+						<div class="col-sm-4">
+							<span class="gray">满足消费金额才能使用优惠券</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">代金券描述：</label>
+						
+							<div class="col-sm-6">
+								<textarea rows="5" style="width:100%">111</textarea>
+							</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">图片：</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control">
+						</div>
+						<div class="col-sm-2">
+							<button type="button" class="btn btn-default">上传</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>试用范围:</label>
+						<div class="col-sm-3">
+							<select class="form-control">
+								<option>选择范围</option>
+								<option disabled="true"><span class='1111'></span>全部区域</option>
+								<option>单区域</option>
+								<option>单区域门店</option>
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select class="form-control">
+								<option>上海</option>
+								<option>上海</option>
+								<option>上海</option>
+								<option>上海</option>
+							</select>
+						</div>
+						
+					</div>
+				
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>类型：</label>	
+						<div class="col-sm-9" >
+							<div class="row margin-left">
+								<div class="col-sm-3" style="padding-left:0px;">
+									<select class="form-control">
+										<option>选择类型</option>
+										<option>全场通用</option>
+										<option>指定类别</option>
+										<option>指定商品</option>
+									</select>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<select class="form-control">
+											<option>选择分类</option>
+											<option>一级分类</option>
+											<option>&nbsp; 天津</option>
+											<option>二级分类</option>
+											<option>北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<button class="btn btn-info " >添加</button>
+								</div>
+							</div>
+							<!--  -->
+							<div class="row margin-left">
+								<div class="col-sm-11" style="padding-left:0px;">
+									已选择分类：
+									<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+									<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+									<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+									<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>判断手机：</label>	
+						<div class="col-sm-9">
+							<p>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										是
+									</input>				
+								</label>	
+								<span class="gray g1">选择是时，会员绑定手机才能领取此优惠券，发放时不受限制</span>
+							</p>
+						</div>	
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" ><span class="red bigred">*</span>适用终端：</label>	
+						<div class="col-sm-9">
+							<p>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										PC端
+									</input>				
+								</label>	
+								<label class="checkbox-inline">
+									<input type="checkbox">
+										移动端
+									</input>				
+								</label>
+							</p>
+						</div>	
+					</div>
+					<!-- 分割线 -->
+				</form>
+		</div>
+	</div>
+	</br>
+		<div class="text-center">
+			<a type="button" class="btn btn-primary "  role="button" href="#" style="margin-right:30px">返回</a>
+			<button type="button" class="btn btn-primary btn17-click" >确定</button>
+		</div>
+		<br>
+</div>
+</div>
+
+</body>
+</html>

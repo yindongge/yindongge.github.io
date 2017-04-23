@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+ <script src="../js/layer.js"></script> 
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../css/layer.ext.css" rel="stylesheet" type="text/css" /> -->
+<title>商品分类</title>
+<script>
+	$(function(){
+		$('.btn-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '111',
+    shadeClose: true,
+    shade: 0.8,
+    shift:-1,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: 'modal11.html' //iframe的url
+}); 
+		})
+	})
+</script>
+</head>
+<body>	
+<div class="page-wrapper goods-control">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">交易</a></li>
+		<li class="active">订单管理</li>
+	</ul>
+	<form  class="form-inline" >
+	<div class="well" style="padding:5px;">
+		<div class="form-group">
+			<label>订单号：</label>
+			<input type="text" class="form-control">			
+		</div>
+		<div class="form-group">
+			<label>收货人：</label>
+			<input type="text" class="form-control">			
+		</div>
+		<div class="form-group">
+			<label>店铺：</label>
+			<input type="text" class="form-control btn-click">			
+		</div>
+		<div class="form-group radio-special2">
+			<label>订单状态：</label>
+			<select>
+				<option>
+					请选择
+				</option>
+				<option>已完成</option>
+				<option>店铺未确认</option>
+				<option>已确认带发货</option>
+				<option>已发货</option>
+				<option>已取消</option>
+			</select>
+		</div>
+		<div class="form-group form-special11">
+			<label>成交时间：</label>
+			<input type="text" class="form-control">
+			<input type="text" class="form-control">					
+		</div>
+		<button type="button" class="btn btn-danger">确认</button>
+		</div>
+	</form>
+	</br>
+
+	<div class="group-button">
+		<button type="button" class="btn btn-default ">订单确认</button>
+		<button type="button" class="btn btn-default">取消订单</button>
+		<button type="button" class="btn btn-default">打印订单</button>
+		<button type="button" class="btn btn-default">批量发货</button>
+	</div>
+	<table class="table table-hover table-bordered ">
+		<thead>
+			<tr class="info">
+				<th><input type="checkbox"></th>
+				<th>订单号</th>
+				<th>用户名</th>
+				<th>收货人</th>
+				<th>店铺</th>
+				<th>下单时间</th>
+				<th>付款时间</th>
+				<th>订单总额（元）</th>
+				<th>支付方式</th>
+				<th>订单来源</th>
+				<th>配送方式</th>
+				<th>订单状态</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox"></td>	
+				<td>
+					10150500002<span class="yulan pull-right" data-toggle="dropdown">[预览]</span>
+				<div class="dropdown-menu yulan-hide" role="menu">
+					<div class="table-content">
+					<div class="table-left">
+					<table class="table table-hover table-bordered ">
+						<thead>
+								<tr class="info ">
+									<th colspan="6">预览详情</th>
+								</tr>
+						</thead>
+						<tr class="active">				
+								<th width="150px;">商品货号</th>
+								<th>商品</th>
+								<th width="150px">单价（元）</th>
+								<th>数量</th>
+								<th width="150px;">优惠</th>
+								<th>小计（元）</th>
+						</tr>
+						<tr>
+							<td >1000394889</td>
+							<td><span class="text-info">好丽友蛋黄派140g，2015最新包装上市</span><br>
+								<span class="text-danger" >口味：巧克力味</span>
+								</td>
+								<td ><span style="text-decoration:line-through">￥15.58</span><br><span class="text-danger" >￥14.00</span></td>
+								<td>×1</td>
+								<td >限时折扣<br><span style="background:#3DD998; padding:1px 5px;">省1.58元</span></td>
+								<td><span class="text-danger" >14.00</span></td>
+						</tr>
+						<tr>
+							<td >1000394889</td>
+							<td><span class="text-info">好丽友蛋黄派140g，2015最新包装上市</span><br>
+						<span class="text-danger" >口味：巧克力味</span>
+							</td>
+							<td ><span style="text-decoration:line-through">￥15.58</span><br><span class="text-danger" >￥14.00</span></td	>
+							<td>×1</td>
+							<td >限时折扣<br><span style="background:#3DD998; padding:1px 5px;">省1.58元</span></td>
+							<td><span class="text-danger" >14.00</span></td>
+						</tr>						
+					</table>
+					</div>
+						<div class="table-right">
+							<!-- 	<h5></h5>
+								<p><strong></strong></p>
+								<p></p>
+								<p></p>
+ -->		
+ 								<table class="table table-bordered">
+ 									<thead>
+ 										<tr class="success">
+ 											<th colspan="3">收货人信息</th>
+ 										</tr>
+ 									</thead>
+ 									<tbody>
+ 										<tr>
+ 											<td><strong>收货人</strong></td>
+ 											<td>赵先生</td>
+ 										</tr>
+ 										<tr>
+ 											<td><strong>电话</strong></td>
+ 											<td>13701023110  010-85211869-1010</td>
+ 										</tr>
+ 										<tr>
+ 											<td><strong>收货地址：</strong></td>
+ 											<td>北京市朝阳区建国门外大街永安东里8号华彬中心1501</td>
+ 										</tr>
+ 									</tbody>
+ 								</table>
+						</div>
+					</div>
+						<div class="table-footer text-center">
+								<p><strong>货到付款 应付款：<span class="text-danger">￥29.58</span></strong></p>
+						</div>
+    			</div>
+				</td>
+				<td>DASDQ111</td>
+				<td>赵先生</td>
+				<td>BJ001</td>
+				<td>15-05-12 08:42:34</td>
+				<td>15-05-12 08:55:3</td>
+				<td>32.00</td>
+				<td>货到付款</td>
+				<td>PC</td>
+				<td>送货</td>
+				<td>已完成</td>
+				<td><button type="button" class="btn btn-danger btn-xs">查看</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>	
+				<td>
+					10150500002<span class="yulan pull-right " data-toggle="dropdown">[预览]</span>
+				
+					<div class="dropdown-menu yulan-hide" role="menu">
+					<div class="table-content">
+					<div class="table-left">
+					<table class="table table-hover table-bordered ">
+						<thead>
+								<tr class="info ">
+									<th colspan="6">预览详情</th>
+								</tr>
+						</thead>
+						<tr class="active">				
+								<th width="150px;">商品货号</th>
+								<th>商品</th>
+								<th width="150px">单价（元）</th>
+								<th>数量</th>
+								<th width="150px;">优惠</th>
+								<th>小计（元）</th>
+						</tr>
+						<tr>
+							<td >1000394889</td>
+							<td><span class="text-info">好丽友蛋黄派140g，2015最新包装上市</span><br>
+								<span class="text-danger" >口味：巧克力味</span>
+								</td>
+								<td ><span style="text-decoration:line-through">￥15.58</span><br><span class="text-danger" >￥14.00</span></td>
+								<td>×1</td>
+								<td >限时折扣<br><span style="background:#3DD998; padding:1px 5px;">省1.58元</span></td>
+								<td><span class="text-danger" >14.00</span></td>
+						</tr>
+						<tr>
+							<td >1000394889</td>
+							<td><span class="text-info">好丽友蛋黄派140g，2015最新包装上市</span><br>
+						<span class="text-danger" >口味：巧克力味</span>
+							</td>
+							<td ><span style="text-decoration:line-through">￥15.58</span><br><span class="text-danger" >￥14.00</span></td	>
+							<td>×1</td>
+							<td >限时折扣<br><span style="background:#3DD998; padding:1px 5px;">省1.58元</span></td>
+							<td><span class="text-danger" >14.00</span></td>
+						</tr>						
+					</table>
+					</div>
+						<div class="table-right">
+ 								<table class="table table-bordered">
+ 									<thead>
+ 										<tr class="success">
+ 											<th colspan="3">收货人信息</th>
+ 										</tr>
+ 									</thead>
+ 									<tbody>
+ 										<tr>
+ 											<td><strong>收货人</strong></td>
+ 											<td>赵先生</td>
+ 										</tr>
+ 										<tr>
+ 											<td><strong>电话</strong></td>
+ 											<td>13701023110  010-85211869-1010</td>
+ 										</tr>
+ 										<tr>
+ 											<td><strong>收货地址：</strong></td>
+ 											<td>北京市朝阳区建国门外大街永安东里8号华彬中心1501</td>
+ 										</tr>
+ 									</tbody>
+ 								</table>
+						</div>
+					</div>
+						<div class="table-footer text-center">
+								<p><strong>货到付款 应付款：<span class="text-danger">￥29.58</span></strong></p>
+						</div>
+    			</div>
+				</td>
+				<td>DASDQ111</td>
+				<td>赵先生</td>
+				<td>BJ001</td>
+				<td>15-05-12 08:42:34</td>
+				<td>15-05-12 08:55:3</td>
+				<td>32.00</td>
+				<td>货到付款</td>
+				<td>PC</td>
+				<td>自取</td>
+				<td>未确认</td>
+				<td style="text-align:center">
+				<a type="button" class="btn btn-danger btn-xs">
+					确认
+				<!-- 	<div class="alerttip">
+						<span class="red" >提货码不正确</span>
+						<input type="text" placeholder="请输入取货码">
+						
+						<p class="text-center">
+							<button type="button" class="btn btn-default btn-xs">取消</button>
+							<button type="button" class="btn btn-info btn-xs">确认</button>
+						</p>
+					</div> -->
+				</a>
+				<button type="button" class="btn btn-danger btn-xs">取消
+					
+				</button>
+				<button type="button" class="btn btn-danger btn-xs">发货</button>
+				<br>
+					<div class="alerttip">
+						<span class="red" >提货码不正确</span>
+						<input type="text" placeholder="请输入取货码">
+						
+						<p class="text-center">
+							<button type="button" class="btn btn-default btn-xs">取消</button>
+							<button type="button" class="btn btn-info btn-xs">确认</button>
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>	
+				<td>
+					10150500002
+				</td>
+				<td>DASDQ111</td>
+				<td>赵先生</td>
+				<td>BJ001</td>
+				<td>15-05-12 08:42:34</td>
+				<td>15-05-12 08:55:3</td>
+				<td>32.00</td>
+				<td>货到付款</td>
+				<td>PC</td>
+				<td>送货</td>
+				<td>确认发货</td>
+				<td>查看</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>	
+				<td>
+					10150500002
+				</td>
+				<td>DASDQ111</td>
+				<td>赵先生</td>
+				<td>BJ001</td>
+				<td>15-05-12 08:42:34</td>
+				<td>15-05-12 08:55:3</td>
+				<td>32.00</td>
+				<td>货到付款</td>
+				<td>PC</td>
+				<td>送货</td>
+				<td>已完成</td>
+				<td><button type="button" class="btn btn-default">订单确认</button>
+					<button type="button" class="btn btn-default">取消订单</button>
+					<button type="button" class="btn btn-default">打印订单</button>
+					<button type="button" class="btn btn-default">批量发货</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="button-display">
+				<div class="button-left-input">
+					<input type="checkbox" name="c1"><label for="c1">全选</label>
+				</div>
+				<div class="button-left-button">
+					<button type="button" class="btn btn-default">订单确认</button>
+					<button type="button" class="btn btn-default">取消订单</button>
+					<button type="button" class="btn btn-default">打印订单</button>
+					<button type="button" class="btn btn-default">批量发货</button>
+				</div>
+	</div>
+	<nav class="navbar navbar-default select-control" >
+			<div class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="到第几页">
+				</div>
+				<button type="submit" class="btn btn-default btn-info">确定</button>
+			</div>	
+			<ul class="pagination pull-right">
+				<li>
+				  <a href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				  </a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href='#'>.....</a></li>
+				<li><a href="#">15</a></li>
+				<li>
+				  <a href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				  </a>
+				</li>
+			 </ul>
+			 <p class="navbar-text pull-right">共有200条记录 每页50条</p>		
+		</nav>
+</div>
+</div>
+</body>
+</html>

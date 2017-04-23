@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopServiceMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopService" >
+    <id column="service_id" property="serviceId" jdbcType="SMALLINT" />
+    <result column="service_name" property="serviceName" jdbcType="VARCHAR" />
+    <result column="service_img_url" property="serviceImgUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    service_id, service_name, service_img_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Short" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_service
+    where service_id = #{serviceId,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short" >
+    delete from org_shop_service
+    where service_id = #{serviceId,jdbcType=SMALLINT}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopService" useGeneratedKeys="true" keyColumn="service_id" keyProperty="serviceId" >
+    insert into org_shop_service (service_name, service_img_url)
+    values (#{serviceName,jdbcType=VARCHAR}, #{serviceImgUrl,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopService" >
+    update org_shop_service
+    <set >
+      <if test="serviceName != null" >
+        service_name = #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceImgUrl != null" >
+        service_img_url = #{serviceImgUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where service_id = #{serviceId,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopService" >
+    update org_shop_service
+    set service_name = #{serviceName,jdbcType=VARCHAR},
+      service_img_url = #{serviceImgUrl,jdbcType=VARCHAR}
+    where service_id = #{serviceId,jdbcType=SMALLINT}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopServiceVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.service_id, 
+    t.service_name, 
+    t.service_img_url
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_service t
+    where t.service_id = #{serviceId,jdbcType=SMALLINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="serviceId != null" >
+          and t.service_id = #{serviceId,jdbcType=SMALLINT}
+      </if>
+      <if test="serviceName != null" >
+          and t.service_name = #{serviceName,jdbcType=VARCHAR}
+      </if>
+      <if test="serviceImgUrl != null" >
+          and t.service_img_url = #{serviceImgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="shopId != null" >
+          and exists (
+          	select 1 from org_shop_bind_service osbs
+          	where t.service_id = osbs.service_id
+          	and osbs.shop_id = #{shopId,jdbcType=INTEGER}
+          )
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.service_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.service_id) from org_shop_service t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_service t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_service where service_id in (
+    select t.service_id from (select * from org_shop_service) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script src="js/swiper3.1.0.min.js"></script>  
+<script src="js/me.js"></script>  
+</head>
+<body >
+	<div class="box box-control">
+		<header class="header">
+			<div class="indexhead">
+				<div class="indexhead_content ">
+					自提点：三里屯SOHO店<span class="down"></span>
+				</div>
+				<a class="searchicon" href="#"></a>
+			</div>
+		</header>
+		<nav class="nav">
+			<a href="#" class="on">
+				全部(12)
+				<span></span>
+			</a>
+			<a href="#">品牌(11)
+				<span></span>
+			</a>
+		</nav>
+	<!-- end nav  -->
+	<!-- end header -->
+		<div class="swiper-container swipecontrol">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><a><img src="images/p17.jpg"></a></div>
+		        <div class="swiper-slide"><a><img src="images/p17.jpg"></a></div>
+		        <div class="swiper-slide"><a><img src="images/p17.jpg"></a></div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		</div>
+		<!-- end 滑动 -->
+		<div class="brand-control">
+			<nav class="nav fournav">
+				<a href="#" class="on">全部商品<span></span></a>
+				<a href="#">热卖<span></span></a>
+				<a href="#" >不知道<span></span></a>
+				<a  class="toggleup t1" >分类<i ></i></a>
+				<div class="toggledown t2">
+					<a href="#">手机</a>
+					<a href="#">冰箱</a>
+					<a href="#">洗衣粉</a>
+					<a href="#">赵四</a>
+					<a href="#">口香糖</a>
+					<a href="#">手机</a>
+					<a href="#">冰箱</a>
+					<a href="#">洗衣粉</a>
+					<a href="#">赵四</a>
+					<a href="#">口香糖</a>
+					<a href="#">手机</a>
+					<a href="#">冰箱</a>
+					<a href="#">洗衣粉</a>
+					<a href="#">赵四</a>
+					<a href="#">口香糖</a>
+				</div>
+			</nav>
+			<div class="brandlist">
+				<a href=""><img src="images/b5.png" alt=""></a>
+				<a href=""><img src="images/b5.png" alt=""></a>
+				<a href=""><img src="images/b5.png" alt=""></a>
+				<a href=""><img src="images/b5.png" alt=""></a>
+				<a href=""><img src="images/b5.png" alt=""></a>
+			</div>
+		</div>
+		<!-- end wrapper -->
+		<div class="loadcircle gray">
+			<span class="bounce-text">正在加载</span>
+			<span class="bounce bounce1"></span>
+			<span class="bounce bounce2"></span>
+			<span class="bounce bounce3"></span>
+		</div>
+	</div>
+	<!-- end box -->
+	<div class="footerbar">
+		<a href="#" >
+			<div class="iconfoot foot1 "></div>
+			<div class="iconfoottext">首页</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot2"></div>
+			<div class="iconfoottext">快捷购</div>
+		</a>
+		<a href="#"  >
+			<div class="iconfoot foot3"></div>
+			<div class="iconfoottext">购物车</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot4"></div>
+			<div class="iconfoottext">类目</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot5"></div>
+			<div class="iconfoottext">我的</div>
+		</a>
+	</div>
+	<div class="gotop" onclick="move()"></div>
+	<!-- end fixedbar -->
+	 <script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay:2000,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+  })    
+
+  </script>
+
+</body>
+</html>

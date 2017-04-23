@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body >
+	<div class="box box-gray">
+		<header class="header">
+			<div class="head-content">订单详情</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+	<div class="goodsintroduce">
+		<div class="area third">
+			<a class="a on">商品介绍<span class="linebottom"></span></a>
+			<a class="a">商品评价<span class="linebottom"></span></a>
+			<a class="a">商品咨询<span class="linebottom"></span></a>
+		</div>
+		<div class="nolist">暂无商品咨询</div>
+		<div class="list-detail">
+			<h5 class="line-h5"><span class="line3"></span>商品参数<span class="line4"></span></h5>
+			<table class="table " border="0" cellspacing="1">
+				<tbody>
+				<tr>
+					<td class="t-left"> 商品编号</td>
+					<td class="t-right"> 6789567890</td>
+				</tr>
+				<tr>
+					<td>品牌</td>
+					<td>好利来</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="list-detail">
+			<a href="#" class="thumbnail"><img src="images/b2.jpg" alt=""></a>
+			<a href="#" class="thumbnail"><img src="images/b3.jpg" alt=""></a>
+			<a href="#" class="thumbnail"><img src="images/b4.jpg" alt=""></a>
+			<a href="#" class="thumbnail"><img src="images/b2.jpg" alt=""></a>
+			<a href="#" class="thumbnail"><img src="images/b3.jpg" alt=""></a>
+			<a href="#" class="thumbnail"><img src="images/b4.jpg" alt=""></a>
+		</div>
+	</div>
+	<!-- 开始评论 -->
+	<div class="assess">
+		<h5>有<span class="red">300</span>条评论</h5>
+		<div class="linestar">
+			<div class="item-detail no-border">
+				<dt>满意度:
+				</dt><dd class="level"></dd>
+			</div>
+			<a class="guide">4.8</a>
+		</div>
+		<div class="assess-list">
+			<div class="name">
+				<div class="myname">Lijianjjunlio </div>
+				<div class="star control">
+					<a class="yellowicon"></a>
+					<a class="yellowicon"></a>
+					<a></a>
+					<a></a>
+					<a></a>
+				</div>
+				<span>2015-5-6</span>
+			</div>
+			<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			<p class="blue">阿健回复：这个是什么东东</p>
+			<p class="leibie"><span>口味：五香味</span><span>颜色：红黄绿</span></p>
+		</div>
+		<div class="assess-list">
+			<div class="name">
+				<div class="myname">我是疯狂的测试 </div>
+				<div class="star">
+					<a class="yellowicon"></a>
+					<a class="yellowicon"></a>
+					<a></a>
+					<a></a>
+					<a></a>
+				</div>
+				<span>2015-5-6</span>
+			</div>
+			<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			<p class="blue">阿健回复：这个是什么东东</p>
+			<p class="leibie"><span>口味：五香味</span><span>颜色：红黄绿</span></p>
+		</div>
+	</div>
+	<!-- 开始咨询 -->
+	<div class="assess zixun">
+		<h5>有<span class="red">300</span>条咨询</h5>
+		<div class="assess-list">
+			<dl class="item-detail no-border">
+				<dt>咨询内容：</dt>
+				<dd>请问为什么页面有这么多呢</dd>
+				<dt class="bluedt">阿健回复：</dt>
+				<dd>您好！具体的分期信息请您点此链接查看：http://help.kjjhome.com/help/question-71.html，感谢您对快捷健的支持！祝您购物愉快！</dd>
+			</dl>
+		</div>
+			<div class="assess-list">
+			<dl class="item-detail no-border">
+				<dt>咨询内容：</dt>
+				<dd>请问为什么页面有这么多呢</dd>
+				<dt class="bluedt">阿健回复：</dt>
+				<dd>您好！具体的分期信息请您点此链接查看：http://help.kjjhome.com/help/question-71.html，感谢您对快捷健的支持！祝您购物愉快！</dd>
+			</dl>
+		</div>
+			<div class="assess-list">
+			<dl class="item-detail no-border">
+				<dt>咨询内容：</dt>
+				<dd>请问为什么页面有这么多呢</dd>
+				<dt class="bluedt">阿健回复：</dt>
+				<dd>您好！具体的分期信息请您点此链接查看：http://help.kjjhome.com/help/question-71.html，感谢您对快捷健的支持！祝您购物愉快！</dd>
+			</dl>
+		</div>
+	</div>
+	<!-- 结束订单详情 -->
+	<footer class="footer">
+		<img src="images/footer.png" alt="">
+	</footer>
+	</div>
+	<!-- end box -->
+
+</body>
+</html>

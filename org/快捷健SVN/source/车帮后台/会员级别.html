@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/load.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<title>车帮</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			   <li ><a href="#">会员管理</a></li>
+			  <li class="active">会员级别</li>
+			</ul>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="content">
+			<div class="table-wrapper ">
+				<div class="yellow-tip bg-warning">
+					<p>备注：</p>
+					<p>• 会员类型分为个人会员和企业会员，个人会员等级间状态可以转换，消费至上限自动升级；个人类型会员和企业类型会员不能进行升级操作。</p>
+				</div>
+				<!-- Single button -->
+				<div class="btn-group" style="float:left">
+					<button class="btn btn-info">会员级别</button>
+				</div>
+				<div class="btn-group" style="float:right">
+					<button class="btn btn-success ">添加</button>
+				</div>
+				<table class="table table-bordered  borded-striped table-hover input-noborder ">
+					<thead>
+						<tr class="info text-center">
+							<th>名称</th>
+							<th>类型</th>
+							<th>消费下限</th>
+							<th>消费上限</th>
+							<th>积分条件</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>普通会员</td>
+							<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+							<td><input type="text" placeholder="0"></td>
+							<td><input type="text" placeholder="500.00"></td>
+							<td><input type="text" placeholder="-"></td>
+							<td>
+								<button type="button" href="#" class="btn btn-danger btn-sm">修改</button>
+							</td>
+						</tr>
+						<tr>
+							<td>VIP会员</td>
+							<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+							<td><input type="text" placeholder="0"></td>
+							<td><input type="text" placeholder="500.00"></td>
+							<td><input type="text" placeholder="-"></td>
+							<td>
+								<button type="button" href="#" class="btn btn-danger btn-sm ">修改</button>
+							</td>
+						</tr>
+						<tr class="success">
+							<td>企业会员</td>
+							<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+							<td><input type="text" placeholder="0"></td>
+							<td><input type="text" placeholder="500.00"></td>
+							<td><input type="text" placeholder="-"></td>
+							<td>
+								<button type="button" href="#" class="btn btn-danger btn-sm ">修改</button>
+							</td>
+						</tr>
+						<tr class="success">
+							<td>高级企业会员</td>
+							<td><select class="form-control" disabled="disabled"><option value="">1</option><option value="">1</option></select></td>
+							<td><input type="text" placeholder="0"></td>
+							<td><input type="text" placeholder="500.00"></td>
+							<td><input type="text" placeholder="-"></td>
+							<td>
+								<button type="button" href="#" class="btn btn-danger btn-sm">修改</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- 表单结束↑ -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

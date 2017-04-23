@@ -1,0 +1,244 @@
+/*maic.css*/
+/*public css*/
+.col-main{float:left;width:100%;min-height:1px;}
+.col-sub,.col-extra{float:left;}
+.layout:after,.main-wrap:after,.col-sub:after,.col-extra:after{content:'\20';display:block;height:0;clear:both;}
+.layout,.main-wrap,.col-sub,.col-extra{zoom:1;}
+/* Common Features */
+.hidden{display:none;}
+.invisible{visibility:hidden;}
+/* Remove Float */
+.clear{display:block;height:0;overflow:hidden;clear:both;}
+.clearfix:after{content:'\20';display:block;height:0;clear:both;}
+.clearfix{*zoom:1;}
+/* For non ie browsers also display the vertical scroll bar by default, to prevent the flicker caused by the scroll bar */
+html{overflow-y:scroll;}
+
+/* Default link styles */
+a:link,a:visited{text-decoration:none;}
+
+/* menu */
+.menu{position:relative;width:1210px;margin:0px auto;height:40px;background-color:#E4393C;}
+.menu div{position:absolute;top:0px;height:40px;font-family:"Microsoft Yahei";}
+.menu .all-sort{left:0px;width:210px;text-align:center;font-size:14px;}
+.menu .all-sort a{color:#FFF;display:block;width:100%;height:100%;line-height:40px;}
+.menu .ad{right:0px;width:141px;}
+.menu .nav{left:210px;}
+.menu .nav ul li{float:left;width:85px;line-height:40px;}
+.menu .nav ul li a{display:block;width:100%;color:#FFF;text-align:center;font:700 15px/40px "Microsoft Yahei";}
+.menu .nav ul li a:hover, .menu .nav ul li a.current{background:#A40000;text-decoration:none;}
+
+.wrap{width:1210px;margin:0px auto;}
+.all-sort-list{
+	position:absolute;
+	width:220px;
+	height: 384px;
+	border-top:none;
+	background:#FAFAFA;
+	z-index: 100;
+}
+.container-fluid .all-sort-list .item{
+	height:66px;
+	overflow: hidden;
+	border-bottom: 1px solid #eae3bf;
+
+}
+// .container-fluid .all-sort-list .item h3:after{
+// 	content: "";
+//     width: 6px;
+//     height: 12px;
+//     background: url(../img/indexrighticon.png) no-repeat center;
+//     display: inline-block;
+//     position: absolute;
+//     top: 26px;
+//     right: 10px;
+// }
+.all-sort-list .item.bo{border-top:none;}
+.all-sort-list .item h3{
+	height:66px;
+	font-size:12px;
+	font-weight:normal;
+	width:220px;
+	padding-left: 54px;
+	margin:0px;
+	position: relative;
+	padding-right: 20px;
+	padding-top:10px;
+}
+.all-sort-list .hover h3{
+	position:relative;
+	z-index:13;
+	border-right: none;
+
+ 	}
+ 	.item h3 b{
+ 	display: none;
+ 	}
+ .item.hover span.glyphicon-menu-right{
+ 	display: none;
+ }
+ .item.hover  h3 b{
+ 	width: 21px;
+ 	height: 65px;
+ 	background: url(../img/icon/fanxiang.png) no-repeat;
+ 	position: absolute;
+ 	top: -2px;
+ 	right: -3px;
+ 	display: block;
+
+ }
+/*.all-sort-list .item:hover h3:after
+{
+  	z-index: 9999;
+ 	 content: "";
+ 	 border:35px solid transparent;
+ 	 display: inline-block;
+ 	 position: absolute;
+ 	 border-right:20px solid #0157B9;
+ 	  right:-5px;
+ 	  top: -3px;
+
+}*/
+.slideme .all-sort-list .item:hover h4:after
+{
+
+ 	 content: "";
+ 	 border:8px solid transparent;
+ 	  display: inline-block;
+ 	  position: absolute;
+ 	  border-left:8px solid #0157B9;
+ 	  right:-16px;
+ 	  top: 6px;
+ 	  z-index: 999;
+}
+
+.item h3:hover a{ color: #fff;}
+
+.all-sort-list .item-list{
+	display: none;
+    position: absolute;
+    width: 500px;
+    height: 397px;
+    _height: 402px;
+    background: #FFF;
+    left: 220px;
+    top: -2px!important;
+    z-index: 6;
+    border-top: none;
+    -webkit-box-shadow: 2px 2px 20px rgba(54, 41, 1, 0.2);
+    -ms-box-shadow: 2px 2px 20px rgba(54, 41, 1, 0.2);
+    -o-box-shadow: 2px 2px 20px rgba(54, 41, 1, 0.2);
+    box-shadow: 2px 2px 20px rgba(54, 41, 1, 0.2);
+}
+.all-sort-list .item a{
+	font-family: "NSimSun";
+}
+.all-sort-list .item h3 a{
+	    padding-right: 10px;
+    float: left;
+    display: inline-block;
+    height: 34px;
+    color: #f9f7f0;
+    font-size: 12px;
+    line-height: 34px;
+}
+.all-sort-list .item a.special{
+	display: block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    float: none;
+    color: #fffefe;
+}
+.item-list .subitem .line1{
+	 width: 100%;
+	background: #fff;
+	padding: 20px;
+}
+.line1 a{
+	font-size: 15px;
+	display: inline-block;
+	margin-bottom: 20px;
+	padding: 0px 15px;
+}
+.item-list .subitem .line1 a:hover{ color: #0157B9}
+.subitem .line2{ width: 494px; border: none; margin-top: 50px; }
+.subitem .line2 img{ width: 100%; max-height: 245px;}
+.item-list .subitem{
+	float:left;width:494px;
+	height: 400px;
+	overflow: hidden;
+	padding:20px;
+}
+.item-list .subitem dl{
+	border-top:1px solid #EEE;
+	padding:6px 0px;overflow:hidden;zoom:1;
+}
+.item-list .subitem .fore1{
+	border-top:none;
+	margin-bottom: 0px;
+}
+/*折叠样式*/
+.main{
+	height: 250px;
+	margin-top: 35px;
+	position: relative;
+	 }
+.main li{
+	float: left;
+	 width: 200px;
+	 margin-left: 0px;
+	 transition:all 0.7s;
+	 webkit-transition:all 0.7s;
+
+}
+.main ul{
+	margin；0px;
+	padding: 0px;
+
+}
+.main li .small{
+	display: block;;
+	width: 200px;
+	height:250px;
+}
+.main li .big{
+	display: none;
+	width: 400px;
+	height: 250px
+}
+.main li.on{
+	width: 400px;
+}
+
+.main li.on .small{
+	display: none;
+	width: 200px;
+	height: 250px;
+}
+ .main li.on .big{
+	display: block
+}
+.all-sort-list .item.hover{
+	background: #ffaa00;
+	width: 220px
+}
+.fourcolor{
+	height: 13px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	background: url(../img/icon/fourcolor.png) 0 0 repeat-x;
+}
+.subitem .line2{
+	width: 100%;
+	height: 250px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	background-size: 89%;
+}
+.all-sort-list .item.hover h3 a{
+	color: #fff;
+}

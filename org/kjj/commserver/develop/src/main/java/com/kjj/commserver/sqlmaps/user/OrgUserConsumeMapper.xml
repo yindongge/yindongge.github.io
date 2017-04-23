@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgUserConsumeMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgUserConsume" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="total" property="total" jdbcType="DECIMAL" />
+    <result column="last_order_time" property="lastOrderTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, total, last_order_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_user_consume
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_user_consume
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgUserConsume" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId" >
+    insert into org_user_consume (total, last_order_time, update_time
+      )
+    values (#{total,jdbcType=DECIMAL}, #{lastOrderTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgUserConsume" >
+    update org_user_consume
+    <set >
+      <if test="total != null" >
+        total = #{total,jdbcType=DECIMAL},
+      </if>
+      <if test="lastOrderTime != null" >
+        last_order_time = #{lastOrderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgUserConsume" >
+    update org_user_consume
+    set total = #{total,jdbcType=DECIMAL},
+      last_order_time = #{lastOrderTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgUserConsumeVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.user_id, 
+    t.total, 
+    t.last_order_time, 
+    t.update_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_consume t
+    where t.user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="total != null" >
+          and t.total = #{total,jdbcType=DECIMAL}
+      </if>
+      <if test="lastOrderTime != null" >
+          and t.last_order_time = #{lastOrderTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.user_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.user_id) from org_user_consume t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_consume t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_user_consume where user_id in (
+    select t.user_id from (select * from org_user_consume) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

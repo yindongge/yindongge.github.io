@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgProductTypeGroupMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgProductTypeGroup" >
+    <id column="group_id" property="groupId" jdbcType="INTEGER" />
+    <result column="orgproduct_type_group_name" property="orgproductTypeGroupName" jdbcType="VARCHAR" />
+    <result column="group_order" property="groupOrder" jdbcType="SMALLINT" />
+    <result column="group_status" property="groupStatus" jdbcType="TINYINT" />
+    <result column="group_1" property="group1" jdbcType="VARCHAR" />
+    <result column="group_2" property="group2" jdbcType="VARCHAR" />
+    <result column="group_3" property="group3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    group_id, orgproduct_type_group_name, group_order, group_status, group_1, group_2, 
+    group_3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_product_type_group
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_product_type_group
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgProductTypeGroup" useGeneratedKeys="true" keyColumn="group_id" keyProperty="groupId" >
+    insert into org_product_type_group (orgproduct_type_group_name, group_order, 
+      group_status, group_1, group_2, 
+      group_3)
+    values (#{orgproductTypeGroupName,jdbcType=VARCHAR}, #{groupOrder,jdbcType=SMALLINT}, 
+      #{groupStatus,jdbcType=TINYINT}, #{group1,jdbcType=VARCHAR}, #{group2,jdbcType=VARCHAR}, 
+      #{group3,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgProductTypeGroup" >
+    update org_product_type_group
+    <set >
+      <if test="orgproductTypeGroupName != null" >
+        orgproduct_type_group_name = #{orgproductTypeGroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupOrder != null" >
+        group_order = #{groupOrder,jdbcType=SMALLINT},
+      </if>
+      <if test="groupStatus != null" >
+        group_status = #{groupStatus,jdbcType=TINYINT},
+      </if>
+      <if test="group1 != null" >
+        group_1 = #{group1,jdbcType=VARCHAR},
+      </if>
+      <if test="group2 != null" >
+        group_2 = #{group2,jdbcType=VARCHAR},
+      </if>
+      <if test="group3 != null" >
+        group_3 = #{group3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgProductTypeGroup" >
+    update org_product_type_group
+    set orgproduct_type_group_name = #{orgproductTypeGroupName,jdbcType=VARCHAR},
+      group_order = #{groupOrder,jdbcType=SMALLINT},
+      group_status = #{groupStatus,jdbcType=TINYINT},
+      group_1 = #{group1,jdbcType=VARCHAR},
+      group_2 = #{group2,jdbcType=VARCHAR},
+      group_3 = #{group3,jdbcType=VARCHAR}
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgProductTypeGroupVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.group_id, 
+    t.orgproduct_type_group_name, 
+    t.group_order, 
+    t.group_status, 
+    t.group_1, 
+    t.group_2, 
+    t.group_3
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_type_group t
+    where t.group_id = #{groupId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="groupId != null" >
+          and t.group_id = #{groupId,jdbcType=INTEGER}
+      </if>
+      <if test="orgproductTypeGroupName != null" >
+          and t.orgproduct_type_group_name = #{orgproductTypeGroupName,jdbcType=VARCHAR}
+      </if>
+      <if test="groupOrder != null" >
+          and t.group_order = #{groupOrder,jdbcType=SMALLINT}
+      </if>
+      <if test="groupStatus != null" >
+          and t.group_status = #{groupStatus,jdbcType=TINYINT}
+      </if>
+      <if test="group1 != null" >
+          and t.group_1 = #{group1,jdbcType=VARCHAR}
+      </if>
+      <if test="group2 != null" >
+          and t.group_2 = #{group2,jdbcType=VARCHAR}
+      </if>
+      <if test="group3 != null" >
+          and t.group_3 = #{group3,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.group_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.group_id) from org_product_type_group t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_product_type_group t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_product_type_group where group_id in (
+    select t.group_id from (select * from org_product_type_group) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

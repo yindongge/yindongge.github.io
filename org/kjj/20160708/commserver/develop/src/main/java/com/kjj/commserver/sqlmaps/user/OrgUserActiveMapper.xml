@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgUserActiveMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgUserActive" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="flag" property="flag" jdbcType="INTEGER" />
+    <result column="isactive" property="isactive" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="vcode" property="vcode" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="user_ip" property="userIp" jdbcType="VARCHAR" />
+    <result column="expiretime" property="expiretime" jdbcType="TIMESTAMP" />
+    <result column="is_use" property="isUse" jdbcType="CHAR" />
+    <result column="usetime" property="usetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, flag, isactive, email, createtime, vcode, phone, user_ip, expiretime, is_use, 
+    usetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_user_active
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_user_active
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgUserActive" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_user_active (flag, isactive, email, 
+      createtime, vcode, phone, 
+      user_ip, expiretime, is_use, 
+      usetime)
+    values (#{flag,jdbcType=INTEGER}, #{isactive,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{vcode,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{userIp,jdbcType=VARCHAR}, #{expiretime,jdbcType=TIMESTAMP}, #{isUse,jdbcType=CHAR}, 
+      #{usetime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgUserActive" >
+    update org_user_active
+    <set >
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="isactive != null" >
+        isactive = #{isactive,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vcode != null" >
+        vcode = #{vcode,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="userIp != null" >
+        user_ip = #{userIp,jdbcType=VARCHAR},
+      </if>
+      <if test="expiretime != null" >
+        expiretime = #{expiretime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isUse != null" >
+        is_use = #{isUse,jdbcType=CHAR},
+      </if>
+      <if test="usetime != null" >
+        usetime = #{usetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgUserActive" >
+    update org_user_active
+    set flag = #{flag,jdbcType=INTEGER},
+      isactive = #{isactive,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      vcode = #{vcode,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      user_ip = #{userIp,jdbcType=VARCHAR},
+      expiretime = #{expiretime,jdbcType=TIMESTAMP},
+      is_use = #{isUse,jdbcType=CHAR},
+      usetime = #{usetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgUserActiveVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.flag, 
+    t.isactive, 
+    t.email, 
+    t.createtime, 
+    t.vcode, 
+    t.phone, 
+    t.user_ip, 
+    t.expiretime, 
+    t.is_use, 
+    t.usetime
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_active t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="flag != null" >
+          and t.flag = #{flag,jdbcType=INTEGER}
+      </if>
+      <if test="isactive != null" >
+          and t.isactive = #{isactive,jdbcType=INTEGER}
+      </if>
+      <if test="email != null" >
+          and t.email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="createtime != null" >
+          and t.createtime = #{createtime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="vcode != null" >
+          and t.vcode = #{vcode,jdbcType=VARCHAR}
+      </if>
+      <if test="phone != null" >
+          and t.phone = #{phone,jdbcType=VARCHAR}
+      </if>
+      <if test="userIp != null" >
+          and t.user_ip = #{userIp,jdbcType=VARCHAR}
+      </if>
+      <if test="expiretime != null" >
+          and t.expiretime = #{expiretime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="isUse != null" >
+          and t.is_use = #{isUse,jdbcType=CHAR}
+      </if>
+      <if test="usetime != null" >
+          and t.usetime = #{usetime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_user_active t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_active t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_user_active where id in (
+    select t.id from (select * from org_user_active) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

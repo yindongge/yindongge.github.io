@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script src="../js/common/add.js"></script>
+<script src="../js/common/layer/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>
+<div class="page-wrapper ">
+<div class="container-fluid">
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li><a href="#">运营</a></li>
+				<li><a href="#">促销管理</a></li>
+				<li ><a href="">满减满送</a></li>
+				<li class="active">添加满减满送</li>
+			</ul>
+			<div  class="bg-warning " style="padding:10px;">
+				<p><strong>备注：</strong></p>
+				<p>• 同一件商品同时只能参加一种活动，只有活动过期后才能参加其他活动；</p>
+				<p>• 当设置多级优惠时，各级优惠的叠加设置将无效；</p>
+				<p>• 可选择多件赠品（数量、种类），用户购买达到条件时将会被一起送出；可选择多种优惠券，每种优惠券只能选1张.</p>
+			</div>
+			<!-- 切换 -->
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="width:30%;">
+			   <a href="#" class="btn btn-info " role="button">基本信息</a>
+			   <a href="#" class="btn btn-primary" role="button">活动商品</a>
+			   <a href="#" class="btn btn-info" role="button">优惠设置</a>
+		    </div>
+			<!-- 切换 -->
+			<div class="table-wrapper">
+				<div class="horizontal_wrapper">
+					<form class="form-horizontal media-control">
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red bigred">*</span>活动商品：</label>
+							<div class="col-sm-9">
+								<div class="row margin-left">
+									<div class="col-sm-3" style="padding-left:0px;">
+										<select class="form-control">
+											<option>选择类型</option>
+											<option>全场通用</option>
+											<option>指定类别</option>
+											<option>指定商品</option>
+										</select>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<select class="form-control">
+												<option>选择分类</option>
+												<option>一级分类</option>
+												<option>&nbsp; 天津</option>
+												<option>二级分类</option>
+												<option>北京</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<button class="btn btn-info ">添加</button>
+									</div>
+								</div>
+								<!--  -->
+								<div class="row margin-left">
+									<div class="col-sm-11" style="padding-left:0px;">
+										已选择分类：
+										<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+										<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+										<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+										<span class="s9">休闲食品<i class="glyphicon glyphicon-remove-sign red"></i></span>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<br />
+				<p class="text-center margin5">
+					<button type="button" class="btn btn-default">返回</button>
+					<button type="button" class="btn btn-info">保存</button>
+				</p>
+				<!--  -->
+				<nav class="navbar navbar-default select-control">
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="到第几页">
+						</div>
+						<button type="submit" class="btn btn-default btn-info">确定</button>
+					</form>
+					<ul class="pagination pull-right">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						  </a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">.....</a></li>
+						<li><a href="#">15</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						  </a>
+						</li>
+					 </ul>
+					 <p class="navbar-text pull-right">共有200条记录 每页50条</p>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

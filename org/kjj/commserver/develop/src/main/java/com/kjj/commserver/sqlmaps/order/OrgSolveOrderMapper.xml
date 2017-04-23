@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgSolveOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgSolveOrder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="from_admin_id" property="fromAdminId" jdbcType="SMALLINT" />
+    <result column="solve_admin_id" property="solveAdminId" jdbcType="SMALLINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="solve_time" property="solveTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_id, shop_id, reason, remark, from_admin_id, solve_admin_id, status, create_time, 
+    solve_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_solve_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_solve_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgSolveOrder" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_solve_order (order_id, shop_id, reason, 
+      remark, from_admin_id, solve_admin_id, 
+      status, create_time, solve_time
+      )
+    values (#{orderId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, #{reason,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{fromAdminId,jdbcType=SMALLINT}, #{solveAdminId,jdbcType=SMALLINT}, 
+      #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{solveTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgSolveOrder" >
+    update org_solve_order
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="fromAdminId != null" >
+        from_admin_id = #{fromAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="solveAdminId != null" >
+        solve_admin_id = #{solveAdminId,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="solveTime != null" >
+        solve_time = #{solveTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgSolveOrder" >
+    update org_solve_order
+    set order_id = #{orderId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      reason = #{reason,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      from_admin_id = #{fromAdminId,jdbcType=SMALLINT},
+      solve_admin_id = #{solveAdminId,jdbcType=SMALLINT},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      solve_time = #{solveTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgSolveOrderVo" extends="BaseResultMap" >
+  	<result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+  	<association property="orgOrder" javaType="com.kjj.commserver.entity.order.OrgOrder">
+	    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+	    <result column="send_style" property="sendStyle" jdbcType="TINYINT" />
+	    <result column="user_id" property="userId" jdbcType="INTEGER" />
+	    <result column="consignee_tel" property="consigneeTel" jdbcType="VARCHAR" />
+   		<result column="consignee_mobile" property="consigneeMobile" jdbcType="VARCHAR" />
+	    <result column="consignee" property="consignee" jdbcType="VARCHAR" />
+	    <result column="source" property="source" jdbcType="TINYINT" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.order_id, 
+    t.shop_id, 
+    t.reason, 
+    t.remark, 
+    t.from_admin_id, 
+    t.solve_admin_id, 
+    t.status, 
+    t.create_time, 
+    t.solve_time,
+    oo.user_id,
+	oo.consignee,
+	oo.consignee_tel,
+	oo.consignee_mobile,
+	oo.send_style,
+	oo.source,
+	oo.create_time,
+	os.shop_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_solve_order t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="orderId != null" >
+          and t.order_id = #{orderId,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="reason != null" >
+          and t.reason = #{reason,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="fromAdminId != null" >
+          and t.from_admin_id = #{fromAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="solveAdminId != null" >
+          and t.solve_admin_id = #{solveAdminId,jdbcType=SMALLINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="solveTime != null" >
+          and t.solve_time = #{solveTime,jdbcType=TIMESTAMP}
+      </if>
+	  <if test="orderIdLike != null and orderIdLike != '' ">
+		  and t.order_id like concat('%',#{orderIdLike},'%')
+	  </if>
+      <if test="shopIds != null" >
+          <if test="shopIds.size() > 0" >
+          and t.shop_id in 
+          <foreach collection="shopIds" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+          </if>
+          <if test="shopIds.size() == 0" >
+          and 1 = 0
+      	  </if>
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_solve_order t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_solve_order t
+   	left join org_order oo on t.order_id = oo.order_id
+ 	left join org_shop os on t.shop_id = os.shop_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_solve_order where id in (
+    select t.id from (select * from org_solve_order) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

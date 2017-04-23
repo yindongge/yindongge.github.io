@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.system.OrgAdminAuthorityMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.system.OrgAdminAuthority" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <id column="authorityID" property="authorityid" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from org_admin_authority
+    where user_id = #{userId,jdbcType=INTEGER}
+      and authorityID = #{authorityid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.system.OrgAdminAuthority"  keyColumn="user_id" keyProperty="userId" >
+    insert into org_admin_authority (user_id,authorityID)
+    values (#{userId,jdbcType=INTEGER},#{authorityid,jdbcType=INTEGER})
+  </insert>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.system.aide.OrgAdminAuthorityVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.user_id, 
+    t.authorityID
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_admin_authority t
+    where t.user_id = #{userId,jdbcType=INTEGER}
+      and t.authorityID = #{authorityid,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="authorityid != null" >
+          and t.authorityID = #{authorityid,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.user_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.user_id) from org_admin_authority t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_admin_authority t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_admin_authority
+    <where >
+      <if test="userId != null" >
+          and user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="authorityid != null" >
+          and authorityID = #{authorityid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </delete>
+</mapper>

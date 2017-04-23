@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopPageFloorProductMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopPageFloorProduct" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="floorid" property="floorid" jdbcType="INTEGER" />
+    <result column="productid" property="productid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, floorid, productid, type, nickname
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_page_floor_product
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_page_floor_product
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopPageFloorProduct" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_shop_page_floor_product (floorid, productid, type, 
+      nickname)
+    values (#{floorid,jdbcType=INTEGER}, #{productid,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{nickname,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopPageFloorProduct" >
+    update org_shop_page_floor_product
+    <set >
+      <if test="floorid != null" >
+        floorid = #{floorid,jdbcType=INTEGER},
+      </if>
+      <if test="productid != null" >
+        productid = #{productid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopPageFloorProduct" >
+    update org_shop_page_floor_product
+    set floorid = #{floorid,jdbcType=INTEGER},
+      productid = #{productid,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopPageFloorProductVo" extends="BaseResultMap" >
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="goods_thumb" property="goodsThumb" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.floorid, 
+    t.productid, 
+    t.type, 
+    t.nickname
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page_floor_product t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="floorid != null" >
+          and t.floorid = #{floorid,jdbcType=INTEGER}
+      </if>
+      <if test="productid != null" >
+          and t.productid = #{productid,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+          and t.type = #{type,jdbcType=INTEGER}
+      </if>
+      <if test="nickname != null" >
+          and t.nickname = #{nickname,jdbcType=VARCHAR}
+      </if>
+      <if test="productidNotEqual != null" >
+          and t.productid != #{productidNotEqual,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_shop_page_floor_product t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page_floor_product t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_page_floor_product where id in (
+    select t.id from (select * from org_shop_page_floor_product) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="queryCommProductByFloor" parameterType="java.util.Map" resultMap="VoResultMap">
+    select t.*,f.goods_name,f.goods_thumb from org_shop_page_floor_product t left join org_product_item f on t.productid = f.goods_id where t.type = '2' 
+    and t.floorid = #{floorId,jdbcType=INTEGER} order by t.id asc
+  </select>
+  <select id="queryRecommandProductByFloor" parameterType="java.util.Map" resultMap="VoResultMap">
+    select t.*,f.goods_name,f.goods_thumb from org_shop_page_floor_product t left join org_product_item f on t.productid = f.goods_id where t.type = '1' 
+    and t.floorid = #{floorId,jdbcType=INTEGER} order by t.id asc
+  </select>
+</mapper>

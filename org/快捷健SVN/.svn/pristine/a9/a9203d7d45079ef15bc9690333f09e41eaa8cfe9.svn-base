@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script src="js/swiper3.1.0.min.js"></script>
+<script src="js/me.js"></script>
+<script src="js/iscroll.js"></script>
+</head>
+<body >
+	<div class="box padding-top   box-gray">
+		<header class="header fixed">
+			<div class="indexhead">
+				<div class="indexhead_content ">
+					<div class="indexhead-overflow">
+						<span class="po"></span>
+						<span>自提点：三里屯SOHO店</span>
+						<span class="down"></span>
+					</div>
+				</div>
+			</div>
+		</header>
+	<!-- end header -->
+	<div class="fastbuy-title">
+		<a class="fastbuy-name"><img src="images/a.png" alt=""></a>
+		<div class="fastbuy-content-r">
+			<p>快捷健超市连锁（永安里店）</p>
+			<p>
+			<span>起送<i>￥0</i></span>
+			<span>配送<i>￥0</i></span>
+			<span>送达<i>一小时内</i></span>
+			</p>
+			<h5><span class="voiceion"></span>此处滚动显示店内公告</h5>
+		</div>
+	</div>
+	<!-- buy titele -->
+	<div class="area third">
+		<a class="a ">商品<span class="linebottom"></span></a>
+		<a class="a on">评价<span class="linebottom"></span></a>
+		<a class="a">门店<span class="linebottom"></span></a>
+	</div>
+	<!-- buy nav -->
+	<div class="fastbuy-conmment">
+		<h5 class="line-h5"><span class="line3"></span>商品参数<span class="line4"></span></h5>
+		<div class="assess ">
+			<div class="assess-list">
+				<div class="name name-control">
+					<div class="myname">Lijianjjunlio </div>
+					<div class="star control">
+						<a class="yellowicon"></a>
+						<a class="yellowicon"></a>
+						<a></a>
+						<a></a>
+						<a></a>
+					</div>
+					<span>商品名称</span>
+				</div>
+				<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			</div>
+			<div class="assess-list">
+				<div class="name name-control">
+					<div class="myname">Lijianjjunlio </div>
+					<div class="star control">
+						<a class="yellowicon"></a>
+						<a class="yellowicon"></a>
+						<a></a>
+						<a></a>
+						<a></a>
+					</div>
+					<span>商品名称</span>
+				</div>
+				<p>他们引用了高盛要求员工们就直接同事的工作表现所写的评价作为证据。</p>
+			</div>
+		</div>
+	</div>
+	<!-- buy conmment -->
+
+</div>
+	<!-- end box -->
+
+<!-- 遮罩 -->
+
+
+<script type="text/javascript">
+	$(function(){
+
+		var h=window.innerHeight-44;
+	 	$('.buy_left').css({"height":h});
+
+	 	leftcontrol();
+
+	})
+</script>
+</body>
+</html>

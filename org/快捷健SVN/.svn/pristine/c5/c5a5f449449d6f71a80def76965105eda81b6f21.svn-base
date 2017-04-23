@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+.yugao{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #0061CF;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+.yugao-content{
+	color: #fff;
+	height: 60px;
+	position: absolute;
+	top:30%;
+	margin-top: -30px;
+	width: 100%;
+	margin: 0px auto;
+}
+.yugao-content h2{
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+</style>
+</head>
+<body >
+<div class="yugao">
+<div class="yugao-content">
+	<h2>活动预告</h2>
+	<p>本次活动已结束，下次活动预计3月8日，敬请期待！</p>
+</div>
+</div>
+
+</body>
+</html>

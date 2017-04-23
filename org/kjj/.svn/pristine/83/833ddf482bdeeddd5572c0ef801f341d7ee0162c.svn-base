@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.account.OrgAccountDepositApplyMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.account.OrgAccountDepositApply" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="fund_amount" property="fundAmount" jdbcType="DECIMAL" />
+    <result column="allowance_amount" property="allowanceAmount" jdbcType="DECIMAL" />
+    <result column="frozen_amount" property="frozenAmount" jdbcType="DECIMAL" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="reason" property="reason" jdbcType="TINYINT" />
+    <result column="apply_comment" property="applyComment" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="batch_code" property="batchCode" jdbcType="VARCHAR" />
+    <result column="pay_style" property="payStyle" jdbcType="TINYINT" />
+    <result column="bank_name" property="bankName" jdbcType="VARCHAR" />
+    <result column="payment_code" property="paymentCode" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="TINYINT" />
+    <result column="apply_code" property="applyCode" jdbcType="VARCHAR" />
+    <result column="create_id" property="createId" jdbcType="INTEGER" />
+    <result column="create_name" property="createName" jdbcType="VARCHAR" />
+    <result column="fail_reason" property="failReason" jdbcType="TINYINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_id" property="updateId" jdbcType="INTEGER" />
+    <result column="update_name" property="updateName" jdbcType="VARCHAR" />
+    <result column="check_time" property="checkTime" jdbcType="TIMESTAMP" />
+    <result column="check_comment" property="checkComment" jdbcType="VARCHAR" />
+    <result column="check_id" property="checkId" jdbcType="INTEGER" />
+    <result column="check_name" property="checkName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, user_name, fund_amount, allowance_amount, frozen_amount, type, create_time, 
+    reason, apply_comment, status, batch_code, pay_style, bank_name, payment_code, source, 
+    apply_code, create_id, create_name, fail_reason, update_time, update_id, update_name, 
+    check_time, check_comment, check_id, check_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_account_deposit_apply
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_account_deposit_apply
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.account.OrgAccountDepositApply" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_account_deposit_apply (user_id, user_name, fund_amount, 
+      allowance_amount, frozen_amount, type, 
+      create_time, reason, apply_comment, 
+      status, batch_code, pay_style, 
+      bank_name, payment_code, source, 
+      apply_code, create_id, create_name, 
+      fail_reason, update_time, update_id, 
+      update_name, check_time, check_comment, 
+      check_id, check_name)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{fundAmount,jdbcType=DECIMAL}, 
+      #{allowanceAmount,jdbcType=DECIMAL}, #{frozenAmount,jdbcType=DECIMAL}, #{type,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{reason,jdbcType=TINYINT}, #{applyComment,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT}, #{batchCode,jdbcType=VARCHAR}, #{payStyle,jdbcType=TINYINT}, 
+      #{bankName,jdbcType=VARCHAR}, #{paymentCode,jdbcType=VARCHAR}, #{source,jdbcType=TINYINT}, 
+      #{applyCode,jdbcType=VARCHAR}, #{createId,jdbcType=INTEGER}, #{createName,jdbcType=VARCHAR}, 
+      #{failReason,jdbcType=TINYINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=INTEGER}, 
+      #{updateName,jdbcType=VARCHAR}, #{checkTime,jdbcType=TIMESTAMP}, #{checkComment,jdbcType=VARCHAR}, 
+      #{checkId,jdbcType=INTEGER}, #{checkName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.account.OrgAccountDepositApply" >
+    update org_account_deposit_apply
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="fundAmount != null" >
+        fund_amount = #{fundAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="allowanceAmount != null" >
+        allowance_amount = #{allowanceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="frozenAmount != null" >
+        frozen_amount = #{frozenAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=TINYINT},
+      </if>
+      <if test="applyComment != null" >
+        apply_comment = #{applyComment,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="batchCode != null" >
+        batch_code = #{batchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payStyle != null" >
+        pay_style = #{payStyle,jdbcType=TINYINT},
+      </if>
+      <if test="bankName != null" >
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentCode != null" >
+        payment_code = #{paymentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=TINYINT},
+      </if>
+      <if test="applyCode != null" >
+        apply_code = #{applyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        create_id = #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="createName != null" >
+        create_name = #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="failReason != null" >
+        fail_reason = #{failReason,jdbcType=TINYINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null" >
+        update_id = #{updateId,jdbcType=INTEGER},
+      </if>
+      <if test="updateName != null" >
+        update_name = #{updateName,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null" >
+        check_time = #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkComment != null" >
+        check_comment = #{checkComment,jdbcType=VARCHAR},
+      </if>
+      <if test="checkId != null" >
+        check_id = #{checkId,jdbcType=INTEGER},
+      </if>
+      <if test="checkName != null" >
+        check_name = #{checkName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.account.OrgAccountDepositApply" >
+    update org_account_deposit_apply
+    set user_id = #{userId,jdbcType=INTEGER},
+      user_name = #{userName,jdbcType=VARCHAR},
+      fund_amount = #{fundAmount,jdbcType=DECIMAL},
+      allowance_amount = #{allowanceAmount,jdbcType=DECIMAL},
+      frozen_amount = #{frozenAmount,jdbcType=DECIMAL},
+      type = #{type,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      reason = #{reason,jdbcType=TINYINT},
+      apply_comment = #{applyComment,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      batch_code = #{batchCode,jdbcType=VARCHAR},
+      pay_style = #{payStyle,jdbcType=TINYINT},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      payment_code = #{paymentCode,jdbcType=VARCHAR},
+      source = #{source,jdbcType=TINYINT},
+      apply_code = #{applyCode,jdbcType=VARCHAR},
+      create_id = #{createId,jdbcType=INTEGER},
+      create_name = #{createName,jdbcType=VARCHAR},
+      fail_reason = #{failReason,jdbcType=TINYINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_id = #{updateId,jdbcType=INTEGER},
+      update_name = #{updateName,jdbcType=VARCHAR},
+      check_time = #{checkTime,jdbcType=TIMESTAMP},
+      check_comment = #{checkComment,jdbcType=VARCHAR},
+      check_id = #{checkId,jdbcType=INTEGER},
+      check_name = #{checkName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.account.aide.OrgAccountDepositApplyVo" extends="BaseResultMap" >
+  	<result column="mobile_phone" property="mobilePhone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.user_id, 
+    t.user_name, 
+    t.fund_amount, 
+    t.allowance_amount, 
+    t.frozen_amount, 
+    t.type, 
+    t.create_time, 
+    t.reason, 
+    t.apply_comment, 
+    t.status, 
+    t.batch_code, 
+    t.pay_style, 
+    t.bank_name, 
+    t.payment_code, 
+    t.source, 
+    t.apply_code, 
+    t.create_id, 
+    t.create_name, 
+    t.fail_reason, 
+    t.update_time, 
+    t.update_id, 
+    t.update_name, 
+    t.check_time, 
+    t.check_comment, 
+    t.check_id, 
+    t.check_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_account_deposit_apply t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="userName != null" >
+          and t.user_name like concat('%',#{userName},'%')
+      </if>
+      <if test="fundAmount != null" >
+          and t.fund_amount = #{fundAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="allowanceAmount != null" >
+          and t.allowance_amount = #{allowanceAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="frozenAmount != null" >
+          and t.frozen_amount = #{frozenAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="type != null" >
+          and t.type = #{type,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="reason != null" >
+          and t.reason = #{reason,jdbcType=TINYINT}
+      </if>
+      <if test="applyComment != null" >
+          and t.apply_comment = #{applyComment,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="batchCode != null" >
+          and t.batch_code = #{batchCode,jdbcType=VARCHAR}
+      </if>
+      <if test="payStyle != null" >
+          and t.pay_style = #{payStyle,jdbcType=TINYINT}
+      </if>
+      <if test="bankName != null" >
+          and t.bank_name = #{bankName,jdbcType=VARCHAR}
+      </if>
+      <if test="paymentCode != null" >
+          and t.payment_code = #{paymentCode,jdbcType=VARCHAR}
+      </if>
+      <if test="source != null" >
+          and t.source = #{source,jdbcType=TINYINT}
+      </if>
+      <if test="applyCode != null" >
+          and t.apply_code = #{applyCode,jdbcType=VARCHAR}
+      </if>
+      <if test="createId != null" >
+          and t.create_id = #{createId,jdbcType=INTEGER}
+      </if>
+      <if test="createName != null" >
+          and t.create_name = #{createName,jdbcType=VARCHAR}
+      </if>
+      <if test="failReason != null" >
+          and t.fail_reason = #{failReason,jdbcType=TINYINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateId != null" >
+          and t.update_id = #{updateId,jdbcType=INTEGER}
+      </if>
+      <if test="updateName != null" >
+          and t.update_name = #{updateName,jdbcType=VARCHAR}
+      </if>
+      <if test="checkTime != null" >
+          and t.check_time = #{checkTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="checkComment != null" >
+          and t.check_comment = #{checkComment,jdbcType=VARCHAR}
+      </if>
+      <if test="checkId != null" >
+          and t.check_id = #{checkId,jdbcType=INTEGER}
+      </if>
+      <if test="checkName != null" >
+          and t.check_name = #{checkName,jdbcType=VARCHAR}
+      </if>
+      <if test="createTimeStart != null and createTimeStart != ''" >
+          and t.create_time &gt;= str_to_date(#{createTimeStart},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="createTimeEnd != null and createTimeEnd != ''" >
+          and t.create_time &lt;= str_to_date(#{createTimeEnd},'%Y-%m-%d %H:%i:%s')
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_account_deposit_apply t left join org_users ou on t.user_id = ou.user_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Select_Column_List" />
+    from org_account_deposit_apply t left join org_users ou on t.user_id = ou.user_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_account_deposit_apply where id in (
+    select t.id from (select * from org_account_deposit_apply) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectDepositApplyCodeSeq" parameterType="java.util.Map" resultType="java.lang.Long" >
+    SELECT nextval('deposit_apply_code_seq');
+    <include refid="Query_Where_Clause" />
+  </select>
+  <sql id="Vo_Select_Column_List" >
+    t.id, 
+    t.user_id, 
+    t.user_name, 
+    t.fund_amount, 
+    t.allowance_amount, 
+    t.frozen_amount, 
+    t.type, 
+    t.create_time, 
+    t.reason, 
+    t.apply_comment, 
+    t.status, 
+    t.batch_code, 
+    t.pay_style, 
+    t.bank_name, 
+    t.payment_code, 
+    t.source, 
+    t.apply_code, 
+    t.create_id, 
+    t.create_name, 
+    t.fail_reason, 
+    t.update_time, 
+    t.update_id, 
+    t.update_name, 
+    t.check_time, 
+    t.check_comment, 
+    t.check_id, 
+    t.check_name,
+    ou.mobile_phone
+  </sql>
+</mapper>

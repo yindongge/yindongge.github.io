@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/tab.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<link href="css/tab.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/all.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/swiper.css">
+<title>快捷健</title>
+
+</head>
+<body>
+	<div class=" box">
+		<div class="box-content">
+			<header class="header">
+				<div class="logo margin1 fl">
+					<a href="#"><img src="img/logo.png"></a>
+				</div>
+				<div class="search fl">
+					<input type="text" class="text1" placeholder="开始搜索">
+					<span class="search-icon"></span>
+					<a href="#" class="search-button">搜索</a>
+				</div>
+				<div class="logo-text fr">
+					<span class="lt1 lt">光华路SOHO</span>
+					<span class="lt2 lt">客服热线：<em>400-666-7777</em></span>
+				</div>
+			</header>
+		</div>
+		<!-- 结束 头 -->
+		<div class="future">
+			<div class="future-left fl">
+				<div class="sidebar">
+					<a href="#">
+						<div class="s-img s1">
+
+						</div>
+						<span class="s-title">精品购物</span>
+					</a>
+					<a href="#">
+						<div class="s-img s2">
+
+						</div>
+						<span class="s-title">防伪溯源</span>
+					</a>
+						<a href="#">
+						<div class="s-img s3">
+
+						</div>
+						<span class="s-title">休闲娱乐</span>
+					</a>
+					<a href="#">
+						<div class="s-img s4">
+
+						</div>
+						<span class="s-title">会员服务</span>
+					</a>
+						<a href="#">
+						<div class="s-img s5">
+
+						</div>
+						<span class="s-title">优惠活动</span>
+					</a>
+					<a href="#">
+						<div class="s-img s6">
+
+						</div>
+						<span class="s-title">关于我们</span>
+					</a>
+				</div>
+			</div>
+			<div class="future-right white  fr">
+				<div class="listall scroll fl">
+					<div class="all">
+
+	<!-- end top -->
+
+	<!-- end header -->
+
+
+	<!-- end nav-index -->
+
+<div class="b">
+<div class="right-extra" >
+				  <!--产品参数开始-->
+				  <div>
+				    <div id="preview" class="spec-preview">
+				    <span class="jqzoom"><img jqimg="img/b1.jpg" src="img/s1.jpg" /></span> </div>
+				    <!--缩图开始-->
+				    <div class="spec-scroll">
+				      <div class="items">
+				        <ul>
+				          <li><img alt="#" bimg="img/17.jpg" src="img/17.jpg" onmousemove="preview(this);"></li>
+				          <li><img alt="#" bimg="img/b3.jpg" src="img/s3.jpg" onmousemove="preview(this);"></li>
+				          <li><img alt="#" bimg="img/17.jpg" src="img/17.jpg" onmousemove="preview(this);"></li>
+				          <li><img alt="#" bimg="img/b3.jpg" src="img/s3.jpg" onmousemove="preview(this);"></li>
+				          <li><img alt="#" bimg="img/17.jpg" src="img/17.jpg" onmousemove="preview(this);"></li>
+				          <li><img alt="#" bimg="img/b3.jpg" src="img/s3.jpg" onmousemove="preview(this);"></li>
+				        </ul>
+				      </div>
+				    </div>
+				    <!--缩图结束-->
+				  </div>
+</div>
+ <div class="goods-detail">
+
+ 		<div class="detail-center">
+ 			<div class="detail-name">
+	 			<h2>果园老农开心果100G，天然绿色产品</h2>
+	 			<h4>这个是黄色的副标题<span class="addredtitle">限量100件，每用户限购5件，绑定手
+机号才能参加哦    </span></h4>
+	 			<div class="choose-taste choose-special nomargin">
+ 					<div class="dt">商品编号：</div>
+ 					<div class="dd ">
+	 					<p class="detail-number">
+	 						888888888888
+	 					</p>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<!-- end  -->
+ 				<div class="choose-taste choose-special nomargin">
+ 					<div class="dt dt-special">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</div>
+ 					<div class="dd ">
+	 					<span class="money">￥</span><span class="yellow">18.00</span>
+ 					</div>
+ 				</div>
+			<!-- price1 -->
+			<div class="price pricerevise">
+				<div class="choose-taste choose-special nomargin">
+					<div class="dt">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</div>
+					<div class="dd"><p class="price-delete">￥88.00</p></div>
+				</div>
+					<div class="choose-taste choose-special nomargin height-control">
+					<div class="dt" style="padding-top:3px;">参加促销：</div>
+					 <div class="dd">
+						<p class="p2">
+							<span class="price1">限时折扣</span>
+							<span class="money">￥</span>
+							<span class="yellow">17.00</span>
+							<span class="daoshu"><i class="reddaoshu">1天22小时18分4.9</i>秒后结束，请尽快购买！</span>
+						</p>
+					</div>
+				</div>
+ 			</div>
+			<!-- price2 -->
+				<div class="price pricerevise">
+				<div class="choose-taste choose-special nomargin">
+					<div class="dt dt-special">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格
+					：</div>
+					<div class="dd">
+						<p class="p2">
+							<span class="money">￥</span>
+							<span class="yellow">17.00</span>
+						</p>
+					</div>
+				</div>
+					<div class="choose-taste choose-special nomargin height-control">
+					<div class="dt" style="padding-top:3px;">参加促销：</div>
+					 <div class="dd">
+						<p class="p2 line-through">
+							<span class="price1 gray">限时折扣</span>
+							<span class="yellow">￥17.00</span>
+							<span class="daoshu">
+							活动已结束，下次活动时间：
+							<i class="reddaoshu">1天22小时18分4.9</i></span>
+						</p>
+					</div>
+				</div>
+ 			</div>
+			<!-- end price2 -->
+ 			<div class="choose">
+ 				<div class="choose-taste">
+ 					<div class="dt small-font">口味：</div>
+ 					<div class="dd">
+ 						<div class="ch ">
+ 							<a title="奶茶味">
+ 								<img src="img/c1.jpg" style="display:none">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味" class="active">
+ 								<img src="img/c1.jpg">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味">
+ 								<img src="img/c1.jpg" style="display:none">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味" class="active">
+ 								<img src="img/c1.jpg">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味">
+ 								<img src="img/c1.jpg" style="display:none">
+ 								<span>五香味</span>
+ 							</a>
+ 							<a title="奶茶味" class="active">
+ 								<img src="img/c1.jpg">
+ 								<span>五香味</span>
+ 							</a>
+
+ 						</div>
+
+ 					</div>
+ 				</div>
+ 				<div class="choose-taste">
+ 					<div class="dt small-font">容量：</div>
+ 					<div class="dd ">
+ 						<div class="ch speciala">
+ 							<a title="奶茶味" class="active">
+ 								<span>500ml</span>
+ 							</a>
+ 							<a title="奶茶味">
+ 								<span>500ml</span>
+ 							</a>
+ 							<a title="奶茶味">
+ 								<span>500ml</span>
+ 							</a>
+ 						</div>
+
+ 					</div>
+ 				</div>
+ 			</div>
+
+ 			<!-- <div class="peisong">
+	 			<div class="choose-taste choose-special">
+ 					<div class="dt ">配送范围：</div>
+ 					<div class="dd ">
+	 					<div class="range">
+		 					<p><strong>详细信息</strong><span class="map"><img src="img/map1.jpg"></span></p>
+		 				</div>
+ 					</div>
+ 				</div>
+	 			<div class="choose-taste choose-special nomargin marginbottom">
+ 					<div class="dt">配送时间：</div>
+ 					<div class="dd ">
+ 						<div class="choose-clock">
+ 							<p>上午8:00—12:00   下午14:00—20:00</p>
+ 							<p><span class="blue">15:00前</span> 完成下单，可预约今天送达</p>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div> -->
+ 			<div class="add-btn">
+ 				<a href="#" class="add-abtn">立即购买</a>
+ 				<a href="#" class="add-abtn btn-back">返回</a>
+ 				<div class="alertwei2">
+ 					<div class="erwei"><img  src="img/m1.png"></div>
+ 				</div>
+ 			</div>
+ 		</div>
+
+
+ </div>
+ </div>
+ <!-- end gooddetail  b-->
+
+ <!-- end  taball -->
+ <div class=" clearfix">
+	 <div class="container">
+	 		<div class="box-right">
+				 	<div class="slideTxtBox">
+						<div class="hd" id="fixedtop">
+							<ul><li>商品详情</li><li>商品评论</li></ul>
+						</div>
+						<div class="bd">
+							<div class="bd-1">
+								<div class="bd-element">
+									<h5>商品参数</h5>
+									<ul>
+										<li>品牌：<span>果园老婆</span></li>
+										<li>是否有机食品<span>是</span></li>
+										<li>保质期：30天</li>
+										<li>包装方式：<span></span></li>
+										<li>重量：<span></span></li>
+										<li>产地：<span></span></li>
+										<li>包装方式：<span></span></li>
+										<li>重量：<span></span></li>
+										<li>产地：<span></span></li>
+										<li>包装方式：<span></span></li>
+										<li>重量：<span></span></li>
+										<li>产地：<span></span></li>
+									</ul>
+								</div>
+
+							</div>
+
+							<div class="bd-2">快捷健上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。</div>
+
+						</div>
+					</div>
+
+
+		 		<div class="bd-list conment">
+		 			<h4>商品评价</h4>
+		 			<div class="ct-content">
+		 				<div class="no-content"><span>还没有评论内容哦！</span></div>
+		 					<div class=" level-star">
+				 				<div class="level-left">商品满意度评分：</div>
+				 				<div class="level-right">
+				 					<span class="l l1">非常不满</span>
+				 					<span class="l l2">不满意</span>
+				 					<span class="l l3">一般</span>
+				 					<span class="l l4">满意</span>
+				 					<span class="l l5">非常满意</span>
+				 					<span class="l6">
+				 						<i>4.8</i>
+				 					</span>
+				 				</div>
+		 					</div>
+		 				<div class="have-content">
+		 					<ul class="ct-listall">
+		 						<li>
+			 						<div class="ct-left">
+			 							<div class="ct-left-ask">质量非常好，送货速度没的说，昨天晚上订的，今天上午就送到了，客服的态度顶呱呱，下次还会光临！质量非常好，送货速度没的说，昨天晚上订的，今天上午就送到了，客服的态度顶呱呱，下次还会光临！</div>
+			 							<div class="ct-left-answer">
+			 								<span>解释：</span>亲，我们都是按照订单发货的，专人配货，专人核对和专人打包的呢，正常情况下是不会出现您说的这种情况的，也有可能是工作人员失误造成的，您购买别的配件的时候我们可以送您2包，给您带来不便实在不好意思，祝亲生活愉快！
+			 							</div>
+			 						</div>
+			 						<div class="ct-center">
+			 							<div class="toggle-right">
+											<a href="" class="yellow-icon"></a>
+											<a href=""></a>
+											<a href=""></a>
+											<a href="" class="yellow-icon"></a>
+											<a href=""></a>
+										</div>
+			 						</div>
+			 						<div class="name-level">beiping 普通会员<br>[08.02/2015]</div>
+		 						</li>
+		 						<li>
+			 						<div class="ct-left">
+			 							<div class="ct-left-ask">质量非常好，送货速度没的说，昨天晚上订的，今天上午就送到了，客服的态度顶呱呱，下次还会光临！质量非常好，送货速度没的说，昨天晚上订的，今天上午就送到了，客服的态度顶呱呱，下次还会光临！</div>
+			 							<div class="ct-left-answer">
+			 								<span>解释：</span>亲，我们都是按照订单发货的，专人配货，专人核对和专人打包的呢，正常情况下是不会出现您说的这种情况的，也有可能是工作人员失误造成的，您购买别的配件的时候我们可以送您2包，给您带来不便实在不好意思，祝亲生活愉快！
+			 							</div>
+			 						</div>
+			 						<div class="ct-center">
+			 							<div class="toggle-right">
+											<a href="" class="yellow-icon"></a>
+											<a href=""></a>
+											<a href=""></a>
+											<a href="" class="yellow-icon"></a>
+											<a href=""></a>
+										</div>
+			 						</div>
+			 						<div class="name-level">beiping 普通会员<br>[08.02/2015]</div>
+		 						</li>
+		 					</ul>
+		 				</div>
+		 			</div>
+		 		</div>
+	 		</div>
+	 </div>
+ </div>
+
+</div>
+
+				</div>
+				<!-- listall -->
+				<div class="list-house fr">
+					<div class="house">
+						<a href="#">休闲零食</a>
+						<a href="#">主食快餐</a>
+						<a href="#">酒水饮料</a>
+						<a href="#">粮油调味品</a>
+						<a href="#">办公日用</a>
+						<a href="#">个人护理</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 结束列表 -->
+
+	</div>
+<!-- <div class="blackmask hide"><img src="img/load2.gif" alt="" class="loadinggif" /></div> -->
+<div class="blackmask">
+	<div class="load load1">
+			<div class="line1 line"></div>
+			<div class="line2 line"></div>
+			<div class="line3 line"></div>
+			<div class="line4 line"></div>
+			<div class="line5 line"></div>
+		</div>
+</div>
+	<!--  -->
+<script type="text/javascript">jQuery(".slideBox").slide({mainCell:".bd ul",effect:"top",trigger:"click",pnLoop:false});</script>
+<script type="text/javascript">jQuery(".slideTxtBox").slide({trigger:"click"});</script>
+<script type="text/javascript">
+	$(' .spec-scroll .items ul li').click(function(){
+		$(this).addClass('on').siblings().removeClass('on');
+	})
+</script>
+</body>
+</html>

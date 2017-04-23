@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.ruixing.sqlmaps.user.BasviptypMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.ruixing.entity.user.Basviptyp" >
+    <id column="RUID" property="ruid" jdbcType="DECIMAL" />
+    <result column="TYPNO" property="typno" jdbcType="VARCHAR" />
+    <result column="TYPNAME" property="typname" jdbcType="VARCHAR" />
+    <result column="TYPFLAG" property="typflag" jdbcType="DECIMAL" />
+    <result column="ISDISCNT" property="isdiscnt" jdbcType="DECIMAL" />
+    <result column="DISCNT" property="discnt" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RUID, TYPNO, TYPNAME, TYPFLAG, ISDISCNT, DISCNT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Short" >
+    select 
+    <include refid="Base_Column_List" />
+    from BASVIPTYP
+    where RUID = #{ruid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short" >
+    delete from BASVIPTYP
+    where RUID = #{ruid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.ruixing.entity.user.Basviptyp" useGeneratedKeys="true" keyColumn="RUID" keyProperty="ruid" >
+    insert into BASVIPTYP (TYPNO, TYPNAME, TYPFLAG, 
+      ISDISCNT, DISCNT)
+    values (#{typno,jdbcType=VARCHAR}, #{typname,jdbcType=VARCHAR}, #{typflag,jdbcType=DECIMAL}, 
+      #{isdiscnt,jdbcType=DECIMAL}, #{discnt,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.ruixing.entity.user.Basviptyp" >
+    update BASVIPTYP
+    <set >
+      <if test="typno != null" >
+        TYPNO = #{typno,jdbcType=VARCHAR},
+      </if>
+      <if test="typname != null" >
+        TYPNAME = #{typname,jdbcType=VARCHAR},
+      </if>
+      <if test="typflag != null" >
+        TYPFLAG = #{typflag,jdbcType=DECIMAL},
+      </if>
+      <if test="isdiscnt != null" >
+        ISDISCNT = #{isdiscnt,jdbcType=DECIMAL},
+      </if>
+      <if test="discnt != null" >
+        DISCNT = #{discnt,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where RUID = #{ruid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.ruixing.entity.user.Basviptyp" >
+    update BASVIPTYP
+    set TYPNO = #{typno,jdbcType=VARCHAR},
+      TYPNAME = #{typname,jdbcType=VARCHAR},
+      TYPFLAG = #{typflag,jdbcType=DECIMAL},
+      ISDISCNT = #{isdiscnt,jdbcType=DECIMAL},
+      DISCNT = #{discnt,jdbcType=DECIMAL}
+    where RUID = #{ruid,jdbcType=DECIMAL}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.ruixing.entity.user.aide.BasviptypVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.RUID, 
+    t.TYPNO, 
+    t.TYPNAME, 
+    t.TYPFLAG, 
+    t.ISDISCNT, 
+    t.DISCNT
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from BASVIPTYP t
+    where t.RUID = #{ruid,jdbcType=DECIMAL}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="ruid != null" >
+          and t.RUID = #{ruid,jdbcType=DECIMAL}
+      </if>
+      <if test="typno != null" >
+          and t.TYPNO = #{typno,jdbcType=VARCHAR}
+      </if>
+      <if test="typname != null" >
+          and t.TYPNAME = #{typname,jdbcType=VARCHAR}
+      </if>
+      <if test="typflag != null" >
+          and t.TYPFLAG = #{typflag,jdbcType=DECIMAL}
+      </if>
+      <if test="isdiscnt != null" >
+          and t.ISDISCNT = #{isdiscnt,jdbcType=DECIMAL}
+      </if>
+      <if test="discnt != null" >
+          and t.DISCNT = #{discnt,jdbcType=DECIMAL}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.RUID desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.RUID) from BASVIPTYP t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from BASVIPTYP t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from BASVIPTYP where RUID in (
+    select t.RUID from (select * from BASVIPTYP) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

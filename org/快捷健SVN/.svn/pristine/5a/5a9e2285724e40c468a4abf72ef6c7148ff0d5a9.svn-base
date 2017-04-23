@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body >
+<div class="box box-gray">
+	<header class="header">
+		<div class="head-content">填写收货地址</div>
+		<div class="head-left"><a href="#" class="link"></a></div>
+	</header>
+	<!-- end top -->
+	<div class="address write">
+		<dl class="item-detail">
+			<dt>联系人</dt>
+			<dd><input type="text" class="form-control" placeholder="您的姓名"></dd>
+		</dl>
+		<dl class="item-detail">
+			<dt>手机</dt>
+			<dd><input type="text" class="form-control" placeholder="配送员联系您的方式"></dd>
+		</dl>
+		<dl class="item-detail">
+			<dt>收货地址</dt>
+			<dd>
+				<a class="form-control " >
+					<span class="smallicon"></span>
+					<span class="building">请选择大厦、小区</span>
+					<span class="icon-right"></span>
+				</a>
+			</dd>
+		</dl>
+		<dl class="item-detail">
+			<dt>门牌号</dt>
+			<dd><input type="text" class="form-control" placeholder="请输入门牌号等详细信息"></dd>
+		</dl>
+	</div>
+	<!-- address -->
+	<div class="btn-wrapper">
+		<a href="#" class="btn">保存</a>
+	</div>
+</div>
+<!-- end box -->
+	
+</body>
+</html>

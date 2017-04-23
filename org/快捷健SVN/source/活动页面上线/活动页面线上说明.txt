@@ -1,0 +1,4 @@
+请以情况，自行安排活动页面地址，上线后，将PC和微信活动页面的访问地址以邮件的形式发给我：wangjipeng@kjjhome.com
+
+手机端内的css和img：svn\source\手机端奥瑞金
+电脑端内的css和img：svn\source\快捷键new

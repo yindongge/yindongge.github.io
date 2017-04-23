@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShop" >
+    <id column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="shop_code" property="shopCode" jdbcType="VARCHAR" />
+    <result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+    <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="business_area_id" property="businessAreaId" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="first_phone_area_code" property="firstPhoneAreaCode" jdbcType="VARCHAR" />
+    <result column="first_phone_no" property="firstPhoneNo" jdbcType="VARCHAR" />
+    <result column="first_phone_extension" property="firstPhoneExtension" jdbcType="VARCHAR" />
+    <result column="second_phone_area_code" property="secondPhoneAreaCode" jdbcType="VARCHAR" />
+    <result column="second_phone_no" property="secondPhoneNo" jdbcType="VARCHAR" />
+    <result column="second_phone_extension" property="secondPhoneExtension" jdbcType="VARCHAR" />
+    <result column="send_explain" property="sendExplain" jdbcType="VARCHAR" />
+    <result column="send_time_am_start" property="sendTimeAmStart" jdbcType="TIME" />
+    <result column="send_time_am_end" property="sendTimeAmEnd" jdbcType="TIME" />
+    <result column="send_time_noon_start" property="sendTimeNoonStart" jdbcType="TIME" />
+    <result column="send_time_noon_end" property="sendTimeNoonEnd" jdbcType="TIME" />
+    <result column="send_time_pm_start" property="sendTimePmStart" jdbcType="TIME" />
+    <result column="send_time_pm_end" property="sendTimePmEnd" jdbcType="TIME" />
+    <result column="send_time_night_start" property="sendTimeNightStart" jdbcType="TIME" />
+    <result column="send_time_night_end" property="sendTimeNightEnd" jdbcType="TIME" />
+    <result column="open_day" property="openDay" jdbcType="TINYINT" />
+    <result column="open_time_start" property="openTimeStart" jdbcType="TIME" />
+    <result column="open_time_end" property="openTimeEnd" jdbcType="TIME" />
+    <result column="is_full_time" property="isFullTime" jdbcType="TINYINT" />
+    <result column="restock_cycle" property="restockCycle" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="DOUBLE" />
+    <result column="latitude" property="latitude" jdbcType="DOUBLE" />
+    <result column="shop_order" property="shopOrder" jdbcType="SMALLINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    shop_id, shop_code, shop_name, area_code, business_area_id, address, first_phone_area_code, 
+    first_phone_no, first_phone_extension, second_phone_area_code, second_phone_no, second_phone_extension, 
+    send_explain, send_time_am_start, send_time_am_end, send_time_noon_start, send_time_noon_end, send_time_pm_start, send_time_pm_end, 
+    send_time_night_start, send_time_night_end, open_day, open_time_start, open_time_end, 
+    is_full_time, restock_cycle, longitude, latitude, shop_order, status, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop
+    where shop_id = #{shopId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop
+    where shop_id = #{shopId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShop" useGeneratedKeys="true" keyColumn="shop_id" keyProperty="shopId" >
+    insert into org_shop (shop_code, shop_name, area_code, 
+      business_area_id, address, first_phone_area_code, 
+      first_phone_no, first_phone_extension, second_phone_area_code, 
+      second_phone_no, second_phone_extension, send_explain, 
+      send_time_am_start, send_time_am_end, send_time_noon_start, send_time_noon_end, 
+      send_time_pm_start, send_time_pm_end, send_time_night_start, send_time_night_end, 
+      open_day, open_time_start, open_time_end, 
+      is_full_time, restock_cycle, longitude, 
+      latitude, shop_order, status, 
+      create_time, update_time)
+    values (#{shopCode,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, 
+      #{businessAreaId,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{firstPhoneAreaCode,jdbcType=VARCHAR}, 
+      #{firstPhoneNo,jdbcType=VARCHAR}, #{firstPhoneExtension,jdbcType=VARCHAR}, #{secondPhoneAreaCode,jdbcType=VARCHAR}, 
+      #{secondPhoneNo,jdbcType=VARCHAR}, #{secondPhoneExtension,jdbcType=VARCHAR}, #{sendExplain,jdbcType=VARCHAR}, 
+      #{sendTimeAmStart,jdbcType=TIME}, #{sendTimeAmEnd,jdbcType=TIME}, #{sendTimeNoonStart,jdbcType=TIME}, 
+      #{sendTimeNoonEnd,jdbcType=TIME},#{sendTimePmStart,jdbcType=TIME}, 
+      #{sendTimePmEnd,jdbcType=TIME}, #{sendTimeNightStart,jdbcType=TIME}, #{sendTimeNightEnd,jdbcType=TIME}, 
+      #{openDay,jdbcType=TINYINT}, #{openTimeStart,jdbcType=TIME}, #{openTimeEnd,jdbcType=TIME}, 
+      #{isFullTime,jdbcType=TINYINT}, #{restockCycle,jdbcType=VARCHAR}, #{longitude,jdbcType=DOUBLE}, 
+      #{latitude,jdbcType=DOUBLE}, #{shopOrder,jdbcType=SMALLINT}, #{status,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShop" >
+    update org_shop
+    <set >
+      <if test="shopCode != null" >
+        shop_code = #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopName != null" >
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessAreaId != null" >
+        business_area_id = #{businessAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="firstPhoneAreaCode != null" >
+        first_phone_area_code = #{firstPhoneAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="firstPhoneNo != null" >
+        first_phone_no = #{firstPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="firstPhoneExtension != null" >
+        first_phone_extension = #{firstPhoneExtension,jdbcType=VARCHAR},
+      </if>
+      <if test="secondPhoneAreaCode != null" >
+        second_phone_area_code = #{secondPhoneAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="secondPhoneNo != null" >
+        second_phone_no = #{secondPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="secondPhoneExtension != null" >
+        second_phone_extension = #{secondPhoneExtension,jdbcType=VARCHAR},
+      </if>
+      <if test="sendExplain != null" >
+        send_explain = #{sendExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTimeAmStart != null" >
+        send_time_am_start = #{sendTimeAmStart,jdbcType=TIME},
+      </if>
+      <if test="sendTimeAmEnd != null" >
+        send_time_am_end = #{sendTimeAmEnd,jdbcType=TIME},
+      </if>
+      <if test="sendTimeNoonStart != null" >
+        send_time_noon_start = #{sendTimeNoonStart,jdbcType=TIME},
+      </if>
+      <if test="sendTimeNoonEnd != null" >
+        send_time_noon_end = #{sendTimeNoonEnd,jdbcType=TIME},
+      </if>
+      <if test="sendTimePmStart != null" >
+        send_time_pm_start = #{sendTimePmStart,jdbcType=TIME},
+      </if>
+      <if test="sendTimePmEnd != null" >
+        send_time_pm_end = #{sendTimePmEnd,jdbcType=TIME},
+      </if>
+      <if test="sendTimeNightStart != null" >
+        send_time_night_start = #{sendTimeNightStart,jdbcType=TIME},
+      </if>
+      <if test="sendTimeNightEnd != null" >
+        send_time_night_end = #{sendTimeNightEnd,jdbcType=TIME},
+      </if>
+      <if test="openDay != null" >
+        open_day = #{openDay,jdbcType=TINYINT},
+      </if>
+      <if test="openTimeStart != null" >
+        open_time_start = #{openTimeStart,jdbcType=TIME},
+      </if>
+      <if test="openTimeEnd != null" >
+        open_time_end = #{openTimeEnd,jdbcType=TIME},
+      </if>
+      <if test="isFullTime != null" >
+        is_full_time = #{isFullTime,jdbcType=TINYINT},
+      </if>
+      <if test="restockCycle != null" >
+        restock_cycle = #{restockCycle,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="shopOrder != null" >
+        shop_order = #{shopOrder,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where shop_id = #{shopId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShop" >
+    update org_shop
+    set shop_code = #{shopCode,jdbcType=VARCHAR},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      business_area_id = #{businessAreaId,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      first_phone_area_code = #{firstPhoneAreaCode,jdbcType=VARCHAR},
+      first_phone_no = #{firstPhoneNo,jdbcType=VARCHAR},
+      first_phone_extension = #{firstPhoneExtension,jdbcType=VARCHAR},
+      second_phone_area_code = #{secondPhoneAreaCode,jdbcType=VARCHAR},
+      second_phone_no = #{secondPhoneNo,jdbcType=VARCHAR},
+      second_phone_extension = #{secondPhoneExtension,jdbcType=VARCHAR},
+      send_explain = #{sendExplain,jdbcType=VARCHAR},
+      send_time_am_start = #{sendTimeAmStart,jdbcType=TIME},
+      send_time_am_end = #{sendTimeAmEnd,jdbcType=TIME},
+      send_time_noon_start = #{sendTimeNoonStart,jdbcType=TIME},
+      send_time_noon_end = #{sendTimeNoonEnd,jdbcType=TIME},
+      send_time_pm_start = #{sendTimePmStart,jdbcType=TIME},
+      send_time_pm_end = #{sendTimePmEnd,jdbcType=TIME},
+      send_time_night_start = #{sendTimeNightStart,jdbcType=TIME},
+      send_time_night_end = #{sendTimeNightEnd,jdbcType=TIME},
+      open_day = #{openDay,jdbcType=TINYINT},
+      open_time_start = #{openTimeStart,jdbcType=TIME},
+      open_time_end = #{openTimeEnd,jdbcType=TIME},
+      is_full_time = #{isFullTime,jdbcType=TINYINT},
+      restock_cycle = #{restockCycle,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=DOUBLE},
+      latitude = #{latitude,jdbcType=DOUBLE},
+      shop_order = #{shopOrder,jdbcType=SMALLINT},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where shop_id = #{shopId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopVo" extends="BaseResultMap" >
+  	<result column="distance" property="distance" jdbcType="DOUBLE" />
+  	<association property="orgArea" javaType="com.kjj.commserver.entity.shop.OrgArea">
+	  	<result column="area_name" property="name" jdbcType="VARCHAR" />
+	    <result column="area_show" property="show" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.shop_id, 
+    t.shop_code, 
+    t.shop_name, 
+    t.area_code, 
+    t.business_area_id, 
+    t.address, 
+    t.first_phone_area_code, 
+    t.first_phone_no, 
+    t.first_phone_extension, 
+    t.second_phone_area_code, 
+    t.second_phone_no, 
+    t.second_phone_extension, 
+    t.send_explain, 
+    t.send_time_am_start, 
+    t.send_time_am_end, 
+    t.send_time_noon_start, 
+    t.send_time_noon_end, 
+    t.send_time_pm_start, 
+    t.send_time_pm_end, 
+    t.send_time_night_start, 
+    t.send_time_night_end, 
+    t.open_day, 
+    t.open_time_start, 
+    t.open_time_end, 
+    t.is_full_time, 
+    t.restock_cycle, 
+    t.longitude, 
+    t.latitude, 
+    t.shop_order, 
+    t.status, 
+    t.create_time, 
+    t.update_time,
+    oa.name as area_name,
+    oa.show as area_show
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop t
+    left join org_area oa on t.area_code = oa.code
+    where t.shop_id = #{shopId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="shopCode != null" >
+          and t.shop_code = #{shopCode,jdbcType=VARCHAR}
+      </if>
+      <if test="shopName != null" >
+          and t.shop_name = #{shopName,jdbcType=VARCHAR}
+      </if>
+      <if test="areaCode != null" >
+          and t.area_code = #{areaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="businessAreaId != null" >
+          and t.business_area_id = #{businessAreaId,jdbcType=INTEGER}
+      </if>
+      <if test="address != null" >
+          and t.address = #{address,jdbcType=VARCHAR}
+      </if>
+      <if test="firstPhoneAreaCode != null" >
+          and t.first_phone_area_code = #{firstPhoneAreaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="firstPhoneNo != null" >
+          and t.first_phone_no = #{firstPhoneNo,jdbcType=VARCHAR}
+      </if>
+      <if test="firstPhoneExtension != null" >
+          and t.first_phone_extension = #{firstPhoneExtension,jdbcType=VARCHAR}
+      </if>
+      <if test="secondPhoneAreaCode != null" >
+          and t.second_phone_area_code = #{secondPhoneAreaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="secondPhoneNo != null" >
+          and t.second_phone_no = #{secondPhoneNo,jdbcType=VARCHAR}
+      </if>
+      <if test="secondPhoneExtension != null" >
+          and t.second_phone_extension = #{secondPhoneExtension,jdbcType=VARCHAR}
+      </if>
+      <if test="sendExplain != null" >
+          and t.send_explain = #{sendExplain,jdbcType=VARCHAR}
+      </if>
+      <if test="sendTimeAmStart != null" >
+          and t.send_time_am_start = #{sendTimeAmStart,jdbcType=TIME}
+      </if>
+      <if test="sendTimeAmEnd != null" >
+          and t.send_time_am_end = #{sendTimeAmEnd,jdbcType=TIME}
+      </if>
+      <if test="sendTimeNoonStart != null" >
+          and t.send_time_noon_start = #{sendTimeNoonStart,jdbcType=TIME}
+      </if>
+      <if test="sendTimeNoonEnd != null" >
+          and t.send_time_noon_end = #{sendTimeNoonEnd,jdbcType=TIME}
+      </if>
+      <if test="sendTimePmStart != null" >
+          and t.send_time_pm_start = #{sendTimePmStart,jdbcType=TIME}
+      </if>
+      <if test="sendTimePmEnd != null" >
+          and t.send_time_pm_end = #{sendTimePmEnd,jdbcType=TIME}
+      </if>
+      <if test="sendTimeNightStart != null" >
+          and t.send_time_night_start = #{sendTimeNightStart,jdbcType=TIME}
+      </if>
+      <if test="sendTimeNightEnd != null" >
+          and t.send_time_night_end = #{sendTimeNightEnd,jdbcType=TIME}
+      </if>
+      <if test="openDay != null" >
+          and t.open_day = #{openDay,jdbcType=TINYINT}
+      </if>
+      <if test="openTimeStart != null" >
+          and t.open_time_start = #{openTimeStart,jdbcType=TIME}
+      </if>
+      <if test="openTimeEnd != null" >
+          and t.open_time_end = #{openTimeEnd,jdbcType=TIME}
+      </if>
+      <if test="isFullTime != null" >
+          and t.is_full_time = #{isFullTime,jdbcType=TINYINT}
+      </if>
+      <if test="restockCycle != null" >
+          and t.restock_cycle = #{restockCycle,jdbcType=VARCHAR}
+      </if>
+      <if test="longitude != null" >
+          and t.longitude = #{longitude,jdbcType=DOUBLE}
+      </if>
+      <if test="latitude != null" >
+          and t.latitude = #{latitude,jdbcType=DOUBLE}
+      </if>
+      <if test="shopOrder != null" >
+          and t.shop_order = #{shopOrder,jdbcType=SMALLINT}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="codeOrNameLike != null and codeOrNameLike != ''">
+		  and (t.shop_code like concat('%',#{codeOrNameLike,jdbcType=VARCHAR},'%') or t.shop_name like concat('%',#{codeOrNameLike,jdbcType=VARCHAR},'%'))
+	  </if>
+	  <if test="areaCodeLike != null" >
+          and t.area_code like concat(#{areaCodeLike,jdbcType=VARCHAR},'%')
+      </if>
+	  <if test="shopIds!=null">
+		<if test="shopIds.size()>0">
+			 and t.shop_id in
+			<foreach collection="shopIds" index="index" item="item" open="(" separator="," close=")">
+				#{item,jdbcType=INTEGER}
+			</foreach>
+		</if>
+		<if test="shopIds.size()==0">
+			and 1=0
+		</if>
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.shop_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.shop_id) from org_shop t
+    left join org_area oa on t.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    <if test="orgLocation != null" >
+    	,f_distance(#{orgLocation.longitude,jdbcType=DOUBLE},#{orgLocation.latitude,jdbcType=DOUBLE},t.longitude,t.latitude) as distance
+    </if>
+    from org_shop t
+    left join org_area oa on t.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop where shop_id in (
+    select t.shop_id from (select * from org_shop) t
+    left join org_area oa on t.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <resultMap id="ShowVoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopViewVo" extends="VoResultMap" >
+  	<result column="business_area_name" property="businessAreaName" jdbcType="VARCHAR" />
+    <result column="send_range_concat" property="sendRangeConcat" jdbcType="VARCHAR" />
+    <result column="shop_service_concat" property="shopBindServiceConcat" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="View_Vo_Column_List" >
+  	<include refid="Vo_Column_List" />,
+  	oba.name as business_area_name,
+	(select group_concat(ossr.send_range_name) from org_shop_send_range ossr where ossr.shop_id = t.shop_id ) as send_range_concat,
+	(select group_concat(oss.service_name) from org_shop_bind_service osbs left join org_shop_service oss 
+		on osbs.service_id=oss.service_id where osbs.shop_id = t.shop_id ) as shop_service_concat
+  </sql>
+  <select id="selectCountView" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.shop_id) from org_shop t
+    left join org_area oa on t.area_code = oa.code
+    left join org_business_area oba on t.business_area_id = oba.id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectView" parameterType="java.util.Map" resultMap="ShowVoResultMap" >
+    select 
+    <include refid="View_Vo_Column_List" />
+    from org_shop t
+    left join org_area oa on t.area_code = oa.code
+    left join org_business_area oba on t.business_area_id = oba.id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectViewVoById" parameterType="java.util.Map" resultMap="ShowVoResultMap" >
+    select 
+    <include refid="View_Vo_Column_List" />
+    from org_shop t
+    left join org_area oa on t.area_code = oa.code
+    left join org_business_area oba on t.business_area_id = oba.id
+    where t.shop_id = #{shopId,jdbcType=INTEGER}
+  </select>
+</mapper>

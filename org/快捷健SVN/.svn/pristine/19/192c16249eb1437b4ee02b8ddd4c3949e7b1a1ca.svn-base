@@ -1,0 +1,132 @@
+// me
+
+$(document).ready(function(){
+	 //sameShow($('.z-title'),$('.zhedie'),'transform');
+	 toggleMe();
+	 showSide();
+	// sameShow($('.toggleup'),$('.toggledown'),'transform');
+	// sameShow($('.toggleup'),$('.toggledown'),'transform');
+	 selectbtn($('.nav a' ).not(".thirdnav a"),"on");
+	 var h=window.innerHeight-176;
+	$('.switch-address').css({height:h})
+	switchBuy();
+	leftcontrol();
+	// transformSwitch()
+
+});
+	function leftcontrol(){
+	 		$('.touchback').click(function(){
+	 			$('.backhome').addClass('sideleft');
+	 		});
+	 		$('.sidefour').click(function(){
+	 			$('.backhome').removeClass('sideleft');
+	 		});
+	 	};
+	function move(){
+	h = $(window).height()/50;
+	t = $(document).scrollTop();
+	if(t > h)
+		{
+			$('.gotop').show();
+			// $('.readyfixed-header').addClass("fixedheader");
+			// $('.readyfixed').addClass("fixedme");跳动BUG，在修改（修改类）
+
+		}
+	else
+		{
+			$('.gotop').hide();
+			// $('.readyfixed-header').removeClass("fixedheader");
+			// $('.readyfixed').removeClass("fixedme");
+		}
+	};
+
+	$(window).scroll(function(e)
+	{
+		move();
+
+	$('.gotop').click(function(e){
+		$(document).scrollTop(0);
+	});
+	});
+
+	function autoAlert(str)
+	{
+		$('body').append("<div class=' shakeme'>"+str+"</div>");
+			$('.shakeme').animate({
+					top:"40%",
+					opacity:1
+			},800);
+			setTimeout(function(){
+				$('.shakeme').remove();
+			},1500);
+	};
+
+	function toggleMe(){
+		$('.z-title').click(function(){
+			$(this).siblings(".zhedie").toggle();
+			 $(this).toggleClass('transform');
+		});
+	};
+
+	function sameShow(objClick,shawObj,addTransform){
+		$(objClick).click(function(){
+			$(shawObj).toggle();
+			$(this).toggleClass(addTransform);
+		});
+	};
+	function showSide(){
+		$('.shaixuan').click(function(){
+			$('.sidebar').addClass('move1');
+			$('.mask').show();
+			$("body").addClass('overHide');
+		});
+		$('.mask ,.a3').click(function(){
+			$("body").removeClass('overHide');
+			$('.sidebar').removeClass('move1');
+			//$('.mask').hide();
+
+		});
+	};
+	function selectbtn(objSelect,activeSelect){
+		$(objSelect).click(function(){
+			$(this).addClass(activeSelect).siblings().removeClass(activeSelect);
+		});
+	};
+
+	function addConfrim(info,data){
+      var appendAlert=	"<div class=\"checkalert\">"
+		+"<p><span class=\"checktanhao\"></span></p>"
+		+"<p>"+info+"</p>"
+		+"<p class=\"btna4\"><a href=\"javascript:removeConfrim("+data+");\">确定</a><a href=\"javascript:removeCancel("+data+");\">取消</a></p></div>";
+		$("body").append(appendAlert);
+		$("body").append("<div class=\"cover\"></div>");
+		$(".cover").show();
+	};
+
+	function removeConfrim(data){
+		$(".checkalert").remove();
+		$(".cover").remove();
+		confrimReturn(true,data);
+	}
+
+	function removeCancel(data){
+		$(".checkalert").remove();
+		$(".cover").remove();
+		confrimReturn(false,data);
+	}
+function switchBuy(){
+	$('.a-classfiy-buy a').click(function(){
+		$(this).next('.a-classfiy-list').toggle();
+		$(this).find('.downicon4').toggleClass('on');
+		$(this).parent('.a-classfiy-buy').siblings().find('.a-classfiy-list').hide();
+		$(this).parent('.a-classfiy-buy').siblings().find('.downicon4').removeClass("on");
+	})
+}
+// function transformSwitch(){
+// 	$(".buylist_img a").click(function(){
+// 		$('.tranform-main').fadeIn();
+// 	})
+// 	$('.chazi5').click(function(){
+// 		$('.tranform-main').fadeOut();
+// 	})
+// }

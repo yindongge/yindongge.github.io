@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/all.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/swiper.css">
+<title>快捷健</title>
+</head>
+<body>
+	<div class="box">
+		<div class="box-content">
+			<header class="header">
+				<div class="logo fl">
+					<a href="#"><img src="img/logo.png"></a>
+				</div>
+				<div class="logo-text fl"><span class="lt lt3">光华路SOHO</span></div>
+				<div class="search fr">
+					<input type="text" class="text1" placeholder="开始搜索">
+					<span class="search-icon"></span>
+					<a href="#" class="search-button">搜索</a>
+				</div>
+			</header>
+		</div>
+		<!-- 结束 头 -->
+
+			<!-- 结束图片滚动 -->
+			<div class="box-content">
+				<div class="navbar">
+					<a  class="nav-a">
+						<div class="imgbox">
+							<img src="img/lead1.png" alt="" />
+						</div>
+						<div class="textbox">
+								3333333
+						</div>
+					</a>
+					<a  class="nav-a">
+						<div class="imgbox">
+							<img src="img/lead1.png" alt="" />
+						</div>
+						<div class="textbox">
+								3333333
+						</div>
+					</a>
+					<a  class="nav-a">
+						<div class="imgbox">
+							<img src="img/lead1.png" alt="" />
+						</div>
+						<div class="textbox">
+								3333333
+						</div>
+					</a>
+					<a  class="nav-a">
+						<div class="imgbox">
+							<img src="img/lead1.png" alt="" />
+						</div>
+						<div class="textbox">
+								3333333
+						</div>
+					</a>
+				</div>
+				<div class="navbar-div">
+					<div class="div-item" style="display:block"><img src="" alt="" />1</div>
+					<div class="div-item"><img src="" alt="" />2</div>
+					<div class="div-item"><img src="" alt="" />3</div>
+					<div class="div-item"><img src="" alt="" />4</div>
+					<div class="div-item"><img src="" alt="" />5</div>
+				</div>
+			</div>
+			<!-- 结束列表 -->
+
+	</div>
+
+	<!--  -->
+<script type="text/javascript">
+	$(function(){
+  		$(".navbar a").click(function(){
+  			var index=$('.nav-a').index(this);
+  			$('.div-item').eq(index).show().siblings('.div-item').hide();
+  		});
+	})
+</script>
+
+
+</body>
+</html>

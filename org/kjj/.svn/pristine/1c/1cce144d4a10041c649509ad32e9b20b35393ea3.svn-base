@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>女性专题</title>
+<link href="../common/common.css" type="text/css" rel="stylesheet"/>
+</head>
+<style>
+.zhuanti_wrapper{
+	  min-width: 320px;
+    max-width: 480px;
+    margin: 0px auto;
+    background: #fff;
+    overflow: hidden;
+    font-family: "Microsoft YaHei", "Glyphicons";
+
+}
+.zhuanti_top_img{
+width: 100%;
+overflow: hidden;
+
+}
+.zhuanti_top_img img{
+	width: 100%;display: block;
+}
+.zhuanti_content a{
+	width: 50%;
+	display: block;
+	float: left;
+	overflow: hidden;
+}
+.zhuanti_content a img{
+	width: 100%;
+}
+</style>
+<body >
+<div class="zhuanti_wrapper">
+	<div class="zhuanti_top_img">
+		<img src="img/nvxing1.jpg" alt="">
+	</div>
+	<div class="zhuanti_content">
+		<a href=""><img src="img/nvxing2.jpg" alt=""></a>
+		<a href=""><img src="img/nvxing3.jpg" alt=""></a>
+		<a href=""><img src="img/nvxing4.jpg" alt=""></a>
+		<a href=""><img src="img/nvxing5.jpg" alt=""></a>
+		<a href=""><img src="img/nvxing6.jpg" alt=""></a>
+		<a href=""><img src="img/nvxing7.jpg" alt=""></a>
+	</div>
+</div>
+
+</body>
+</html>

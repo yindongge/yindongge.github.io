@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgBrandMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgBrand" >
+    <id column="product_brand_id" property="productBrandId" jdbcType="INTEGER" />
+    <result column="product_store_code" property="productStoreCode" jdbcType="VARCHAR" />
+    <result column="product_brand_name" property="productBrandName" jdbcType="VARCHAR" />
+    <result column="product_brand_logoimage" property="productBrandLogoimage" jdbcType="VARCHAR" />
+    <result column="is_active" property="isActive" jdbcType="CHAR" />
+    <result column="brand_order" property="brandOrder" jdbcType="INTEGER" />
+    <result column="brand_product_count" property="brandProductCount" jdbcType="INTEGER" />
+    <result column="brand_recommand" property="brandRecommand" jdbcType="VARCHAR" />
+    <result column="brand_type_id" property="brandTypeId" jdbcType="INTEGER" />
+    <result column="brand_1" property="brand1" jdbcType="VARCHAR" />
+    <result column="brand_2" property="brand2" jdbcType="VARCHAR" />
+    <result column="brand_3" property="brand3" jdbcType="VARCHAR" />
+    <result column="product_brand_intro" property="productBrandIntro" jdbcType="LONGVARCHAR" />
+    <result column="brand_type_str" property="brandTypeStr" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.kjj.commserver.entity.goods.OrgBrand" extends="BaseResultMap" >
+    <result column="product_brand_intro" property="productBrandIntro" jdbcType="LONGVARCHAR" />
+    <result column="brand_type_str" property="brandTypeStr" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    product_brand_id, product_store_code, product_brand_name, product_brand_logoimage, 
+    is_active, brand_order, brand_product_count, brand_recommand, brand_type_id, brand_1, 
+    brand_2, brand_3, product_brand_intro, brand_type_str
+  </sql>
+  <sql id="Blob_Column_List" >
+    product_brand_intro, brand_type_str
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from org_brand
+    where product_brand_id = #{productBrandId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_brand
+    where product_brand_id = #{productBrandId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgBrand" useGeneratedKeys="true" keyColumn="product_brand_id" keyProperty="productBrandId" >
+    insert into org_brand (product_store_code, product_brand_name, 
+      product_brand_logoimage, is_active, brand_order, 
+      brand_product_count, brand_recommand, brand_type_id, 
+      brand_1, brand_2, brand_3, 
+      product_brand_intro, brand_type_str
+      )
+    values (#{productStoreCode,jdbcType=VARCHAR}, #{productBrandName,jdbcType=VARCHAR}, 
+      #{productBrandLogoimage,jdbcType=VARCHAR}, #{isActive,jdbcType=CHAR}, #{brandOrder,jdbcType=INTEGER}, 
+      #{brandProductCount,jdbcType=INTEGER}, #{brandRecommand,jdbcType=VARCHAR}, #{brandTypeId,jdbcType=INTEGER}, 
+      #{brand1,jdbcType=VARCHAR}, #{brand2,jdbcType=VARCHAR}, #{brand3,jdbcType=VARCHAR}, 
+      #{productBrandIntro,jdbcType=LONGVARCHAR}, #{brandTypeStr,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgBrand" >
+    update org_brand
+    <set >
+      <if test="productStoreCode != null" >
+        product_store_code = #{productStoreCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productBrandName != null" >
+        product_brand_name = #{productBrandName,jdbcType=VARCHAR},
+      </if>
+      <if test="productBrandLogoimage != null" >
+        product_brand_logoimage = #{productBrandLogoimage,jdbcType=VARCHAR},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=CHAR},
+      </if>
+      <if test="brandOrder != null" >
+        brand_order = #{brandOrder,jdbcType=INTEGER},
+      </if>
+      <if test="brandProductCount != null" >
+        brand_product_count = #{brandProductCount,jdbcType=INTEGER},
+      </if>
+      <if test="brandRecommand != null" >
+        brand_recommand = #{brandRecommand,jdbcType=VARCHAR},
+      </if>
+      <if test="brandTypeId != null" >
+        brand_type_id = #{brandTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="brand1 != null" >
+        brand_1 = #{brand1,jdbcType=VARCHAR},
+      </if>
+      <if test="brand2 != null" >
+        brand_2 = #{brand2,jdbcType=VARCHAR},
+      </if>
+      <if test="brand3 != null" >
+        brand_3 = #{brand3,jdbcType=VARCHAR},
+      </if>
+      <if test="productBrandIntro != null" >
+        product_brand_intro = #{productBrandIntro,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="brandTypeStr != null" >
+        brand_type_str = #{brandTypeStr,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where product_brand_id = #{productBrandId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.kjj.commserver.entity.goods.OrgBrand" >
+    update org_brand
+    set product_store_code = #{productStoreCode,jdbcType=VARCHAR},
+      product_brand_name = #{productBrandName,jdbcType=VARCHAR},
+      product_brand_logoimage = #{productBrandLogoimage,jdbcType=VARCHAR},
+      is_active = #{isActive,jdbcType=CHAR},
+      brand_order = #{brandOrder,jdbcType=INTEGER},
+      brand_product_count = #{brandProductCount,jdbcType=INTEGER},
+      brand_recommand = #{brandRecommand,jdbcType=VARCHAR},
+      brand_type_id = #{brandTypeId,jdbcType=INTEGER},
+      brand_1 = #{brand1,jdbcType=VARCHAR},
+      brand_2 = #{brand2,jdbcType=VARCHAR},
+      brand_3 = #{brand3,jdbcType=VARCHAR},
+      product_brand_intro = #{productBrandIntro,jdbcType=LONGVARCHAR},
+      brand_type_str = #{brandTypeStr,jdbcType=LONGVARCHAR}
+    where product_brand_id = #{productBrandId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgBrand" >
+    update org_brand
+    set product_store_code = #{productStoreCode,jdbcType=VARCHAR},
+      product_brand_name = #{productBrandName,jdbcType=VARCHAR},
+      product_brand_logoimage = #{productBrandLogoimage,jdbcType=VARCHAR},
+      is_active = #{isActive,jdbcType=CHAR},
+      brand_order = #{brandOrder,jdbcType=INTEGER},
+      brand_product_count = #{brandProductCount,jdbcType=INTEGER},
+      brand_recommand = #{brandRecommand,jdbcType=VARCHAR},
+      brand_type_id = #{brandTypeId,jdbcType=INTEGER},
+      brand_1 = #{brand1,jdbcType=VARCHAR},
+      brand_2 = #{brand2,jdbcType=VARCHAR},
+      brand_3 = #{brand3,jdbcType=VARCHAR}
+    where product_brand_id = #{productBrandId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgBrandVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.product_brand_id, 
+    t.product_store_code, 
+    t.product_brand_name, 
+    t.product_brand_logoimage, 
+    t.is_active, 
+    t.brand_order, 
+    t.brand_product_count, 
+    t.brand_recommand, 
+    t.brand_type_id, 
+    t.brand_1, 
+    t.brand_2, 
+    t.brand_3,
+    product_brand_intro, 
+    brand_type_str
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.lang.Integer" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_brand t
+    where t.product_brand_id = #{productBrandId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="productBrandId != null" >
+          and t.product_brand_id = #{productBrandId,jdbcType=INTEGER}
+      </if>
+      <if test="productStoreCode != null" >
+          and t.product_store_code = #{productStoreCode,jdbcType=VARCHAR}
+      </if>
+      <if test="productBrandName != null" >
+          and t.product_brand_name like concat('%',#{productBrandName,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="productBrandLogoimage != null" >
+          and t.product_brand_logoimage = #{productBrandLogoimage,jdbcType=VARCHAR}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=CHAR}
+      </if>
+      <if test="brandOrder != null" >
+          and t.brand_order = #{brandOrder,jdbcType=INTEGER}
+      </if>
+      <if test="brandProductCount != null" >
+          and t.brand_product_count = #{brandProductCount,jdbcType=INTEGER}
+      </if>
+      <if test="brandRecommand != null" >
+          and t.brand_recommand = #{brandRecommand,jdbcType=VARCHAR}
+      </if>
+      <if test="brandTypeId != null" >
+          and t.brand_type_id = #{brandTypeId,jdbcType=INTEGER}
+      </if>
+      <if test="brand1 != null" >
+          and t.brand_1 = #{brand1,jdbcType=VARCHAR}
+      </if>
+      <if test="brand2 != null" >
+          and t.brand_2 = #{brand2,jdbcType=VARCHAR}
+      </if>
+      <if test="brand3 != null" >
+          and t.brand_3 = #{brand3,jdbcType=VARCHAR}
+      </if>
+      <if test="productBrandIntro != null" >
+          and t.product_brand_intro = #{productBrandIntro,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="brandTypeStr != null" >
+          and t.brand_type_str = #{brandTypeStr,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="classId != null and classId !='' " >
+		  and oblt.type_id = #{classId,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.product_brand_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.product_brand_id) from org_brand t
+    <if test="classId != null and classId !='' " >
+    inner join org_brand_link_type oblt on t.product_brand_id = oblt.brand_id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_brand t
+    <if test="classId != null and classId !='' " >
+    inner join org_brand_link_type oblt on t.product_brand_id = oblt.brand_id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_brand where product_brand_id in (
+    select t.product_brand_id from (select * from org_brand) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+   <select id="selectVoByClassParentId" parameterType="java.lang.Integer" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+	from org_brand  t
+	left join org_brand_link_type oblt on t.product_brand_id=oblt.brand_id
+	left join org_class oc on oblt.type_id=oc.class_id
+	where oc.class_parent=#{classParentId,jdbcType=INTEGER}
+	group by t.product_brand_id
+  </select>
+  
+  <select id="selectSkuNumByBrandId" parameterType="java.util.Map" resultType="java.util.Map">
+  	select brand_id brandId, count(1) skuNum from org_product_item
+	where is_delete = 0
+	<if test="brandIds != null">
+		<if test="brandIds.size() > 0">
+			and brand_id in
+			<foreach collection="brandIds" index="index" open="(" item="item" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="brandIds.size() == 0">
+			and 1=0
+		</if>
+	</if>
+	group by brand_id
+  </select>
+  
+</mapper>

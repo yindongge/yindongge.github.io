@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>限时折扣</title>
+
+
+<script type="text/javascript">
+		$('.input10').click (function(){
+		$('.show-mangent').show();
+		alert('ad')
+	})
+</script>
+</head>
+<body>	
+<div class="page-wrapper goods-control">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#" >运营</a></li>
+		<li ><a  href="#">促销管理</a></li>
+		<li class="active">限时折扣</li>
+	</ul>
+	<form  class="form-inline" >
+		<div class="well" style="padding:5px;">
+				<div class="form-group">
+					<label>活动名称：</label>
+					<input type="text" class="form-control">			
+				</div>
+				<div class="form-group">
+					<label>所有：</label>
+					<select class="form-control">
+						<option>未发布</option>
+						<option>进行中</option>
+						<option>已结束</option>
+						<option>取消</option>
+					</select>		
+				</div>		
+				<button type="button" class="btn btn-danger">搜索</button>
+		</div>
+	</form>
+	</br>
+	<button type="button" class="btn btn-danger" style="font-weight:600">活动列表</button>
+	<button type="button" class="btn btn-default">添加限时折扣</button>
+	<table class="table table-hover table-bordered ">
+		<thead>
+			<tr>
+				<th>活动名称</th>
+				<th>开始时间</th>
+				<th>结束时间</th>
+				<th>默认折扣</th>
+				<th>投放区域</th>
+				<th>参加店铺</th>
+				<th>状态</th>
+				<th width="300px;">操作</th>
+			</tr>
+			
+		</thead>
+		<tbody>
+			<tr>
+				<td>十一大促，部分商品5折起</td>
+				<td><span class="blue">15-09-07 12:00:18</span></td>
+				<td>15-09-07 18:59:59</td>
+				<td>25折</td>
+				<td>京，上海，天津</td>
+				<td><span class="blue">详细 </span>（全部店铺）</td>
+				<td>进行中</td>
+				<td>	
+					<button type="button" class="btn btn-danger btn-xs btn-click">详情</button>
+					<button type="button" class="btn btn-danger btn-xs">取消</button>
+					<button type="button" class="btn btn-danger btn-xs">发布</button>
+					<button type="button" class="btn btn-danger btn-xs">活动商品</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<nav class="navbar navbar-default select-control" >
+			<div class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="到第几页">
+				</div>
+				<button type="submit" class="btn btn-default btn-info">确定</button>
+			</div>	
+			<ul class="pagination pull-right">
+				<li>
+				  <a href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				  </a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href='#'>.....</a></li>
+				<li><a href="#">15</a></li>
+				<li>
+				  <a href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				  </a>
+				</li>
+			 </ul>
+			 <p class="navbar-text pull-right">共有200条记录 每页50条</p>		
+		</nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopPageImgMapper">
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopPageImg">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="shop_id" jdbcType="INTEGER" property="shopId" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="page_img" jdbcType="VARCHAR" property="pageImg" />
+    <result column="device" jdbcType="TINYINT" property="device" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, shop_id, type, page_img, device
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_page_img
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from org_shop_page_img
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.kjj.commserver.entity.shop.OrgShopPageImg" useGeneratedKeys="true">
+    insert into org_shop_page_img (shop_id, type, page_img, 
+      device)
+    values (#{shopId,jdbcType=INTEGER}, #{type,jdbcType=TINYINT}, #{pageImg,jdbcType=VARCHAR}, 
+      #{device,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopPageImg">
+    update org_shop_page_img
+    <set>
+      <if test="shopId != null">
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="pageImg != null">
+        page_img = #{pageImg,jdbcType=VARCHAR},
+      </if>
+      <if test="device != null">
+        device = #{device,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopPageImg">
+    update org_shop_page_img
+    set shop_id = #{shopId,jdbcType=INTEGER},
+      type = #{type,jdbcType=TINYINT},
+      page_img = #{pageImg,jdbcType=VARCHAR},
+      device = #{device,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopPageImgVo" />
+  <sql id="Vo_Column_List">
+    t.id, 
+    t.shop_id, 
+    t.type, 
+    t.page_img, 
+    t.device
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page_img t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null">
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="type != null">
+          and t.type = #{type,jdbcType=TINYINT}
+      </if>
+      <if test="pageImg != null">
+          and t.page_img = #{pageImg,jdbcType=VARCHAR}
+      </if>
+      <if test="device != null">
+          and t.device = #{device,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.id) from org_shop_page_img t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_page_img t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from org_shop_page_img where id in (
+    select t.id from (select * from org_shop_page_img) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

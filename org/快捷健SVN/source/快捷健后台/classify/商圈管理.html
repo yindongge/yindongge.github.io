@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+<script>
+	$(function(){
+		$('.btn2-click').click(function(){
+			//iframe层
+layer.open({
+    type: 2,
+    title: '111',
+    shadeClose: true,
+    shade: 0.8,
+	maxmin: true, //开启最大化最小化按钮
+    area: ['800px', '450px'],
+    content: 'modal6.html' //iframe的url
+}); 
+		})
+	})
+</script>
+</head>
+
+<body>	
+
+<div class="page-wrapper">
+<div class="container-fluid">
+	<ul class="breadcrumb">
+		<li>您的位置</li>
+		<li ><a href="#">店铺</a></li>
+		<li class="active">商圈管理</li>
+	</ul>
+
+	<form class="form-inline ">
+				<Button type="button" class="btn btn-danger btn2-click" style="margin-right:100px;">
+				添加商圈
+				</Button>
+			<div class="form-group">
+				<label>商圈名称：</label>
+				<input type="text" class="form-control" placeholder="请输入"></input>
+			</div>
+			<div class="form-group ">
+				<label>所在区域：</label>
+				<select class="form-control">
+					<option>所在省市</option>
+					<option>北京</option>
+					<option>天津</option>
+					<option>河北</option>
+					<option>1</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<select class="form-control">
+					<option>所在城市</option>
+					<option>北京</option>
+					<option>天津</option>
+					<option>1</option>
+					<option>1</option>
+				</select>
+			</div>	
+			<div class="form-group">
+				<select class="form-control">
+					<option>请选择所在区县</option>
+					<option>1</option>
+					<option>1</option>
+					<option>1</option>
+					<option>1</option>
+				</select>
+			</div>				
+			<button type="button" class="btn btn-info">搜索</button>
+		<div class="table-margin">
+			<table class="table table-hover table-striped table-bordered table-control">
+				<thead>
+					<tr class="info">
+						<td>商圈名称</td>
+						<td>所属区域</td>
+						<td class="length">范围说明</td>
+						<td>门店数量</td>
+						<td>排序</td>
+						<td>显示</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>CBD商圈</td>
+						<td>北京市朝阳区</td>
+						<td></td>
+						<td>5</td>
+						<td>255</td>
+						<td>是</td>
+						<td><button type="button" href="#" class="btn btn-danger btn-go btn-sm btn-click" >编辑</button>
+							<button type="button" href="#" class="btn btn-danger btn-go btn-sm">删除</button>
+						</td>
+					</tr>
+					<tr>
+						<td>CBD商圈</td>
+						<td>北京市朝阳区</td>
+						<td></td>
+						<td>5</td>
+						<td>255</td>
+						<td>是</td>
+						<td><button type="button" href="#" class="btn btn-danger btn-go btn-sm btn-click" >编辑</button>
+							<button type="button" href="#" class="btn btn-danger btn-go btn-sm">删除</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+
+	
+	</br>
+		<div class="text-center">
+			<button type="button" class="btn btn-primary " >保存</button>
+		</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mui.picker.css"/>
+<!--	<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>-->
+	<link rel="stylesheet" type="text/css" href="css/mui.dtpicker.css"/>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+	<title>手动填写关联产品信息</title>
+</head>
+<body class="grey_body">
+<div class="all">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #fff;"></a>
+		<h1 class="mui-title">发货</h1>
+		<a href="#" class="mui-btn mui-btn-link mui-pull-right set_color">退出</a>
+	</header>
+	<div class="mui-content">
+			<h5 class="set_h5">你好吗？</h5>
+			<div class="media_set_list">
+				<ul>
+					<li><span class="mui_title">产品名称：</span>斑马虎系列赤霞珠干红葡11萄酒2011</li>
+					<li><span class="mui_title">二维码编号：</span>15454545454545451215</li>
+					<li><span class="mui_title">二维码类型：</span>二维码</li>
+				</ul>
+			</div>
+			<div class="media_set_list">
+				<ul>
+					<li><span class="mui_title">关联方式：</span>
+						<div class="mui-input-row mui-radio mui-left">
+						<input type="radio" name="1" id="1" value="" />
+						<label for="">模板填写</label>
+						</div>
+						<div class="mui-input-row mui-radio mui-left">
+						<input type="radio" name="1" id="1" value="" />
+						<label for="">手动填写</label>
+						</div>	
+					</li>
+				</ul>
+				<div class="white_bg">
+					<div class="mui-content-padded white">
+					<h5 class="h5_red">必填</h5>
+					<form class="mui_set_form">
+						<div class="mui_set_form_list">
+							<label for="">原产国</label>
+							<input type="text" name="" id="" value="" placeholder="请输入原产国名称" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">产品类型</label>
+							<input type="text" name="" id="" value="" placeholder="请输入产品类型" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">生产厂商</label>
+							<input type="text" name="" id="" value="" placeholder="请输入生产厂商" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">地址</label>
+							<input type="text" name="" id="" value="" placeholder="请输入地址" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">净含量</label>
+							<input type="text" name="" id="" value="" placeholder="请输入净含量" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">酒精度</label>
+							<input type="text" name="" id="" value="" placeholder="请输入酒精度" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">保质期</label>
+							<input type="text" name="" id="" value="" placeholder="请输入保质期" />
+						</div>
+						<div class="mui_set_form_list">
+							<label for="">灌装日期</label>
+							<input type="button" id='demo2' value="2015-8-9" style="text-align: left;" data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="btn mui-btn mui-btn-block"></input>
+						</div>
+					</form>
+				</div>			
+			</div>
+			
+	</div>
+	<nav class="mui-bar mui-bar-tab set_tab">
+		<a class="mui-tab-item mui-active">
+			<span class="mui-tab-label">查看关联产品</span>
+		</a>
+		<a class="mui-tab-item">
+			<span class="mui-tab-label">保存</span>
+		</a>
+	</nav>
+</div>
+	<script type="text/javascript" src="js/mui.js" ></script>
+	<script type="text/javascript" src="js/mui.picker.js" ></script>
+	<!--<script type="text/javascript" src="js/mui.poppicker.js" ></script>-->
+	<script type="text/javascript" src="js/mui.dtpicker.js" ></script>
+    <!--<script type="text/javascript">
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+    </script>-->
+	<script>
+			(function($) {
+				$.init();
+				//var result = $('#result')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = '选择结果: ' + rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		</script>
+</body>
+</html>

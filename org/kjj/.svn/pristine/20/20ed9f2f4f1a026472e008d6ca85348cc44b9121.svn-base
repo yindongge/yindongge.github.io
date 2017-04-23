@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="../css/modal.css" rel="stylesheet" type="text/css" />
+<link href="../css/tab.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="../css/regin.css" rel="stylesheet" type="text/css" />
+<link href="../css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健</title>
+</head>
+<body>
+<div class="all">
+	<div class="top">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<ul class="nav navbar-nav fl">
+					<li class="showmenu">
+						<a href="#" class="yellow"><i class="glyphicon point"></i> 北京 </a>
+						<div class="hidemenu">
+							<p>请选择收货区域</p>
+							<p><a href="">北京</a><a href="">上海</a><a href="">天津</a><a href="">重庆</a></p>
+						</div>
+					</li>
+	            	<li><a href="#">您好，欢迎来到快捷健</a></li>
+	            	<li><a href="#">[登录]</a></li>
+	            	<li><a href="#">[免费成为会员]</a></li>
+				</ul>
+				<ul class="nav navbar-nav fr">
+					<li class="showmenu special2">
+						<a href="#" > 我的快捷健  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">我的订单</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><i class="glyphicon glyphicon-star point4"></i> 收藏夹</a></li>
+					<li><a href="#"><i class="glyphicon point2"></i> 消息</a></li>
+					<li><a href="#"><i class="glyphicon point3"></i> 手机快捷健</a></li>
+					<li class="showmenu special2">
+						<a href="#" > 客户服务  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">留言咨询</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- end top -->
+	<div class="header">
+		<div class="container">
+			<div class="logo fl">
+				<a href="index.html"><img src="../img/logo.jpg"></a>
+				<div class="select-city">
+					<strong class="strong">光华路SOHO</strong>
+					<span class="small">切换 <i class="glyphicon glyphicon-chevron-down"></i>
+					</span>
+				</div>
+			</div>
+			<div class="search fl">
+					<div class="input-group">
+					      <input type="text" class="form-control" placeholder="Search for...">
+					      <i  class="icon1 glyphicon glyphicon-search"></i>
+					      <span class="input-group-btn">
+					        	<button class="btn btn-me" type="button">搜索</button>
+					      </span>
+				    </div>
+				    <div class="hotword">
+				    	<a href="">热门搜索:</a>
+				    	<a href="">咖啡</a>
+				    	<a href="">新疆</a>
+				    	<a href="">红酒</a>
+				    	<a href="">新疆红枣</a>
+				    	<a href="">黄飞鸿</a>
+				    	<a href="">叫一叫</a>
+				    </div>
+			</div>
+			<div class="shopcar fr">
+				<div class="shop">
+					<i  class="glyphicon icon2 icon"></i>
+					<i  class="glyphicon glyphicon-menu-down icon3 icon"></i>
+					<i  class="glyphicon icon4 icon">2</i>
+					<a href="#">去购物车结算</a>
+				</div>
+				<div class="space"></div>
+				<div class="sale">
+					<div class="nogoods">
+						<p class="spepcial3">购物车中还没有商品，赶紧选购吧</p>
+					</div>
+					<ul class="havegoods">
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+								<p>红牛多功能饮料来几箱比较好呢</p>
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-foot">
+								<p>共计<i class="blue">2</i>件商品共计￥<i class="blue">160.00元</i></p>
+								<p><button type="button" class="btn btn-warning pull-right">去购物车结算</button></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+	<!-- start foods -->
+	<div class="delicious_box">
+		<div class="container">
+			<div class="take-out-wrapper">
+				<div class="delicious_foods_l">
+					<div class="delicious_list">
+						<div class="deli_img_item"><img src="../img/3.jpg" alt="" /></div>
+						<div class="deli_content_item">
+							<h5>便当小生土豆鸡块便当盒装</h5>
+							<div class="deli_item_title">（配菜会根据每天的不同而变化，请以实物为准）订购时间：10:00-11:30 配送时间11:30-12:30</div>
+							<div class="deli_item_number"><span>已售1369份</span></div>
+							<div class="deli_item_price">
+								<span>￥<i>10.00</i></span>
+								<div class="deli_item_join">
+									<a href="" class="join_car">加入购物车</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="delicious_list">
+						<div class="deli_img_item"><img src="../img/3.jpg" alt="" /></div>
+						<div class="deli_content_item">
+							<h5>便当小生土豆鸡块便当盒装</h5>
+							<div class="deli_item_title">（配菜会根据每天的不同而变化，请以实物为准）订购时间：10:00-11:30 配送时间11:30-12:30</div>
+							<div class="deli_item_number"><span>已售1369份</span></div>
+							<div class="deli_item_price">
+								<span>￥<i>10.00</i></span>
+								<div class="deli_item_join">
+									<a href="" class="join_car gray">加入购物车</a>
+								</div>
+							</div>
+							<div class="empty_food">
+
+							</div>
+						</div>
+					</div>
+					<div class="delicious_list">
+						<div class="deli_img_item"><img src="../img/3.jpg" alt="" /></div>
+						<div class="deli_content_item">
+							<h5>便当小生土豆鸡块便当盒装</h5>
+							<div class="deli_item_title">（配菜会根据每天的不同而变化，请以实物为准）订购时间：10:00-11:30 配送时间11:30-12:30</div>
+							<div class="deli_item_number"><span>已售1369份</span></div>
+							<div class="deli_item_price">
+								<span>￥<i>10.00</i></span>
+								<div class="deli_item_join hide">
+									<a href="" class="join_car">加入购物车</a>
+								</div>
+								<!-- 2种形态 -->
+								<div class="deli_item_join">
+									<div class="qu-form">
+										<a class="a1"></a>
+										<input type="text">
+										<a class="a2"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="delicious_list">
+					</div>
+				</div>
+				<div class="delicious_foods_r">
+					<div class="d_top">
+						<a>
+							<span class="span_fi"><i>1</i>元</span>
+							<span class="span_se">起送</span>
+						</a>
+						<a>
+							<span class="span_fi"><i>1</i>元</span>
+							<span class="span_se">配送</span>
+						</a>
+						<a>
+							<span class="span_fi"><i>1</i>小时</span>
+							<span class="span_se">内送达</span>
+						</a>
+					</div>
+					<div class="d_first">
+						<h5>订餐必读&门店公告</h5>
+						<ul class="d_intro">
+							<li>一、由快捷健直送 10.00-11.30下单，11.30-12.30送达，为保证您的菜品品质，请亲们耐心等待，我们会尽快送达。谢谢您的配合！</li>
+							<li>二、请确保您的电话畅通，以便送餐员能及时联系上您。</li>
+							<li>三、任何订餐问题随时联系客服，欢迎致电，客服热线4000-306-603。</li>
+							<li>四、可使用支付宝、微信、进行在线支付。</li>
+							<li>五、支持发票开具，如需发票请联系客服。</li>
+						</ul>
+					</div>
+					<div class="d_new_right">
+						<div class="d_second">地图</div>
+						<div class="d_third">
+							<h5>配送范围</h5>
+							<div class="d_area_list">
+								<span>华彬中心</span>
+								<span>用哪里华彬中心14从性能</span>
+							</div>
+							<div class="d_area_list">
+								<span>华彬中心</span>
+								<span>用哪里华彬中心14从性能</span>
+							</div>
+							<div class="d_area_list">
+								<span>华彬中心</span>
+								<span>用哪里华彬中心14从性能</span>
+							</div>
+							<div class="d_area_list">
+								<span>华彬中心</span>
+								<span>用哪里华彬中心14从性能</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ <!-- end  foods -->
+
+
+<!-- footer -->
+<div class="well">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 ">
+					<div class="thumbnail">
+					      <img src="img/icon/icon11.png" alt="...">
+					      <div class="caption">
+					        <h5>会员服务</h5>
+					        <p><a href="">购物流程</a></p>
+					        <p><a href="">常见问题</a></p>
+					        <p><a href="">用户服务</a></p>
+					        <p><a href="">积分说明</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon12.png" alt="...">
+					      <div class="caption">
+					        <h5>支付问题</h5>
+					       	<p><a href="">在线支付</a></p>
+					        <p><a href="">礼品卡</a></p>
+					        <p><a href="">配送方式</a></p>
+					        <p><a href="">配送范围</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon13.png" alt="...">
+					      <div class="caption">
+					        <h5>售后服务</h5>
+					       <p><a href="">售后服务政策</a></p>
+					        <p><a href="">售后服务流程</a></p>
+					        <p><a href="">退款说明</a></p>
+					        <p><a href="">订单取消</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon14.png" alt="...">
+					      <div class="caption">
+					        <h5>关于我们</h5>
+					        <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon15.png" alt="...">
+					      <div class="caption">
+					        <h5>店面体验</h5>
+					       <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+			</div>
+	</div>
+</div>
+</div>
+<div class="side-toolbar">
+	<div class="side-fistlist">
+		<div class="side_item side_1" ><em></em></div>
+		<div class="side_item side_2">
+			<em></em>
+			<span class="red_count">12</span>
+		</div>
+		<div class="side_item side_3"><em></em></div>
+		<div class="side_item side_4"><em></em></div>
+	</div>
+	<div class="side-secondlist">
+		<div class="side_item side_5" ><em></em></div>
+		<div class="side_item side_6">
+			<em></em>
+			<div class="side_erweima">
+				<img src="../img/erweima3.jpg" alt="" />
+				<span>扫描并关注</span>
+			</div>
+		</div>
+		<div class="side_item side_7"><em></em></div>
+	</div>
+</div>
+<!-- side shopcar  -->
+<div class="side-shopcar">
+	<div class="side_shopcar_content">
+		<h5 class="side_s_title">
+			<input type="checkbox" />全选
+			<a href="">进入购物车</a>
+		</h5>
+		<div class="side_s_list">
+			<div class="white_title">
+				午餐（淡菜）
+				<span class="gray">提示：每个餐盒最多可放<i class="yellow_tip">3</i>个菜</span>
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					一号餐盒
+					<span class="yellow_tip">午餐将放入此餐盒</span>
+				</h4>
+				<div class="side_s_item_content">
+					<ul>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					一号餐盒
+					<span class="yellow_tip">午餐将放入此餐盒</span>
+				</h4>
+				<div class="side_s_item_content">
+					<ul>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 多余三个提示 -->
+				<div class="alert-pp">
+					每个餐盒最多可放3个菜，请更换餐盒
+				</div>
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="blue-circle"></span>
+					三号餐盒
+					<span class="gray_tip">如需分盒请点击此处</span>
+				</h4>
+				<div class="side_s_item_content">
+					<p class="no-canhe">餐盒空空</p>
+				</div>
+			</div>
+			<div class="side_s_zengpin">
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+			</div>
+		</div>
+			<div class="side_s_list">
+			<div class="white_title">
+				普通商品
+			</div>
+			<div class="side_s_item">
+				<h4>
+					<span class="manjian-circle"></span>
+					满100，减20
+				</h4>
+				<div class="side_s_item_content">
+					<ul>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+						<li>
+							<div class="googs_floor">
+								<input type="checkbox" />
+								<img src="" alt="" class="" />
+								<h5>良一川辣味蚕豆瓣170克</h5>
+								<div class="addorplus">
+									<span class="plus_count"></span>
+									<span class="count">10</span>
+									<span class="add_conut"></span>
+									<span class="price_single">250..</span>
+								</div>
+								<span class="gray_close"></span>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="side_s_zengpin">
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+				<div class="zengpin_list">
+					<p>【赠品】可口可乐200ml少时诵诗</p>
+					<span class="zengpin_number">x1</span>
+				</div>
+			</div>
+		</div>
+		<div class="side_s_footer">
+			<div class="side_s_f_title">
+				已选<i class="yellow_tip">13</i>件
+				<span class="yellow_tip right_control">￥150..</span>
+			</div>
+			<div class="gogopay">
+				<button class="subminta">去结算<span class="go_right"></span></button>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/modal.js"></script>
+<script src="../js/common/me.js"></script>
+<script src="../js/common/addcart.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.join_car').on('click',function(e){
+	animateAddCart($('.side_item.side_2'),$(this).parents('.delicious_list').find('.deli_img_item img'));
+	e.preventDefault();
+});
+});
+
+function animateAddCart(cartEnd,imgtodrag){
+		var imgclone = imgtodrag.clone().offset({
+			top: imgtodrag.offset().top + 50,
+			left: imgtodrag.offset().left + 50
+		}).css({
+			'opacity': '0.5',
+			'position': 'absolute',
+			'height': '100px',
+			'width': '100px',
+			'z-index': '100'
+		}).appendTo($('body')).animate({
+			'top': cartEnd.offset().top + 0,
+			'left': cartEnd.offset().left + 0,
+			'width': 40,
+			'height': 40
+		}, 1000, 'easeInOutExpo');
+		setTimeout(function () {
+			cartEnd.effect('shake', { times: 2}, 300);//购物车抖动次数
+		}, 1500);//购物车抖动
+		imgclone.animate({
+			'width': 0,
+			'height': 0
+		}, function () {
+			$(this).detach();
+		});
+}
+</script>
+<script type="text/javascript">
+	(function($){
+		$('.googs_floor').hover(function(){
+			$(this).find('.gray_close').show();
+			$(this).find('.plus_count,.add_conut ').animate({
+				opacity:1,
+			},"fast");
+		},function(){
+			$(this).find('.gray_close').hide();
+				$(this).find('.plus_count,.add_conut ').animate({
+				opacity:0,
+			},"fast");
+		});
+		$('.side_2').click(function(){
+			$('.side-shopcar,.side-toolbar').toggleClass('on');
+			$('.all').click(function(){
+				$('.side-shopcar,.side-toolbar').removeClass('on');
+			});
+		});
+	})(jQuery);
+</script>
+</body>
+</html>

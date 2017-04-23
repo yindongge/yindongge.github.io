@@ -1,0 +1,15 @@
+<script src="${jsBase}/common/jquery-1.11.2.js" type="text/javascript"></script>
+<script src="${jsBase}/common/jquery-form.js" type="text/javascript"></script>
+<script src="${jsBase}/common/add.js" type="text/javascript"></script>
+<script src="${jsBase}/common/bootstrap.min.js" type="text/javascript"></script>
+<script src="${jsBase}/common/bootstrapValidator.min.js" type="text/javascript"></script>
+<script src="${jsBase}/common/layer/layer.js" type="text/javascript"></script>
+<script src="${jsBase}/common/respond.js" type="text/javascript"></script>
+<script src="${jsBase}/common/moment.min.js" type="text/javascript"></script>
+<script src="${jsBase}/common/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="${jsBase}/common/zh-cn.js" type="text/javascript"></script>
+<script src="${jsBase}/common/validate.js" type="text/javascript"></script>
+<script src="${jsBase}/common/jquery.ztree.core-3.5.js" type="text/javascript"></script>
+<script src="${jsBase}/common/jquery.ztree.excheck-3.5.js"  type="text/javascript"></script>
+<script src="${jsBase}/common/uploadPreview.min.js" type="text/javascript"></script>
+<script src="${jsBase}/common/ajaxfileupload.js" type="text/javascript"></script>

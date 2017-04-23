@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.account.OrgAccountGroupMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.account.OrgAccountGroup" >
+    <id column="group_id" property="groupId" jdbcType="INTEGER" />
+    <result column="group_name" property="groupName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    group_id, group_name, create_time 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_account_group
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_account_group
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.account.OrgAccountGroup" useGeneratedKeys="true" keyColumn="group_id" keyProperty="groupId" >
+    insert into org_account_group (group_name, create_time)
+    values (#{groupName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.account.OrgAccountGroup" >
+    update org_account_group
+    <set >
+      <if test="groupName != null" >
+        group_name = #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.account.OrgAccountGroup" >
+    update org_account_group
+    set group_name = #{groupName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where group_id = #{groupId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.account.aide.OrgAccountGroupVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.group_id, 
+    t.group_name, 
+    t.create_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_account_group t
+    where t.group_id = #{groupId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="groupId != null" >
+          and t.group_id = #{groupId,jdbcType=INTEGER}
+      </if>
+      <if test="groupName != null" >
+          and t.group_name = #{groupName,jdbcType=VARCHAR}
+      </if>
+      <if test="createTimeStart != null and createTimeStart != ''" >
+          and t.create_time &gt;= str_to_date(#{createTimeStart},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="createTimeEnd != null and createTimeEnd != ''" >
+          and t.create_time &lt;= str_to_date(#{createTimeEnd},'%Y-%m-%d %H:%i:%s')
+      </if>
+      <if test="groupNameLike != null" >
+          and t.group_name like concat('%',#{groupNameLike},'%')
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if> 
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.group_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.group_id) from org_account_group t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_account_group t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_account_group where group_id in (
+    select t.group_id from (select * from org_account_group) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

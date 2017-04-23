@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.special.OrgSpecialFloorMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.special.OrgSpecialFloor" >
+    <id column="floor_id" property="floorId" jdbcType="INTEGER" />
+    <result column="special_id" property="specialId" jdbcType="INTEGER" />
+    <result column="img_path" property="imgPath" jdbcType="VARCHAR" />
+    <result column="floor_order" property="floorOrder" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    floor_id, special_id, img_path, floor_order
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_special_floor
+    where floor_id = #{floorId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_special_floor
+    where floor_id = #{floorId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.special.OrgSpecialFloor" useGeneratedKeys="true" keyColumn="floor_id" keyProperty="floorId" >
+    insert into org_special_floor (special_id, img_path, floor_order
+      )
+    values (#{specialId,jdbcType=INTEGER}, #{imgPath,jdbcType=VARCHAR}, #{floorOrder,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.special.OrgSpecialFloor" >
+    update org_special_floor
+    <set >
+      <if test="specialId != null" >
+        special_id = #{specialId,jdbcType=INTEGER},
+      </if>
+      <if test="imgPath != null" >
+        img_path = #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="floorOrder != null" >
+        floor_order = #{floorOrder,jdbcType=TINYINT},
+      </if>
+    </set>
+    where floor_id = #{floorId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.special.OrgSpecialFloor" >
+    update org_special_floor
+    set special_id = #{specialId,jdbcType=INTEGER},
+      img_path = #{imgPath,jdbcType=VARCHAR},
+      floor_order = #{floorOrder,jdbcType=TINYINT}
+    where floor_id = #{floorId,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_floor t
+    <include refid="Table_Join_Clause" />
+    where t.floor_id = #{floorId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="floorId != null" >
+          and t.floor_id = #{floorId,jdbcType=INTEGER}
+      </if>
+      <if test="specialId != null" >
+          and t.special_id = #{specialId,jdbcType=INTEGER}
+      </if>
+      <if test="imgPath != null" >
+          and t.img_path = #{imgPath,jdbcType=VARCHAR}
+      </if>
+      <if test="floorOrder != null" >
+          and t.floor_order = #{floorOrder,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.floor_id asc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.floor_id) from org_special_floor t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_floor t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_special_floor where floor_id in (
+    select t.floor_id from (select * from org_special_floor) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+   <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.special.aide.OrgSpecialFloorVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+    <collection property="productList" resultMap="floorProduct" />
+  </resultMap>
+  <resultMap id="floorProduct" type="com.kjj.commserver.entity.special.aide.OrgSpecialFloorProductVo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="floor_id" property="floorId" jdbcType="INTEGER" />
+    <result column="special_id" property="specialId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="image_path" property="imagePath" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <association property="productItem" javaType="com.kjj.commserver.entity.goods.aide.OrgProductItemVo"> 
+        <result column="goods_thumb" property="goodsThumb" jdbcType="VARCHAR" />
+        <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+     </association>
+  </resultMap>
+  
+  <sql id="Vo_Column_List" >
+    t.floor_id, 
+    t.special_id, 
+    t.img_path,
+    osfp.id, 
+    osfp.floor_id, 
+    osfp.special_id, 
+    osfp.goods_id, 
+    osfp.image_path, 
+    osfp.url, 
+    osfp.type,
+    opi.goods_thumb,
+    opi.goods_name
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+  </sql>
+  <sql id="Table_Join_Clause" >
+     left join org_special_floor_product osfp on t.floor_id=osfp.floor_id 
+     left join org_product_item opi on opi.goods_id=osfp.goods_id
+  </sql>
+</mapper>

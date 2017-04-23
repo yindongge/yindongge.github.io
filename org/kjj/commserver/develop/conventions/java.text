@@ -1,0 +1,47 @@
+快捷键项目JAVA编码规范
+一、综述
+1.使用@Resource，不使用@Autowired。
+2.修饰符不要省略(接口方法不要修饰符)，尽量用private。
+3.不可出现魔鬼数字，必须改为使用常量。
+4.方法写文档注释/**  */，包括方法说明，参数(接口方法写在接口上)。
+5.自定义属性写文档注释/**  */。
+6.方法参数建议用Byte、Integer、Long,不建议用byte、integer、long。
+7.方法参数名称建议和实体类对应，例：OrgOrder的主键为orderId,(Integer id)应改为(Integer orderId)。
+8.java中不可以出现警告。
+二、entity
+1.实体类自动生成，不可在实体类添加属性、方法(@DateTimeFormat除外)。如数据库添加字段，需要手动增加实体类属性(另一种选择为重新执行自动生成程序)，必须把equals,hashCode,toString方法也修改。
+2.查询条件写入对应的Query对象。
+3.展示结果写入对应的Vo对象。Vo可写多个，可继承(例：OrgOrderGoodsCommentVo.java)。
+4.表单附加属性写入对应的Form对象。例：OrgOrderForm.java。
+4.实体类常量说明写入对应的Constant对象，常量用普通数字类型(byte,int)。
+三、controller
+1.建议的方法名及@RequestMapping值：list，addInit，add，editInit，edit。
+2.controller方法参数不能添加无用的。
+3.返回json的方法建议返回类型：Map<String, Object>，其中包含“code”说明成功失败。
+4.controller中方法没有事务控制，一般情况应把多个修改数据库的操作放在一个事务中，请把此方法写在service中。
+5.建议不要在controller里new query对象(controller参数里自带query对象除外)，改为在service新增方法里面new query对象，controller直接调用这个service方法。例：query.setId(1);service.queryList(query);改为service.queryById(1);
+四、service
+1.建议的方法名：queryListXXX,queryOneXXX,queryMapXXX,XXXByXXX,XXX4XXX,XXX2XXX,updateXXX,addXXX,lockXXX
+2.尽量使用已有的baseService方法。
+2.方法是否有事务，取决于方法名称前缀，请查看applicationContext.xml里事务配置。
+3.service中只能引入自己的dao，其他的类的dao不可引入，可引入其他类的service。
+4.建议重写父类方法。例：add(XXX xxx){xxx.setCreateTime(new Date);super.add(xxx);}。
+5.this,super关键字能省略就省略。
+五、dao
+1.建议的方法名：selectXXX,selectCountXXX,insertXXX,updateXXX,deleteXXX。
+2.尽量使用已有的baseDao方法。
+3.新增的dao方法，sqlId写常量。
+4.如果查询map要排序，使用queryLinkedMap。
+六、sqlmap
+1.自动生成的部分尽量不要修改，新增sql添加在最下面，新增的where条件加在where最下面。
+2.尽量共用语句。例：不建议专门写selectByXXX的语句，建议在where条件里加if判断。
+3.resultMap里可以<result>或者<association>,若某关联表返回字段比较多或者之后有可以增多，建议用<association>。
+4.<association>对应类建议为Vo。
+七、jsp
+1.建议将jsp文件按照类名(去掉org)放在各自的文件夹内，建议的jsp文件名称为：add，edit，detail，list。
+1.css,js尽量不要写着页内，应写为单独文件引入。
+2.head最底下引入css文件，body最底下引入js文件。
+3.区分静态引入(<%@include)，动态 引入(<jsp:include)。
+4.common_page.jsp放在form里，form id为“pageform”。
+5.fmt:formatDate标签type有both，date，time选项，还可以直接加pattern。
+6.每个商品都有多个不同分辨率的图片，尽量选择小的图片。

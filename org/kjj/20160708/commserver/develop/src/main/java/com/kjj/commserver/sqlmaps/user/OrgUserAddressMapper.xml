@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgUserAddressMapper">
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgUserAddress">
+    <id column="address_id" jdbcType="INTEGER" property="addressId" />
+    <result column="address_name" jdbcType="VARCHAR" property="addressName" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="shop_id" jdbcType="INTEGER" property="shopId" />
+    <result column="send_range_id" jdbcType="INTEGER" property="sendRangeId" />
+    <result column="consignee" jdbcType="VARCHAR" property="consignee" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="zipcode" jdbcType="VARCHAR" property="zipcode" />
+    <result column="tel_area_code" jdbcType="VARCHAR" property="telAreaCode" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="sign_building" jdbcType="VARCHAR" property="signBuilding" />
+    <result column="best_time" jdbcType="VARCHAR" property="bestTime" />
+    <result column="flag" jdbcType="TINYINT" property="flag" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    address_id, address_name, user_id, shop_id, send_range_id, consignee, email, address, 
+    zipcode, tel_area_code, tel, mobile, sign_building, best_time, flag, status, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_user_address
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from org_user_address
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="address_id" keyProperty="addressId" parameterType="com.kjj.commserver.entity.user.OrgUserAddress" useGeneratedKeys="true">
+    insert into org_user_address (address_name, user_id, shop_id, 
+      send_range_id, consignee, email, 
+      address, zipcode, tel_area_code, 
+      tel, mobile, sign_building, 
+      best_time, flag, status, 
+      update_time)
+    values (#{addressName,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, 
+      #{sendRangeId,jdbcType=INTEGER}, #{consignee,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR}, #{telAreaCode,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{signBuilding,jdbcType=VARCHAR}, 
+      #{bestTime,jdbcType=VARCHAR}, #{flag,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgUserAddress">
+    update org_user_address
+    <set>
+      <if test="addressName != null">
+        address_name = #{addressName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="shopId != null">
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="sendRangeId != null">
+        send_range_id = #{sendRangeId,jdbcType=INTEGER},
+      </if>
+      <if test="consignee != null">
+        consignee = #{consignee,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null">
+        zipcode = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="telAreaCode != null">
+        tel_area_code = #{telAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="signBuilding != null">
+        sign_building = #{signBuilding,jdbcType=VARCHAR},
+      </if>
+      <if test="bestTime != null">
+        best_time = #{bestTime,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgUserAddress">
+    update org_user_address
+    set address_name = #{addressName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      send_range_id = #{sendRangeId,jdbcType=INTEGER},
+      consignee = #{consignee,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      zipcode = #{zipcode,jdbcType=VARCHAR},
+      tel_area_code = #{telAreaCode,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      sign_building = #{signBuilding,jdbcType=VARCHAR},
+      best_time = #{bestTime,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where address_id = #{addressId,jdbcType=INTEGER}
+  </update>
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgUserAddressVo">
+  	<result column="send_range_name" jdbcType="VARCHAR" property="sendRangeName" />
+  	<result column="area_show" jdbcType="VARCHAR" property="areaShow" />
+  	<result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.address_id, 
+    t.address_name, 
+    t.user_id, 
+    t.shop_id, 
+    t.send_range_id, 
+    t.consignee, 
+    t.email, 
+    t.address, 
+    t.zipcode, 
+    t.tel_area_code, 
+    t.tel, 
+    t.mobile, 
+    t.sign_building, 
+    t.best_time, 
+    t.flag, 
+    t.status,
+    t.update_time,
+    ossr.send_range_name,
+    oa.show as area_show,
+    os.shop_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_address t
+	left join org_shop_send_range ossr on t.send_range_id = ossr.id
+	left join org_shop os on t.shop_id = os.shop_id
+	left join org_area oa on os.area_code = oa.code
+    where t.address_id = #{addressId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="addressId != null">
+          and t.address_id = #{addressId,jdbcType=INTEGER}
+      </if>
+      <if test="addressName != null">
+          and t.address_name = #{addressName,jdbcType=VARCHAR}
+      </if>
+      <if test="userId != null">
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null">
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="sendRangeId != null">
+          and t.send_range_id = #{sendRangeId,jdbcType=INTEGER}
+      </if>
+      <if test="consignee != null">
+          and t.consignee = #{consignee,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null">
+          and t.email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="address != null">
+          and t.address = #{address,jdbcType=VARCHAR}
+      </if>
+      <if test="zipcode != null">
+          and t.zipcode = #{zipcode,jdbcType=VARCHAR}
+      </if>
+      <if test="telAreaCode != null">
+          and t.tel_area_code = #{telAreaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="tel != null">
+          and t.tel = #{tel,jdbcType=VARCHAR}
+      </if>
+      <if test="mobile != null">
+          and t.mobile = #{mobile,jdbcType=VARCHAR}
+      </if>
+      <if test="signBuilding != null">
+          and t.sign_building = #{signBuilding,jdbcType=VARCHAR}
+      </if>
+      <if test="bestTime != null">
+          and t.best_time = #{bestTime,jdbcType=VARCHAR}
+      </if>
+      <if test="flag != null">
+          and t.flag = #{flag,jdbcType=TINYINT}
+      </if>
+      <if test="status != null">
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="update_time != null">
+          and t.update_time = #{update_time,jdbcType=TIMESTAMP}
+      </if>
+      <if test="notEqualShopId != null">
+          and t.shop_id != #{notEqualShopId,jdbcType=INTEGER}
+      </if>
+      <if test="shopStatus != null">
+          and os.status = #{shopStatus,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.address_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.address_id) from org_user_address t
+    left join org_shop_send_range ossr on t.send_range_id = ossr.id
+    left join org_shop os on t.shop_id = os.shop_id
+	left join org_area oa on os.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_address t
+    left join org_shop_send_range ossr on t.send_range_id = ossr.id
+    left join org_shop os on t.shop_id = os.shop_id
+	left join org_area oa on os.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from org_user_address where address_id in (
+    select t.address_id from (select * from org_user_address) t
+    left join org_shop_send_range ossr on t.send_range_id = ossr.id
+    left join org_shop os on t.shop_id = os.shop_id
+	left join org_area oa on os.area_code = oa.code
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <update id="updateInvaildByShopSendRangeId" parameterType="com.kjj.commserver.entity.user.OrgUserAddress">
+    update org_user_address
+    set status = 1,update_time = now()
+    where send_range_id = #{sendRangeId,jdbcType=INTEGER}
+    </update>
+</mapper>

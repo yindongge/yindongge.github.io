@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgFeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgFeedback" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone_num" property="phoneNum" jdbcType="VARCHAR" />
+    <result column="feedback" property="feedback" jdbcType="VARCHAR" />
+    <result column="problem1" property="problem1" jdbcType="VARCHAR" />
+    <result column="problem2" property="problem2" jdbcType="VARCHAR" />
+    <result column="problem3" property="problem3" jdbcType="VARCHAR" />
+    <result column="problem4" property="problem4" jdbcType="VARCHAR" />
+    <result column="problem5" property="problem5" jdbcType="VARCHAR" />
+    <result column="problem6" property="problem6" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, phone_num, feedback, problem1, problem2, problem3, problem4, problem5, 
+    problem6, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_feedback
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_feedback
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgFeedback" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_feedback (name, phone_num, feedback, 
+      problem1, problem2, problem3, 
+      problem4, problem5, problem6, 
+      create_time)
+    values (#{name,jdbcType=VARCHAR}, #{phoneNum,jdbcType=VARCHAR}, #{feedback,jdbcType=VARCHAR}, 
+      #{problem1,jdbcType=VARCHAR}, #{problem2,jdbcType=VARCHAR}, #{problem3,jdbcType=VARCHAR}, 
+      #{problem4,jdbcType=VARCHAR}, #{problem5,jdbcType=VARCHAR}, #{problem6,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgFeedback" >
+    update org_feedback
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null" >
+        phone_num = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="feedback != null" >
+        feedback = #{feedback,jdbcType=VARCHAR},
+      </if>
+      <if test="problem1 != null" >
+        problem1 = #{problem1,jdbcType=VARCHAR},
+      </if>
+      <if test="problem2 != null" >
+        problem2 = #{problem2,jdbcType=VARCHAR},
+      </if>
+      <if test="problem3 != null" >
+        problem3 = #{problem3,jdbcType=VARCHAR},
+      </if>
+      <if test="problem4 != null" >
+        problem4 = #{problem4,jdbcType=VARCHAR},
+      </if>
+      <if test="problem5 != null" >
+        problem5 = #{problem5,jdbcType=VARCHAR},
+      </if>
+      <if test="problem6 != null" >
+        problem6 = #{problem6,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgFeedback" >
+    update org_feedback
+    set name = #{name,jdbcType=VARCHAR},
+      phone_num = #{phoneNum,jdbcType=VARCHAR},
+      feedback = #{feedback,jdbcType=VARCHAR},
+      problem1 = #{problem1,jdbcType=VARCHAR},
+      problem2 = #{problem2,jdbcType=VARCHAR},
+      problem3 = #{problem3,jdbcType=VARCHAR},
+      problem4 = #{problem4,jdbcType=VARCHAR},
+      problem5 = #{problem5,jdbcType=VARCHAR},
+      problem6 = #{problem6,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgFeedbackVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.name, 
+    t.phone_num, 
+    t.feedback, 
+    t.problem1, 
+    t.problem2, 
+    t.problem3, 
+    t.problem4, 
+    t.problem5, 
+    t.problem6, 
+    t.create_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_feedback t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="phoneNum != null" >
+          and t.phone_num = #{phoneNum,jdbcType=VARCHAR}
+      </if>
+      <if test="feedback != null" >
+          and t.feedback = #{feedback,jdbcType=VARCHAR}
+      </if>
+      <if test="problem1 != null" >
+          and t.problem1 = #{problem1,jdbcType=VARCHAR}
+      </if>
+      <if test="problem2 != null" >
+          and t.problem2 = #{problem2,jdbcType=VARCHAR}
+      </if>
+      <if test="problem3 != null" >
+          and t.problem3 = #{problem3,jdbcType=VARCHAR}
+      </if>
+      <if test="problem4 != null" >
+          and t.problem4 = #{problem4,jdbcType=VARCHAR}
+      </if>
+      <if test="problem5 != null" >
+          and t.problem5 = #{problem5,jdbcType=VARCHAR}
+      </if>
+      <if test="problem6 != null" >
+          and t.problem6 = #{problem6,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_feedback t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_feedback t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_feedback where id in (
+    select t.id from (select * from org_feedback) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

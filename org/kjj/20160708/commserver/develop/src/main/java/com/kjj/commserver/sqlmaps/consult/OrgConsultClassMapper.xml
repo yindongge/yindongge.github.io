@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.consult.OrgConsultClassMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.consult.OrgConsultClass" >
+    <id column="consult_class_id" property="consultClassId" jdbcType="INTEGER" />
+    <result column="consult_class_name" property="consultClassName" jdbcType="VARCHAR" />
+    <result column="is_web_consult" property="isWebConsult" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    consult_class_id, consult_class_name, is_web_consult
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_consult_class
+    where consult_class_id = #{consultClassId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_consult_class
+    where consult_class_id = #{consultClassId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.consult.OrgConsultClass" useGeneratedKeys="true" keyColumn="consult_class_id" keyProperty="consultClassId" >
+    insert into org_consult_class (consult_class_name, is_web_consult)
+    values (#{consultClassName,jdbcType=VARCHAR}, #{isWebConsult,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.consult.OrgConsultClass" >
+    update org_consult_class
+    <set >
+      <if test="consultClassName != null" >
+        consult_class_name = #{consultClassName,jdbcType=VARCHAR},
+      </if>
+      <if test="isWebConsult != null" >
+        is_web_consult = #{isWebConsult,jdbcType=TINYINT},
+      </if>
+    </set>
+    where consult_class_id = #{consultClassId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.consult.OrgConsultClass" >
+    update org_consult_class
+    set consult_class_name = #{consultClassName,jdbcType=VARCHAR},
+      is_web_consult = #{isWebConsult,jdbcType=TINYINT}
+    where consult_class_id = #{consultClassId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.consult.aide.OrgConsultClassVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.consult_class_id, 
+    t.consult_class_name, 
+    t.is_web_consult
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_consult_class t
+    where t.consult_class_id = #{consultClassId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="consultClassId != null" >
+          and t.consult_class_id = #{consultClassId,jdbcType=INTEGER}
+      </if>
+      <if test="consultClassName != null" >
+          and t.consult_class_name = #{consultClassName,jdbcType=VARCHAR}
+      </if>
+      <if test="isWebConsult != null" >
+          and t.is_web_consult = #{isWebConsult,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.consult_class_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.consult_class_id) from org_consult_class t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_consult_class t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_consult_class where consult_class_id in (
+    select t.consult_class_id from (select * from org_consult_class) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

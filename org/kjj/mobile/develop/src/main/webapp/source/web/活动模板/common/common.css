@@ -1,0 +1,280 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+a, a:hover {
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+}
+.box2 {
+	min-width: 320px;
+	max-width: 480px;
+	margin: 0px auto;
+	background: #fff;
+	overflow: hidden;
+	font-family: "Microsoft YaHei", "Glyphicons";
+	background: #fef2f8;
+}
+
+.content2 {
+	background: #fef2f8;
+	overflow: hidden;
+	clear: both;
+}
+
+.box2-top {
+
+}
+
+.box2-top img {
+	width: 100%;
+	text-align: center;
+}
+
+.content2 h5 {
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+}
+
+.boxlist a {
+	width: 46%;
+	display: block;
+	box-sizing: border-box;
+	float: left;
+	background: #fff;
+	margin-left: 2%;
+	margin-bottom: 10px;
+	margin-right: 2%;
+	position: relative;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.b-listimg img {
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+.b-listimg:after {
+	content: "";
+	display: block;
+	width: 100%;
+	padding-top: 100%;
+	background: #fff;
+}
+
+.b-listimg {
+	width: 100%;
+	position: relative;
+}
+
+.b-listtext {
+	padding-left: 5px;
+}
+
+.b-price span {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+}
+
+.b-price .gray-text {
+	color: #ccc;
+	text-decoration: line-through;
+	font-size: 14px;
+}
+
+.b-price .yellow-text {
+	color: #e72864;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.b-listtext h4 {
+	height: 20px;
+	line-height: 20px;
+	color: #333;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+	overflow: hidden;
+	white-space: nowrap;
+	font-weight: 400;
+}
+
+.b-price {
+	height: 40px;
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.b-price i {
+    background: url(./img/hotspan.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    background-size: 30px;
+}
+
+.lowprice {
+	width: 40px;
+	height: 40px;
+	background: url(./img/cdj.png) no-repeat center;
+	background-size: cover;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 999;
+}
+
+.gotop {
+	width: 44px;
+	height: 44px;
+	position: fixed;
+	bottom: 20%;
+	background: url(./img/icon_top.png) rgba(255, 138, 0, 0.5) no-repeat
+		center;
+	float: right;
+	right: 10px;
+	z-index: 15000;
+	display: none;
+	background-size: 25px;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+}
+
+.fixed-shopcar {
+	width: 44px;
+	height: 44px;
+	position: fixed;
+	bottom: 27%;
+	background: url(./img/float_car.png) no-repeat rgba(255, 138, 0, 0.7)
+		center;
+	float: right;
+	right: 10px;
+	z-index: 15000;
+	background-size: 26px;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+}
+
+.shakeme {
+	position: fixed;
+	width: 60%;
+	height: 40px;
+	top: 50%;
+	left: 50%;
+	margin-top: -20px;
+	margin-left: -30%;
+	background: #333;
+	color: #FFF;
+	z-index: 30000;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	opacity: 0;
+	font-size: 16px;
+}
+
+.backhome {
+	width: 100%;
+	text-align: center;
+}
+.same-floor{
+	clear: both;
+	overflow: hidden;
+}
+.backhome a {
+	font-size: 16px;
+	color: #333;
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+.backhome a.a1{
+	display: block;
+	width: 50%;
+	float: left;
+	background: #0061CF;
+	color: #fff;
+}
+.backhome a.a2{
+	display: block;
+	width: 50%;
+	float: left;
+	background: #ccc;
+	color: #333;
+}
+.backhome a.a3{
+	display: block;
+	width: 100%;
+	background: #0061CF;
+	color: #fff;
+}
+.content2 .title-img{
+ overflow: hidden;
+ width: 100%;
+}
+.title-img img{
+ border: 0px;
+ width: 100%;
+}
+.backhome.fixed{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: #eee;
+	z-index: 5000;
+}
+.space40{
+	height: 40px;
+	width: 100%;
+	display: block;
+	background: #fff;
+}
+.white_mask{
+	   position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    background: #fff;
+    right: 0px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.no_circle{
+	 position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    right: 0px;
+	text-align: center;
+}
+.no_circle img{
+	padding-top: 30px;
+}
+.zhuanti_img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    z-index: 99;
+}
+.zhuanti_img img{
+    width: 100%;
+    height: 100%;
+}

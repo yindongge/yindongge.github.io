@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<title>无标题文档</title>
+<style type='text/css'>
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
+{ color:#eba238; font-weight:bold; background:none;}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{color:#eba238; font-weight:bold}
+.feature img{ width:100%;margin-bottom: 15px;}
+.navbar-header .logo{padding-top: 17px;}
+.all{}
+.navall .nav.navbar-nav li{
+	width: 170px;
+}
+.navbar-default .navbar-nav>li>a{ color:#fff;  font-size:16px;}
+.navall .nav{ padding:30px 50px; }
+.navall .navbar-default{ border:0px; background:#0d4391;}
+.all .container-fluid{ padding:0px;}
+.navall .container{ padding-left:10%}
+.navall .navbar{ margin-bottom:0px; border-radius:0px;}
+.feifei{
+	position: fixed;top: 0px;
+	right: 16%;
+	height: 154px;
+	width: 34px;
+	display: block;
+	background: url(img/feifei.png) no-repeat;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navall">
+			<nav class="navbar navbar-default ">
+			
+			<div  class="container" style="position:relative">
+				<div class="navbar-header">
+					<a href="#"><img src="img/5.png" class="logo"/></a>
+				</div>
+				<ul class="nav navbar-nav ">
+					<li class="active"><a href="#f1">公司简介</a></li>
+					<li><a href="#f2">店铺展示</a></li>
+					<li><a href="#f3">人才招聘</a></li>
+					<li><a href="#f4">联系我们</a></li>
+				</ul>
+				<a href="#" class="feifei"></a>
+			</div>
+
+			</nav>
+		
+</div>
+
+<div  class="all">
+	<div  class="container-fluid">
+		<div class="feature" id="f1">
+			<img src="img/1.jpg"/>
+		</div>
+			<div class="feature" id="f2">
+			<img src="img/2.jpg"/>
+		</div>
+			<div class="feature" id="f3">
+			<img src="img/3.jpg"/>
+		</div>
+			<div class="feature" id="f4">
+			<img src="img/4.jpg"/>
+		</div>
+	</div>
+</div>	
+</body>
+</html>

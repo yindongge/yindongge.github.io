@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<link rel="stylesheet" type="text/css" href="../css/weixin.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper3.1.0.min.css">
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/swiper3.1.0.min.js"></script>
+<script src="../js/common/me.js"></script>
+<script src="../js/common/trigger.js"></script>
+<script type="text/javascript" src="../js/common/addcart.js"></script>
+</head>
+<body >
+	<div class="box box-gray">
+		<header class="header">
+			<div class="head-content">订单详情</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+	<div class="dingdan-wrapper">
+		<div class="list-detail">
+			<h5>您的订单已生成</h5>
+			<dl class="item-dingdan">商品订单24小时内未成功支付将自动取消，请尽快支付</dl>
+			<dl class="item-dingdan">
+				<dt>订单状态：</dt>
+				<dd ><span class="blue">未支付</span></dd>
+			</dl>
+			<dl class="item-dingdan">
+				<dt>订单编号：</dt>
+				<dd>123456789</dd>
+			</dl>
+			<dl class="item-dingdan">
+				<dt>下单时间：</dt>
+				<dd>2015.06.19</dd>
+			</dl>
+			<a class="btnsure" onclick="addConfrim()">去支付</a>
+			<div class="hidea">
+				<a class="bg-gray">申请取消订单</a>
+				<a class="bg-yellow">去支付</a>
+			</div>
+		</div>
+		<div class="list-detail ">
+			<dl class="item-dingdan">
+				<dt>总金额：</dt>
+				<dd><span class="red"><i class="rmb">￥</i>40.00</span>(在线支付)</dd>
+			</dl>
+			<dl class="item-dingdan">
+				<dt>收货地址：</dt>
+				<dd>987653411</dd>
+			</dl>
+				<dl class="item-dingdan">
+				<dt>收货人：</dt>
+				<dd>1223566</dd>
+			</dl>
+				<dl class="item-dingdan">
+				<dt>送货时间：</dt>
+				<dd>12348488787</dd>
+			</dl>
+				<dl class="item-dingdan">
+				<dt>发票信息：</dt>
+				<dd>个人</dd>
+			</dl>
+		</div>
+
+		<!-- 新增 -->
+	<div class="shopwrapper">
+		<div class="floor h50 same-floor border_bottom_control">
+			<span class="black">午餐（菜）</span>
+			<span class="gray">提示：每个餐盒最多可放<i class="yellow">3</i>个菜</span>
+		</div>
+		<!-- floor -->
+		<div class="canhe_floor">
+			<div class="canhe-title">
+				<i class="dot"></i>一号餐盒
+				(<span class="yellow">午餐将放入此餐盒</span>)
+			</div>
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+
+							<!-- 新增 -->
+						</div>
+			</div>
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+							<!-- 新增 -->
+						</div>
+			</div>
+		</div>
+		<div class="canhe_floor">
+			<div class="canhe-title">
+				<i class="dot"></i>一号餐盒
+				(<span class="yellow">午餐将放入此餐盒</span>)
+			</div>
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+							<!-- 新增 -->
+						</div>
+			</div>
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+		<!-- 					<div class="fixed_content">
+								<a class="fixed_span">促销优惠<i class="yellow_down_icon"></i></a>
+								<div class="fixed_div ">
+									<div class="fixed_div_title">
+										<h5>该商品优惠条件<span>X</span></h5>
+									</div>
+									<div class="radio_list">
+										<div class="checkselect "></div>
+										<p>满199.00减100.0,满199.00减100.0，满199.00减100.0
+										m满199.00减100.0</p>
+									</div>
+									<div class="radio_list">
+										<div class="checkselect on"></div>
+										<p>不用优惠券</p>
+									</div>
+									<div class="radio_list">
+										<input type="radio">
+										<p>不用优惠券</p>
+									</div>
+								</div>
+							</div> -->
+							<!-- 新增 -->
+						</div>
+			</div>
+		</div>
+		<div class="gray_bg_zeng">
+			<div class="zeng_list"><span>[赠品]可口可乐200ml   <i class="pull-right">X1</i></span></div>
+			<div class="zeng_list"><span>[赠品]可口可乐200ml   <i class="pull-right">X1</i></span></div>
+		</div>
+		<!-- end first -->
+	</div>
+	<div class="shopwrapper">
+		<div class="floor h50 same-floor border_bottom_control">
+			<span class="black">普通商品</span>
+		</div>
+		<!-- floor -->
+		<div class="canhe_floor">
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+
+							<!-- 新增 -->
+						</div>
+			</div>
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+							<!-- 新增 -->
+						</div>
+			</div>
+		</div>
+		<div class="canhe_floor">
+		<!-- 	<div class="canhe-title">
+				<i class="dot"></i>一号餐盒
+				(<span class="yellow">午餐将放入此餐盒</span>)
+			</div> -->
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+							<!-- 新增 -->
+						</div>
+			</div>
+			<div class="car-list margin-top">
+						<div class="car-item">
+							<div class="car-content">
+								<div class="carlist-a">
+									<div class="carlist-body">
+										<div class="carlist-img">
+											<a href="www.kjjhome.com"><img src="images/p14.jpg"></a>
+										</div>
+										<div class="carlist-text">
+											<a href="#"><span class="title">够在没有监督的情况下勤奋地工作。</span></a>
+											<div class="price-list">
+												<span class="yellow">价格：1500</span>
+											</div>
+											<div class="price-list">
+											 	<span class="blackquanity">数量：1件</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 新增 -->
+		<!-- 					<div class="fixed_content">
+								<a class="fixed_span">促销优惠<i class="yellow_down_icon"></i></a>
+								<div class="fixed_div ">
+									<div class="fixed_div_title">
+										<h5>该商品优惠条件<span>X</span></h5>
+									</div>
+									<div class="radio_list">
+										<div class="checkselect "></div>
+										<p>满199.00减100.0,满199.00减100.0，满199.00减100.0
+										m满199.00减100.0</p>
+									</div>
+									<div class="radio_list">
+										<div class="checkselect on"></div>
+										<p>不用优惠券</p>
+									</div>
+									<div class="radio_list">
+										<input type="radio">
+										<p>不用优惠券</p>
+									</div>
+								</div>
+							</div> -->
+							<!-- 新增 -->
+						</div>
+			</div>
+		</div>
+		<div class="gray_bg_zeng">
+			<div class="zeng_list"><span>[赠品]可口可乐200ml   <i class="pull-right">X1</i></span></div>
+			<div class="zeng_list"><span>[赠品]可口可乐200ml   <i class="pull-right">X1</i></span></div>
+		</div>
+		<div class="detail-price">
+			<p>配送费：+<span class="red"><i class="rmb">￥</i>15.00</span></p>
+			<p>实付：<span class="red"><i class="rmb">￥</i>15.00</span></p>
+		</div>
+		<!-- end first -->
+	</div>
+
+
+	</div>
+	<!-- 结束订单详情 -->
+	<!-- <footer class="footer">
+		<img src="images/footer.png" alt="">
+	</footer> -->
+	</div>
+	<!-- add -->
+<!-- 	<div class="trigger-box" style="display: block;">
+		<div class="trigger-showbox">
+			<div class="info-confrim text-cneter ">
+				<p class="info-c-title control-close">请输入提货码<span class="close"></span></p>
+				<p class="new_trigger"><input type="text"></p>
+				<p class="redtip">11111111111111111111111</p>
+				<div class="forget-box newforget_btn"><a href="" class="forget-password">确认</a></div>
+			</div>
+		</div>
+		<div class="trigger-cover"></div>
+	</div> -->
+</body>
+</html>

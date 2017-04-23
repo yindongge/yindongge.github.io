@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgClassMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgClass" >
+    <id column="class_id" property="classId" jdbcType="INTEGER" />
+    <result column="class_name" property="className" jdbcType="VARCHAR" />
+    <result column="class_level" property="classLevel" jdbcType="TINYINT" />
+    <result column="class_quantity" property="classQuantity" jdbcType="VARCHAR" />
+    <result column="class_order" property="classOrder" jdbcType="SMALLINT" />
+    <result column="class_showMenu" property="classShowmenu" jdbcType="SMALLINT" />
+    <result column="class_showHighlight" property="classShowhighlight" jdbcType="SMALLINT" />
+    <result column="class_type" property="classType" jdbcType="INTEGER" />
+    <result column="class_keyword" property="classKeyword" jdbcType="VARCHAR" />
+    <result column="class_1" property="class1" jdbcType="VARCHAR" />
+    <result column="class_2" property="class2" jdbcType="VARCHAR" />
+    <result column="class_3" property="class3" jdbcType="VARCHAR" />
+    <result column="class_parent" property="classParent" jdbcType="INTEGER" />
+    <result column="class_time" property="classTime" jdbcType="TIMESTAMP" />
+    <result column="class_active" property="classActive" jdbcType="SMALLINT" />
+    <result column="class_common_use" property="classCommonUse" jdbcType="INTEGER" />
+    <result column="cllass_url" property="cllassUrl" jdbcType="VARCHAR" />
+    <result column="class_desc" property="classDesc" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    class_id, class_name, class_level, class_quantity, class_order, class_showMenu, class_showHighlight, 
+    class_type, class_keyword, class_1, class_2, class_3, class_parent, class_time, class_active, 
+    class_common_use, cllass_url,class_desc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_class
+    where class_id = #{classId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_class
+    where class_id = #{classId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgClass" useGeneratedKeys="true" keyColumn="class_id" keyProperty="classId" >
+    insert into org_class (class_name, class_level, class_quantity, 
+      class_order, class_showMenu, class_showHighlight, 
+      class_type, class_keyword, class_1, 
+      class_2, class_3, class_parent, 
+      class_time, class_active, class_common_use, 
+      cllass_url, class_desc)
+    values (#{className,jdbcType=VARCHAR}, #{classLevel,jdbcType=TINYINT}, #{classQuantity,jdbcType=VARCHAR}, 
+      #{classOrder,jdbcType=SMALLINT}, #{classShowmenu,jdbcType=SMALLINT}, #{classShowhighlight,jdbcType=SMALLINT}, 
+      #{classType,jdbcType=INTEGER}, #{classKeyword,jdbcType=VARCHAR}, #{class1,jdbcType=VARCHAR}, 
+      #{class2,jdbcType=VARCHAR}, #{class3,jdbcType=VARCHAR}, #{classParent,jdbcType=INTEGER}, 
+      #{classTime,jdbcType=TIMESTAMP}, #{classActive,jdbcType=SMALLINT}, #{classCommonUse,jdbcType=INTEGER}, 
+      #{cllassUrl,jdbcType=VARCHAR}, #{classDesc,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgClass" >
+    update org_class
+    <set >
+      <if test="className != null" >
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="classLevel != null" >
+        class_level = #{classLevel,jdbcType=TINYINT},
+      </if>
+      <if test="classQuantity != null" >
+        class_quantity = #{classQuantity,jdbcType=VARCHAR},
+      </if>
+      <if test="classOrder != null" >
+        class_order = #{classOrder,jdbcType=SMALLINT},
+      </if>
+      <if test="classShowmenu != null" >
+        class_showMenu = #{classShowmenu,jdbcType=SMALLINT},
+      </if>
+      <if test="classShowhighlight != null" >
+        class_showHighlight = #{classShowhighlight,jdbcType=SMALLINT},
+      </if>
+      <if test="classType != null" >
+        class_type = #{classType,jdbcType=INTEGER},
+      </if>
+      <if test="classKeyword != null" >
+        class_keyword = #{classKeyword,jdbcType=VARCHAR},
+      </if>
+      <if test="class1 != null" >
+        class_1 = #{class1,jdbcType=VARCHAR},
+      </if>
+      <if test="class2 != null" >
+        class_2 = #{class2,jdbcType=VARCHAR},
+      </if>
+      <if test="class3 != null" >
+        class_3 = #{class3,jdbcType=VARCHAR},
+      </if>
+      <if test="classParent != null" >
+        class_parent = #{classParent,jdbcType=INTEGER},
+      </if>
+      <if test="classTime != null" >
+        class_time = #{classTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="classActive != null" >
+        class_active = #{classActive,jdbcType=SMALLINT},
+      </if>
+      <if test="classCommonUse != null" >
+        class_common_use = #{classCommonUse,jdbcType=INTEGER},
+      </if>
+      <if test="cllassUrl != null" >
+        cllass_url = #{cllassUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="classDesc != null" >
+        class_desc = #{classDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where class_id = #{classId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgClass" >
+    update org_class
+    set class_name = #{className,jdbcType=VARCHAR},
+      class_level = #{classLevel,jdbcType=TINYINT},
+      class_quantity = #{classQuantity,jdbcType=VARCHAR},
+      class_order = #{classOrder,jdbcType=SMALLINT},
+      class_showMenu = #{classShowmenu,jdbcType=SMALLINT},
+      class_showHighlight = #{classShowhighlight,jdbcType=SMALLINT},
+      class_type = #{classType,jdbcType=INTEGER},
+      class_keyword = #{classKeyword,jdbcType=VARCHAR},
+      class_1 = #{class1,jdbcType=VARCHAR},
+      class_2 = #{class2,jdbcType=VARCHAR},
+      class_3 = #{class3,jdbcType=VARCHAR},
+      class_parent = #{classParent,jdbcType=INTEGER},
+      class_time = #{classTime,jdbcType=TIMESTAMP},
+      class_active = #{classActive,jdbcType=SMALLINT},
+      class_common_use = #{classCommonUse,jdbcType=INTEGER},
+      cllass_url = #{cllassUrl,jdbcType=VARCHAR},
+      class_desc = #{classDesc,jdbcType=LONGVARCHAR}
+    where class_id = #{classId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgClassVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.class_id, 
+    t.class_name, 
+    t.class_level, 
+    t.class_quantity, 
+    t.class_order, 
+    t.class_showMenu, 
+    t.class_showHighlight, 
+    t.class_type, 
+    t.class_keyword, 
+    t.class_1, 
+    t.class_2, 
+    t.class_3, 
+    t.class_parent, 
+    t.class_time, 
+    t.class_active, 
+    t.class_common_use, 
+    t.cllass_url,
+    t.class_desc
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_class t
+    where t.class_id = #{classId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="classId != null" >
+          and t.class_id = #{classId,jdbcType=INTEGER}
+      </if>
+      <if test="className != null" >
+          and t.class_name = #{className,jdbcType=VARCHAR}
+      </if>
+      <if test="classLevel != null" >
+          and t.class_level = #{classLevel,jdbcType=TINYINT}
+      </if>
+      <if test="classQuantity != null" >
+          and t.class_quantity = #{classQuantity,jdbcType=VARCHAR}
+      </if>
+      <if test="classOrder != null" >
+          and t.class_order = #{classOrder,jdbcType=SMALLINT}
+      </if>
+      <if test="classShowmenu != null" >
+          and t.class_showMenu = #{classShowmenu,jdbcType=SMALLINT}
+      </if>
+      <if test="classShowhighlight != null" >
+          and t.class_showHighlight = #{classShowhighlight,jdbcType=SMALLINT}
+      </if>
+      <if test="classType != null" >
+          and t.class_type = #{classType,jdbcType=INTEGER}
+      </if>
+      <if test="classKeyword != null" >
+          and t.class_keyword = #{classKeyword,jdbcType=VARCHAR}
+      </if>
+      <if test="class1 != null" >
+          and t.class_1 = #{class1,jdbcType=VARCHAR}
+      </if>
+      <if test="class2 != null" >
+          and t.class_2 = #{class2,jdbcType=VARCHAR}
+      </if>
+      <if test="class3 != null" >
+          and t.class_3 = #{class3,jdbcType=VARCHAR}
+      </if>
+      <if test="classParent != null" >
+          and t.class_parent = #{classParent,jdbcType=INTEGER}
+      </if>
+      <if test="classTime != null" >
+          and t.class_time = #{classTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="classActive != null" >
+          and t.class_active = #{classActive,jdbcType=SMALLINT}
+      </if>
+      <if test="classCommonUse != null" >
+          and t.class_common_use = #{classCommonUse,jdbcType=INTEGER}
+      </if>
+      <if test="cllassUrl != null" >
+          and t.cllass_url = #{cllassUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="classDesc != null" >
+          and t.class_desc = #{classDesc,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="classParentIds != null ">
+	      <if test="classParentIds.size() > 0">
+	      	  and t.class_parent in
+	      	  <foreach collection="classParentIds" item="item" index="index" open="(" separator="," close=")">
+	      	  	#{item,jdbcType=INTEGER}
+	      	  </foreach>
+	      </if>
+	      <if test="classParentIds.size() == 0">
+	      	  and 1=0
+	      </if>
+      </if>
+      <if test="topId != null" >
+          and (t.class_id = #{topId,jdbcType=INTEGER} or t.class_parent = #{topId,jdbcType=INTEGER})
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.class_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.class_id) from org_class t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_class t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_class where class_id in (
+    select t.class_id from (select * from org_class) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  
+  <select id="selectByBrandId" parameterType="java.util.Map" resultMap="VoResultMap">
+  	SELECT oc.* FROM org_brand_link_type oblt
+	INNER JOIN org_class oc ON oblt.type_id = oc.class_id
+	WHERE oblt.brand_id = #{brandId,jdbcType=INTEGER}
+  </select>
+  
+  <update id="offSaleLinkedSpuByClassId" parameterType="java.util.Map">
+  	update org_product op 
+	left join org_class oc on oc.class_id = op.cat_id
+	set op.is_on_sale = 0, op.offsaletime = now(), op.off_sale_type = 3
+	where 1=1
+	<if test="classIds!=null">
+		<if test="classIds.size()>0">
+			and oc.class_id in
+			<foreach collection="classIds" index="index" item="item" open="(" separator="," close=")">
+				#{item,jdbcType=INTEGER}
+			</foreach>
+		</if>
+		<if test="classIds.size()==0">
+			and 1=0
+		</if>
+	</if>
+	and op.is_on_sale = 1
+	and op.is_delete = 0
+  </update>
+  <delete id="deleteSkuLinkedSaleSpecByClassId" parameterType="java.util.Map">
+	delete from org_product_link_salespec
+	where goods_id in (select opi.goods_id from org_product_item opi
+	left join org_class oc on oc.class_id = opi.cat_id
+	where 1=1
+	<if test="classIds!=null">
+		<if test="classIds.size()>0">
+			 and oc.class_id in
+			<foreach collection="classIds" index="index" item="item" open="(" separator="," close=")">
+				#{item,jdbcType=INTEGER}
+			</foreach>
+		</if>
+		<if test="classIds.size()==0">
+			and 1=0
+		</if>
+	</if>
+	and opi.is_delete = 0)
+  </delete>
+  <update id="deleteLinkedSkuByClassId" parameterType="java.util.Map">
+	update org_product_item opi
+	left join org_class oc on oc.class_id = opi.cat_id
+	set opi.is_delete = 1, opi.historytime = now()
+	where 1=1
+	<if test="classIds!=null">
+		<if test="classIds.size()>0">
+			and oc.class_id in
+			<foreach collection="classIds" index="index" item="item" open="(" separator="," close=")">
+				#{item,jdbcType=INTEGER}
+			</foreach>
+		</if>
+		<if test="classIds.size()==0">
+			and 1=0
+		</if>
+	</if>
+	and opi.is_delete = 0
+  </update>
+  <update id="offSaleLinkedSpuByClassId2" parameterType="java.util.Map">
+  	update org_product op 
+	left join org_class oc on oc.class_id = op.cat_id
+	set op.is_on_sale = 0, op.offsaletime = now(), op.off_sale_type = 3, op.cat_id = 0, op.cat_str = ''
+	where 1=1
+	<if test="classIds!=null">
+		<if test="classIds.size()>0">
+			and oc.class_id in
+			<foreach collection="classIds" index="index" item="item" open="(" separator="," close=")">
+				#{item,jdbcType=INTEGER}
+			</foreach>
+		</if>
+		<if test="classIds.size()==0">
+			and 1=0
+		</if>
+	</if>
+	and op.is_on_sale = 1
+	and op.is_delete = 0
+  </update>
+  <select id="selectSkuNumByClassId" parameterType="java.util.Map" resultType="java.util.Map">
+	select cat_id classId, count(1) skuNum from org_product_item
+	where is_delete = 0
+	group by cat_id
+  </select>
+</mapper>

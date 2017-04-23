@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.leveldiscount.OrgUserLevelCouponDiscountMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCouponDiscount" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="level_id" property="levelId" jdbcType="INTEGER" />
+    <result column="level_coupon_id" property="levelCouponId" jdbcType="INTEGER" />
+    <result column="discount" property="discount" jdbcType="DECIMAL" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, level_id, level_coupon_id, discount, price
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_user_level_coupon_discount
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_user_level_coupon_discount
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCouponDiscount" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_user_level_coupon_discount (level_id, level_coupon_id, discount, 
+      price)
+    values (#{levelId,jdbcType=INTEGER}, #{levelCouponId,jdbcType=INTEGER}, #{discount,jdbcType=DECIMAL}, 
+      #{price,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCouponDiscount" >
+    update org_user_level_coupon_discount
+    <set >
+      <if test="levelId != null" >
+        level_id = #{levelId,jdbcType=INTEGER},
+      </if>
+      <if test="levelCouponId != null" >
+        level_coupon_id = #{levelCouponId,jdbcType=INTEGER},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.leveldiscount.OrgUserLevelCouponDiscount" >
+    update org_user_level_coupon_discount
+    set level_id = #{levelId,jdbcType=INTEGER},
+      level_coupon_id = #{levelCouponId,jdbcType=INTEGER},
+      discount = #{discount,jdbcType=DECIMAL},
+      price = #{price,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.leveldiscount.aide.OrgUserLevelCouponDiscountVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.level_id, 
+    t.level_coupon_id, 
+    t.discount, 
+    t.price
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level_coupon_discount t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="levelId != null" >
+          and t.level_id = #{levelId,jdbcType=INTEGER}
+      </if>
+      <if test="levelCouponId != null" >
+          and t.level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+      </if>
+      <if test="discount != null" >
+          and t.discount = #{discount,jdbcType=DECIMAL}
+      </if>
+      <if test="price != null" >
+          and t.price = #{price,jdbcType=DECIMAL}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_user_level_coupon_discount t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level_coupon_discount t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_user_level_coupon_discount where id in (
+    select t.id from (select * from org_user_level_coupon_discount) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <delete id="deleteByLevelCouponId" parameterType="java.util.Map" >
+    delete from org_user_level_coupon_discount
+    where level_coupon_id = #{levelCouponId,jdbcType=INTEGER}
+  </delete>
+</mapper>

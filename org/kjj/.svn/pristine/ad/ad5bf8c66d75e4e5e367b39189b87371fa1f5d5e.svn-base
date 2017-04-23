@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script src="../js/common/add.js"></script>
+<script src="../js/common/layer/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>
+<div class="page-wrapper ">
+<div class="container-fluid">
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li class="active">专题页配置</li>
+			</ul>
+			<!-- 切换 -->
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="width:30%;">
+			   <a href="#" class="btn btn-primary " role="button">基本信息</a>
+			   <a href="#" class="btn btn-info" role="button">自定义HTML</a>
+			   <a href="#" class="btn btn-info" role="button">活动专题图</a>
+			   <a href="#" class="btn btn-info" role="button">分组商品</a>
+			   <a href="#" class="btn btn-info" role="button">锚点链接</a>
+		    </div>
+			<!-- 切换 -->
+			<div class="table-wrapper">
+				<div class="horizontal_wrapper">
+					<form class="form-horizontal  media-control">
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>专题名称：</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>页面背景：</label>
+							<div class="col-sm-4">
+								<a href="" class="color_picker"></a>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>生效时间：</label>
+							<div class="con-sm-6">
+								<label>从</label>
+								<input type="text"  class="special_form">
+								<label>到</label>
+								<input type="text" class="special_form" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>星期循环：</label>
+							<div class="col-sm-6">
+								<label class="checkbox-inline">
+								  <input type="checkbox"   value="option1"> 星期一
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox"  value="option2"> 星期二
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox"   value="option1"> 星期三
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox"   value="option1"> 星期四
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox"  value="option2"> 星期五
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox"   value="option1"> 星期六
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>时刻设置：</label>
+							<div class="con-sm-6">
+								<label>从</label>
+								<input type="date"  class="special_form">
+								<label>到</label>
+								<input type="date" class="special_form" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>是否启用：</label>
+							<div class="col-sm-2">
+								<select name="" class="form-control">
+									<option value="">是</option>
+									<option value="">1</option>
+									<option value="">2</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span class="red">*</span>活动规则：</label>
+							<div class="col-sm-9">
+								<textarea name="" rows="10" class="form-control">
+									文本编辑器
+								</textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--  -->
+			</div>
+			<div class="text-center margin5">
+				<button type="button" class="btn btn-default">返回</button>
+				<button type="button" class="btn btn-info">保存</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

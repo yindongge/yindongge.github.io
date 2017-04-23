@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />  -->
+<title>商品分类</title>
+</head>
+<body >	
+
+	
+<!--开始头部-->
+	<div class="wrapper">	
+		<!--结束登录-->		
+				<ul class="nav nav-pills nav-stacked side-nav">
+					<li  class="active"><a href="#"><i class="glyphicon glyphicon-folder-close"></i>基本设置</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-open"></i>积分规则</a></li>
+					<li><a href="#"> <i class="glyphicon glyphicon-align-justify"></i>广告管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-adjust"></i>限时折扣</a></li>
+					<li ><a href="#"><i class="glyphicon glyphicon-folder-close"></i>满即送</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-open"></i>组合销售</a></li>
+					<li><a href="#"> <i class="glyphicon glyphicon-align-justify"></i>活动管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-adjust"></i>红包</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-open"></i>优惠券</a></li>
+				</ul>
+	<!--结束头部-->
+	
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>扫一扫</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<link rel="stylesheet" type="text/css" href="../css/weixin.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper3.1.0.min.css">
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/swiper3.1.0.min.js"></script>
+<script src="../js/common/me.js"></script>
+<script type="text/javascript" src="../js/common/addcart.js"></script>
+</head>
+<body >
+	<div class="box box-height-fixed">
+		<header class="header">
+			<div class="head-content">快捷登录</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+		<!-- end top -->
+		<div class="third_loginway">
+			<div class="t_l_circle">
+				<img src="../images/3.jpg" alt="">
+			</div>
+			<div  class="t_l_text">QQ昵称，为了给您更好的体验，请绑定您的快捷健账号</div>
+			<div class="t_l_int">
+				<span>  没有快捷健账号，请注册</span>
+				<a href="">快速注册</a>
+			</div>
+			<div class="t_l_int">
+				<span>  已有快捷健账号，请绑定</span>
+				<a href="" class="gray">立即绑定</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- end box -->
+
+</body>
+</html>

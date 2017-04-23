@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.dtpicker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+		<script type="text/javascript" src="js/mui.js" ></script>
+		<title>我的精品</title>
+	</head>
+	<body class="wx_set_body">
+		<div class="all">
+			<header class="mui-bar mui-bar-nav header-control">
+			    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			    <h1 class="mui-title">我的奖品</h1>
+			</header>
+			<!---->
+			<div class="mui-content">
+					<div id="segmentedControl" class="mui-segmented-control">
+						<a class="mui-control-item mui-active" href="#item1">
+						未兑换	
+						</a>
+						<a class="mui-control-item" href="#item2">
+						已失效
+						</a>
+					</div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div class="wx_set_card">
+						<h5>产品A</h5>
+						<div class="card_title">
+							<span>幸运大专</span>
+							<span class="card_title_fixed">抽奖日期：2016.55.55</span>
+						</div>
+						<div class="card_img">
+							<img src="img/muwu.jpg"/>
+						</div>
+						<div class="card_right_bottom">
+							兑换码：98Y36
+						</div>
+					</div>
+					<div class="wx_set_card">
+						<h5>产品A</h5>
+						<div class="card_title">
+							<span>幸运大专</span>
+							<span class="card_title_fixed">抽奖日期：2016.55.55</span>
+						</div>
+						<div class="card_img">
+							<img src="img/muwu.jpg"/>
+						</div>
+						<div class="card_right_bottom">
+							兑换码：98Y36
+						</div>
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content haveno">
+					<div class="wx_set_card">
+						<h5>产品B</h5>
+						<div class="card_title">
+							<span>幸运大专</span>
+							<span class="card_title_fixed">抽奖日期：2016.55.55</span>
+						</div>
+						<div class="card_img">
+							<img src="img/yuantiao.jpg"/>
+							<div class="img_mask"></div>
+						</div>
+						<div class="card_right_bottom">
+							兑换码：98Y36
+							<div class="stamp"></div>
+						</div>
+					</div>
+					<div class="wx_set_card">
+						<h5>产品d</h5>
+						<div class="card_title">
+							<span>幸运大专</span>
+							<span class="card_title_fixed">抽奖日期：2016.55.55</span>
+						</div>
+						<div class="card_img">
+							<img src="img/muwu.jpg"/>
+						</div>
+						<div class="card_right_bottom">
+							兑换码：98Y36
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<script type="text/javascript" src="js/mui.picker.js" ></script>
+<script type="text/javascript" src="js/mui.dtpicker.js" ></script>
+<script type="text/javascript"> 	
+	   		document.addEventListener('plusready', function(){
+	   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+	   		});	
+</script>		
+</body>
+</html>

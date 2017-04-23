@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgEnterpriseCheckMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgEnterpriseCheck" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="INTEGER" />
+    <result column="check_status" property="checkStatus" jdbcType="TINYINT" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="check_time" property="checkTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, enterprise_id, check_status, remark, user_id, check_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_enterprise_check
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_enterprise_check
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgEnterpriseCheck" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_enterprise_check (enterprise_id, check_status, remark, 
+      user_id, check_time)
+    values (#{enterpriseId,jdbcType=INTEGER}, #{checkStatus,jdbcType=TINYINT}, #{remark,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{checkTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgEnterpriseCheck" >
+    update org_enterprise_check
+    <set >
+      <if test="enterpriseId != null" >
+        enterprise_id = #{enterpriseId,jdbcType=INTEGER},
+      </if>
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null" >
+        check_time = #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgEnterpriseCheck" >
+    update org_enterprise_check
+    set enterprise_id = #{enterpriseId,jdbcType=INTEGER},
+      check_status = #{checkStatus,jdbcType=TINYINT},
+      remark = #{remark,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      check_time = #{checkTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgEnterpriseCheckVo" extends="BaseResultMap" >
+	<result column="user_name" property="userName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.enterprise_id, 
+    t.check_status, 
+    t.remark, 
+    t.user_id, 
+    t.check_time
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_enterprise_check t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="enterpriseId != null" >
+          and t.enterprise_id = #{enterpriseId,jdbcType=INTEGER}
+      </if>
+      <if test="checkStatus != null" >
+          and t.check_status = #{checkStatus,jdbcType=TINYINT}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="checkTime != null" >
+          and t.check_time = #{checkTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by check_time desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_enterprise_check t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List1" />
+    from org_enterprise_check t left join org_enterprise t1 on t1.enterprise_id = t.enterprise_id left join org_admin_user t2 on t.user_id = t2.user_id 
+    <include refid="Query_Where_Clause" />
+     order by check_time desc
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_enterprise_check where id in (
+    select t.id from (select * from org_enterprise_check) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <sql id="Vo_Column_List1" >
+    t.id, 
+    t.enterprise_id, 
+    t.check_status, 
+    t.remark, 
+    t.user_id, 
+    t.check_time,
+    t2.user_name
+  </sql>
+</mapper>

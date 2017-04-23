@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.consult.OrgConsultStateMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.consult.OrgConsultState" >
+    <id column="consult_state_id" property="consultStateId" jdbcType="INTEGER" />
+    <result column="consult_state_name" property="consultStateName" jdbcType="VARCHAR" />
+    <result column="consult_state_type" property="consultStateType" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    consult_state_id, consult_state_name, consult_state_type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_consult_state
+    where consult_state_id = #{consultStateId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_consult_state
+    where consult_state_id = #{consultStateId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.consult.OrgConsultState" useGeneratedKeys="true" keyColumn="consult_state_id" keyProperty="consultStateId" >
+    insert into org_consult_state (consult_state_name, consult_state_type
+      )
+    values (#{consultStateName,jdbcType=VARCHAR}, #{consultStateType,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.consult.OrgConsultState" >
+    update org_consult_state
+    <set >
+      <if test="consultStateName != null" >
+        consult_state_name = #{consultStateName,jdbcType=VARCHAR},
+      </if>
+      <if test="consultStateType != null" >
+        consult_state_type = #{consultStateType,jdbcType=TINYINT},
+      </if>
+    </set>
+    where consult_state_id = #{consultStateId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.consult.OrgConsultState" >
+    update org_consult_state
+    set consult_state_name = #{consultStateName,jdbcType=VARCHAR},
+      consult_state_type = #{consultStateType,jdbcType=TINYINT}
+    where consult_state_id = #{consultStateId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.consult.aide.OrgConsultStateVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.consult_state_id, 
+    t.consult_state_name, 
+    t.consult_state_type
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_consult_state t
+    where t.consult_state_id = #{consultStateId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="consultStateId != null" >
+          and t.consult_state_id = #{consultStateId,jdbcType=INTEGER}
+      </if>
+      <if test="consultStateName != null" >
+          and t.consult_state_name = #{consultStateName,jdbcType=VARCHAR}
+      </if>
+      <if test="consultStateType != null" >
+          and t.consult_state_type = #{consultStateType,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.consult_state_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.consult_state_id) from org_consult_state t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_consult_state t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_consult_state where consult_state_id in (
+    select t.consult_state_id from (select * from org_consult_state) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

@@ -1,0 +1,159 @@
+/**/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset,  th, td
+{margin: 0; padding: 0; border: 0; outline: none;}
+ul, li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #fff;
+	color: #333;
+	font-family: "Microsoft YaHei",Arial,sans-serif;
+	font-size: 12px;
+	height: 100%;
+}
+*{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.floor1 img{
+	width: 100%;
+}
+.floor2{
+	background: url(b2.png) no-repeat center;
+	height: 100px;
+	text-align: center;
+}
+.floor2 img{
+	width: 901px;
+	height: 85px;
+}
+.floor-item{
+	width: 901px;
+	height: 85px;
+	position: relative;
+	margin: 0px auto;
+}
+.floor-item2{
+	width: 929px;
+	height: 562px;
+	margin: 0px auto;
+	position: relative;
+}
+.floor3 span.span3{
+	width: 170px;
+	height: 50px;
+	line-height: 50px;
+	left: 140px;
+	bottom: 57px;
+	color: #fff;
+	font-size: 36px;
+	text-align: center;
+}
+.floor2 a{
+	color: #d6324c;
+	position: absolute;
+	font-size: 16px;
+	bottom: 10px;
+	right: 6px;
+	width: 169px;
+	height: 39px;
+	background: url(b7.png) no-repeat;
+}
+.floor3{
+	background: #17aefc;
+	height: 562px;
+	overflow: hidden;
+	position: relative;
+}
+.floor3 span{
+	 width: 182px;
+	 height: 149px;	
+	 position: absolute;
+	 bottom: 0px;
+}
+.floor3 span.span1{
+	background: url(b4.png) no-repeat center;
+	left: 15px;
+}
+.floor3 span.span2{
+	background: url(b5.png) no-repeat center;
+	right: 15px;
+}
+.banner{
+	background: url(b1.png ) repeat-x;
+	height: 80px;
+	width: 100%;
+}
+.banner.b1{
+	background: #02be71;
+}
+.banner h5{
+	width: 900px;
+	margin: 0px auto;
+	font-size: 30px;
+	line-height: 80px;
+	color: #fff;
+}
+.floor4{
+	background: #ffc002;
+	height:auto;
+	overflow: hidden;
+	width: 100%;
+}
+.floor-item3{
+	width: 900px;
+	padding-top: 40px;
+	margin: 0px auto;
+}
+.floor-item3 a{
+	width: 435px;
+	height: 239px;
+	overflow: hidden;
+	display: block;
+	float: left;
+	margin: 5px;
+}
+.floor-item3 a.a1{
+	width: 214px;
+	height: 335px;
+}
+.floor-item3 a:hover img{
+	transform:scale(1.1);
+	transition: scale(1.1);
+	-moz-transition: scale(1.1); /* Firefox 4 */
+	-webkit-transition: scale(1.1); /* Safari 和 Chrome */
+	-o-transition: scale(1.1); /* Opera */
+}
+.floor-item3 a img{
+	width: 100%;
+	transition: all 0.5s;
+-moz-transition: all 0.5s; /* Firefox 4 */
+-webkit-transition: all 0.5s; /* Safari 和 Chrome */
+-o-transition: all 0.5s; /* Opera */
+}
+.banner-all{
+	width: 100%;
+	background: #FFC002;
+}
+.banner-text{
+	width: 900px;
+	height: auto;
+	overflow: hidden;padding: 30px 0px;
+	margin: 0px auto;
+	color: #DA6816;
+}
+.banner-text h4{
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+}
+.banner-text p{
+	font-size: 14px;
+	color: #DA6816;
+	line-height: 24px;
+}

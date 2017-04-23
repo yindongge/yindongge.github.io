@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.article.OrgArticleClassMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.article.OrgArticleClass" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="class_name" property="className" jdbcType="VARCHAR" />
+    <result column="order_" property="order" jdbcType="INTEGER" />
+    <result column="parentId" property="parentid" jdbcType="INTEGER" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="level" property="level" jdbcType="SMALLINT" />
+    <result column="isvalide" property="isvalide" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, class_name, order_, parentId, createtime, level, isvalide
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_article_class
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_article_class
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.article.OrgArticleClass" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_article_class (class_name, order_, parentId, 
+      createtime, level, isvalide
+      )
+    values (#{className,jdbcType=VARCHAR}, #{order,jdbcType=INTEGER}, #{parentid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{level,jdbcType=SMALLINT}, #{isvalide,jdbcType=SMALLINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.article.OrgArticleClass" >
+    update org_article_class
+    <set >
+      <if test="className != null" >
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        order_ = #{order,jdbcType=INTEGER},
+      </if>
+      <if test="parentid != null" >
+        parentId = #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=SMALLINT},
+      </if>
+      <if test="isvalide != null" >
+        isvalide = #{isvalide,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.article.OrgArticleClass" >
+    update org_article_class
+    set class_name = #{className,jdbcType=VARCHAR},
+      order_ = #{order,jdbcType=INTEGER},
+      parentId = #{parentid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      level = #{level,jdbcType=SMALLINT},
+      isvalide = #{isvalide,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.article.aide.OrgArticleClassVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.class_name, 
+    t.order_, 
+    t.parentId, 
+    t.createtime, 
+    t.level, 
+    t.isvalide
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_article_class t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="className != null" >
+          and t.class_name = #{className,jdbcType=VARCHAR}
+      </if>
+      <if test="order != null" >
+          and t.order_ = #{order,jdbcType=INTEGER}
+      </if>
+      <if test="parentid != null" >
+          and t.parentId = #{parentid,jdbcType=INTEGER}
+      </if>
+      <if test="createtime != null" >
+          and t.createtime = #{createtime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="level != null" >
+          and t.level = #{level,jdbcType=SMALLINT}
+      </if>
+      <if test="isvalide != null" >
+          and t.isvalide = #{isvalide,jdbcType=SMALLINT}
+      </if>
+      <if test="rootId != null" >
+          and oac.parentId = #{rootId,jdbcType=INTEGER}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_article_class t
+    <if test="rootId != null" >
+    	left join org_article_class oac on t.parentId = oac.id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_article_class t
+    <if test="rootId != null" >
+    	left join org_article_class oac on t.parentId = oac.id
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_article_class where id in (
+    select t.id from (select * from org_article_class) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

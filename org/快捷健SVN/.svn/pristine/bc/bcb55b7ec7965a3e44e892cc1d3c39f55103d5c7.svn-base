@@ -1,0 +1,265 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>罐头的秘密-超多商品 超低特价 1分钱起送 1小时配送 0配送费-快捷健商城Kjjhome.com  </title>
+<link href="../common/common.css" type="text/css" rel="stylesheet"/>
+<style type="text/css">
+.box2.bg-black {
+	background: #001532;
+}
+.same-floor.red-bg{
+ background:#aa0004;
+}
+.backhome.white{
+	background: #fff;
+}
+.blue-bg{background: #1c6a9f;}
+.blue-bg .title-img{
+	width: 74%;
+	margin: 10px auto;
+}
+.box2.bg-fourgreen{
+ background: #590082;
+}
+.same-tip{
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	padding: 0px 10px;
+	box-sizing: border-box;
+}
+.same-tip img{
+	width: 100%;
+}
+.boxlist{
+	clear: both;
+	overflow: hidden;
+}
+.same-tip h5{
+	font-size: 16px;
+	color: #ffef35;
+	margin-top: 80px;
+	text-align: left;
+}
+.same-tip p {
+    color: #ffef35;
+    font-size: 14px;
+    margin-bottom: 28px;
+    font-weight: normal;
+    text-align: left;
+}
+.same-tip p a{
+	color: #fff;
+	font-size: 14px;
+}
+.show-erweima{ width: 100%; overflow: hidden;text-align: center;vertical-align: middle;}
+.show-erweima img{
+	width: 502px;
+	height: 574px;
+	margin: 200px auto;
+}
+.date-set {
+    width: 100%;
+    height: 76px;
+    /* background: #f00; */
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.center-content .fixed-time{
+	position: relative;
+	overflow: hidden;
+}
+.fix-box {
+    width: 220px;
+    height: 76px;
+    background: url(img/time.png) no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -110px;
+    margin-top: -184px;
+}
+ @media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-device-pixel-ratio: 2)
+and (device-aspect-ratio: 2/3)
+{
+.fix-box{margin-top: -125px}
+}
+ @media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-device-pixel-ratio: 2)
+and (device-aspect-ratio: 2/3)
+{
+.fix-box{margin-top: -125px}
+}
+
+
+.fixed-time img{
+	width: 100%;
+}
+
+
+
+.date-set #time1 {
+    width: 60px;
+    height: 40px;
+    /* background: #f00; */
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    position: absolute;
+    left: 4px;
+    letter-spacing: 17px;
+    text-indent: 9px;
+    bottom: 2px;
+}
+
+
+.date-set #time2 {
+    width: 60px;
+    height: 40px;
+    /* background: #f00; */
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    position: absolute;
+    left: 80px;
+    letter-spacing: 17px;
+    text-indent: 9px;
+    bottom: 2px;
+}
+
+.date-set #time3 {
+    width: 60px;
+    height: 40px;
+    /* background: #f00; */
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    position: absolute;
+    left:158px;
+    letter-spacing: 17px;
+    text-indent: 9px;
+    bottom: 2px;
+}
+</style>
+</head>
+<body>
+	<div class="box2 bg-fourgreen">
+		<header class="box2-top">
+		<div class="fixed-time">
+			<img src="img/day1.jpg" >
+			<div class="fix-box">
+			<div class="date-set">
+				<input type="hidden" id="endTime"/>
+				<span id="time1"></span>
+				<span id="time2"></span>
+				<span id="time3"></span>
+			</div>
+			</div>
+		</div>
+		</header>
+		<!--  -->
+		<div class="same-floor red-bg">
+			<p class="title-img">
+				<img src="./img/day2.png">
+			</p>
+			<div class="boxlist">
+				<a href="../../item/592"> <span class="lowprice"></span>
+					<div class="b-listimg">
+						<img src="./img/592.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>魔冠豆豉金枪鱼190g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥12.50</span> <span class="yellow-text">¥9.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+
+					<a href="../../item/1387"> <span class="lowprice"></span>
+					<div class="b-listimg">
+						<img src="./img/1387.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>魔冠油浸金枪鱼罐头185g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥12.50</span> <span class="yellow-text">¥9.50</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+			 <a href="../../item/1283"> <span class="lowprice"></span>
+					<div class="b-listimg">
+						<img src="./img/1283.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>魔冠油浸鲭鱼片125g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥19.00</span> <span class="yellow-text">¥15.00</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="../../item/1531"> <span class="lowprice"></span>
+					<div class="b-listimg">
+						<img src="./img/1531.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>魔冠豆豉金枪鱼罐头120克</h4>
+						<div class="b-price">
+							<span class="gray-text">¥19.00</span> <span class="yellow-text">¥9.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+				<a href="../../item/595"> <span class="lowprice"></span>
+					<div class="b-listimg">
+						<img src="./img/595.jpg" alt="" />
+					</div>
+					<div class="b-listtext">
+						<h4>魔冠油浸金枪鱼120g</h4>
+						<div class="b-price">
+							<span class="gray-text">¥19.00</span> <span class="yellow-text">¥9.90</span>
+							<i></i>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="same-tip">
+					<h5>活动说明：</h5>
+					<p>1.VIP专场活动是快捷健针对金牌会员和VIP会员推出的，秒升VIP会员请<a href="">点这里</a></p>
+					<p>2.本次活动价格为VIP会员专享价，普通用户无法享受VIP价格，您可以在个人中心查看会员等级 <a href="">进入个人中心</a></p>
+					<p>3.本次活动秒杀商品每个ID限购1个，共计170个，抢完为止。</p>
+					<p>4.本次活动特价商品，数量有限，部分商品每个用户限购1个或3个，抢完为止</p>
+					<p>5.快捷健提供到店自提、1小时免费配送的服务  <a href="">查看配送范围和时间</a></p>
+				</div>
+		</div>
+		<!-- end samefloor -->
+<div class="gotop" onclick="move()"></div>
+		<div class="space40"></div>
+		<div class="backhome white fixed">
+			<a href="../../home" class="a2">返回商城首页</a>
+			<a href="../../cart/list" class="a1">去购物车结算</a>
+		</div>
+<script src="../common/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="../common/common.js" type="text/javascript"></script>
+<script src="../common/settime.js" type="text/javascript"></script>
+<!-- <script src="../common/baidutongji.js" type="text/javascript"></script> -->
+
+</body>
+</html>

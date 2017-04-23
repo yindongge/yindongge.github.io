@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />  -->
+<title>商品分类</title>
+</head>
+<body >	
+	<!--弹出框分割线-->
+        <div class="modal show modal-control modal-controladd3  " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+			<div class="modal-body">
+			<form>
+				<table class="table ">
+					<thead>
+						<tr>
+							<th><i class="glyphicon glyphicon-star"></i>分组名称</th>
+							<th><i class="glyphicon glyphicon-star"></i>排序</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="form-group">								
+									<input type="text" class="form-control"  placeholder="Enter ">
+							  </div>
+							</td>
+							<td>
+								<div class="form-group">								
+									<input type="text" class="form-control"  placeholder="Enter ">
+							  </div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="form-group">								
+									<input type="text" class="form-control"  placeholder="Enter ">
+							  </div>
+							</td>
+							<td>
+								<div class="form-group">									
+									<input type="text" class="form-control"  placeholder="Enter ">
+							  </div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+        
+        	
+			</div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default modal-button" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary modal-button">确定</button>
+			  </div>
+    </div>
+  </div>
+</div>
+<!--结束弹出框分割线-->
+	
+	
+</body>
+</html>

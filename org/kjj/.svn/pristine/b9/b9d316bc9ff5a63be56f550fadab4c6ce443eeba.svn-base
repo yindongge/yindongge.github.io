@@ -1,0 +1,71 @@
+package com.kjj.manage.web.controller.$!{foo};
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.kjj.commserver.entity.$!{entityPosition}.$!{Tb}$!{Foo};
+import com.kjj.commserver.entity.$!{entityPosition}.aide.$!{Tb}$!{Foo}Query;
+import com.kjj.commserver.service.$!{servicesPosition}.$!{Tb}$!{Foo}Service;
+import com.kjj.manage.constant.HttpStatusCode;
+import com.kjj.manage.util.PageReq;
+
+@Controller
+@RequestMapping("/$!{foo}")
+public class $!{Foo}Controller {
+
+	@Resource
+	private $!{Tb}$!{Foo}Service $!{tb}$!{Foo}Service;
+
+
+	@RequestMapping(value = "/list", method = { RequestMethod.GET, RequestMethod.POST })
+	public String list( Model model,HttpSession session,PageReq pageReq,$!{Tb}$!{Foo}Query query ) {
+		Page<$!{Tb}$!{Foo}> page = $!{tb}$!{Foo}Service.queryPageList(query, pageReq);
+		model.addAttribute("page", page);
+		return "/$!{foo}/list";
+	}
+
+	@RequestMapping(value = "/add", method = { RequestMethod.GET,RequestMethod.POST })
+	public String addInit( Model model,HttpSession session) {
+		return "$!{foo}/add";
+	}
+
+	@RequestMapping(value = "/edit/{id}/{pageNumber}", method = { RequestMethod.GET,RequestMethod.POST })
+	public String edit( Model model,HttpSession session,@PathVariable Integer id, @PathVariable Integer pageNumber) {
+		$!{Tb}$!{Foo} $!{tb}$!{Foo} = $!{tb}$!{Foo}Service.queryById(id);
+		model.addAttribute("$!{tb}$!{Foo}", $!{tb}$!{Foo});
+		model.addAttribute("pageNumber", pageNumber);
+		return "$!{foo}/edit";
+	}
+
+	@RequestMapping(value = "/save", method = { RequestMethod.GET,RequestMethod.POST })
+	public String save(Model model,HttpSession session,$!{Tb}$!{Foo} $!{tb}$!{Foo},PageReq pageReq,RedirectAttributes redirectAttributes) {
+		if($!{tb}$!{Foo}.getId()==null){
+			$!{tb}$!{Foo}Service.add($!{tb}$!{Foo});
+		}else{
+			$!{tb}$!{Foo}Service.updateByIdSelective($!{tb}$!{Foo});
+		}
+		redirectAttributes.addAttribute("pageNumber", pageReq.getPageNumber());
+		return "redirect:/$!{foo}/list";
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> delete(@PathVariable Integer id) {
+		$!{tb}$!{Foo}Service.deleteById(id);
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+}

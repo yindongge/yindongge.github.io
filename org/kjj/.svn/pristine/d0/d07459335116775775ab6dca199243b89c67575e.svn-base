@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/all.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/swiper.css">
+<title>快捷健</title>
+</head>
+<body>
+	<div class="box">
+		<div class="box-content">
+			<header class="header">
+				<div class="logo margin1 fl">
+					<a href="#"><img src="img/logo.png"></a>
+				</div>
+				<div class="search fl">
+					<input type="text" class="text1" placeholder="开始搜索">
+					<span class="search-icon"></span>
+					<a href="#" class="search-button">搜索</a>
+				</div>
+				<div class="logo-text fr">
+					<span class="lt1 lt">光华路SOHO</span>
+					<span class="lt2 lt">客服热线：<em>400-666-7777</em></span>
+				</div>
+			</header>
+		</div>
+		<!-- 结束 头 -->
+		<div class="future">
+			<div class="future-left fl">
+				<div class="sidebar">
+					<a href="#">
+						<div class="s-img s1">
+							
+						</div>
+						<span class="s-title">精品购物</span>
+					</a>
+					<a href="#">
+						<div class="s-img s2">
+							
+						</div>
+						<span class="s-title">防伪溯源</span>
+					</a>
+						<a href="#">
+						<div class="s-img s3">
+							
+						</div>
+						<span class="s-title">休闲娱乐</span>
+					</a>
+					<a href="#">
+						<div class="s-img s4">
+							
+						</div>
+						<span class="s-title">会员服务</span>
+					</a>
+						<a href="#">
+						<div class="s-img s5">
+							
+						</div>
+						<span class="s-title">优惠活动</span>
+					</a>
+					<a href="#">
+						<div class="s-img s6">
+							
+						</div>
+						<span class="s-title">关于我们</span>
+					</a>
+				</div>
+			</div>
+			<div class="future-right m fr">
+				<div class="m-left fl">
+					<a style="display:block"><img src="img/zhaomu.jpg"></a>
+					<a><img src="img/fuli.jpg"></a>
+				</div>
+				<div class="m-right fr">
+					<div class="m-banner">
+						<a class="a2 on">招募会员</a>
+						<a class="a2 ">会员福利</a>
+					</div>
+					<div class="m-content addmember">
+						<p>现在就加入快捷健吧！</p>
+						<p>免费午餐肉等你来领！</p>
+						<p>
+							即日起成为快捷健注册会员，我们就赠送您午餐肉罐头券一张，您可以在线下单，免费领取午餐肉罐头一份！快捷健秉承：快乐、便捷、健康的生活理念，为您快提供1分钱起送，0配送费，1小时配送的便捷服务。更有不定期推出优惠活动，更多精彩尽在快捷健！
+                       </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 结束列表 -->
+			
+	</div>
+
+	<!--  -->
+<script type="text/javascript">
+	$(function(){
+		$('.a2').click(function(){
+			$(this).addClass('on').siblings('.a2').removeClass('on');
+			var index=$('.a2').index(this);
+			$('.m-left a').eq(index).show().siblings('.m-left a').hide();
+			//这里后期修改的，注意，是在siblings添加的选择器
+		})
+	})
+</script>
+</body>
+</html>

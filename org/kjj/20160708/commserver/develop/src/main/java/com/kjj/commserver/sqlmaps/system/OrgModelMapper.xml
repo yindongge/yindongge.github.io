@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.system.OrgModelMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.system.OrgModel" >
+    <id column="modelId" property="modelid" jdbcType="INTEGER" />
+    <result column="modelName" property="modelname" jdbcType="VARCHAR" />
+    <result column="modelImg" property="modelimg" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="modelCode" property="modelcode" jdbcType="VARCHAR" />
+    <result column="flag" property="flag" jdbcType="INTEGER" />
+    <result column="modelParent" property="modelparent" jdbcType="INTEGER" />
+    <result column="modelLevel" property="modellevel" jdbcType="INTEGER" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="isActive" property="isactive" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    modelId, modelName, modelImg, url, modelCode, flag, modelParent, modelLevel, description, 
+    isActive
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_model
+    where modelId = #{modelid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_model
+    where modelId = #{modelid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.system.OrgModel" useGeneratedKeys="true" keyColumn="modelId" keyProperty="modelid" >
+    insert into org_model (modelName, modelImg, url, 
+      modelCode, flag, modelParent, 
+      modelLevel, description, isActive
+      )
+    values (#{modelname,jdbcType=VARCHAR}, #{modelimg,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{modelcode,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER}, #{modelparent,jdbcType=INTEGER}, 
+      #{modellevel,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{isactive,jdbcType=CHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.system.OrgModel" >
+    update org_model
+    <set >
+      <if test="modelname != null" >
+        modelName = #{modelname,jdbcType=VARCHAR},
+      </if>
+      <if test="modelimg != null" >
+        modelImg = #{modelimg,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="modelcode != null" >
+        modelCode = #{modelcode,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="modelparent != null" >
+        modelParent = #{modelparent,jdbcType=INTEGER},
+      </if>
+      <if test="modellevel != null" >
+        modelLevel = #{modellevel,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isactive != null" >
+        isActive = #{isactive,jdbcType=CHAR},
+      </if>
+    </set>
+    where modelId = #{modelid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.system.OrgModel" >
+    update org_model
+    set modelName = #{modelname,jdbcType=VARCHAR},
+      modelImg = #{modelimg,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      modelCode = #{modelcode,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=INTEGER},
+      modelParent = #{modelparent,jdbcType=INTEGER},
+      modelLevel = #{modellevel,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      isActive = #{isactive,jdbcType=CHAR}
+    where modelId = #{modelid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.system.aide.OrgModelVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.modelId, 
+    t.modelName, 
+    t.modelImg, 
+    t.url, 
+    t.modelCode, 
+    t.flag, 
+    t.modelParent, 
+    t.modelLevel, 
+    t.description, 
+    t.isActive
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_model t
+    where t.modelId = #{modelid,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="modelid != null" >
+          and t.modelId = #{modelid,jdbcType=INTEGER}
+      </if>
+      <if test="modelname != null" >
+          and t.modelName = #{modelname,jdbcType=VARCHAR}
+      </if>
+      <if test="modelimg != null" >
+          and t.modelImg = #{modelimg,jdbcType=VARCHAR}
+      </if>
+      <if test="url != null" >
+          and t.url = #{url,jdbcType=VARCHAR}
+      </if>
+      <if test="modelcode != null" >
+          and t.modelCode = #{modelcode,jdbcType=VARCHAR}
+      </if>
+      <if test="flag != null" >
+          and t.flag = #{flag,jdbcType=INTEGER}
+      </if>
+      <if test="modelparent != null" >
+          and t.modelParent = #{modelparent,jdbcType=INTEGER}
+      </if>
+      <if test="modellevel != null" >
+          and t.modelLevel = #{modellevel,jdbcType=INTEGER}
+      </if>
+      <if test="description != null" >
+          and t.description = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="isActive != null" >
+          and t.isActive = #{isActive,jdbcType=VARCHAR}
+      </if>
+      <if test="userId != null" >
+      	  and exists (
+      	  	select 1 from org_admin_authority oaa 
+      	  	where oaa.authorityID = t.modelId
+      	  	and oaa.user_id = #{userId,jdbcType=SMALLINT}
+      	  )
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.modelId desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.modelId) from org_model t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="com.kjj.commserver.entity.system.OrgModel" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_model t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_model where modelId in (
+    select t.modelId from (select * from org_model) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

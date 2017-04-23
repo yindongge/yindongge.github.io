@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />  -->
+<title>商品分类</title>
+</head>
+<body >
+
+<!--开始头部-->
+	<div class="wrapper">
+
+		<!--结束登录-->
+		<nav class="navbar navbar-inverse navbar-fixed-top"  style="margin-top:30px;">
+			<div class="navbar-header">
+					<a href="index.html"  class="navbar-brand">
+					<img src="../img/logo.jpg"/>
+				</a>
+			</div>
+				<ul class="nav navbar-nav navbar-control">
+					<li><a href="#">控制台</a></li>
+					<li><a href="#">会员</a></li>
+					<li class="active"><a href="#">商品</a></li>
+					<li><a href="#">交易</a></li>
+					<li><a href="#">店铺</a></li>
+					<li><a href="#">运营</a></li>
+					<li><a href="#">设置</a></li>
+				</ul>
+			<ul class="nav navbar-nav pull-right  header-control">
+				<li ><a><p >李建军</p></a></li>
+				<li><a href="#"><i class="glyphicon glyphicon-arrow-left"></i>安全退出</a></li>
+				<li><a href="#"><i class="glyphicon glyphicon-star"></i> 账号管理</a></li>
+				<li><a href="#"><i class="glyphicon glyphicon-user"></i>  前台首页</a></li>
+			</ul>
+			<!-- Single button -->
+
+		</nav><!--结束导航条-->
+
+	<!--结束头部-->
+	</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

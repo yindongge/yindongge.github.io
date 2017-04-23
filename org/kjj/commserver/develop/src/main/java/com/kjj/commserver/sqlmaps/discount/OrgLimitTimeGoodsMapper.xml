@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.discount.OrgLimitTimeGoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.discount.OrgLimitTimeGoods" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ltd_id" property="ltdId" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="goods_title" property="goodsTitle" jdbcType="VARCHAR" />
+    <result column="discount" property="discount" jdbcType="TINYINT" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="city_num" property="cityNum" jdbcType="INTEGER" />
+    <result column="shop_num" property="shopNum" jdbcType="INTEGER" />
+    <result column="user_num" property="userNum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ltd_id, goods_id, goods_title, discount, price, city_num, shop_num, user_num
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_limit_time_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_limit_time_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeGoods" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_limit_time_goods (ltd_id, goods_id, goods_title, 
+      discount, price, city_num, 
+      shop_num, user_num)
+    values (#{ltdId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{goodsTitle,jdbcType=VARCHAR}, 
+      #{discount,jdbcType=TINYINT}, #{price,jdbcType=DECIMAL}, #{cityNum,jdbcType=INTEGER}, 
+      #{shopNum,jdbcType=INTEGER}, #{userNum,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeGoods" >
+    update org_limit_time_goods
+    <set >
+      <if test="ltdId != null" >
+        ltd_id = #{ltdId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsTitle != null" >
+        goods_title = #{goodsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=TINYINT},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="cityNum != null" >
+        city_num = #{cityNum,jdbcType=INTEGER},
+      </if>
+      <if test="shopNum != null" >
+        shop_num = #{shopNum,jdbcType=INTEGER},
+      </if>
+      <if test="userNum != null" >
+        user_num = #{userNum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeGoods" >
+    update org_limit_time_goods
+    set ltd_id = #{ltdId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_title = #{goodsTitle,jdbcType=VARCHAR},
+      discount = #{discount,jdbcType=TINYINT},
+      price = #{price,jdbcType=DECIMAL},
+      city_num = #{cityNum,jdbcType=INTEGER},
+      shop_num = #{shopNum,jdbcType=INTEGER},
+      user_num = #{userNum,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.discount.aide.OrgLimitTimeGoodsVo" extends="BaseResultMap" >
+  	  <result column="shop_buy_num" property="shopBuyNum" jdbcType="INTEGER" />
+	  <result column="user_buy_num" property="userBuyNum" jdbcType="INTEGER" />
+	  <result column="db_date" property="dbDate" jdbcType="TIMESTAMP" />
+	  <association property="orgLimitTimeDiscount" javaType="com.kjj.commserver.entity.discount.OrgLimitTimeDiscount">
+		<result column="name" property="name" jdbcType="VARCHAR" />
+	    <result column="title" property="title" jdbcType="VARCHAR" />
+	    <result column="start_date" property="startDate" jdbcType="DATE" />
+	    <result column="end_date" property="endDate" jdbcType="DATE" />
+	    <result column="start_time" property="startTime" jdbcType="TIME" />
+	    <result column="end_time" property="endTime" jdbcType="TIME" />
+	    <result column="seckill" property="seckill" jdbcType="TINYINT" />
+	    <result column="seckill_time_length" property="seckillTimeLength" jdbcType="SMALLINT" />
+	    <result column="check_phone" property="checkPhone" jdbcType="TINYINT" />
+	    <result column="shop_type" property="shopType" jdbcType="TINYINT" />
+	    <result column="status" property="status" jdbcType="TINYINT" />
+	  </association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.ltd_id, 
+    t.goods_id, 
+    t.goods_title, 
+    t.discount, 
+    t.price, 
+    t.city_num, 
+    t.shop_num, 
+    t.user_num,
+    oltd.name, 
+    oltd.title, 
+    oltd.start_date, 
+    oltd.end_date, 
+    oltd.start_time, 
+    oltd.end_time, 
+    oltd.seckill, 
+    oltd.seckill_time_length, 
+    oltd.check_phone, 
+    oltd.shop_type, 
+    oltd.status,
+    now() as db_date
+    <if test="query4User != null and query4User">
+    	,(select ifnull(sum(oltr.amount),0) from org_limit_time_record oltr where oltr.ltg_id=t.id and oltr.shop_id=#{orgUsersSession.orgShop.shopId,jdbcType=INTEGER}
+	    	<if test="forUpdate != null and forUpdate" >
+		      for update
+		    </if>
+    	)AS shop_buy_num
+		<if test="orgUsersSession.login">
+			,(select ifnull(sum(oltre.amount),0) from org_limit_time_record oltre where oltre.ltg_id=t.id and oltre.user_id=#{orgUsersSession.orgUsers.userId,jdbcType=INTEGER}
+				<if test="forUpdate != null and forUpdate" >
+			      for update
+			    </if>
+			)AS user_buy_num
+		</if>
+    </if>
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_limit_time_goods t
+    left join org_limit_time_discount oltd on t.ltd_id = oltd.id
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="ltdId != null" >
+          and t.ltd_id = #{ltdId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsId != null" >
+          and t.goods_id = #{goodsId,jdbcType=INTEGER}
+      </if>
+      <if test="goodsTitle != null" >
+          and t.goods_title = #{goodsTitle,jdbcType=VARCHAR}
+      </if>
+      <if test="discount != null" >
+          and t.discount = #{discount,jdbcType=TINYINT}
+      </if>
+      <if test="price != null" >
+          and t.price = #{price,jdbcType=DECIMAL}
+      </if>
+      <if test="cityNum != null" >
+          and t.city_num = #{cityNum,jdbcType=INTEGER}
+      </if>
+      <if test="shopNum != null" >
+          and t.shop_num = #{shopNum,jdbcType=INTEGER}
+      </if>
+      <if test="userNum != null" >
+          and t.user_num = #{userNum,jdbcType=INTEGER}
+      </if>
+      <if test="goodsIds != null" >
+          <if test="goodsIds.size() > 0" >
+          and t.goods_id in 
+          <foreach collection="goodsIds" index="index" item="item" open="(" separator="," close=")">
+          	#{item,jdbcType=INTEGER}
+          </foreach>
+     	  </if>
+     	  <if test="goodsIds.size() == 0" >
+          and 1 = 0
+     	  </if>
+      </if>
+      <if test="status != null" >
+          and oltd.status = #{status,jdbcType=TINYINT}
+      </if>
+	  <if test="timeType != null and timeType == 0">
+		and oltd.end_date &gt;= curdate()
+		and oltd.start_date &lt;= curdate()
+		and oltd.start_time &gt;= curtime()
+	  </if>
+	  <if test="timeType != null and timeType == 1">
+		and oltd.start_date &lt;= curdate()
+		and oltd.end_date &gt;= curdate()
+		and oltd.start_time &lt;= curtime()
+		and oltd.end_time &gt;= curtime()
+	  </if>
+	  <if test="timeType != null and timeType == 2">
+		and oltd.end_date &gt;= curdate()
+		and oltd.start_date &lt;= curdate()
+	  </if>
+	  <if test="timeType != null and timeType == 3">
+		and oltd.start_date &gt;= curdate()
+	  </if>
+	  <if test="timeType != null and timeType == 4">
+		and CONCAT(end_date," ",end_time) &gt;= NOW()
+	  </if>
+	  <if test="query4User != null and query4User">
+		and exists (
+				select 1 from org_discount_scope odsc where
+				odsc.type_id = 1
+				and odsc.discount_id = oltd.id
+				and odsc.scope = #{orgUsersSession.source,jdbcType=TINYINT}
+			)
+		and (
+				(oltd.shop_type = 3 AND EXISTS (
+					SELECT 1 from org_discount_shop ods where
+					ods.type_id = 1
+					and ods.discount_id = oltd.id
+					and ods.shop_id is not null
+					and ods.shop_id = #{orgUsersSession.orgShop.shopId,jdbcType=INTEGER}
+				)) or (oltd.shop_type = 2 AND EXISTS (
+					SELECT 1 from org_discount_shop odsh where
+					odsh.type_id = 1
+					and odsh.discount_id = oltd.id
+					and odsh.city_code is not null
+					and left(odsh.city_code,4) = left(#{orgUsersSession.orgShop.areaCode,jdbcType=VARCHAR},4)
+				)) or oltd.shop_type = 1
+			)
+	  </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+    <if test="forUpdate != null and forUpdate" >
+      for update
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_limit_time_goods t
+    left join org_limit_time_discount oltd on t.ltd_id = oltd.id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_limit_time_goods t
+    left join org_limit_time_discount oltd on t.ltd_id = oltd.id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_limit_time_goods where id in (
+    select t.id from (select * from org_limit_time_goods) t
+    left join org_limit_time_discount oltd on t.ltd_id = oltd.id
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <update id="updateByGoodsIdAndLtdId" parameterType="com.kjj.commserver.entity.discount.OrgLimitTimeGoods" >
+    update org_limit_time_goods
+    set goods_title = #{goodsTitle,jdbcType=VARCHAR},
+        discount = #{discount,jdbcType=TINYINT},
+        price = #{price,jdbcType=DECIMAL},
+        city_num = #{cityNum,jdbcType=INTEGER},
+        shop_num = #{shopNum,jdbcType=INTEGER},
+        user_num = #{userNum,jdbcType=INTEGER}
+    where ltd_id = #{ltdId,jdbcType=INTEGER} 
+    	and goods_id = #{goodsId,jdbcType=INTEGER}
+  </update>
+</mapper>

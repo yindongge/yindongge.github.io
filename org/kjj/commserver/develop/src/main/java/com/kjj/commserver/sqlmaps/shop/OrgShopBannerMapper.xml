@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopBannerMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopBanner" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="pageid" property="pageid" jdbcType="INTEGER" />
+    <result column="org_shop_banner" property="orgShopBanner" jdbcType="VARCHAR" />
+    <result column="org_shop_banner_url" property="orgShopBannerUrl" jdbcType="VARCHAR" />
+    <result column="org_shop_banner_order" property="orgShopBannerOrder" jdbcType="VARCHAR" />
+    <result column="b_2" property="b2" jdbcType="VARCHAR" />
+    <result column="b_3" property="b3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pageid, org_shop_banner, org_shop_banner_url, org_shop_banner_order, b_2, b_3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_banner
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_banner
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopBanner" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_shop_banner (pageid, org_shop_banner, org_shop_banner_url, 
+      org_shop_banner_order, b_2, b_3)
+    values (#{pageid,jdbcType=INTEGER}, #{orgShopBanner,jdbcType=VARCHAR}, #{orgShopBannerUrl,jdbcType=VARCHAR}, 
+      #{orgShopBannerOrder,jdbcType=VARCHAR}, #{b2,jdbcType=VARCHAR}, #{b3,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopBanner" >
+    update org_shop_banner
+    <set >
+      <if test="pageid != null" >
+        pageid = #{pageid,jdbcType=INTEGER},
+      </if>
+      <if test="orgShopBanner != null" >
+        org_shop_banner = #{orgShopBanner,jdbcType=VARCHAR},
+      </if>
+      <if test="orgShopBannerUrl != null" >
+        org_shop_banner_url = #{orgShopBannerUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="orgShopBannerOrder != null" >
+        org_shop_banner_order = #{orgShopBannerOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="b2 != null" >
+        b_2 = #{b2,jdbcType=VARCHAR},
+      </if>
+      <if test="b3 != null" >
+        b_3 = #{b3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopBanner" >
+    update org_shop_banner
+    set pageid = #{pageid,jdbcType=INTEGER},
+      org_shop_banner = #{orgShopBanner,jdbcType=VARCHAR},
+      org_shop_banner_url = #{orgShopBannerUrl,jdbcType=VARCHAR},
+      org_shop_banner_order = #{orgShopBannerOrder,jdbcType=VARCHAR},
+      b_2 = #{b2,jdbcType=VARCHAR},
+      b_3 = #{b3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByOldPath" parameterType="java.util.HashMap">  
+       update org_shop_banner 
+       set org_shop_banner =#{newpath,jdbcType=VARCHAR},
+       org_shop_banner_url=#{url,jdbcType=VARCHAR} ,
+       org_shop_banner_order=#{bannerOrder,jdbcType=VARCHAR} 
+	   where org_shop_banner=#{oldpath,jdbcType=VARCHAR}
+  </update>
+  <update id="updateOrderByOldPath" parameterType="java.util.HashMap">  
+       update org_shop_banner 
+       set  org_shop_banner_order=#{bannerOrder,jdbcType=VARCHAR} 
+	   where org_shop_banner=#{oldpath,jdbcType=VARCHAR}
+  </update>
+  <update id="updateBannerUrlByImg" parameterType="java.util.HashMap">  
+       update org_shop_banner 
+       set org_shop_banner_url=#{url,jdbcType=VARCHAR} 
+	   where org_shop_banner=#{oldpath,jdbcType=VARCHAR}
+  </update>
+  <delete id="deleteBannerByImg" parameterType="java.util.HashMap">
+    delete from org_shop_banner
+    where org_shop_banner=#{oldpath,jdbcType=VARCHAR}
+  </delete>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopBannerVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.pageid, 
+    t.org_shop_banner, 
+    t.org_shop_banner_url, 
+    t.org_shop_banner_order, 
+    t.b_2, 
+    t.b_3
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_banner t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="pageid != null" >
+          and t.pageid = #{pageid,jdbcType=INTEGER}
+      </if>
+      <if test="orgShopBanner != null" >
+          and t.org_shop_banner = #{orgShopBanner,jdbcType=VARCHAR}
+      </if>
+      <if test="orgShopBannerUrl != null" >
+          and t.org_shop_banner_url = #{orgShopBannerUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="orgShopBannerOrder != null" >
+          and t.org_shop_banner_order = #{orgShopBannerOrder,jdbcType=VARCHAR}
+      </if>
+      <if test="b2 != null" >
+          and t.b_2 = #{b2,jdbcType=VARCHAR}
+      </if>
+      <if test="b3 != null" >
+          and t.b_3 = #{b3,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_shop_banner t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_banner t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_banner where id in (
+    select t.id from (select * from org_shop_banner) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

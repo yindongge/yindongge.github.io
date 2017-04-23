@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.order.OrgReturnOrderLogMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.order.OrgReturnOrderLog" >
+    <id column="log_id" property="logId" jdbcType="INTEGER" />
+    <result column="return_order_id" property="returnOrderId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="admin_id" property="adminId" jdbcType="SMALLINT" />
+    <result column="log_type" property="logType" jdbcType="TINYINT" />
+    <result column="log_detail" property="logDetail" jdbcType="VARCHAR" />
+    <result column="log_time" property="logTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    log_id, return_order_id, user_id, admin_id, log_type, log_detail, log_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_return_order_log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_return_order_log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.order.OrgReturnOrderLog" useGeneratedKeys="true" keyColumn="log_id" keyProperty="logId" >
+    insert into org_return_order_log (return_order_id, user_id, admin_id, 
+      log_type, log_detail, log_time
+      )
+    values (#{returnOrderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{adminId,jdbcType=SMALLINT}, 
+      #{logType,jdbcType=TINYINT}, #{logDetail,jdbcType=VARCHAR}, #{logTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.order.OrgReturnOrderLog" >
+    update org_return_order_log
+    <set >
+      <if test="returnOrderId != null" >
+        return_order_id = #{returnOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="adminId != null" >
+        admin_id = #{adminId,jdbcType=SMALLINT},
+      </if>
+      <if test="logType != null" >
+        log_type = #{logType,jdbcType=TINYINT},
+      </if>
+      <if test="logDetail != null" >
+        log_detail = #{logDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="logTime != null" >
+        log_time = #{logTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.order.OrgReturnOrderLog" >
+    update org_return_order_log
+    set return_order_id = #{returnOrderId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      admin_id = #{adminId,jdbcType=SMALLINT},
+      log_type = #{logType,jdbcType=TINYINT},
+      log_detail = #{logDetail,jdbcType=VARCHAR},
+      log_time = #{logTime,jdbcType=TIMESTAMP}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.order.aide.OrgReturnOrderLogVo" extends="BaseResultMap" >
+    <result column="type_name" property="typeName" jdbcType="VARCHAR" />
+  	<result column="type_show" property="typeShow" jdbcType="VARCHAR" />
+  	<result column="log_source" property="logSource" jdbcType="TINYINT" />
+  	<result column="user_name" property="userName" jdbcType="VARCHAR" />
+  	<result column="admin_name" property="adminName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.log_id, 
+    t.return_order_id, 
+    t.user_id, 
+    t.admin_id, 
+    t.log_type, 
+    t.log_detail, 
+    t.log_time,
+    orolt.type_name,
+    orolt.type_show,
+    orolt.log_source,
+    ou.user_name,
+    oau.user_name as admin_name
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_return_order_log t
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on t.admin_id = oau.user_id
+	left join org_return_order_log_type orolt on t.log_type = orolt.type_id
+    where t.log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="logId != null" >
+          and t.log_id = #{logId,jdbcType=INTEGER}
+      </if>
+      <if test="returnOrderId != null" >
+          and t.return_order_id = #{returnOrderId,jdbcType=INTEGER}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=INTEGER}
+      </if>
+      <if test="adminId != null" >
+          and t.admin_id = #{adminId,jdbcType=SMALLINT}
+      </if>
+      <if test="logType != null" >
+          and t.log_type = #{logType,jdbcType=TINYINT}
+      </if>
+      <if test="logDetail != null" >
+          and t.log_detail = #{logDetail,jdbcType=VARCHAR}
+      </if>
+      <if test="logTime != null" >
+          and t.log_time = #{logTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.log_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.log_id) from org_return_order_log t
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on t.admin_id = oau.user_id
+	left join org_return_order_log_type orolt on t.log_type = orolt.type_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_return_order_log t
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on t.admin_id = oau.user_id
+	left join org_return_order_log_type orolt on t.log_type = orolt.type_id
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_return_order_log where log_id in (
+    left join org_users ou on t.user_id = ou.user_id
+    left join org_admin_user oau on t.admin_id = oau.user_id
+	left join org_return_order_log_type orolt on t.log_type = orolt.type_id
+    select t.log_id from (select * from org_return_order_log) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

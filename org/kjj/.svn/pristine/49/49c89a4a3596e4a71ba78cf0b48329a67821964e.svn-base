@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="-webkit-text-size-adjust:none;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/add.js"></script>
+ <script src="../js/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../css/layer.ext.css" rel="stylesheet" type="text/css" /> -->
+<title>送货单</title>
+
+</head>
+<body>
+<div class="alertbox">
+	<div class="container-fluid ">
+		<div class="row alertcontrol">
+			<div class="col-sm-3">
+				<img src="../img/checklogo.png" class="imgadd">
+			</div>
+			<div class="col-sm-4 text-center">
+				<span class="blacklist">送货单</span>
+			</div>
+			<div class="col-sm-5 text-center">
+					<div class="yiweima"><img src="../img/icon6.jpg"></div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="row row6" style="margin-bottom:10px;">
+			<div class="col-sm-6">
+				<span>客户姓名：</span>
+				<span>王吉鹏</span>
+			</div>
+			<div class="col-sm-6">
+				<span>客户电话：</span>
+				<span>18910083134</span>
+			</div>
+			<div class="col-sm-12">
+				<span>客户地址：</span>
+				<span>北京什么什么什么</span>
+			</div>
+			<div class="col-sm-6">
+				<span>店铺名称：</span>
+				<span>北京什么什么店</span>
+			</div>
+			<div class="col-sm-6">
+				<span>送达时间：</span>
+				<span>1111111111111111</span>
+			</div>
+		</div>
+		<div class="row row6">
+			<div class="col-sm-6">
+				<span>客户姓名：</span>
+				<span>王吉鹏</span>
+			</div>
+			<div class="col-sm-6">
+				<span>客户电话：</span>
+				<span>18910083134</span>
+			</div>
+			<div class="col-sm-12">
+				<span>客户地址：</span>
+				<span>北京什么什么什么</span>
+			</div>
+			<div class="col-sm-6">
+				<span>店铺名称：</span>
+				<span>北京什么什么店</span>
+			</div>
+			<div class="col-sm-6">
+				<span>送达时间：</span>
+				<span>1111111111111111</span>
+			</div>
+		</div>
+		<div class="row row5">
+		<div class="col-md-12">
+				<span>订单编号：</span>
+				<span>11111111111</span>
+			</div>
+			<div class="col-md-12">
+				<span>下单时间：</span>
+				<span>11111111111111111111111</span>
+			</div>
+			<div class="col-md-12">
+				<span>商品总数：</span>
+				<span class="strong">11111111111111</span>
+			</div>
+		</div>
+
+		<table class="table  table-striped " style="margin-bottom:10px;">
+			<thead>
+				<tr>
+					<th>商品名称</th>
+					<th style="width:85px;">商品编号</th>
+					<th  style="width:60px;">价格</th>
+					<th style="width:30px;">数量</th>
+					<th>小计</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="text-left">test商品new</td>
+					<td class="text-center">1234567891234</td>
+					<td class="text-right">￥1200.00</td>
+					<td class="text-center">1</td>
+					<td class="text-right">￥1200.00元</td>
+				</tr>
+				<tr>
+					<td colspan="4" class="spantop text-left">
+						<span>配送费:<em>100.00</em></span>
+						<span>优惠:<em>10.00</em></span>
+						<span>已付:<em>10.00</em></span>
+						<span>应收:<em class="red">10.00</em></span>
+					</td>
+					<td class="text-right">合计：1500</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="qianzi">
+			<span>客户签字：</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

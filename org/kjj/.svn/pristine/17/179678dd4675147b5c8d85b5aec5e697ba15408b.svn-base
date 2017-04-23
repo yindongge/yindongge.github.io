@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.special.OrgSpecialTimeMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.special.OrgSpecialTime" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="special_id" property="specialId" jdbcType="INTEGER" />
+    <result column="time_start" property="timeStart" jdbcType="TIMESTAMP" />
+    <result column="time_end" property="timeEnd" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, special_id, time_start, time_end
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_special_time
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_special_time
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.special.OrgSpecialTime" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_special_time (special_id, time_start, time_end
+      )
+    values (#{specialId,jdbcType=INTEGER}, #{timeStart,jdbcType=TIMESTAMP}, #{timeEnd,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.special.OrgSpecialTime" >
+    update org_special_time
+    <set >
+      <if test="specialId != null" >
+        special_id = #{specialId,jdbcType=INTEGER},
+      </if>
+      <if test="timeStart != null" >
+        time_start = #{timeStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeEnd != null" >
+        time_end = #{timeEnd,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.special.OrgSpecialTime" >
+    update org_special_time
+    set special_id = #{specialId,jdbcType=INTEGER},
+      time_start = #{timeStart,jdbcType=TIMESTAMP},
+      time_end = #{timeEnd,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_time t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="specialId != null" >
+          and t.special_id = #{specialId,jdbcType=INTEGER}
+      </if>
+      <if test="timeStart != null" >
+          and t.time_start = #{timeStart,jdbcType=TIMESTAMP}
+      </if>
+      <if test="timeEnd != null" >
+          and t.time_end = #{timeEnd,jdbcType=TIMESTAMP}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+     <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_special_time t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_time t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_special_time where id in (
+    select t.id from (select * from org_special_time) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.special.aide.OrgSpecialTimeVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.special_id, 
+    t.time_start, 
+    t.time_end
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

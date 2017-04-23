@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.org.baseserver.sqlmaps.user.QrcodeUserMapper" >
+  <resultMap id="BaseResultMap" type="com.org.baseserver.entity.user.QrcodeUser" >
+    <id column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="userName" property="username" jdbcType="VARCHAR" />
+    <result column="userRealName" property="userrealname" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="TINYINT" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="addTime" property="addtime" jdbcType="DATE" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="last_ip" property="lastIp" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userId, userName, userRealName, mobile, sex, password, addTime, remark, last_ip, 
+    status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from qrcode_user
+    where userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from qrcode_user
+    where userId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.org.baseserver.entity.user.QrcodeUser" useGeneratedKeys="true" keyColumn="userId" keyProperty="userid" >
+    insert into qrcode_user (userName, userRealName, mobile, 
+      sex, password, addTime, 
+      remark, last_ip, status
+      )
+    values (#{username,jdbcType=VARCHAR}, #{userrealname,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=TINYINT}, #{password,jdbcType=VARCHAR}, #{addtime,jdbcType=DATE}, 
+      #{remark,jdbcType=VARCHAR}, #{lastIp,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.org.baseserver.entity.user.QrcodeUser" >
+    update qrcode_user
+    <set >
+      <if test="username != null" >
+        userName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userrealname != null" >
+        userRealName = #{userrealname,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        addTime = #{addtime,jdbcType=DATE},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="lastIp != null" >
+        last_ip = #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.org.baseserver.entity.user.QrcodeUser" >
+    update qrcode_user
+    set userName = #{username,jdbcType=VARCHAR},
+      userRealName = #{userrealname,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      password = #{password,jdbcType=VARCHAR},
+      addTime = #{addtime,jdbcType=DATE},
+      remark = #{remark,jdbcType=VARCHAR},
+      last_ip = #{lastIp,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT}
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.org.baseserver.entity.user.aide.QrcodeUserVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.userId, 
+    t.userName, 
+    t.userRealName, 
+    t.mobile, 
+    t.sex, 
+    t.password, 
+    t.addTime, 
+    t.remark, 
+    t.last_ip, 
+    t.status
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from qrcode_user t
+    where t.userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="userid != null" >
+          and t.userId = #{userid,jdbcType=INTEGER}
+      </if>
+      <if test="username != null" >
+          and t.userName = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="userrealname != null" >
+          and t.userRealName = #{userrealname,jdbcType=VARCHAR}
+      </if>
+      <if test="mobile != null" >
+          and t.mobile = #{mobile,jdbcType=VARCHAR}
+      </if>
+      <if test="sex != null" >
+          and t.sex = #{sex,jdbcType=TINYINT}
+      </if>
+      <if test="password != null" >
+          and t.password = #{password,jdbcType=VARCHAR}
+      </if>
+      <if test="addtime != null" >
+          and t.addTime = #{addtime,jdbcType=DATE}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="lastIp != null" >
+          and t.last_ip = #{lastIp,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.userId desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.userId) from qrcode_user t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from qrcode_user t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from qrcode_user where userId in (
+    select t.userId from (select * from qrcode_user) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

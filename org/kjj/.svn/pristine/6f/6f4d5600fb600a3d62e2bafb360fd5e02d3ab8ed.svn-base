@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.special.OrgSpecialWeekMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.special.OrgSpecialWeek" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="special_id" property="specialId" jdbcType="INTEGER" />
+    <result column="week_code" property="weekCode" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, special_id, week_code
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_special_week
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_special_week
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.special.OrgSpecialWeek" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_special_week (special_id, week_code)
+    values (#{specialId,jdbcType=INTEGER}, #{weekCode,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.special.OrgSpecialWeek" >
+    update org_special_week
+    <set >
+      <if test="specialId != null" >
+        special_id = #{specialId,jdbcType=INTEGER},
+      </if>
+      <if test="weekCode != null" >
+        week_code = #{weekCode,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.special.OrgSpecialWeek" >
+    update org_special_week
+    set special_id = #{specialId,jdbcType=INTEGER},
+      week_code = #{weekCode,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_week t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="specialId != null" >
+          and t.special_id = #{specialId,jdbcType=INTEGER}
+      </if>
+      <if test="weekCode != null" >
+          and t.week_code = #{weekCode,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_special_week t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_week t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_special_week where id in (
+    select t.id from (select * from org_special_week) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.special.aide.OrgSpecialWeekVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.special_id, 
+    t.week_code
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

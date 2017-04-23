@@ -1,0 +1,18 @@
+快捷键项目静态文件、图片存放路径
+/home/kjjBase
+			 /manage
+			 		/fileBase
+			 				 /goodsReport
+			 				 /orderReport
+			 		/imgBase
+			 				 /article
+			 				 /brand
+			 				 /enterprise
+			 				 /goods
+			 				 /return
+			 				 /shopPage
+			 		/upload/image
+			 /mobile
+			 		/html
+			 /pc
+			 		/html

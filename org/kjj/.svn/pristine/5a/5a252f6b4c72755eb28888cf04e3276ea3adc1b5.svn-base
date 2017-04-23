@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgTradeSnapshootPropertyMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgTradeSnapshootProperty" >
+    <id column="trade_snapshoot_property_id" property="tradeSnapshootPropertyId" jdbcType="INTEGER" />
+    <result column="trade_snapshoot_id" property="tradeSnapshootId" jdbcType="INTEGER" />
+    <result column="property_name" property="propertyName" jdbcType="VARCHAR" />
+    <result column="property_value" property="propertyValue" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    trade_snapshoot_property_id, trade_snapshoot_id, property_name, property_value
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_trade_snapshoot_property
+    where trade_snapshoot_property_id = #{tradeSnapshootPropertyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_trade_snapshoot_property
+    where trade_snapshoot_property_id = #{tradeSnapshootPropertyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshootProperty" useGeneratedKeys="true" keyColumn="trade_snapshoot_property_id" keyProperty="tradeSnapshootPropertyId" >
+    insert into org_trade_snapshoot_property (trade_snapshoot_id, property_name, property_value
+      )
+    values (#{tradeSnapshootId,jdbcType=INTEGER}, #{propertyName,jdbcType=VARCHAR}, #{propertyValue,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshootProperty" >
+    update org_trade_snapshoot_property
+    <set >
+      <if test="tradeSnapshootId != null" >
+        trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER},
+      </if>
+      <if test="propertyName != null" >
+        property_name = #{propertyName,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyValue != null" >
+        property_value = #{propertyValue,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where trade_snapshoot_property_id = #{tradeSnapshootPropertyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgTradeSnapshootProperty" >
+    update org_trade_snapshoot_property
+    set trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER},
+      property_name = #{propertyName,jdbcType=VARCHAR},
+      property_value = #{propertyValue,jdbcType=VARCHAR}
+    where trade_snapshoot_property_id = #{tradeSnapshootPropertyId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgTradeSnapshootPropertyVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.trade_snapshoot_property_id, 
+    t.trade_snapshoot_id, 
+    t.property_name, 
+    t.property_value
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_trade_snapshoot_property t
+    where t.trade_snapshoot_property_id = #{tradeSnapshootPropertyId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="tradeSnapshootPropertyId != null" >
+          and t.trade_snapshoot_property_id = #{tradeSnapshootPropertyId,jdbcType=INTEGER}
+      </if>
+      <if test="tradeSnapshootId != null" >
+          and t.trade_snapshoot_id = #{tradeSnapshootId,jdbcType=INTEGER}
+      </if>
+      <if test="propertyName != null" >
+          and t.property_name = #{propertyName,jdbcType=VARCHAR}
+      </if>
+      <if test="propertyValue != null" >
+          and t.property_value = #{propertyValue,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.trade_snapshoot_property_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.trade_snapshoot_property_id) from org_trade_snapshoot_property t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_trade_snapshoot_property t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_trade_snapshoot_property where trade_snapshoot_property_id in (
+    select t.trade_snapshoot_property_id from (select * from org_trade_snapshoot_property) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

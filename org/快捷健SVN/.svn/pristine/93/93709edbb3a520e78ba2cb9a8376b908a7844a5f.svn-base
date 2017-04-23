@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/weixin.css">
+<link rel="stylesheet" type="text/css" href="css/swiper3.1.0.min.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script src="js/swiper3.1.0.min.js"></script>
+<script src="js/me.js"></script>
+</head>
+<body >
+	<div class="box box-control">
+		<header class="header ">
+			<div class="head-content classify searchAdd">
+				<input type="text" >
+				<a class="shaixuan" href="#">筛选</a>
+			</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+		</header>
+			<nav class="nav thirdnav">
+				<a href="#" class="on">默认<span></span></a>
+				<a href="#">销量<span></span></a>
+				<a href="#" >价格<span></span></a>
+			</nav>
+	<!-- end nav  -->
+	<!-- end header -->
+		<div class="procuct_control">
+			<div class="produce_title"><span>筛选商品</span></div>
+			<div class="product_wrap">
+				<div class="product_item">
+					<a href="#">
+						<div class="pic_box"></div>
+						<div class="title_box">
+							<span>两行商品名称多了出现一个省略号三个点赶紧出现吧赶紧出现吧</span>
+						</div>
+						<div class="price_box">
+							<span class="yellow price">￥15.00</span>
+						</div>
+					</a>
+				</div>
+				<div class="product_item">
+					<a href="#">
+						<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+						<div class="title_box">
+							<span>两行商品名称多了出现一个省略号三个点</span>
+						</div>
+						<div class="price_box">
+							<span class="yellow price">￥15.00</span>
+						</div>
+					</a>
+				</div>
+				<div class="product_item">
+					<a href="#">
+						<div class="pic_box"></div>
+						<div class="title_box">
+							<span>两行商品名称多</span>
+						</div>
+						<div class="price_box">
+							<span class="yellow price">￥15.00</span>
+						</div>
+					</a>
+				</div>
+				<div class="product_item">
+					<a href="#">
+						<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+						<div class="title_box">
+							<span>两行商品名称多了出现一个省略号三个点</span>
+						</div>
+						<div class="price_box">
+							<span class="yellow price">￥15.00</span>
+						</div>
+					</a>
+				</div>
+				<div class="product_item">
+					<a href="#">
+						<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+						<div class="title_box">
+							<span>两行商品名称多了出现一个省略号三个点</span>
+						</div>
+						<div class="price_box">
+							<span class="yellow price">￥15.00</span>
+						</div>
+					</a>
+				</div>
+				<div class="product_item">
+					<a href="#">
+						<div class="pic_box"><img src="images/1.jpg" alt=""></div>
+						<div class="title_box">
+							<span>两行商品名称多了出现一个省略号三个点</span>
+						</div>
+						<div class="price_box">
+							<span class="yellow price">￥15.00</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- end wrapper -->
+		<div class="loadcircle gray">
+			<span class="bounce-text">正在加载</span>
+			<span class="bounce bounce1"></span>
+			<span class="bounce bounce2"></span>
+			<span class="bounce bounce3"></span>
+		</div>
+	</div>
+	<!-- end box -->
+	<div class="footerbar">
+		<a href="#" >
+			<div class="iconfoot foot1 "></div>
+			<div class="iconfoottext">首页</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot2"></div>
+			<div class="iconfoottext">快捷购</div>
+		</a>
+		<a href="#"  >
+			<div class="iconfoot foot3"></div>
+			<div class="iconfoottext">购物车</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot4"></div>
+			<div class="iconfoottext">类目</div>
+		</a>
+		<a href="#" >
+			<div class="iconfoot foot5"></div>
+			<div class="iconfoottext">我的</div>
+		</a>
+	</div>
+	<div class="gotop" onclick="move()"></div>
+	<!-- end fixedbar -->
+<div class="sidebar ">
+	<aside class="aside ">
+		<div class="aside-head">
+			<div class="a-head">
+				筛选
+				<a class="a3">取消</a>
+				<a href="" class="a4">确定</a>
+			</div>
+			<span class="line1"></span>
+		</div>
+		<div class="aside-all">
+			<div class="a-content">
+				<!-- 一级滑动框 -->
+				<div class="member-content">
+					<ul>
+						<li> 品牌<em class="emadd">天龙天龙八部3D八部3D</em> <span class="icon-right"></span></li>
+						<li>类别  <span class="icon-right"></span></li>
+						<li>  产地 <span class="icon-right"></span></li>
+						<li> 品牌 <em class="emadd">天龙天龙八部3D八部3D</em><span class="icon-right"></span></li>
+						<li>类别 <em class="emadd">天龙天龙八部3D八部3D</em> <span class="icon-right"></span></li>
+						<li>  产地 <span class="icon-right"></span></li>
+						<li class="no-border"> 价格      <span class="icon-right"></span></li>
+					</ul>
+				</div>
+				<!--end  一级滑动框 -->
+			</div>
+			<!-- 二级品牌滑动框 -->
+			<div class="a-content">
+				<h4 class="c-title">
+					<strong>已选择：</strong>
+					<span>康师傅，哇哈哈康师傅，哇哈哈康师傅，哇哈哈</span>
+					<span class="c-r">等2个</span>
+				</h4>
+				<div class="member-content">
+					<ul>
+						<li>康师傅<span class="checkme checked"></span></li>
+						<li>康师傅 <span class="checkme "></span></li>
+						<li>康师傅<span class="checkme "></span> </li>
+					</ul>
+				</div>
+			</div>
+			<!-- end 二级滑动框 -->
+
+			<!-- 二级折叠滑动框 -->
+			<div class="a-content">
+				<h4 class="c-title">
+					<strong>已选择：</strong>全部分类
+				</h4>
+				<div class="member-content">
+					<ul>
+						<li>
+							<h5 class="z-title ">电脑商城<span class="icon-down "></span></h5>
+							<div class="zhedie special3  " >
+								<p>平板<span class="checkme "></span></p>
+								<p>平板<span class="checkme "></span></p>
+							</div>
+						</li>
+							<li>
+							<h5 class="z-title ">电脑商城<span class="icon-down "></span></h5>
+							<div class="zhedie special3 ">
+								<p>平板<span class="checkme "></span></p>
+								<p>平板<span class="checkme "></span></p>
+							</div>
+						</li>
+							<li>
+							<h5 class="z-title ">电脑商城<span class="icon-down "></span></h5>
+							<div class="zhedie special3 ">
+								<p>平板<span class="checkme "></span></p>
+								<p>平板</p>
+								<p>平板</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end 二级折叠滑动框 -->
+					<!-- 二级价格滑动框 -->
+			<div class="a-content">
+				<h4 class="c-title">
+					<strong>已选择：</strong>什么价格
+				</h4>
+				<div class="member-content">
+					<ul>
+						<li>康师傅<span class="checkme checked"></span></li>
+						<li>康师傅 <span class="checkme "></span></li>
+						<li>康师傅<span class="checkme "></span> </li>
+					</ul>
+				</div>
+				<div class="search-price">
+					<input type="text">
+					<span>—</span>
+					<input type="text">
+					<a href="#" class="sure2">确认</a>
+				</div>
+			</div>
+			<!-- end 二级滑动框 -->
+			<div class="a-footer">
+				<a class="a5">清除选项</a>
+			</div>
+		</div>
+	</aside>
+</div>
+<div class="mask"></div>
+
+</body>
+</html>

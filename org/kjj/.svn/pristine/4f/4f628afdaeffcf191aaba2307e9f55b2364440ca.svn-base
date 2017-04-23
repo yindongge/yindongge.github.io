@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>微信商城</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css">
+<link rel="stylesheet" type="text/css" href="../css/weixin.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper3.1.0.min.css">
+<script type="text/javascript" src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/swiper3.1.0.min.js"></script>
+<script src="../js/common/me.js"></script>
+<script type="text/javascript" src="../js/common/addcart.js"></script>
+</head>
+
+<body >
+	<div class="box box-control">
+		<header class="header readyfixed-header">
+			<div class="head-content">购物车</div>
+			<div class="head-left"><a href="#" class="link"></a></div>
+			<!-- <div class="head_delete">编辑</div> -->
+		</header>
+		<!-- end top -->
+		<div class="shopwrapper readyfixed">
+			<div class="floor h40 same-floor">
+				<a href="#" class="blockgo">
+					<span>永安里店</span>
+					<span class="pull-right">更换配送方式</span>
+					<span class="icon-right"></span>
+				</a>
+			</div>
+
+		</div>
+		<!--end  tip -->
+
+	<div class="shopwrapper">
+		<div class="floor h50 same-floor">
+			商品信息
+			<div class="head_delete">编辑</div>
+		</div>
+		<div class="manjian_left">
+			<a href="#" class="yellow_a">满减</a>
+			<span class="inline_span">前的所有渲染引擎都是前的所有渲染引所有渲染引擎都是前</span>
+			<span class="yellow">已满100元</span>
+		</div>
+		<div class="car-list margin-top" >
+			<div class="car-item">
+				<div class="car-checked">
+					<span class="checkme"></span>
+				</div>
+				<div class="car-content">
+					<div class="carlist-a">
+						<div class="carlist-img">
+							<a href="www.kjjhome.com"><img src="../images/p14.jpg"></a>
+						</div>
+						<div class="carlist-text">
+							<a href="#"><span class="title" >够在没有监督的情况下勤奋地工作。</span></a>
+							<div class="price-list">
+								<span class="a-zhekou">限时折扣</span>
+							</div>
+							<div class="price-list">
+							 	<span class="red"><i class="rmb">￥</i>111.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="addlist">
+						<span class="quantity disabled">-</span>
+						<input type="text" class="quanityainput" value="2">
+						<span class="quantity">+</span>
+					<!-- 	<i class="shengyu">剩余五件商件</i> -->
+					</div>
+				</div>
+			</div>
+			<div class="shengyuwrapper" >
+				<p class="shengyu2">剩余五件商件</p>
+			</div>
+			<!-- <div class="singleprice">
+				已选<span>11</span>件商品,合计<span class="red"><i class="rmb">￥</i>15.00</span><span class="space2">已减20.00</span>
+			</div> -->
+		</div>
+		<div class="car-list margin-top" >
+			<div class="car-item">
+				<div class="car-checked">
+					<span class="checkme"></span>
+				</div>
+				<div class="car-content">
+					<div class="carlist-a">
+						<div class="carlist-img">
+							<a href="www.kjjhome.com"><img src="../images/p14.jpg"></a>
+						</div>
+						<div class="carlist-text">
+							<a href="#"><span class="title" >够在没有监督的情况下勤奋地工作。</span></a>
+							<div class="price-list">
+								<span class="a-zhekou">限时折扣</span>
+							</div>
+							<div class="price-list">
+							 	<span class="red"><i class="rmb">￥</i>111.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="addlist">
+						<span class="quantity disabled">-</span>
+						<input type="text" class="quanityainput" value="2">
+						<span class="quantity">+</span>
+					<!-- 	<i class="shengyu">剩余五件商件</i> -->
+					</div>
+				</div>
+			</div>
+			<div class="shengyuwrapper" >
+				<p class="shengyu2">剩余五件商件</p>
+				<!-- 增加弹窗 -->
+				<div class="fixed_content">
+					<a class="fixed_span">促销优惠<i class="yellow_down_icon"></i></a>
+					<div class="fixed_div ">
+						<div class="fixed_div_title">
+							<h5>该商品优惠条件<span>X</span></h5>
+						</div>
+						<div class="radio_list">
+							<div class="checkselect "></div>
+							<p>满199.00减100.0,满199.00减100.0，满199.00减100.0
+							m满199.00减100.0</p>
+						</div>
+						<div class="radio_list">
+							<div class="checkselect on"></div>
+							<p>不用优惠券</p>
+						</div>
+						<div class="radio_list">
+							<input type="radio">
+							<p>不用优惠券</p>
+						</div>
+					</div>
+				</div>
+				<!-- 增加弹窗 -->
+			</div>
+			<!-- <div class="singleprice">
+				已选<span>11</span>件商品,合计<span class="red"><i class="rmb">￥</i>15.00</span><span class="space2">已减20.00</span>
+			</div> -->
+		</div>
+		<div class="gray_bg_zeng">
+			<span>赠品可口可乐</span>
+		</div>
+		<!-- end first -->
+
+			<div class=" car-list gray-bg">
+				<div class="diffent">
+					<div class="car-item">
+						<div class="car-checked g_s_control">
+							<span class="gray_span">失效</span>
+						</div>
+						<div class="car-content">
+							<div href="www.baidu.com" class="carlist-a">
+								<div class="carlist-img">
+									<a href="www.kjjhome.com"><img src="../images/p14.jpg"></a>
+								</div>
+								<div class="carlist-text">
+									<a href="www.kjjhome.com"><span class="title" >
+									够在没有监督的情况下勤奋地工作。
+									</span>
+									</a>
+									<div class="price-list">
+										<span>对不起，宝贝已经卖光了！</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="shengyuwrapper" >
+						<p class="shengyu2">剩余五件商件</p>
+					</div>
+				</div>
+			</div>
+			<div class=" car-list gray-bg">
+				<div class="diffent">
+					<div class="car-item">
+						<div class="car-checked g_s_control">
+							<span class="gray_span">失效</span>
+						</div>
+						<div class="car-content">
+							<div href="www.baidu.com" class="carlist-a">
+								<div class="carlist-img">
+									<a href="www.kjjhome.com"><img src="../images/p14.jpg"></a>
+								</div>
+								<div class="carlist-text">
+									<a href="www.kjjhome.com"><span class="title" >
+									够在没有监督的情况下勤奋地工作。
+									</span>
+									</a>
+									<div class="price-list">
+										<span>对不起，宝贝已经卖光了！</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="shengyuwrapper" >
+						<p class="shengyu2">剩余五件商件</p>
+					</div>
+				</div>
+			</div>
+			<div class="cleargoods">
+				<a  class="clear-a" >清空失效宝贝</a>
+			</div>
+
+		<!--  -->
+
+
+			<!-- 开始商品展示-->
+			<div class="procuct_control">
+				<div class="produce_title"><span>商品推荐</span></div>
+				<div class="product_wrap">
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点赶紧出现吧赶紧出现吧</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="../images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"></div>
+							<div class="title_box">
+								<span>两行商品名称多</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="../images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price"><i class="rmb">￥</i>15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="../images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price">￥15.00</span>
+							</div>
+						</a>
+					</div>
+					<div class="product_item">
+						<a href="#">
+							<div class="pic_box"><img src="../images/1.jpg" alt=""></div>
+							<div class="title_box">
+								<span>两行商品名称多了出现一个省略号三个点</span>
+							</div>
+							<div class="price_box">
+								<span class="yellow price">￥15.00</span>
+							</div>
+						</a>
+					</div>
+				</div>
+		</div>
+		<!-- 结束商品展示 -->
+
+		</div>
+		<!-- 	<div class="mask" style="display:block; z-index:500"></div> -->
+	</div>
+	<!-- end box -->
+	<div class="fixed-bottom">
+		<div class="priceall">
+			<div class="pa-l">
+
+				<span class="checkme checked"></span>
+				全选
+			</div>
+			<div class="pa-c">
+				<p>总计
+					<span class="red">￥00.00</span>
+				</p>
+				<p>总计0件,不含配送费</p>
+			</div>
+			<div class="pa-r on">
+				<a onclick="autoAlert()">结算</a>
+				<!-- <i class="disabled"></i> -->
+			</div>
+			<div class="pa-r deletep">
+				<a href="#">删除</a>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	$(function(){
+		$(".fixed_span").on("click",function(){
+			$('.fixed_div ').fadeIn("400");
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgShopSendRangeMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgShopSendRange" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="send_range_name" property="sendRangeName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, shop_id, send_range_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_shop_send_range
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_shop_send_range
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgShopSendRange" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_shop_send_range (shop_id, send_range_name)
+    values (#{shopId,jdbcType=INTEGER}, #{sendRangeName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgShopSendRange" >
+    update org_shop_send_range
+    <set >
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="sendRangeName != null" >
+        send_range_name = #{sendRangeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgShopSendRange" >
+    update org_shop_send_range
+    set shop_id = #{shopId,jdbcType=INTEGER},
+      send_range_name = #{sendRangeName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgShopSendRangeVo" extends="BaseResultMap" >
+  	<result column="distance" property="distance" jdbcType="DOUBLE" />
+  	<association property="orgArea" javaType="com.kjj.commserver.entity.shop.OrgArea">
+	    <result column="area_show" property="show" jdbcType="VARCHAR" />
+  	</association>
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.shop_id, 
+    t.send_range_name
+    <if test="orgLocation != null" >
+    	,f_distance(#{orgLocation.longitude,jdbcType=DOUBLE},#{orgLocation.latitude,jdbcType=DOUBLE},os.longitude,os.latitude) as distance,
+    	oa.show as area_show
+    </if>
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_send_range t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="sendRangeName != null" >
+          and t.send_range_name = #{sendRangeName,jdbcType=VARCHAR}
+      </if>
+      <if test="distanceLess != null" >
+          and f_distance(#{orgLocation.longitude,jdbcType=DOUBLE},#{orgLocation.latitude,jdbcType=DOUBLE},os.longitude,os.latitude) &lt; #{distanceLess,jdbcType=DOUBLE}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_shop_send_range t
+    <if test="orgLocation != null" >
+	    left join org_shop os on t.shop_id = os.shop_id
+	    left join org_area oa on os.area_code = oa.code
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_shop_send_range t
+    <if test="orgLocation != null" >
+	    left join org_shop os on t.shop_id = os.shop_id
+	    left join org_area oa on os.area_code = oa.code
+    </if>
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_shop_send_range where id in (
+    select t.id from (select * from org_shop_send_range) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+</mapper>

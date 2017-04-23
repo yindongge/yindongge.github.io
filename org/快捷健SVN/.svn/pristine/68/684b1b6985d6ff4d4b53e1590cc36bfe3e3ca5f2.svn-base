@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">        
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/TouchSlide.1.1.js"></script> 
+<script src="js/me.js"></script> 
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+
+<body>
+<div class="all fixed-all">
+	<header class="head list_head">
+		<div class="head_left">
+			<a href="index.html"><span class="glyphicon glyphicon-menu-left"></span></a>
+		</div>
+		<div class="head_right">
+			<input type="text" placeholder="请输入大厦名，小区名" class="form-control">
+			<span class="glyphicon glyphicon-search"></span>
+		</div>
+		<div class="head_right2">
+			<a href="#">搜索</a>
+		</div>
+	</header>
+	<div class="floor">
+	<dl class="item-detail">
+			<dt class="strong">当前店铺：</dt>
+			<dd><span class="blue">光华路店</span></dd>
+			<dd>北京市朝阳区八里庄西里56789</dd>
+		</dl>
+	</div>
+	<div class="floor">
+		<h5 class="strong">可送至：</h5>
+		<ul class="list">
+			<li><a class="aa" href="#">光华路大厦</a></li>
+			<li><a class="aa">光华路大厦</a></li>
+			<li><a class="aa">光华路大厦</a></li>
+			<li><a class="aa">光华路大厦</a></li>
+			
+		</ul>
+	</div>
+
+</div>
+<script type="text/javascript">
+	$(function(){
+	
+	$('.paperlist li h5').click(function(){
+		var $div=$(this).siblings('.zhedie');	
+	
+		if($div.is(':hidden'))
+		{
+			$(this).removeClass('on')
+			
+			$div.slideDown("fast");
+		}
+		else{
+			
+			$(this).addClass('on')
+			 $div.slideUp("fast");
+			}
+	})
+
+})
+
+</script>
+</body>
+
+</html>

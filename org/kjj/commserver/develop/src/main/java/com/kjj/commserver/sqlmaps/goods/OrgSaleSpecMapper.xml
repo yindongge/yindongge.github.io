@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.goods.OrgSaleSpecMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.goods.OrgSaleSpec" >
+    <id column="spec_id" property="specId" jdbcType="INTEGER" />
+    <result column="spec_name" property="specName" jdbcType="VARCHAR" />
+    <result column="spec_type_id" property="specTypeId" jdbcType="INTEGER" />
+    <result column="spec_order" property="specOrder" jdbcType="SMALLINT" />
+    <result column="spec_value_id" property="specValueId" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="CHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="CHAR" />
+    <result column="spec_1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec_2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec_3" property="spec3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    spec_id, spec_name, spec_type_id, spec_order, spec_value_id, is_active, is_delete, 
+    spec_1, spec_2, spec_3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_sale_spec
+    where spec_id = #{specId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_sale_spec
+    where spec_id = #{specId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.goods.OrgSaleSpec" useGeneratedKeys="true" keyColumn="spec_id" keyProperty="specId" >
+    insert into org_sale_spec (spec_name, spec_type_id, spec_order, 
+      spec_value_id, is_active, is_delete, 
+      spec_1, spec_2, spec_3
+      )
+    values (#{specName,jdbcType=VARCHAR}, #{specTypeId,jdbcType=INTEGER}, #{specOrder,jdbcType=SMALLINT}, 
+      #{specValueId,jdbcType=BIGINT}, #{isActive,jdbcType=CHAR}, #{isDelete,jdbcType=CHAR}, 
+      #{spec1,jdbcType=VARCHAR}, #{spec2,jdbcType=VARCHAR}, #{spec3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.goods.OrgSaleSpec" >
+    update org_sale_spec
+    <set >
+      <if test="specName != null" >
+        spec_name = #{specName,jdbcType=VARCHAR},
+      </if>
+      <if test="specTypeId != null" >
+        spec_type_id = #{specTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="specOrder != null" >
+        spec_order = #{specOrder,jdbcType=SMALLINT},
+      </if>
+      <if test="specValueId != null" >
+        spec_value_id = #{specValueId,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=CHAR},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="spec1 != null" >
+        spec_1 = #{spec1,jdbcType=VARCHAR},
+      </if>
+      <if test="spec2 != null" >
+        spec_2 = #{spec2,jdbcType=VARCHAR},
+      </if>
+      <if test="spec3 != null" >
+        spec_3 = #{spec3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where spec_id = #{specId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.goods.OrgSaleSpec" >
+    update org_sale_spec
+    set spec_name = #{specName,jdbcType=VARCHAR},
+      spec_type_id = #{specTypeId,jdbcType=INTEGER},
+      spec_order = #{specOrder,jdbcType=SMALLINT},
+      spec_value_id = #{specValueId,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=CHAR},
+      is_delete = #{isDelete,jdbcType=CHAR},
+      spec_1 = #{spec1,jdbcType=VARCHAR},
+      spec_2 = #{spec2,jdbcType=VARCHAR},
+      spec_3 = #{spec3,jdbcType=VARCHAR}
+    where spec_id = #{specId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.goods.aide.OrgSaleSpecVo" extends="BaseResultMap" >
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.spec_id, 
+    t.spec_name, 
+    t.spec_type_id, 
+    t.spec_order, 
+    t.spec_value_id, 
+    t.is_active, 
+    t.is_delete, 
+    t.spec_1, 
+    t.spec_2, 
+    t.spec_3
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_sale_spec t
+    where t.spec_id = #{specId,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="specId != null" >
+          and t.spec_id = #{specId,jdbcType=INTEGER}
+      </if>
+      <if test="specName != null" >
+          and t.spec_name = #{specName,jdbcType=VARCHAR}
+      </if>
+      <if test="specTypeId != null" >
+          and t.spec_type_id = #{specTypeId,jdbcType=INTEGER}
+      </if>
+      <if test="specOrder != null" >
+          and t.spec_order = #{specOrder,jdbcType=SMALLINT}
+      </if>
+      <if test="specValueId != null" >
+          and t.spec_value_id = #{specValueId,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=CHAR}
+      </if>
+      <if test="isDelete != null" >
+          and t.is_delete = #{isDelete,jdbcType=CHAR}
+      </if>
+      <if test="spec1 != null" >
+          and t.spec_1 = #{spec1,jdbcType=VARCHAR}
+      </if>
+      <if test="spec2 != null" >
+          and t.spec_2 = #{spec2,jdbcType=VARCHAR}
+      </if>
+      <if test="spec3 != null" >
+          and t.spec_3 = #{spec3,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.spec_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.spec_id) from org_sale_spec t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_sale_spec t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_sale_spec where spec_id in (
+    select t.spec_id from (select * from org_sale_spec) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectByTypeId" parameterType="java.lang.Integer" resultMap="VoResultMap">
+  	select oss.* from org_product_type_link_sale_spec optlss
+	left join org_sale_spec oss on optlss.spec_id = oss.spec_id
+	where optlss.product_type_id = #{_parameter}
+  </select>
+</mapper>

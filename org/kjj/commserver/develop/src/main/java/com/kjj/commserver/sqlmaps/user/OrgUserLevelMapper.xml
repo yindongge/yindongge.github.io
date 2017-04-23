@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.user.OrgUserLevelMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.user.OrgUserLevel" >
+    <id column="level_id" property="levelId" jdbcType="VARCHAR" />
+    <result column="level_name" property="levelName" jdbcType="VARCHAR" />
+    <result column="is_integral" property="isIntegral" jdbcType="TINYINT" />
+    <result column="is_discount" property="isDiscount" jdbcType="TINYINT" />
+    <result column="discount" property="discount" jdbcType="DECIMAL" />
+    <result column="level_type" property="levelType" jdbcType="TINYINT" />
+    <result column="consume_top" property="consumeTop" jdbcType="DECIMAL" />
+    <result column="consume_down" property="consumeDown" jdbcType="DECIMAL" />
+    <result column="integral" property="integral" jdbcType="DECIMAL" />
+    <result column="level_order" property="levelOrder" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    level_id, level_name, is_integral, is_discount, discount, level_type, consume_top, 
+    consume_down, integral, level_order
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_user_level
+    where level_id = #{levelId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from org_user_level
+    where level_id = #{levelId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.user.OrgUserLevel" useGeneratedKeys="false" keyColumn="level_id" keyProperty="levelId" >
+    insert into org_user_level (level_id,level_name, is_integral, is_discount, 
+      discount, level_type, consume_top, 
+      consume_down, integral, level_order)
+    values (#{levelId,jdbcType=VARCHAR},#{levelName,jdbcType=VARCHAR}, #{isIntegral,jdbcType=TINYINT}, #{isDiscount,jdbcType=TINYINT}, 
+      #{discount,jdbcType=DECIMAL}, #{levelType,jdbcType=TINYINT}, #{consumeTop,jdbcType=DECIMAL}, 
+      #{consumeDown,jdbcType=DECIMAL}, #{integral,jdbcType=DECIMAL},#{levelOrder,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.user.OrgUserLevel" >
+    update org_user_level
+    <set >
+      <if test="levelName != null" >
+        level_name = #{levelName,jdbcType=VARCHAR},
+      </if>
+      <if test="isIntegral != null" >
+        is_integral = #{isIntegral,jdbcType=TINYINT},
+      </if>
+      <if test="isDiscount != null" >
+        is_discount = #{isDiscount,jdbcType=TINYINT},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="levelType != null" >
+        level_type = #{levelType,jdbcType=TINYINT},
+      </if>
+      <if test="consumeTop != null" >
+        consume_top = #{consumeTop,jdbcType=DECIMAL},
+      </if>
+      <if test="consumeDown != null" >
+        consume_down = #{consumeDown,jdbcType=DECIMAL},
+      </if>
+      <if test="integral != null" >
+        integral = #{integral,jdbcType=DECIMAL},
+      </if>
+      <if test="levelOrder != null" >
+        level_order = #{levelOrder,jdbcType=TINYINT},
+      </if>
+    </set>
+    where level_id = #{levelId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.user.OrgUserLevel" >
+    update org_user_level
+    set level_name = #{levelName,jdbcType=VARCHAR},
+      is_integral = #{isIntegral,jdbcType=TINYINT},
+      is_discount = #{isDiscount,jdbcType=TINYINT},
+      discount = #{discount,jdbcType=DECIMAL},
+      level_type = #{levelType,jdbcType=TINYINT},
+      consume_top = #{consumeTop,jdbcType=DECIMAL},
+      consume_down = #{consumeDown,jdbcType=DECIMAL},
+      integral = #{integral,jdbcType=DECIMAL},
+      level_order = #{levelOrder,jdbcType=TINYINT}
+    where level_id = #{levelId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.user.aide.OrgUserLevelVo" extends="BaseResultMap" />
+  <sql id="Vo_Column_List" >
+    t.level_id, 
+    t.level_name, 
+    t.is_integral, 
+    t.is_discount, 
+    t.discount, 
+    t.level_type, 
+    t.consume_top, 
+    t.consume_down, 
+    t.integral,
+    t.level_order
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level t
+    where t.level_id = #{levelId,jdbcType=VARCHAR}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="levelId != null" >
+          and t.level_id = #{levelId,jdbcType=VARCHAR}
+      </if>
+      <if test="levelName != null" >
+          and t.level_name = #{levelName,jdbcType=VARCHAR}
+      </if>
+      <if test="isIntegral != null" >
+          and t.is_integral = #{isIntegral,jdbcType=TINYINT}
+      </if>
+      <if test="isDiscount != null" >
+          and t.is_discount = #{isDiscount,jdbcType=TINYINT}
+      </if>
+      <if test="discount != null" >
+          and t.discount = #{discount,jdbcType=DECIMAL}
+      </if>
+      <if test="levelType != null" >
+          and t.level_type = #{levelType,jdbcType=TINYINT}
+      </if>
+      <if test="consumeTop != null" >
+          and t.consume_top = #{consumeTop,jdbcType=DECIMAL}
+      </if>
+      <if test="consumeDown != null" >
+          and t.consume_down = #{consumeDown,jdbcType=DECIMAL}
+      </if>
+      <if test="integral != null" >
+          and t.integral = #{integral,jdbcType=DECIMAL}
+      </if>
+      <if test="levelOrder != null" >
+          and t.level_order = #{levelOrder,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting == null" >
+      order by t.level_type asc, t.level_order,t.level_id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.level_id) from org_user_level t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_user_level t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_user_level where level_id in (
+    select t.level_id from (select * from org_user_level) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <select id="selectEventStatus" parameterType="java.util.Map" resultType="java.lang.String" >
+    select @@event_scheduler event_status
+  </select>
+  <select id="updateOpenEventStatus" parameterType="java.util.Map">
+    set global event_scheduler = on
+  </select>
+</mapper>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">        
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>   
+<script src="js/jquery-1.11.2.min.js"></script>  
+<meta content="telephone=no" name="format-detection">
+<link href="css/load.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/regin.css" rel="stylesheet" type="text/css" />
+<title>手机</title>
+</head>
+<body>
+<div class="all">
+	<div class="position">
+		<h5 class="border_h5"><span  class="glyphicon glyphicon-screenshot"></span>  当前定位位置：</h5>
+		<p class="padding-right">
+		 <a href="#">
+		 	<strong class="strong1">华彬中心15层</strong><br>
+		 	北京市朝阳区建外大街8号华彬中心 
+		 </a>
+		<span class="glyphicon glyphicon-menu-right" ></span>
+		</p>
+		<!-- no -->
+		<p class="noaddress ">
+			定位失败，请手动选择店铺~
+		</p>
+	</div>
+	
+	<div class="shop-go paperlist ">
+		<h5 class="border_h5"><span class="glyphicon glyphicon-flag"></span>   省份 </h5>
+		<ul>
+			<li>
+				<h5 class="">北京：
+					<i class="glyphicon glyphicon-menu-down sameicon"></i>
+				</h5>
+				<div class="zhedie special3" >
+					<h4>光华路店</h4>
+					<P>北京市朝阳区华彬中心1515北京市朝阳区华彬中心1515</P>
+					<h4>光华路店</h4>
+					<P>北京市朝阳区华彬中心1515北京市朝阳区华彬中心1515</P>
+					<h4>光华路店</h4>
+					<P>北京市朝阳区华彬中心1515北京市朝阳区华彬中心1515</P>
+				</div>
+			</li>
+			<li>
+				<h5 class="">北京：
+					<i class="glyphicon glyphicon-menu-down sameicon"></i>
+				</h5>
+				<div class="zhedie special3" >
+				<h4>光华路店</h4>
+				<P>北京市朝阳区华彬中心1515北京市朝阳区华彬中心1515</P>
+				</div>
+				<div class="zhedie special3" >
+				<h4>光华路店</h4>
+				<P>北京市朝阳区华彬中心1515北京市朝阳区华彬中心1515</P>
+				</div>
+				<div class="zhedie special3" >
+				<h4>光华路店</h4>
+				<P>北京市朝阳区华彬中心1515北京市朝阳区华彬中心1515</P>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+
+
+</div>
+<script type="text/javascript">
+	$(function(){
+	$('.zhedie.special3').eq(0).css({"display":'block'})
+
+	$('.paperlist li h5').click(function(){
+		var $div=$(this).siblings('.zhedie');	
+		if($div.is(':hidden'))
+		{
+			$(".zhedie.special3").addClass('on')
+			
+			$div.slideDown("fast");
+		}
+		else{
+			
+			$(".zhedie.special3").removeClass('on')
+			 $div.slideUp("fast");
+			}
+		// $(this).next('.zhedie.special3').toggleClass('on');
+	})
+
+	})
+
+
+</script>
+
+</body>
+</html>

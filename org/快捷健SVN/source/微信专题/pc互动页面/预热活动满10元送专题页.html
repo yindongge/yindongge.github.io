@@ -1,0 +1,1040 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="js/jquery.js"></script>
+<script src="js/me.js"></script>
+<script src="js/modal.js"></script>
+<link href="css/modal.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sevrice.css" rel="stylesheet" type="text/css" />
+<link href="css/slide-left.css" rel="stylesheet" type="text/css" />
+<title>快捷健-老用户回馈专场，全场订单满十元就送鱼罐头</title>
+<style type="text/css">
+	.center-content{
+		margin: 0px auto;
+	}
+	.center-content img.yure{
+		width: 100%;
+	}
+	.center-content.hot{
+		background: #ea2262;
+	}
+	.hotbox{
+		background: #ea2262;
+	}
+	.hot-title{
+		width: 602px;
+		margin: 0px auto;
+	}
+	.hot-list{
+		width: 290px;
+		height: 396px;
+		display: block;
+		float: left;
+		background: #fff;
+		overflow: hidden;
+		position: relative;
+		margin-right: 10px;
+		margin-bottom: 24px;
+		box-shadow:0 4px 8px rgba(0, 0, 0, 0.5);
+	}
+	.hot-list:hover .hot-text{
+		background: #ffdd40;
+	}
+	.hot-a{
+		
+	}
+	.hot-img{
+		width: 250px;
+		height: 250px;
+		overflow: hidden;
+		margin: 0px auto;
+		text-align: center;
+
+	}
+	.hot-img img{
+		width: 250px;
+		height: 250px;
+	}
+	.hot-text{
+		height: 146px;
+		padding-top: 8px;
+		position: relative;
+	}
+	.hot-text h4{
+		font-size: 18px;
+		color: #000;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 15px;
+		margin-top: 10px;
+		text-overflow:ellipsis;
+		word-wrap:normal;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.hot-price{
+		position: absolute;
+		height: 102px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+	}
+	.hot-icon{
+		display: inline-block;
+		width: 100px;
+		height: 52px;
+		background: url(img/hotspan.png) no-repeat;
+		position: absolute; right: 0px;
+		bottom: 18px;
+	}
+	.hot-delete{
+		display: block;
+		color: #b1acac;
+		font-size: 18px;
+		text-decoration: line-through;
+		left: 15px;
+		width: 138px;
+		bottom: 55px;
+		position: absolute;
+	}
+	.hot-normal{
+		display: block;
+		left: 15px;
+		bottom: 14px;
+		color: #ea2262;
+		font-size: 26px;
+		width: 138px;
+		position: absolute;
+	}
+	.hot-normal i{
+		font-size: 26px;
+		font-style: normal;
+	}
+
+	/**/
+	.floor-panel{
+	position: fixed;
+	top: 50%;
+	width:120px;
+	right: 0px;
+	display: none;
+	margin-top: -73px;
+}
+.floor-panel a{
+	display: block;
+	color: #f5f52f;
+	width: 100%;
+	margin: 5px auto;
+	text-align: center;
+	height: 44px;
+	font-size: 16px;
+	line-height: 44px;
+	position: relative;
+	background: #7f0d97;
+
+}
+.floor-panel a.bottoma{
+	border-bottom: 0px;
+	cursor: pointer;
+	width: 120px;
+	height: 80px;
+	background: url(img/topicon.png) no-repeat;
+}
+
+.zhuantisame h5 span{
+	width: 4px;
+	height: 24px;
+	margin: 0px 5px;
+	background: #fff;
+	position: relative;
+	top: 3px;
+	display: inline-block;	
+}
+
+</style>
+</head>
+<body>
+<div class="all memberall">
+	<div class="top">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<ul class="nav navbar-nav fl">
+					<li class="showmenu">
+						<a href="#" class="yellow"><i class="glyphicon point"></i> 北京 </a>
+						<div class="hidemenu">
+							<p>请选择收货区域</p>
+							<p><a href="">北京</a><a href="">上海</a><a href="">天津</a><a href="">重庆</a></p>
+						</div>
+					</li>
+	            	<li><a href="#">您好，欢迎来到快捷健</a></li>
+	            	<li><a href="#">[登录]</a></li>
+	            	<li><a href="#">[免费成为会员]</a></li>
+				</ul>
+				<ul class="nav navbar-nav fr">	
+					<li><a href="#">快捷健首页</a></li>				
+					<li class="showmenu special2">
+						<a href="#" > 我的快捷健  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">我的订单</a></li>						
+						</ul>
+					</li>
+					<li><a href="#"><i class="glyphicon glyphicon-star point4"></i> 收藏夹</a></li>
+					<li><a href="#"><i class="glyphicon point2"></i> 消息</a></li>
+					<li><a href="#"><i class="glyphicon point3"></i> 手机快捷健</a></li>					
+					<li class="showmenu special2">
+						<a href="#" > 客户服务  <i class="glyphicon glyphicon-menu-down"></i></a>
+						<ul class="hidemenu">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">在线客服</a></li>
+							<li><a href="">留言咨询</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- end top -->
+		<div class="header">
+		<div class="container">
+			<div class="logo fl">
+				<a href="index.html"><img src="img/logo.jpg"></a>
+				<div class="select-city">
+					<strong class="strong">光华路SOHO</strong>
+					<span class="small area-select">切换 <i class="glyphicon glyphicon glyphicon-menu-down"></i></span>
+					<div class="area hide">
+						<div class="area-title">
+								<div class="area-first fl">
+									<p>本店地址：朝阳区光华路22号光华路SOHO底商188号</p>
+									<P>电话：010-51887766</P>
+								</div>
+								<div class="area-second fl">
+									<p>详细配送范围</p>
+								</div>					
+								<div class="close-mask"></div>
+						</div>
+						<div class="area-body">
+							<ul>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+								<li>
+									<div class="area-left">
+										东城区：
+									</div>
+									<div class="area-right">
+										<a>前门店</a>
+										<a>王府井店</a>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="search fl">
+					<div class="input-group">
+					      <input type="text" class="form-control" placeholder="Search for...">
+					      <i  class="icon1 glyphicon glyphicon-search"></i>
+					      <span class="input-group-btn">
+					        	<button class="btn btn-me" type="button">搜索</button>
+					      </span>
+				    </div>	
+				    <div class="hotword">
+				    	<a href="">热门搜索:</a>
+				    	<a href="">咖啡</a>
+				    	<a href="">新疆</a>
+				    	<a href="">红酒</a>
+				    	<a href="">新疆红枣</a>
+				    	<a href="">黄飞鸿</a>
+				    	<a href="">叫一叫</a>
+				    </div>
+			</div>
+			<div class="shopcar fr">
+				<div class="shop">					
+					<i  class="glyphicon icon2 icon"></i>
+					<i  class="glyphicon glyphicon-menu-down icon3 icon"></i>
+					<i  class="glyphicon icon4 icon">2</i>
+					<a href="#">去购物车结算</a>
+				</div>
+				<div class="space"></div>
+				<div class="sale">
+					<div class="nogoods">
+						<p class="spepcial3">购物车中还没有商品，赶紧选购吧</p>
+					</div>
+					<ul class="havegoods">
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+								<p>红牛多功能饮料来几箱比较好呢</p>
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-left">
+								<img src="img/small.jpg">
+							</div>
+							<div class="goods-center">
+								
+							</div>
+							<div class="goods-right">
+								<span calss="price">￥17.1*5</span>
+								<br>
+								<a href="" class="delete">删除</a>
+							</div>
+						</li>
+						<li>
+							<div class="goods-foot">
+								<p>共计<i class="blue">2</i>件商品共计￥<i class="blue">160.00元</i></p>
+								<p><button type="button" class="btn btn-warning pull-right">去购物车结算</button></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="center-content hot">
+		<img src="img/yurehot.png" alt="" / class="yure">
+		<div class="hotbox" id="link2">
+			<div class="container">
+				<div class="hot-title"><img src="img/yurehot1.png"></div>
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%BE%B7%E5%9B%BD%E8%B4%B9%E5%BE%B7%E5%8B%92&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444872020142_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>德国费德勒黑啤酒5°听装500毫升</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.50</span>
+									<span class="hot-normal"><i>¥ </i>3.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+				<!--  -->
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E6%98%9F%E5%B7%B4%E5%85%8B%E5%92%96%E5%95%A1&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444811838961_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>美国星巴克咖啡摩卡味281毫升</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥18.90</span>
+									<span class="hot-normal"><i>¥ </i>11.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E7%A2%B1%E6%B3%95&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1440999313082_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>碱法荔枝味苏打汽水500ml</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥4.50</span>
+									<span class="hot-normal"><i>¥ </i>2.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E6%84%A4%E6%80%92%E7%9A%84%E5%B0%8F%E9%B8%9F&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1441866569779_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>愤怒的小鸟酸奶油洋葱味薯片罐装160g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥19.00</span>
+									<span class="hot-normal"><i>¥ </i>11.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list" >
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%AE%BE%E6%A0%BC%E7%91%9E&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444888428184_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>宾格瑞香蕉味牛奶饮料盒装200ml</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥7.50</span>
+									<span class="hot-normal"><i>¥ </i>4.99</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E7%BE%8E%E5%9B%BD%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444889455005_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>美国可口可乐原味355ml</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥7.50</span>
+									<span class="hot-normal"><i>¥ </i>2.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=798">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444888834451_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>美国百事可乐原味355ml</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥2.90</span>
+									<span class="hot-normal"><i>¥ </i>2.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=877">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1445310417961_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>印度尼西亚丹麦皇冠曲奇饼干368克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥58.00</span>
+									<span class="hot-normal"><i>¥ </i>29.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=775">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444804086646_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>天喔开心果150克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥40.40</span>
+									<span class="hot-normal"><i>¥ </i>23.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%B8%83%E4%B8%81&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1445235170679_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>摩咔金奇异果味布丁125克单杯</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥5.50</span>
+									<span class="hot-normal"><i>¥ </i>3.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=SPRING%20VALLEY&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444891749128_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>法国SPRING VALLEY 橙汁纯果汁200ml</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.90</span>
+									<span class="hot-normal"><i>¥ </i>3.20</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://kjjhome.com/product/getProductDetail?parent_goods_id=957">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1448601150798_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>今时代原味酸奶瓶装295g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥8.50</span>
+									<span class="hot-normal"><i>¥ </i>6.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=977">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1448952391367_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>大美美式生榨椰汁500克</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.00</span>
+									<span class="hot-normal"><i>¥ </i>4.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--  第二部分-->
+				<div class="hotbox" id="link3">
+			<div class="container">
+				<div class="hot-title"><img src="img/yurehot2.png"></div>
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E9%A6%99%E9%A3%98%E9%A3%98%E6%A4%B0%E6%9E%9C&pageNow=1">
+							<div class="hot-img"><img src="HTTP://114.113.234.102:8080/goods/1439434651899_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>香飘飘椰果巧克力奶茶80g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥3.50</span>
+									<span class="hot-normal"><i>¥ </i>3.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+				<!--  -->
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=400">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440730743583_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>雀巢咖啡卡布奇诺+香浓可可粉盒装（19g*5条）</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥19.90</span>
+									<span class="hot-normal"><i>¥ </i>12.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=786">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1444811523476_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>韩国KJ柚子茶560毫升</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥35.00</span>
+									<span class="hot-normal"><i>¥ </i>35.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=219">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1441076338762_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>可比可拿铁咖啡5包盒装105g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥15.20</span>
+									<span class="hot-normal"><i>¥ </i>15.20</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=495">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1441522153422_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>桂格即食燕麦片400g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥32.00</span>
+									<span class="hot-normal"><i>¥ </i>12.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=118">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1439349036203_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>雀巢优麦3合1即食牛奶燕麦片400g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥32.00</span>
+									<span class="hot-normal"><i>¥ </i>32.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E9%9F%A9%E5%9B%BD%E6%AF%8F%E6%97%A5%E5%92%96%E5%95%A1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1445332080186_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>韩国每日咖啡杯装250ml</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥16.90</span>
+									<span class="hot-normal"><i>¥ </i>16.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=156">
+							<div class="hot-img"><img src="HTTP://114.113.234.102:8080/goods/1439368782936_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>麦斯威尔咖啡原味11条装</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥16.60</span>
+									<span class="hot-normal"><i>¥ </i>16.60</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=270">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440471286580_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>贝瑞斯塔黄金浅焙咖啡三合一盒装125g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥25.50</span>
+									<span class="hot-normal"><i>¥ </i>25.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=271">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440471673102_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>贝瑞斯塔原味拿铁味咖啡盒装105g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥20.80</span>
+									<span class="hot-normal"><i>¥ </i>20.80</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=761">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1442562008195_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>贝瑞斯塔滤挂咖啡（综合味）盒装8g*5包</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥39.90</span>
+									<span class="hot-normal"><i>¥ </i>39.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=398">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440730019680_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>雀巢咖啡1+2特浓7条盒装(13g*7条)</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥12.00</span>
+									<span class="hot-normal"><i>¥ </i>12.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 三部分 -->
+
+						<div class="hotbox" id="link4">
+			<div class="container">
+				<div class="hot-title"><img src="img/yurehot3.png"></div>
+				<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=221">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440730492985_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>悠伴话梅102g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥12.80</span>
+									<span class="hot-normal"><i>¥ </i>12.80</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+				<!--  -->
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=303">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440568693681_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>溜溜梅食尚装润喉话梅袋装42g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.00</span>
+									<span class="hot-normal"><i>¥ </i>6.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E4%B9%90%E4%BA%8B">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1441607704299_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>乐事（美国经典原味）45g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥4.90</span>
+									<span class="hot-normal"><i>¥ </i>4.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=506">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1441604108232_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>好巴食乐香米400G</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥14.50</span>
+									<span class="hot-normal"><i>¥ </i>14.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E9%BB%91%E7%86%8A">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440725027983_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>黑熊五粮红曲玄米卷袋装160g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥22.00</span>
+									<span class="hot-normal"><i>¥ </i>22.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E5%8A%B2%E4%BB%94">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1442559665498_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>劲仔小鱼50克装 4种口味可选</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥7.50</span>
+									<span class="hot-normal"><i>¥ </i>7.50</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E8%B6%A3%E5%A4%9A%E5%A4%9A">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440569820861_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>趣多多巧克力饼干95g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥5.00</span>
+									<span class="hot-normal"><i>¥ </i>5.00</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/getProductDetail?parent_goods_id=315">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/goods/1440570485859_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>太平苏打饼干奶盐味100g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥3.70</span>
+									<span class="hot-normal"><i>¥ </i>3.70</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E6%A0%BC%E5%8A%9B%E9%AB%98&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1441078442806_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>格力高百奇巧克力棒60g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥6.70</span>
+									<span class="hot-normal"><i>¥ </i>6.70</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E7%9B%8A%E8%BE%BE%E6%9C%A8%E7%B3%96%E9%86%87&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1442282339065_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>益达木糖醇无糖口香糖多种口味56g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥11.20</span>
+									<span class="hot-normal"><i>¥ </i>11.20</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+					<div class="hotitem">
+					<div class="hot-list">
+						<a class="hot-a" href="http://www.kjjhome.com/product/search?keyword=%E6%9D%AF%E6%9D%AF%E4%B9%90%E6%9E%9C%E5%86%BB%E7%9B%92%E8%A3%85275g&pageNow=1">
+							<div class="hot-img"><img src="http://114.113.234.102:8080/platform/goods/1442561428936_350x350.jpg"></div>
+							<div class="hot-text">
+								<h4>自然素材杯杯乐果冻盒装275g</h4>
+								<div class="hot-price">
+									<span class="hot-delete">¥19.90</span>
+									<span class="hot-normal"><i>¥ </i>19.90</span>
+									<span class="hot-icon"></span>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<img src="img/ewm.png" alt="" / class="yure">
+	</div>
+
+
+
+
+<!--  -->
+<div class="well">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 ">
+					<div class="thumbnail">
+					      <img src="img/icon/icon11.png" alt="...">
+					      <div class="caption">
+					        <h5>会员服务</h5>
+					        <p><a href="">购物流程</a></p>
+					        <p><a href="">常见问题</a></p>
+					        <p><a href="">用户服务</a></p>
+					        <p><a href="">积分说明</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon12.png" alt="...">
+					      <div class="caption">
+					        <h5>支付问题</h5>
+					       	<p><a href="">在线支付</a></p>
+					        <p><a href="">礼品卡</a></p>
+					        <p><a href="">配送方式</a></p>
+					        <p><a href="">配送范围</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon13.png" alt="...">
+					      <div class="caption">
+					        <h5>售后服务</h5>
+					       <p><a href="">售后服务政策</a></p>
+					        <p><a href="">售后服务流程</a></p>
+					        <p><a href="">退款说明</a></p>
+					        <p><a href="">订单取消</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon14.png" alt="...">
+					      <div class="caption">
+					        <h5>关于我们</h5>
+					        <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+					      <img src="img/icon/icon15.png" alt="...">
+					      <div class="caption">
+					        <h5>店面体验</h5>
+					       <p><a href="">公司介绍</a></p>
+					        <p><a href="">人才招聘</a></p>
+					        <p><a href="">合作发展</a></p>
+					        <p><a href="">联系我们</a></p>
+					      </div>
+				    </div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>电信与信息服务业务经营许可证：京ICP证120343号      食品流通许可证：SP1101131210068873（1-1）     工信部备案：京ICP备20130356号         客服热线：400-666-7777</p>
+				<p>Copyright © 2013 Cndlbz.com Inc. All Rights Reserved. 快捷健连锁超市版权所有</p>
+			</div>
+	</div>
+</div>
+
+</div>
+<div class="floor-panel" >
+		<a class="bottoma">top</a>
+		<a href="#link2" target="_parent">超值特价</a>
+		<a href="#link3" target="_parent">冬季冲饮</a>
+		<a href="#link4" target="_parent">零食饼干</a>
+		
+	</div>
+	<script type="text/javascript">
+$(function(){
+		$(window).scroll(function(){
+		if($(window).scrollTop()>400){
+			$(" .floor-panel").fadeIn();	
+		}
+		else{
+			$(".floor-panel").hide();
+		}
+	});
+
+	$(".floor-panel .bottoma").click(function(){
+		$('html,body').animate({'scrollTop':0},900);
+	});
+})
+		
+
+</script>
+</body>
+</html>

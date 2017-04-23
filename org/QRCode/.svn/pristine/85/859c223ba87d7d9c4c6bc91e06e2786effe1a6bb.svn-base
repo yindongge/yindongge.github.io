@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<title>新增客户</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<form action="" class="form-horizontal">
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label"><span class="red">*</span>单位编码：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label"><span class="red">*</span>单位名称：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label"><span class="red">*</span>联系人：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label"><span class="red">*</span>客户级别：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label"><span class="red">*</span>分管部门：</label>
+					<div class="col-sm-9">
+						<select name="" id="" class="form-control">
+							<option value="">1</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label">手机号码：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label">座机号码：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label">邮箱：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label">识别号：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label"><span class="red">*</span>开户银行：</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label">银行账号</label>
+					<div class="col-sm-9"><input type="text" class="form-control" /></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-sm-3 control-label">地址：</label>
+					<div class="col-sm-3">
+						<select name="" id="" class="form-control">
+							<option value="">1</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<select name="" id="" class="form-control">
+							<option value="">1</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<select name="" id="" class="form-control">
+							<option value="">1</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<input type=" text" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6" style="width:100%">
+					<label class="col-sm-3 control-label" style="width:12%">备注：</label>
+					<div class="col-sm-9">
+					<textarea name="" id="" cols="30" rows="10" style="width:70%"></textarea>
+					</div>
+				</div>
+
+			</div>
+			</div>
+		</form>
+
+		<div class="pageselect">
+					<div class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="到第几页">
+						</div>
+						<button type="submit" class="btn btn-sm btn-info">确定</button>
+					</div>
+					<ul class="pagination pull-right pagination-sm">
+						<li>
+						  <a href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						  </a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">.....</a></li>
+						<li><a href="#">15</a></li>
+						<li>
+						  <a href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						  </a>
+						</li>
+					 </ul>
+				 	<span class=" pull-right">共有200条记录 每页50条</span>
+				</div>
+	</div>
+</div>
+<!-- 弹出窗口 -->
+
+
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+</body>
+</html>

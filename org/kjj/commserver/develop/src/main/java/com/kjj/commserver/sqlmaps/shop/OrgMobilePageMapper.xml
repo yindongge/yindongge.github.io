@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.shop.OrgMobilePageMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.shop.OrgMobilePage" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, area_code, shop_id, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from org_mobile_page
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_mobile_page
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.shop.OrgMobilePage" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_mobile_page (area_code, shop_id, status
+      )
+    values (#{areaCode,jdbcType=VARCHAR}, #{shopId,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.shop.OrgMobilePage" >
+    update org_mobile_page
+    <set >
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.shop.OrgMobilePage" >
+    update org_mobile_page
+    set area_code = #{areaCode,jdbcType=VARCHAR},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.shop.aide.OrgMobilePageVo" extends="BaseResultMap" >
+  	<result column="shopname" property="shopname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.area_code, 
+    t.shop_id, 
+    t.status
+  </sql>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page t
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="areaCode != null" >
+          and t.area_code = #{areaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="areaCode == null" >
+          and t.area_code = ''
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="shopId == null" >
+          and t.shop_id is null
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=TINYINT}
+      </if>
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <sql id="QueryPage_Where_Clause">
+  	<where>
+  		<if test="id != null">
+  			and omp.id = #{id,jdbcType=INTEGER}
+  		</if>
+  		<if test="shopId != null">
+  			and omp.shop_id = #{shopId,jdbcType=INTEGER}
+  		</if>
+  		<if test="areaCode != null">
+  			and omp.area_code = #{areaCode,jdbcType=VARCHAR}
+  		</if>
+  		<if test="status != null">
+  			and omp.status = #{status,jdbcType=TINYINT}
+  		</if>
+  		<if test="flag != null">
+  			and omp.shop_id is null
+  		</if>
+  		<if test="shopNameLike != null and shopNameLike == '全部店铺'">
+  			and omp.shop_id is null and omp.area_code = ''
+  		</if>
+  		<if test="shopNameLike != null and shopNameLike != '全部店铺'">
+  			and (os.shop_name like concat('%',#{shopNameLike},'%') or oa.show like concat('%',#{shopNameLike},'%'))
+  		</if>
+  	</where>
+  	<if test="sorting != null">
+  		order by #{sorting},t.id desc
+  	</if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_mobile_page t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page t
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="selectPageList" parameterType="java.util.Map" resultMap="VoResultMap">
+  	select omp.id, omp.shop_id,omp.area_code,omp.status,ifnull(os.shop_name,ifnull(oa.show,'')) as shopname
+    from org_mobile_page omp left join org_shop os on omp.shop_id=os.shop_id left join org_area oa on omp.area_code=oa.code
+    <include refid="QueryPage_Where_Clause"/>
+  </select>
+  <select id="selectPageListCount" parameterType="java.util.Map" resultType="java.lang.Long">
+  	select count(1) from org_mobile_page omp left join org_shop os on omp.shop_id=os.shop_id left join org_area oa on omp.area_code=oa.code
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_mobile_page where id in (
+    select t.id from (select * from org_mobile_page) t
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  
+  <select id="selectPageByAreaCodeShopId" parameterType="java.util.Map" resultMap="VoResultMap">
+  	select 
+    <include refid="Vo_Column_List" />
+    from org_mobile_page t
+    <include refid="Query_Areacode_ShopId"/>
+  </select>
+ <sql id="Query_Areacode_ShopId">
+  <where>
+  	 <if test="areaCode != null"> 
+     and t.area_code = #{areaCode,jdbcType=VARCHAR}
+    </if>
+    <if test="areaCode == null"> 
+    and t.area_code = ''
+    </if>
+     and t.shop_id is null
+     and t.status = 1
+   </where>
+ </sql>
+</mapper>

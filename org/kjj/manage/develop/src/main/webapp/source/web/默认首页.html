@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="../js/common/jquery-1.11.2.js"></script>
+<script src="../js/common/bootstrap.min.js"></script>
+<script src="../js/common/add.js"></script>
+<script src="../js/common/layer/layer.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<link href="../css/add.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.css" rel="stylesheet" type="text/css" />
+<link href="../css/layer.ext.css" rel="stylesheet" type="text/css" />
+<title>商品分类</title>
+</head>
+<body>
+<div class="page-wrapper goods-control">
+<div class="container-fluid">
+
+	<!--  -->
+
+		<form class="form-horizontal" name="shop_page_add" id="shop_page_add" action="http://114.113.234.102:8080/platform/shop/savePage" method="post" enctype="multipart/form-data">
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<ul class="breadcrumb">
+				<li>您的位置</li>
+				<li><a href="#">店铺</a></li>
+				<li><a href="#">首页管理</a></li>
+				<li class="active">新增默认首页</li>
+			</ul>
+			<!-- 切换 -->
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="width:30%">
+			   <a href="" class="btn btn-info active" role="button">pc</a>
+			   <a href="javascript:void(0)" class="btn btn-info" role="button">微信</a>
+	    	</div>
+			<!-- 切换 -->
+			<div class="panel panel-default">
+				<div class="panel-heading">新增首页</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">所在区域:</label>
+						<div class="col-sm-3">
+							<select class="form-control" name="provinceCode" id="provinceCode" min="0" data-bv-greaterthan-message="请选择区域">
+								<option value="-1">选择省或者市</option>
+
+									<option value="110000">北京市</option>
+
+									<option value="120000">天津市</option>
+
+									<option value="130000">河北省</option>
+
+									<option value="140000">山西省</option>
+
+									<option value="150000">内蒙古</option>
+
+									<option value="210000">辽宁省</option>
+
+									<option value="220000">吉林省</option>
+
+									<option value="230000">黑龙江</option>
+
+									<option value="310000">上海市</option>
+
+									<option value="320000">江苏省</option>
+
+									<option value="330000">浙江省</option>
+
+									<option value="340000">安徽省</option>
+
+									<option value="350000">福建省</option>
+
+									<option value="360000">江西省</option>
+
+									<option value="370000">山东省</option>
+
+									<option value="410000">河南省</option>
+
+									<option value="420000">湖北省</option>
+
+									<option value="430000">湖南省</option>
+
+									<option value="440000">广东省</option>
+
+									<option value="450000">广  西</option>
+
+									<option value="460000">海南省</option>
+
+									<option value="500000">重庆市</option>
+
+									<option value="510000">四川省</option>
+
+									<option value="520000">贵州省</option>
+
+									<option value="530000">云南省</option>
+
+									<option value="540000">西  藏</option>
+
+									<option value="610000">陕西省</option>
+
+									<option value="620000">甘肃省</option>
+
+									<option value="630000">青海省</option>
+
+									<option value="640000">宁  夏</option>
+
+									<option value="650000">新  疆</option>
+
+									<option value="710000">台湾省</option>
+
+									<option value="810000">香  港</option>
+
+									<option value="820000">澳  门</option>
+
+							</select>
+
+						</div>
+						<div class="col-sm-3">
+							<select class="form-control" name="cityCode" id="cityCode"><option value="-1">请选择市</option><option value="140100">太原市</option><option value="140200">大同市</option><option value="140300">阳泉市</option><option value="140400">长治市</option><option value="140500">晋城市</option><option value="140600">朔州市</option><option value="140700">晋中市</option><option value="140800">运城市</option><option value="140900">忻州市</option><option value="141000">临汾市</option><option value="141100">吕梁市</option></select>
+
+						</div>
+						<div class="col-sm-3">
+							<select class="form-control" name="countyCode" id="countyCode"><option value="-1">请选择区或县</option></select>
+
+						</div>
+					</div>
+
+					<div class="form-group" style="display:none">
+						<label class="col-sm-2 control-label">门店选择:</label>
+						<div class="col-sm-4">
+							<select class="form-control" name="shop_id" id="shop_id">
+								<option value="-1">选择门店</option>
+
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">是否启用:</label>
+						<div class="col-sm-4">
+							<select class="form-control" name="isActive" id="isActive">
+								<option value="1">是</option>
+								<option value="0">否</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+							<label class="col-sm-2 control-label">添加banner:</label>
+							<div class="col-sm-9">
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_1" id="file_1" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_1">
+												<img src="" id="showimg_1" name="showimg_1" height="30" width="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_1" name="url_1" value="#">
+											</div>
+										</div>
+
+										<div class="col-sm-3">
+											<button type="button" class="btn " onclick="removeItem('showimg_1');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+											<span class="glyphicon glyphicon-arrow-up control"></span>
+											<span class="glyphicon glyphicon-arrow-down control"></span>
+										</div>
+
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_2" id="file_2" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_1">
+												<img src="" id="showimg_2" name="showimg_2" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_2" name="url_2" value="#">
+											</div>
+										</div>
+
+										<div class="col-sm-1">
+											<button type="button" class="btn " onclick="removeItem('showimg_2');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_3" id="file_3" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_3">
+												<img src="" id="showimg_3" name="showimg_3" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_3" name="url_3" value="#">
+											</div>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn" onclick="removeItem('showimg_3');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_4" id="file_4" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_4">
+												<img src="" id="showimg_4" name="showimg_4" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_4" name="url_4" value="#">
+											</div>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn" onclick="removeItem('showimg_4');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_5" id="file_5" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_5">
+												<img src="" id="showimg_5" name="showimg_5" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_5" name="url_5" value="#">
+											</div>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn" onclick="removeItem('showimg_5');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_6" id="file_6" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_6">
+												<img src="" id="showimg_6" name="showimg_6" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_6" name="url_6" value="#">
+											</div>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn" onclick="removeItem('showimg_6');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_7" id="file_7" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_7">
+												<img src="" id="showimg_7" name="showimg_7" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_7" name="url_7" value="#">
+											</div>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn" onclick="removeItem('showimg_7');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_8" id="file_8" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_8">
+												<img src="" id="showimg_8" name="showimg_8" height="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_8" name="url_8" value="#">
+											</div>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn" onclick="removeItem('showimg_8');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+							</div>
+
+					</div>
+
+
+				<!-- 猜你喜欢部分页面 -->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">添加分类宣传:</label>
+							<div class="col-sm-9">
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_1" id="file_1" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_1">
+												<img src="" id="showimg_1" name="showimg_1" height="30" width="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_1" name="url_1" value="#">
+											</div>
+										</div>
+
+										<div class="col-sm-1">
+											<button type="button" class="btn " onclick="removeItem('showimg_1');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_1" id="file_1" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_1">
+												<img src="" id="showimg_1" name="showimg_1" height="30" width="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_1" name="url_1" value="#">
+											</div>
+										</div>
+
+										<div class="col-sm-1">
+											<button type="button" class="btn " onclick="removeItem('showimg_1');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+											<div class="form-group">
+												<input type="file" name="file_1" id="file_1" class="color-control form-control">
+											</div>
+										</div>
+										<div class="col-sm-3 ">
+											<div class="form-group" id="div_1">
+												<img src="" id="showimg_1" name="showimg_1" height="30" width="30">
+											</div>
+										</div>
+
+										<div class="col-sm-2 ">
+											<div class="form-group">
+												<input type="text" id="url_1" name="url_1" value="#">
+											</div>
+										</div>
+
+										<div class="col-sm-1">
+											<button type="button" class="btn " onclick="removeItem('showimg_1');" style="background:none;"><i class="glyphicon glyphicon-remove-circle"></i></button>
+										</div>
+								</div>
+							</div>
+					</div>
+
+					<!-- 产品分类添加 -->
+					<!-- 添加楼层 -->
+					<div class="form-group reverse-row">
+						<div class="row">
+							<label class="col-sm-2 control-label">楼层添加:</label>
+							<div class="col-sm-9">
+								<div class="row"><button class="btn btn-success">添加楼层</button></div>
+								<!-- 复制中间 -->
+								<div class="borderme" >
+									<div class="row">
+										<div class="form-inline reverse_form">
+											<div class="form-group">
+												<label>分类：</label>
+												<select class="form-control">
+													<option value="">1111</option>
+													<option value="">1111</option>
+													<option value="">1111</option>
+													<option value="">1111</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>名称：</label>
+												<input type="text" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>url:</label>
+												<input type="text" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>是否启用：</label>
+												<select class="form-control">
+													<option value="">1111</option>
+													<option value="">1111</option>
+													<option value="">1111</option>
+													<option value="">1111</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row img_group">
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<button class="btn btn-default">删除</button>
+										</div>
+											<button class="btn btn-info" style="margin-left:10px;">在来一批</button>
+									</div>
+									<div class="row">
+										<div class="form-inline reverse_form">
+											<div class="form-group">
+												<label>分类标题图片：</label>
+												<input type="file" class="form-control" />
+											</div>
+											<div class="form-group">
+												<label>URL:</label>
+												<input type="text" class="form-control">
+											</div>
+
+										</div>
+									</div>
+									<div class="row img_group">
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<input type="text" class="form-control fix80" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<input type="text" class="form-control fix80" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<input type="text" class="form-control fix80" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<input type="text" class="form-control fix80" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="../img/5555.jpg" alt="" class="img_control" />
+											<input type="text" class="form-control fix80" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<div class="col-sm-2">
+											<img src="" alt="点击选择其他商品" class="img_control" title="点击选择其他商品" />
+											<input type="text" class="form-control fix80" />
+											<button class="btn btn-default">删除</button>
+										</div>
+										<button class="btn btn-info" style="margin-left:10px;">在来一批</button>
+									</div>
+									<div class="row">
+										<button class="btn btn-danger">删除楼层</button>
+									</div>
+								</div>
+
+								<!-- 复制中间 -->
+							</div>
+						</div>
+
+					</div>
+			    </div>
+			</div>
+			<br>
+			<div class="text-center">
+				<a type="button" class="btn btn-primary " role="button" href="http://114.113.234.102:8080/platform/shop/list">返回</a>
+				<button type="button" class="btn btn-primary " onclick="savedata()">确定</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!--  -->
+</div>
+
+</div>
+
+</body>
+</html>

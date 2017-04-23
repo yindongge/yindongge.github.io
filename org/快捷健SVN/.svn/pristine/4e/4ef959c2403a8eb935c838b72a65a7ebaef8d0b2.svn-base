@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/load.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<title>车帮</title>
+</head>
+<body>
+<div class="box">
+	<div class="container-fluid">
+		<div class="head-tip">
+			<ul class="breadcrumb">
+			  <li>您的位置</li>
+			   <li ><a href="#">会员管理</a></li>
+			  <li class="active">证件信息</li>
+			</ul>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="content">
+			<div class="table-wrapper  text-left">
+				<!-- Single button -->
+				<div class="btn-group">
+					<button class="btn btn-info">基本信息</button>
+					<button class="btn btn-primary">证件信息</button>
+					<button class="btn btn-info">车辆信息</button>
+					<button class="btn btn-info">订单信息</button>
+					<button class="btn btn-info">财务信息</button>
+				</div>
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr class="info " >
+							<th colspan="9">身份信息<a class="sure sure1">通过</a><a href="#" class="sure active">不通过</a></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr >
+							<td>证件类型：</td>
+							<td>身份证</td>
+							<td>身份证号：</td>
+							<td>1111156151515</td>
+							<td>有效期</td>
+							<td>2015015105</td>
+						</tr>
+						<tr>
+							<td>正面照片：</td>
+							<td><a href=""><img src="img/2.jpg" alt="" class="img3" /></a></td>
+							<td>背面照片：</td>
+							<td><a href=""><img src="img/2.jpg" alt="" class="img3" /></a></td>
+							<td>手持照片</td>
+							<td><a href=""><img src="img/2.jpg" alt="" class="img3" /></a></td>
+						</tr>
+						<tr class="info" >
+							<th colspan="9">身份信息<a class="sure sure1">通过</a><a href="#" class="sure active">不通过</a></th>
+						</tr>
+						<tr>
+							<td>档案编号：</td>
+							<td>1234567</td>
+							<td>准驾车型：</td>
+							<td></td>
+							<td>初次领证日期：</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>驾驶证照片：</td>
+							<td colspan="2"><a href=""><img src="" alt="img/2.jpg" class="img2" /></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+
+				</table>
+				<div class="buttoncenter"><button class="btn btn-default">返回</button></div>
+			</div>
+
+			<!-- 表单结束↑ -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

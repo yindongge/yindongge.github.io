@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<!-- 自动扫描注解 -->
+	<context:component-scan base-package="com.kjj.pc"/>
+	
+	<!-- 默认的注解映射的支持 --> 
+	<mvc:annotation-driven/>
+	
+	<!-- 对静态资源文件的访问  -->  
+    <mvc:default-servlet-handler/>
+
+	<!-- 视图解释类 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/alipay/notifyUrl"/>
+			<mvc:exclude-mapping path="/wxpay/notifyUrl"/>
+			<bean class="com.kjj.pc.web.interceptor.RemembermeInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/"/>
+			<mvc:exclude-mapping path="/shop/**"/>
+			<mvc:exclude-mapping path="/foot"/>
+			<mvc:exclude-mapping path="/alipay/notifyUrl"/>
+			<mvc:exclude-mapping path="/wxpay/notifyUrl"/>
+			<bean class="com.kjj.pc.web.interceptor.ShopInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/coupon/**"/>
+			<mvc:mapping path="/comment/**"/>
+			<mvc:mapping path="/consultation/**"/>
+			<mvc:mapping path="/order/**"/>
+			<mvc:mapping path="/return/**"/>
+			<mvc:mapping path="/refund/**"/>
+			<mvc:mapping path="/pay/**"/>
+			<mvc:mapping path="/alipay/**"/>
+			<mvc:mapping path="/wxpay/**"/>
+			<mvc:mapping path="/address/**"/>
+			<mvc:mapping path="/sendRange/**"/>
+			<mvc:mapping path="/user/**"/>
+			<mvc:mapping path="/security/**"/>
+			<mvc:mapping path="/accountDeposit/**"/>
+			<mvc:exclude-mapping path="/alipay/notifyUrl"/>
+			<mvc:exclude-mapping path="/wxpay/notifyUrl"/>
+			<mvc:exclude-mapping path="/consultation/itemList"/>
+			<mvc:exclude-mapping path="/security/findPassword**"/>
+			<mvc:exclude-mapping path="/security/sendEmailCode**"/>
+			<mvc:exclude-mapping path="/security/verifyEmailOrPhone**"/>
+			<mvc:exclude-mapping path="/security/verifySuccess**"/>
+			<mvc:exclude-mapping path="/security/resetPassword**"/>
+			<bean class="com.kjj.pc.web.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>	
+	
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+</beans>

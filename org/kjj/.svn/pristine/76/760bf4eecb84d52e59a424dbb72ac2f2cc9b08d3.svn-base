@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjj.commserver.sqlmaps.special.OrgSpecialRuleMapper" >
+  <resultMap id="BaseResultMap" type="com.kjj.commserver.entity.special.OrgSpecialRule" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="special_id" property="specialId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.kjj.commserver.entity.special.OrgSpecialRule" extends="BaseResultMap" >
+    <result column="rule_content" property="ruleContent" jdbcType="LONGVARCHAR" />
+    <result column="rule_html" property="ruleHtml" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, special_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    rule_content, rule_html
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from org_special_rule
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from org_special_rule
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kjj.commserver.entity.special.OrgSpecialRule" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+    insert into org_special_rule (special_id, rule_content, rule_html
+      )
+    values (#{specialId,jdbcType=INTEGER}, #{ruleContent,jdbcType=LONGVARCHAR}, #{ruleHtml,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kjj.commserver.entity.special.OrgSpecialRule" >
+    update org_special_rule
+    <set >
+      <if test="specialId != null" >
+        special_id = #{specialId,jdbcType=INTEGER},
+      </if>
+      <if test="ruleContent != null" >
+        rule_content = #{ruleContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="ruleHtml != null" >
+        rule_html = #{ruleHtml,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.kjj.commserver.entity.special.OrgSpecialRule" >
+    update org_special_rule
+    set special_id = #{specialId,jdbcType=INTEGER},
+      rule_content = #{ruleContent,jdbcType=LONGVARCHAR},
+      rule_html = #{ruleHtml,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kjj.commserver.entity.special.OrgSpecialRule" >
+    update org_special_rule
+    set special_id = #{specialId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_rule t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=INTEGER}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="specialId != null" >
+          and t.special_id = #{specialId,jdbcType=INTEGER}
+      </if>
+      <if test="ruleContent != null" >
+          and t.rule_content = #{ruleContent,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="ruleHtml != null" >
+          and t.rule_html = #{ruleHtml,jdbcType=LONGVARCHAR}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+       order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from org_special_rule t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from org_special_rule t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from org_special_rule where id in (
+    select t.id from (select * from org_special_rule) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.kjj.commserver.entity.special.aide.OrgSpecialRuleVo" extends="ResultMapWithBLOBs" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.special_id,
+    t.rule_content, 
+    t.rule_html
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>
